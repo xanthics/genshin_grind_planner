@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Genshin Impact Grind Target Tracker</title>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.9.0/brython.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.9.0/brython_stdlib.js"></script>
+        <link href="css/layout.css" rel="stylesheet" type="text/css" />
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    </head>
+    <body onload="brython(1)">
+        <section class="main">
+            <p><strong>This page requires local storage to save state.</strong>  Save/load is working, totals are being implemented</p>
+            <div id="loading">
+                This page requires javascript in order to work correctly.
+                <br><br>
+                This page may take a moment to load.
+            </div>
+            <div id="main"></div>
+            <br /><span id="reset"></span><br />(warning not reversible)
+            <div id="patreon"><a href="https://www.patreon.com/xanthics"><img alt="Become a Patron!" src="img/become_a_patron_button@2x.png" id="patreon_image"></a></div>
+            <p>Primary data source: <a href="https://genshin-impact.fandom.com/wiki/Genshin_Impact_Wiki">The fandom wiki</a></p>
+        </section>
+        <script type="text/python" src="main.py"></script>
+    </body>
+</html>
