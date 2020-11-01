@@ -1,0 +1,11 @@
+
+.gitignore
+.idea/.gitignore
+.idea/dictionaries
+.idea/genshin_grind_planner.iml
+.idea/inspectionProfiles/
+.idea/misc.xml
+.idea/modules.xml
+__pycache__/
+levels.csv
+temp.py
