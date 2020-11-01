@@ -155,7 +155,7 @@ def init_page():
 			b.bind('click', delete_me)
 			doc[target] <= b
 		else:
-			print(k, v)
+			print(f"Invalid stored data: {k}, {v}")
 
 	# Function for saving changes
 	@bind('.save', 'change')
