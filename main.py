@@ -107,9 +107,12 @@ def init_page():
 		# Set up weapon select
 		ws = SELECT(Id=f"weapon_{char}", data_id=f"select_{char}", Class=f'weapon {char} save')
 		ws <= OPTION('--')
+		sort_dict_wep = {}
 		for item in weapons[characters[char]['weapon']]:
 			if weapons[characters[char]['weapon']][item]['wam'] != 'unk':
-				ws <= OPTION(strings[characters[char]['weapon']][item])
+				sort_dict_wep[strings[characters[char]['weapon']][item]] = item
+		for k in sorted(sort_dict_wep):
+			ws <= OPTION(k, value=sort_dict_wep[k])
 		wlvlc = SELECT(Id=f"weapon_c_{char}", Class=f"{char} save")
 		wlvlt = SELECT(Id=f"weapon_t_{char}", Class=f"{char} save")
 		for lvl in [wlvlc, wlvlt]:
@@ -144,8 +147,8 @@ def init_page():
 			doc[k].checked = True
 			for elt in doc.get(selector='TR[data-id="{}"]'.format(k)):
 				elt.attrs['class'] = 'checked'
-		elif v.isnumeric():
-			doc[k].selectedIndex = int(v)
+		elif 'select' in v:
+			doc[k].value = v.split('-')[1]
 		elif v == 'y':
 			target, ev_id = k.split('-')
 			b = BUTTON(strings['artifacts'][ev_id], Class='text_button saved_arti', Id=f"{target}-{ev_id}", data_arti=ev_id)
@@ -164,7 +167,7 @@ def init_page():
 				del_storage(ev.target.id)
 		elif ev.target.type == 'select-one':
 			if ev.target.selectedIndex:
-				set_storage(ev.target.id, str(ev.target.selectedIndex))
+				set_storage(ev.target.id, f"select-{ev.target.value}")
 			else:
 				del_storage(ev.target.id)
 		else:
