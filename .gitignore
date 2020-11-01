@@ -9,3 +9,4 @@
 __pycache__/
 levels.csv
 temp.py
+.idea/vcs.xml

@@ -37,6 +37,15 @@ def check_storage(key):
 
 # Reset that only deletes values for this site
 def reset_data(ev):
+	for elt in doc.get(selector='input[type=checkbox]'):
+		doc[elt.id].checked = False
+	for elt in doc.get(selector='select'):
+		elt.selectedIndex = 0
+	for elt in doc.get(selector='TR[data-id]'):
+		elt.attrs['class'] = 'unchecked'
+	for elt in doc.get(selector='.saved_arti'):
+		del doc[elt.id]
+
 	for key in storage.keys():
 		if key.startswith(storage_key):
 			del storage[key]
@@ -139,7 +148,7 @@ def init_page():
 			doc[k].selectedIndex = int(v)
 		elif v == 'y':
 			target, ev_id = k.split('-')
-			b = BUTTON(strings['artifacts'][ev_id], Class='text_button', Id=f"{target}-{ev_id}", data_arti=ev_id)
+			b = BUTTON(strings['artifacts'][ev_id], Class='text_button saved_arti', Id=f"{target}-{ev_id}", data_arti=ev_id)
 			b.bind('click', delete_me)
 			doc[target] <= b
 		else:
@@ -200,7 +209,7 @@ def delete_me(ev):
 def custom_menu(ev):
 	if 'data-id' in ev.target.attrs and 'menu-item' in ev.target.attrs['class'] and 'vertical-menu' in ev.target.attrs['class']:
 		if f"{ev.target.attrs['data-id']}-{ev.target.id}" not in doc:
-			b = BUTTON(strings['artifacts'][ev.target.id], Class='text_button', Id=f"{ev.target.attrs['data-id']}-{ev.target.id}", data_arti=ev.target.id)
+			b = BUTTON(strings['artifacts'][ev.target.id], Class='text_button saved_arti', Id=f"{ev.target.attrs['data-id']}-{ev.target.id}", data_arti=ev.target.id)
 			b.bind('click', delete_me)
 			doc[ev.target.attrs["data-id"]] <= b
 			set_storage(f"{ev.target.attrs['data-id']}-{ev.target.id}", 'y')
