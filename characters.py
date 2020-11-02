@@ -1,5 +1,5 @@
 characters = {
-	"Amber": {
+	"amber": {
 		'ascension': {
 			'element_1': 'agnidus_agate',
 			'element_2': 'everflame_seed',
@@ -13,7 +13,7 @@ characters = {
 		},
 		'weapon': 'bow'
 	},
-	"Barbara": {
+	"barbara": {
 		'ascension': {
 			'element_1': 'varunada_lazurite',
 			'element_2': 'cleansing_heart',
@@ -27,7 +27,7 @@ characters = {
 		},
 		'weapon': 'catalyst'
 	},
-	"Beidou": {
+	"beidou": {
 		'ascension': {
 			'element_1': 'vajrada_amethyst',
 			'element_2': 'lightning_prism',
@@ -41,7 +41,7 @@ characters = {
 		},
 		'weapon': 'claymore'
 	},
-	"Bennett": {
+	"bennett": {
 		'ascension': {
 			'element_1': 'agnidus_agate',
 			'element_2': 'everflame_seed',
@@ -55,7 +55,7 @@ characters = {
 		},
 		'weapon': 'sword'
 	},
-	"Chongyun": {
+	"chongyun": {
 		'ascension': {
 			'element_1': 'shivada_jade',
 			'element_2': 'hoarfrost_core',
@@ -69,7 +69,7 @@ characters = {
 		},
 		'weapon': 'claymore'
 	},
-	"Diluc": {
+	"diluc": {
 		'ascension': {
 			'element_1': 'agnidus_agate',
 			'element_2': 'everflame_seed',
@@ -83,7 +83,7 @@ characters = {
 		},
 		'weapon': 'claymore'
 	},
-	"Fischl": {
+	"fischl": {
 		'ascension': {
 			'element_1': 'vajrada_amethyst',
 			'element_2': 'lightning_prism',
@@ -97,7 +97,7 @@ characters = {
 		},
 		'weapon': 'bow'
 	},
-	"Jean": {
+	"jean": {
 		'ascension': {
 			'element_1': 'vayuda_turqoise',
 			'element_2': 'hurricane_seed',
@@ -111,7 +111,7 @@ characters = {
 		},
 		'weapon': 'sword'
 	},
-	"Kaeya": {
+	"kaeya": {
 		'ascension': {
 			'element_1': 'shivada_jade',
 			'element_2': 'hoarfrost_core',
@@ -125,7 +125,7 @@ characters = {
 		},
 		'weapon': 'sword'
 	},
-	"Keqing": {
+	"keqing": {
 		'ascension': {
 			'element_1': 'vajrada_amethyst',
 			'element_2': 'lightning_prism',
@@ -139,7 +139,7 @@ characters = {
 		},
 		'weapon': 'sword'
 	},
-	"Klee": {
+	"klee": {
 		'ascension': {
 			'element_1': 'agnidus_agate',
 			'element_2': 'everflame_seed',
@@ -153,7 +153,7 @@ characters = {
 		},
 		'weapon': 'catalyst'
 	},
-	"Lisa": {
+	"lisa": {
 		'ascension': {
 			'element_1': 'vajrada_amethyst',
 			'element_2': 'lightning_prism',
@@ -167,7 +167,7 @@ characters = {
 		},
 		'weapon': 'catalyst'
 	},
-	"Mona": {
+	"mona": {
 		'ascension': {
 			'element_1': 'varunada_lazurite',
 			'element_2': 'cleansing_heart',
@@ -181,7 +181,7 @@ characters = {
 		},
 		'weapon': 'catalyst'
 	},
-	"Ningguang": {
+	"ningguang": {
 		'ascension': {
 			'element_1': 'prithiva_topaz',
 			'element_2': 'basalt_pillar',
@@ -195,7 +195,7 @@ characters = {
 		},
 		'weapon': 'catalyst'
 	},
-	"Noelle": {
+	"noelle": {
 		'ascension': {
 			'element_1': 'prithiva_topaz',
 			'element_2': 'basalt_pillar',
@@ -209,7 +209,7 @@ characters = {
 		},
 		'weapon': 'claymore'
 	},
-	"Qiqi": {
+	"qiqi": {
 		'ascension': {
 			'element_1': 'shivada_jade',
 			'element_2': 'hoarfrost_core',
@@ -223,7 +223,7 @@ characters = {
 		},
 		'weapon': 'sword'
 	},
-	"Razor": {
+	"razor": {
 		'ascension': {
 			'element_1': 'vajrada_amethyst',
 			'element_2': 'lightning_prism',
@@ -237,7 +237,7 @@ characters = {
 		},
 		'weapon': 'claymore'
 	},
-	"Sucrose": {
+	"sucrose": {
 		'ascension': {
 			'element_1': 'vayuda_turqoise',
 			'element_2': 'hurricane_seed',
@@ -251,7 +251,7 @@ characters = {
 		},
 		'weapon': 'catalyst'
 	},
-	"Venti": {
+	"venti": {
 		'ascension': {
 			'element_1': 'vayuda_turqoise',
 			'element_2': 'hurricane_seed',
@@ -265,7 +265,7 @@ characters = {
 		},
 		'weapon': 'bow'
 	},
-	"Xiangling": {
+	"xiangling": {
 		'ascension': {
 			'element_1': 'agnidus_agate',
 			'element_2': 'everflame_seed',
@@ -279,7 +279,7 @@ characters = {
 		},
 		'weapon': 'polearm'
 	},
-	"Xingqiu": {
+	"xingqiu": {
 		'ascension': {
 			'element_1': 'varunada_lazurite',
 			'element_2': 'cleansing_heart',
