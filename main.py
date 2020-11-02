@@ -296,12 +296,16 @@ def calculate_change():
 		if elt.id.split('-')[1] in grind_table_state['checked']:
 			print(elt.id)
 
-	for item in totals:
-		key = f"{item}-total"
-		if totals[item] != grind_table_state['id'][key]:
-			grind_table_state['id'][key] = totals[item]
-			doc[key].text = f"{totals[item]:,}"
-			doc[f"{key}_row"].style.display = 'table-row' if totals[item] else 'none'
+	for item in grind_table_state['id']:
+		key = item.split('-')[0]
+		if key in totals:
+			grind_table_state['id'][item] = totals[key]
+			doc[item].text = f"{totals[key]:,}"
+			doc[f"{item}_row"].style.display = 'table-row' if totals[key] else 'none'
+		elif grind_table_state['id'][item]:
+			grind_table_state['id'][item] = 0
+			doc[item].text = f"0"
+			doc[f"{item}_row"].style.display = 'none'
 
 
 # Function to handle deleting artifacts
