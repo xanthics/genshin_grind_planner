@@ -11,7 +11,8 @@ characters = {
 			'common': 'arrowhead',
 			'boss': 'dvalins_sigh'
 		},
-		'weapon': 'bow'
+		'weapon': 'bow',
+		'element': 'pyro'
 	},
 	"barbara": {
 		'ascension': {
@@ -25,35 +26,39 @@ characters = {
 			'common': 'scroll',
 			'boss': 'ring_of_boreas'
 		},
-		'weapon': 'catalyst'
+		'weapon': 'catalyst',
+		'element': 'hydro'
 	},
 	"beidou": {
 		'ascension': {
 			'element_1': 'vajrada_amethyst',
 			'element_2': 'lightning_prism',
 			'local': 'noctilucous_jade',
-			'common': 'insignia'
+			'common': 'th_insignia'
 		},
 		'talent': {
 			'talent': 'gold',
-			'common': 'insignia',
+			'common': 'th_insignia',
 			'boss': 'dvalins_sigh'
 		},
-		'weapon': 'claymore'
+		'weapon': 'claymore',
+		'element': 'electro'
+
 	},
 	"bennett": {
 		'ascension': {
 			'element_1': 'agnidus_agate',
 			'element_2': 'everflame_seed',
 			'local': 'windwheel_aster',
-			'common': 'insignia'
+			'common': 'th_insignia'
 		},
 		'talent': {
 			'talent': 'resistance',
-			'common': 'insignia',
+			'common': 'th_insignia',
 			'boss': 'dvalins_plume'
 		},
-		'weapon': 'sword'
+		'weapon': 'sword',
+		'element': 'pyro'
 	},
 	"chongyun": {
 		'ascension': {
@@ -67,21 +72,23 @@ characters = {
 			'common': 'mask',
 			'boss': 'dvalins_sigh'
 		},
-		'weapon': 'claymore'
+		'weapon': 'claymore',
+		'element': 'cryo'
 	},
 	"diluc": {
 		'ascension': {
 			'element_1': 'agnidus_agate',
 			'element_2': 'everflame_seed',
 			'local': 'small_lamp_grass',
-			'common': 'insignia'
+			'common': 'f_insignia'
 		},
 		'talent': {
 			'talent': 'resistance',
-			'common': 'insignia',
+			'common': 'f_insignia',
 			'boss': 'dvalins_plume'
 		},
-		'weapon': 'claymore'
+		'weapon': 'claymore',
+		'element': 'pyro'
 	},
 	"fischl": {
 		'ascension': {
@@ -95,7 +102,8 @@ characters = {
 			'common': 'arrowhead',
 			'boss': 'spirit_locket_of_boreas'
 		},
-		'weapon': 'bow'
+		'weapon': 'bow',
+		'element': 'electro'
 	},
 	"jean": {
 		'ascension': {
@@ -109,21 +117,23 @@ characters = {
 			'common': 'mask',
 			'boss': 'dvalins_plume'
 		},
-		'weapon': 'sword'
+		'weapon': 'sword',
+		'element': 'anemo'
 	},
 	"kaeya": {
 		'ascension': {
 			'element_1': 'shivada_jade',
 			'element_2': 'hoarfrost_core',
 			'local': 'calla_lily',
-			'common': 'insignia'
+			'common': 'th_insignia'
 		},
 		'talent': {
 			'talent': 'ballad',
-			'common': 'insignia',
+			'common': 'th_insignia',
 			'boss': 'spirit_locket_of_boreas'
 		},
-		'weapon': 'sword'
+		'weapon': 'sword',
+		'element': 'cryo'
 	},
 	"keqing": {
 		'ascension': {
@@ -137,7 +147,8 @@ characters = {
 			'common': 'nectar',
 			'boss': 'ring_of_boreas'
 		},
-		'weapon': 'sword'
+		'weapon': 'sword',
+		'element': 'electro'
 	},
 	"klee": {
 		'ascension': {
@@ -151,7 +162,8 @@ characters = {
 			'common': 'scroll',
 			'boss': 'ring_of_boreas'
 		},
-		'weapon': 'catalyst'
+		'weapon': 'catalyst',
+		'element': 'pyro'
 	},
 	"lisa": {
 		'ascension': {
@@ -165,7 +177,8 @@ characters = {
 			'common': 'slime',
 			'boss': 'dvalins_claw'
 		},
-		'weapon': 'catalyst'
+		'weapon': 'catalyst',
+		'element': 'electro'
 	},
 	"mona": {
 		'ascension': {
@@ -179,21 +192,23 @@ characters = {
 			'common': 'nectar',
 			'boss': 'ring_of_boreas'
 		},
-		'weapon': 'catalyst'
+		'weapon': 'catalyst',
+		'element': 'hydro'
 	},
 	"ningguang": {
 		'ascension': {
 			'element_1': 'prithiva_topaz',
 			'element_2': 'basalt_pillar',
 			'local': 'glaze_lilly',
-			'common': 'insignia'
+			'common': 'f_insignia'
 		},
 		'talent': {
 			'talent': 'prosperity',
-			'common': 'insignia',
+			'common': 'f_insignia',
 			'boss': 'spirit_locket_of_boreas'
 		},
-		'weapon': 'catalyst'
+		'weapon': 'catalyst',
+		'element': 'geo'
 	},
 	"noelle": {
 		'ascension': {
@@ -207,7 +222,8 @@ characters = {
 			'common': 'mask',
 			'boss': 'dvalins_claw'
 		},
-		'weapon': 'claymore'
+		'weapon': 'claymore',
+		'element': 'geo'
 	},
 	"qiqi": {
 		'ascension': {
@@ -221,7 +237,8 @@ characters = {
 			'common': 'scroll',
 			'boss': 'tail_of_boreas'
 		},
-		'weapon': 'sword'
+		'weapon': 'sword',
+		'element': 'cryo'
 	},
 	"razor": {
 		'ascension': {
@@ -235,7 +252,8 @@ characters = {
 			'common': 'mask',
 			'boss': 'dvalins_claw'
 		},
-		'weapon': 'claymore'
+		'weapon': 'claymore',
+		'element': 'electro'
 	},
 	"sucrose": {
 		'ascension': {
@@ -249,7 +267,8 @@ characters = {
 			'common': 'nectar',
 			'boss': 'spirit_locket_of_boreas'
 		},
-		'weapon': 'catalyst'
+		'weapon': 'catalyst',
+		'element': 'anemo'
 	},
 	"venti": {
 		'ascension': {
@@ -263,7 +282,8 @@ characters = {
 			'common': 'slime',
 			'boss': 'tail_of_boreas'
 		},
-		'weapon': 'bow'
+		'weapon': 'bow',
+		'element': 'anemo'
 	},
 	"xiangling": {
 		'ascension': {
@@ -277,7 +297,8 @@ characters = {
 			'common': 'slime',
 			'boss': 'dvalins_claw'
 		},
-		'weapon': 'polearm'
+		'weapon': 'polearm',
+		'element': 'pyro'
 	},
 	"xingqiu": {
 		'ascension': {
@@ -291,6 +312,7 @@ characters = {
 			'common': 'mask',
 			'boss': 'tail_of_boreas'
 		},
-		'weapon': 'sword'
+		'weapon': 'sword',
+		'element': 'hydro'
 	},
 }
