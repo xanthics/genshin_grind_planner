@@ -27,36 +27,6 @@ input {
     font-family: monospace;
 }
 
-table.body {
-    border: 1px solid black;
-    margin-left:1%;
-    margin-right:1%;
-	width: 98%;
-}
-
-/* Alternating list background Styles */
-
-tr {
-    text-align: left;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	padding:6px;
-	margin: 1px
-	line-height: 1em;
-}
-tr:nth-child(even) {
-	background-color: rgb(185,185,185);
-}
-tr:nth-child(odd) {
-	background-color: rgb(220,220,220);
-}
-
-tr.unchecked {
-	opacity:0.25;}
-
-tr.checked {
-	opacity:1.0;}
-
 span {
     width: 1.5em;
     height: 1.5em;
@@ -89,8 +59,8 @@ select.weapon {
 button {
     white-space: nowrap;
     width: fit-content;
-    border: 1px solid #000000;
-    background-color: #a0a0a0;
+    border: 1px solid rgb(0,0,0);
+    background-color: rgb(150,150,150);
     display: inline-block;
 }
 
@@ -124,4 +94,77 @@ button {
 #patreon_image {
     height: 100%;
     width: 100%;
-    object-fit: contain;}
+    object-fit: contain;
+}
+
+table.body {
+    border: 1px solid black;
+    margin-left:1%;
+    margin-right:1%;
+	width: 98%;
+	border-collapse: collapse;
+}
+
+/* Alternating list background Styles */
+
+tr {
+    text-align: left;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	padding:6px;
+	margin: 1px
+	line-height: 1em;
+}
+tr:nth-child(even) {
+	background-color: rgb(185,185,185);
+}
+tr:nth-child(odd) {
+	background-color: rgb(220,220,220);
+}
+
+tr.unchecked {
+	opacity:0.25;}
+
+tr.checked {
+	opacity:1.0;}
+
+/* Set up color variables */
+:root {
+    --pyro-color: rgb(255,171,111);
+    --hydro-color: rgb(9,227,255);
+    --electro-color: rgb(222,187,253);
+    --cryo-color: rgb(205,255,253);
+    --anemo-color: rgb(171,243,208);
+    --geo-color: rgb(244,216,98);
+}
+
+tr[data-color='pyro'].checked {
+    border: 1px solid rgb(0,0,0);
+    background-color: var(--pyro-color);
+    margin: 0px 2px;
+}
+tr[data-color='hydro'].checked {
+    border: 1px solid rgb(0,0,0);
+    background-color: var(--hydro-color);
+    margin: 0px 2px;
+}
+tr[data-color='electro'].checked {
+    border: 1px solid rgb(0,0,0);
+    background-color: var(--electro-color);
+    margin: 0px 2px;
+}
+tr[data-color='cryo'].checked {
+    border: 1px solid rgb(0,0,0);
+    background-color: var(--cryo-color);
+    margin: 0px 2px;
+}
+tr[data-color='anemo'].checked {
+    border: 1px solid rgb(0,0,0);
+    background-color: var(--anemo-color);
+    margin: 0px 2px;
+}
+tr[data-color='geo'].checked {
+    border: 1px solid rgb(0,0,0);
+    background-color: var(--geo-color);
+    margin: 0px 2px;
+}
