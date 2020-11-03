@@ -1,6 +1,6 @@
 from browser import document as doc
 from browser import bind
-from browser.html import TABLE, TR, TH, TD, INPUT, SELECT, OPTION, DIV, BUTTON, SPAN, LI
+from browser.html import TABLE, TR, TH, TD, INPUT, SELECT, OPTION, DIV, BUTTON, SPAN, LI, H2, H3
 from browser.local_storage import storage
 
 from characters import characters
@@ -8,6 +8,8 @@ from weapons import weapons
 from artifacts import artifacts
 from lang_en import strings
 from costs import costs
+from farming_data import farming_data
+from groups import groups
 
 
 storage_key = "genshin_grind_planner"
@@ -111,10 +113,10 @@ def init_page():
 		sort_dict_wep = {}
 		for item in weapons[characters[char]['weapon']]:
 			if weapons[characters[char]['weapon']][item]['wam'] != 'unk':
-				sort_dict_wep[strings[characters[char]['weapon']][item]] = item
+				sort_dict_wep[strings[item]] = item
 			else:
 				if f"missing-{item}" not in doc:
-					doc['missing'] <= LI(strings[characters[char]['weapon']][item], Id=f"missing-{item}")
+					doc['missing'] <= LI(strings[item], Id=f"missing-{item}")
 
 		for k in sorted(sort_dict_wep):
 			ws <= OPTION(k, value=sort_dict_wep[k])
@@ -126,7 +128,7 @@ def init_page():
 		# Create table row for character
 		t <= TR(
 			TD(INPUT(Id=f"check-{char}", type='checkbox', data_id=f"check-{char}", Class='char_select save')) +
-			TD(strings['character'][char]) +
+			TD(strings[char]) +
 			TD(lvlc) +
 			TD(lvlt) +
 			TD(t1c) +
@@ -141,7 +143,7 @@ def init_page():
 			TD(BUTTON("Add", Class='arti_list text_button', data_id=f"arti-{char}")) +
 			TD(DIV(Id=f"arti-{char}", Class=f'arti_span'))
 			,
-			data_id=f"check-{char}", Class='unchecked'
+			data_id=f"check-{char}", Class='unchecked', data_color=characters[char]['element']
 		)
 
 	doc['main'] <= DIV(Id="test")
@@ -159,15 +161,15 @@ def init_page():
 	grind_table_state['id'][f"mora-total"] = 0
 	for section in ['boss', 'element_1', 'element_2', 'local', 'common', 'common_rare', 'wam', 'talent']:
 		if section in ['boss', 'element_2', 'local']:
-			for item in strings[section]:
+			for item in groups[section]:
 				grind_table_state['id'][f"{item}-total"] = 0
-				t <= TR(TD(strings[section][item]) + TD('0', Id=f"{item}-total"), Id=f"{item}-total_row")
+				t <= TR(TD(strings[item]) + TD('0', Id=f"{item}-total"), Id=f"{item}-total_row")
 		if section in ['element_1', 'common', 'common_rare', 'wam', 'talent']:
-			for item in strings[section]:
-				for i in range(len(strings[section][item])):
+			for item in groups[section]:
+				for i in range(len(strings[item])):
 					grind_table_state['id'][f"{item}_{i}-total"] = 0
-					t <= TR(TD(strings[section][item][i]) + TD('0', Id=f"{item}_{i}-total"), Id=f"{item}_{i}-total_row")
-	doc['farm'] <= t
+					t <= TR(TD(strings[item][i]) + TD('0', Id=f"{item}_{i}-total"), Id=f"{item}_{i}-total_row")
+	doc['farm'] <= H2(strings['missing']) + t
 
 	for k, v in list_storage():
 		if v == 'checked':
@@ -181,7 +183,7 @@ def init_page():
 			idx = k.rfind('-')
 			target = k[:idx]
 			ev_id = k[idx+1:]
-			b = BUTTON(strings['artifacts'][ev_id], Class=f'text_button saved_arti {target.split("-")[1]}', Id=f"{target}-{ev_id}", data_arti=ev_id)
+			b = BUTTON(strings[ev_id], Class=f'text_button saved_arti {target.split("-")[1]}', Id=f"{target}-{ev_id}", data_arti=ev_id)
 			b.bind('click', delete_me)
 			doc[target] <= b
 		else:
@@ -227,7 +229,7 @@ def init_page():
 		# Set up artifact select
 		arti = DIV(Id='vertical-menu', Class='vertical-menu')
 		for art in artifacts:
-			temp = DIV(strings['artifacts'][art], Id=art, data_id=ev.target.attrs["data-id"], Class='vertical-menu menu-item')
+			temp = DIV(strings[art], Id=art, data_id=ev.target.attrs["data-id"], Class='vertical-menu menu-item')
 			temp.bind('click', custom_menu)
 			arti <= temp
 		arti.top = ev.y
@@ -261,6 +263,14 @@ def calculate_change():
 				add_value_int(totals, characters[char]['ascension']['element_2'], temp['element_2'])
 				add_value_int(totals, characters[char]['ascension']['local'], temp['local'])
 				add_value_int(totals, f"{characters[char]['ascension']['common']}_{temp['common'][1]}", temp['common'][0])
+				if temp['element_1'][0]:
+					grind_daily_tracker.add(characters[char]['ascension']['element_1'])
+				if temp['element_2']:
+					grind_daily_tracker.add(characters[char]['ascension']['element_2'])
+				if temp['local']:
+					grind_daily_tracker.add(characters[char]['ascension']['local'])
+				if temp['common'][0]:
+					grind_daily_tracker.add(characters[char]['ascension']['common'])
 
 		# calculate mats for talent
 		talent_1_c = int(doc[f'talent_1_c-{char}'].value)
@@ -277,6 +287,12 @@ def calculate_change():
 					add_value_int(totals, f"{characters[char]['talent']['talent']}_{temp['talent'][1]}", temp['talent'][0])
 					add_value_int(totals, f"{characters[char]['talent']['common']}_{temp['common'][1]}", temp['common'][0])
 					add_value_int(totals, characters[char]['talent']['boss'], temp['boss'])
+					if temp['talent'][0]:
+						grind_daily_tracker.add(characters[char]['talent']['talent'])
+					if temp['common'][0]:
+						grind_daily_tracker.add(characters[char]['talent']['common'])
+					if temp['boss']:
+						grind_daily_tracker.add(characters[char]['talent']['boss'])
 		# calculate mats for weapon
 		weapon_c = int(doc[f'weapon_c-{char}'].value)
 		weapon_t = int(doc[f'weapon_t-{char}'].value)
@@ -289,12 +305,17 @@ def calculate_change():
 				add_value_int(totals, f"{weapon['wam']}_{temp['wam'][1]}", temp['wam'][0])
 				add_value_int(totals, f"{weapon['common_rare']}_{temp['common_rare'][1]}", temp['common_rare'][0])
 				add_value_int(totals, f"{weapon['common']}_{temp['common'][1]}", temp['common'][0])
+				if temp['wam'][0]:
+					grind_daily_tracker.add(weapon['wam'])
+				if temp['common_rare'][0]:
+					grind_daily_tracker.add(weapon['common_rare'])
+				if temp['common'][0]:
+					grind_daily_tracker.add(weapon['common'])
 
 	# Get a list of all chosen artifacts so we know what to farm
-	# TODO: checkbox on artifacts that will remove them from farm goal
 	for elt in doc.get(selector=f'.saved_arti'):
 		if elt.id.split('-')[1] in grind_table_state['checked']:
-			print(elt.id)
+			grind_daily_tracker.add(elt.id.split('-')[-1])
 
 	for item in grind_table_state['id']:
 		key = item.split('-')[0]
@@ -306,6 +327,61 @@ def calculate_change():
 			grind_table_state['id'][item] = 0
 			doc[item].text = f"0"
 			doc[f"{item}_row"].style.display = 'none'
+	# Build up and display farm table
+	data = {
+		'any': {0: {}, 20: {}, 40: {}, 60: {}},
+		'mon': {},
+		'tue': {},
+		'wed': {},
+		'thu': {},
+		'fri': {},
+		'sat': {},
+		'sun': {},
+	}
+	resin = {
+		'stormterror': 60,
+		'wolf_of_the_north': 60,
+		'anemo_hypostasis': 40,
+		'cryo_regisvine': 40,
+		'electro_hypostasis': 40,
+		'geo_hypostasis': 40,
+		'oceanid': 40,
+		'pyro_regisvine': 40,
+		'clear_pool_and_mountain_cavern': 20,
+		'domain_of_guyun': 20,
+		'hidden_palace_of_zhou_formula': 20,
+		'midsummer_courtyard': 20,
+		'valley_of_remembrance': 20,
+	}
+	for item in grind_daily_tracker:
+		for day in farming_data[item]['when']:
+			for loc in farming_data[item]['where']:
+				if day == 'any':
+					cost = 0 if loc not in resin else resin[loc]
+					if loc not in data[day][cost]:
+						data[day][cost][loc] = []
+					data[day][cost][loc].append(item)
+				else:
+					if loc not in data[day]:
+						data[day][loc] = []
+					data[day][loc].append(item)
+	doc['daily'].text = ''
+	for day in ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']:
+		if data[day]:
+			doc['daily'] <= H2([strings[day]])
+			t = TABLE(TR(TH("Location") + TH("Item(s)")))
+			for loc in sorted(data[day]):
+				t <= TR(TD(strings[loc]) + TD(', '.join([strings[x] if isinstance(strings[x], str) else strings[x][0] for x in data[day][loc]])))
+			doc['daily'] <= t
+	if any([data['any'][x] for x in [0, 20, 40, 60]]):
+		doc['daily'] <= H2([strings['any']])
+		for cost in [0, 20, 40, 60]:
+			if data['any'][cost]:
+				doc['daily'] <= H3(f"{cost} {strings['resin']}")
+				t = TABLE(TR(TH("Location") + TH("Item(s)")))
+				for loc in sorted(data['any'][cost]):
+					t <= TR(TD(strings[loc]) + TD(', '.join([strings[x] if isinstance(strings[x], str) else strings[x][0] for x in data['any'][cost][loc]])))
+				doc['daily'] <= t
 
 
 # Function to handle deleting artifacts
@@ -319,7 +395,7 @@ def delete_me(ev):
 def custom_menu(ev):
 	if 'data-id' in ev.target.attrs and 'menu-item' in ev.target.attrs['class'] and 'vertical-menu' in ev.target.attrs['class']:
 		if f"{ev.target.attrs['data-id']}-{ev.target.id}" not in doc:
-			b = BUTTON(strings['artifacts'][ev.target.id], Class=f'text_button saved_arti {ev.target.attrs["data-id"].split("-")[1]}', Id=f"{ev.target.attrs['data-id']}-{ev.target.id}", data_arti=ev.target.id)
+			b = BUTTON(strings[ev.target.id], Class=f'text_button saved_arti {ev.target.attrs["data-id"].split("-")[1]}', Id=f"{ev.target.attrs['data-id']}-{ev.target.id}", data_arti=ev.target.id)
 			b.bind('click', delete_me)
 			doc[ev.target.attrs["data-id"]] <= b
 			set_storage(f"{ev.target.attrs['data-id']}-{ev.target.id}", 'y')
