@@ -53,6 +53,7 @@ def reset_data(ev):
 	for key in storage.keys():
 		if key.startswith(storage_key):
 			del storage[key]
+	calculate_change()
 
 
 # generator to get all values in storage.  used during page load to set things up
@@ -310,7 +311,8 @@ def calculate_change():
 			doc[f"{key}-total"].text = f"{totals[key]:,}"
 			doc[f"{key}-need"].text = f"{new_val:,}"
 			doc[f"{key}-need"].attrs['class'] = 'bad' if new_val > 0 else 'good'
-			grind_daily_tracker.add(key[:-2] if key[-1].isnumeric() else key)
+			if new_val > 0:
+				grind_daily_tracker.add(key[:-2] if key[-1].isnumeric() else key)
 		elif grind_table_state['id'][item] > 0:
 			grind_table_state['id'][item] = 0
 			doc[f"{key}-total"].text = "0"
@@ -319,6 +321,7 @@ def calculate_change():
 	grind_daily_tracker.discard('xp')
 	grind_daily_tracker.discard('wep_xp')
 	grind_daily_tracker.discard('mora')
+	print(grind_daily_tracker)
 	# Build up and display farm table
 	data = {
 		'any': {0: {}, 20: {}, 40: {}, 60: {}},
@@ -416,7 +419,7 @@ doc["character"] <= b_char
 b_inven = BUTTON("Inventory")
 b_inven.bind("click", show_inventory)
 doc["inventory"] <= b_inven
-b_reset = BUTTON("Reset Data")
+b_reset = BUTTON("Reset All Data")
 b_reset.bind("click", reset_data)
 doc["reset"] <= b_reset
 init_page()
