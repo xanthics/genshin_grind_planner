@@ -321,7 +321,7 @@ def calculate_change():
 				add_value_int(totals, f"{weapon['common_rare']}_{temp['common_rare'][1]}", temp['common_rare'][0])
 				add_value_int(totals, f"{weapon['common']}_{temp['common'][1]}", temp['common'][0])
 				if temp['wam'][0]:
-					add_value_set(char_tracker, weapon['boss'], char)
+					add_value_set(char_tracker, weapon['wam'], char)
 				if temp['common_rare'][0]:
 					add_value_set(char_tracker, weapon['common_rare'], char)
 				if temp['common'][0]:
