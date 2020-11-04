@@ -167,8 +167,8 @@ tr[data-color='geo'].checked {
 }
 
 input[type=number] {
-    max-width: 5em;
-    width: 5em;
+    max-width: 7em;
+    width: 7em;
 }
 
 .bad {

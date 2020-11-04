@@ -150,16 +150,11 @@ def init_page():
 
 	# Create a table of items we might need and store their ids in a lookup table
 	# char xp, weapon xp, and mora
-	t = TABLE()
 	t_own = TABLE()
-	t <= TR(TH("Item") + TH("Amount"))
-	t <= TR(TD('Character XP') + TD('0', Id='xp-total'), Id='xp-total_row')
-	t <= TR(TD('Weapon XP') + TD('0', Id='wep_xp-total'), Id='wep_xp-total_row')
-	t <= TR(TD('Mora') + TD('0', Id='mora-total'), Id='mora-total_row')
 	t_own <= TR(TH("Item") + TH("Need") + TH("Have") + TH("Missing"))
-	t_own <= TR(TD('Character XP') + TD('0', Id='xp-total_req') + INPUT(Type='number', min='0', step="1", value='0', Id='xp-user', Class='save') + TD('0', Id='xp-need'))
-	t_own <= TR(TD('Weapon XP') + TD('0', Id='wep_xp-total_req') + INPUT(Type='number', min='0', step="1", value='0', Id='wep_xp-user', Class='save') + TD('0', Id='wep_xp-need'))
-	t_own <= TR(TD('Mora') + TD('0', Id='mora-total_req') + INPUT(Type='number', min='0', step="1", value='0', Id='mora-user', Class='save') + TD('0', Id='mora-need'))
+	t_own <= TR(TD('Character XP') + TD('0', Id='xp-total') + INPUT(Type='number', min='0', step="1", value='0', Id='xp-user', Class='save') + TD('0', Id='xp-need'))
+	t_own <= TR(TD('Weapon XP') + TD('0', Id='wep_xp-total') + INPUT(Type='number', min='0', step="1", value='0', Id='wep_xp-user', Class='save') + TD('0', Id='wep_xp-need'))
+	t_own <= TR(TD('Mora') + TD('0', Id='mora-total') + INPUT(Type='number', min='0', step="1", value='0', Id='mora-user', Class='save') + TD('0', Id='mora-need'))
 	grind_table_state['id'][f"xp-total"] = 0
 	grind_table_state['id'][f"wep_xp-total"] = 0
 	grind_table_state['id'][f"mora-total"] = 0
@@ -167,15 +162,13 @@ def init_page():
 		if section in ['boss', 'element_2', 'local']:
 			for item in groups[section]:
 				grind_table_state['id'][f"{item}-total"] = 0
-				t <= TR(TD(strings[item]) + TD('0', Id=f"{item}-total"), Id=f"{item}-total_row")
-				t_own <= TR(TD(strings[item]) + TD('0', Id=f"{item}-total_req") + INPUT(Type='number', min='0', step="1", value='0', Id=f"{item}-user", Class='save') + TD('0', Id=f"{item}-need", Class='good'))
+				t_own <= TR(TD(strings[item]) + TD('0', Id=f"{item}-total") + INPUT(Type='number', min='0', step="1", value='0', Id=f"{item}-user", Class='save') + TD('0', Id=f"{item}-need", Class='good'))
 		if section in ['element_1', 'common', 'common_rare', 'wam', 'talent']:
 			for item in groups[section]:
 				for i in range(len(strings[item])):
 					grind_table_state['id'][f"{item}_{i}-total"] = 0
-					t <= TR(TD(strings[item][i]) + TD('0', Id=f"{item}_{i}-total"), Id=f"{item}_{i}-total_row")
-					t_own <= TR(TD(strings[item][i]) + TD('0', Id=f"{item}_{i}-total_req") + INPUT(Type='number', min='0', step="1", value='0', Id=f"{item}_{i}-user", Class='save') + TD('0', Id=f"{item}_{i}-need", Class='good'))
-	doc['farm'] <= H2(strings['missing']) + t
+					t_own <= TR(TD(strings[item][i]) + TD('0', Id=f"{item}_{i}-total") + INPUT(Type='number', min='0', step="1", value='0', Id=f"{item}_{i}-user", Class='save') + TD('0', Id=f"{item}_{i}-need", Class='good'))
+
 	doc['inven'] <= t_own
 
 	for k, v in list_storage():
@@ -198,10 +191,6 @@ def init_page():
 		else:
 			print(f"Invalid stored data: {k}, {v}")
 
-	# hide empty grind table rows
-	for val in grind_table_state['id']:
-		if grind_table_state['id'][val] == 0:
-			doc[f"{val}_row"].style.display = 'none'
 	calculate_change()
 
 	# Function for saving changes
@@ -318,20 +307,15 @@ def calculate_change():
 			new_val = totals[key]-int(doc[f'{key}-user'].value)
 			grind_table_state['id'][item] = new_val
 			doc[item].text = f"{new_val:,}"
-			doc[f"{key}-total_req"].text = f"{totals[key]:,}"
+			doc[f"{key}-total"].text = f"{totals[key]:,}"
 			doc[f"{key}-need"].text = f"{new_val:,}"
 			doc[f"{key}-need"].attrs['class'] = 'bad' if new_val > 0 else 'good'
-			if new_val > 0:
-				grind_daily_tracker.add(key[:-2] if key[-1].isnumeric() else key)
-				doc[f"{item}_row"].style.display = 'table-row'
-			else:
-				doc[f"{item}_row"].style.display = 'none'
+			grind_daily_tracker.add(key[:-2] if key[-1].isnumeric() else key)
 		elif grind_table_state['id'][item] > 0:
 			grind_table_state['id'][item] = 0
-			doc[f"{key}-total_req"].text = "0"
+			doc[f"{key}-total"].text = "0"
 			doc[f"{key}-need"].text = f"{-int(doc[f'{key}-user'].value):,}"
 			doc[item].text = "0"
-			doc[f"{item}_row"].style.display = 'none'
 	grind_daily_tracker.discard('xp')
 	grind_daily_tracker.discard('wep_xp')
 	grind_daily_tracker.discard('mora')
