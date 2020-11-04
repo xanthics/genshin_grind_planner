@@ -170,3 +170,11 @@ input[type=number] {
     max-width: 5em;
     width: 5em;
 }
+
+.bad {
+    background-color: rgb(200, 50, 50);
+}
+
+.good {
+    background-color: rgb(50, 200, 50);
+}

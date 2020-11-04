@@ -168,13 +168,13 @@ def init_page():
 			for item in groups[section]:
 				grind_table_state['id'][f"{item}-total"] = 0
 				t <= TR(TD(strings[item]) + TD('0', Id=f"{item}-total"), Id=f"{item}-total_row")
-				t_own <= TR(TD(strings[item]) + TD('0', Id=f"{item}-total_req") + INPUT(Type='number', min='0', step="1", value='0', Id=f"{item}-user", Class='save') + TD('0', Id=f"{item}-need"))
+				t_own <= TR(TD(strings[item]) + TD('0', Id=f"{item}-total_req") + INPUT(Type='number', min='0', step="1", value='0', Id=f"{item}-user", Class='save') + TD('0', Id=f"{item}-need", Class='good'))
 		if section in ['element_1', 'common', 'common_rare', 'wam', 'talent']:
 			for item in groups[section]:
 				for i in range(len(strings[item])):
 					grind_table_state['id'][f"{item}_{i}-total"] = 0
 					t <= TR(TD(strings[item][i]) + TD('0', Id=f"{item}_{i}-total"), Id=f"{item}_{i}-total_row")
-					t_own <= TR(TD(strings[item][i]) + TD('0', Id=f"{item}_{i}-total_req") + INPUT(Type='number', min='0', step="1", value='0', Id=f"{item}_{i}-user", Class='save') + TD('0', Id=f"{item}_{i}-need"))
+					t_own <= TR(TD(strings[item][i]) + TD('0', Id=f"{item}_{i}-total_req") + INPUT(Type='number', min='0', step="1", value='0', Id=f"{item}_{i}-user", Class='save') + TD('0', Id=f"{item}_{i}-need", Class='good'))
 	doc['farm'] <= H2(strings['missing']) + t
 	doc['inven'] <= t_own
 
@@ -320,6 +320,7 @@ def calculate_change():
 			doc[item].text = f"{new_val:,}"
 			doc[f"{key}-total_req"].text = f"{totals[key]:,}"
 			doc[f"{key}-need"].text = f"{new_val:,}"
+			doc[f"{key}-need"].attrs['class'] = 'bad' if new_val > 0 else 'good'
 			if new_val > 0:
 				grind_daily_tracker.add(key[:-2] if key[-1].isnumeric() else key)
 				doc[f"{item}_row"].style.display = 'table-row'
