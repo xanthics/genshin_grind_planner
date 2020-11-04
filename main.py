@@ -331,7 +331,6 @@ def calculate_change():
 	for elt in doc.get(selector=f'.saved_arti'):
 		if elt.id.split('-')[1] in grind_table_state['checked']:
 			grind_daily_tracker.add(elt.id.split('-')[-1])
-			print(elt.id.split('-'))
 			add_value_set(char_tracker, elt.id.split('-')[-1], elt.id.split('-')[1])
 
 	for item in grind_table_state['id']:
