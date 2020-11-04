@@ -31,13 +31,13 @@ groups = {
 		'xingqiu',
 	],
 	'element_1': [
-		'agnidus_agate',
 		'brilliant_diamond',
-		'prithiva_topaz',
-		'shivada_jade',
-		'vajrada_amethyst',
+		'agnidus_agate',
 		'varunada_lazurite',
+		'vajrada_amethyst',
 		'vayuda_turqoise',
+		'shivada_jade',
+		'prithiva_topaz',
 	],
 	'element_2': [
 		'basalt_pillar',
