@@ -333,6 +333,7 @@ def calculate_change():
 			doc[item].text = "0"
 			doc[f"{item}_row"].style.display = 'none'
 	grind_daily_tracker.discard('xp')
+	grind_daily_tracker.discard('wep_xp')
 	grind_daily_tracker.discard('mora')
 	# Build up and display farm table
 	data = {
