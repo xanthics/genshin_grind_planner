@@ -251,10 +251,19 @@ def add_value_int(i_dict, key, val):
 		i_dict[key] += val
 
 
+# custom implementation of default dict for int
+def add_value_set(i_dict, key, val):
+	if key not in i_dict:
+		i_dict[key] = {val, }
+	else:
+		i_dict[key].add(val)
+
+
 # called when anything in the selection table changes to update grind trackers
 def calculate_change():
 	totals = {}
 	grind_daily_tracker = set()
+	char_tracker = {}
 	for char in grind_table_state['checked']:
 		# calculate mats for level
 		level_c = int(doc[f'level_c-{char}'].value)
@@ -268,6 +277,14 @@ def calculate_change():
 				add_value_int(totals, characters[char]['ascension']['element_2'], temp['element_2'])
 				add_value_int(totals, characters[char]['ascension']['local'], temp['local'])
 				add_value_int(totals, f"{characters[char]['ascension']['common']}_{temp['common'][1]}", temp['common'][0])
+				if temp['element_1'][0]:
+					add_value_set(char_tracker, characters[char]['ascension']['element_1'], char)
+				if temp['element_2']:
+					add_value_set(char_tracker, characters[char]['ascension']['element_2'], char)
+				if temp['local']:
+					add_value_set(char_tracker, characters[char]['ascension']['local'], char)
+				if temp['common'][0]:
+					add_value_set(char_tracker, characters[char]['ascension']['common'], char)
 
 		# calculate mats for talent
 		talent_1_c = int(doc[f'talent_1_c-{char}'].value)
@@ -284,6 +301,13 @@ def calculate_change():
 					add_value_int(totals, f"{characters[char]['talent']['talent']}_{temp['talent'][1]}", temp['talent'][0])
 					add_value_int(totals, f"{characters[char]['talent']['common']}_{temp['common'][1]}", temp['common'][0])
 					add_value_int(totals, characters[char]['talent']['boss'], temp['boss'])
+					if temp['talent'][0]:
+						add_value_set(char_tracker, characters[char]['talent']['talent'], char)
+					if temp['common'][0]:
+						add_value_set(char_tracker, characters[char]['talent']['common'], char)
+					if temp['boss']:
+						add_value_set(char_tracker, characters[char]['talent']['boss'], char)
+
 		# calculate mats for weapon
 		weapon_c = int(doc[f'weapon_c-{char}'].value)
 		weapon_t = int(doc[f'weapon_t-{char}'].value)
@@ -296,6 +320,12 @@ def calculate_change():
 				add_value_int(totals, f"{weapon['wam']}_{temp['wam'][1]}", temp['wam'][0])
 				add_value_int(totals, f"{weapon['common_rare']}_{temp['common_rare'][1]}", temp['common_rare'][0])
 				add_value_int(totals, f"{weapon['common']}_{temp['common'][1]}", temp['common'][0])
+				if temp['wam'][0]:
+					add_value_set(char_tracker, weapon['boss'], char)
+				if temp['common_rare'][0]:
+					add_value_set(char_tracker, weapon['common_rare'], char)
+				if temp['common'][0]:
+					add_value_set(char_tracker, weapon['common'], char)
 
 	# Get a list of all chosen artifacts so we know what to farm
 	for elt in doc.get(selector=f'.saved_arti'):
@@ -321,7 +351,6 @@ def calculate_change():
 	grind_daily_tracker.discard('xp')
 	grind_daily_tracker.discard('wep_xp')
 	grind_daily_tracker.discard('mora')
-	print(grind_daily_tracker)
 	# Build up and display farm table
 	data = {
 		'any': {0: {}, 20: {}, 40: {}, 60: {}},
@@ -364,18 +393,20 @@ def calculate_change():
 	for day in ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']:
 		if data[day]:
 			doc['daily'] <= H2([strings[day]])
-			t = TABLE(TR(TH("Location") + TH("Item(s)")))
+			t = TABLE(TR(TH("Location") + TH("Item(s)") + TH("Character(s)")))
 			for loc in sorted(data[day]):
-				t <= TR(TD(strings[loc]) + TD(', '.join([strings[x] if isinstance(strings[x], str) else strings[x][0] for x in data[day][loc]])))
+				new_set = {y for x in data[day][loc] for y in char_tracker[x]}
+				t <= TR(TD(strings[loc]) + TD(', '.join([strings[x] if isinstance(strings[x], str) else strings[x][0] for x in data[day][loc]])) + TD(', '.join([strings[x] for x in sorted(new_set)])))
 			doc['daily'] <= t
 	if any([data['any'][x] for x in [0, 20, 40, 60]]):
 		doc['daily'] <= H2([strings['any']])
 		for cost in [0, 20, 40, 60]:
 			if data['any'][cost]:
 				doc['daily'] <= H3(f"{cost} {strings['resin']}")
-				t = TABLE(TR(TH("Location") + TH("Item(s)")))
+				t = TABLE(TR(TH("Location") + TH("Item(s)") + TH("Character(s)")))
 				for loc in sorted(data['any'][cost]):
-					t <= TR(TD(strings[loc]) + TD(', '.join([strings[x] if isinstance(strings[x], str) else strings[x][0] for x in data['any'][cost][loc]])))
+					new_set = {y for x in data['any'][cost][loc] for y in char_tracker[x]}
+					t <= TR(TD(strings[loc]) + TD(', '.join([strings[x] if isinstance(strings[x], str) else strings[x][0] for x in data['any'][cost][loc]])) + TD(', '.join([strings[x] for x in sorted(new_set)])))
 				doc['daily'] <= t
 
 
