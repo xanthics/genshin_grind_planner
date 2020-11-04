@@ -14,22 +14,24 @@
             <pr>Current TODO list:</pr>
             <ul>
                 <li>Goal needs to be reworks to have "legal" values.  Eg talent goals can't be higher than level goal.</li>
-                <li>Totals calc needs to be offloaded to a worker thread so main thread doesn't hang.</li>
                 <li>Fill in missing information.</li>
                 <li>toggle to set if that characer's artifacts are tracked in farm goal.</li>
-                <li>toggle for hiding 0 value rows in missing materials.</li>
-                <li>Allow storage of "owned" materials and highlight rows based on differences in missing material.</li>
                 <li>Implement Traveler.</li>
                 <li>Icons instead of words?</li>
+                <li>Code cleanup. Remove some loops if possible.</li>
            </ul>
             <div id="loading">
                 This page requires javascript in order to work correctly.
                 <br><br>
                 This page may take a moment to load.
             </div>
-            <div id="main"></div>
-            <div id="daily"></div>
-            <div id="farm"></div>
+            <span id="character"></span><span id="inventory"></span>
+            <div id="main">
+                <div id="test"></div>
+                <div id="daily"></div>
+                <div id="farm"></div>
+                </div>
+            <div id="inven" style="display: none;"><p>No materials are automatically converted up.  If you have more than you need of something, it won't show on the grind table.</p></div>
             <br /><span id="reset"></span><br />(warning not reversible)
             <div id="patreon"><a href="https://www.patreon.com/xanthics"><img alt="Become a Patron!" src="img/become_a_patron_button@2x.png" id="patreon_image"></a></div>
             <p>Some information is missing from the wiki, the following weapons are missing ascension information and thus aren't selectable:</p>

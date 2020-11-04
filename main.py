@@ -146,30 +146,37 @@ def init_page():
 			data_id=f"check-{char}", Class='unchecked', data_color=characters[char]['element']
 		)
 
-	doc['main'] <= DIV(Id="test")
 	doc['test'] <= t
 
 	# Create a table of items we might need and store their ids in a lookup table
-	# xp and mora
+	# char xp, weapon xp, and mora
 	t = TABLE()
+	t_own = TABLE()
 	t <= TR(TH("Item") + TH("Amount"))
 	t <= TR(TD('Character XP') + TD('0', Id='xp-total'), Id='xp-total_row')
 	t <= TR(TD('Weapon XP') + TD('0', Id='wep_xp-total'), Id='wep_xp-total_row')
 	t <= TR(TD('Mora') + TD('0', Id='mora-total'), Id='mora-total_row')
+	t_own <= TR(TH("Item") + TH("Need") + TH("Have") + TH("Missing"))
+	t_own <= TR(TD('Character XP') + TD('0', Id='xp-total_req') + INPUT(Type='number', min='0', step="1", value='0', Id='xp-user', Class='save') + TD('0', Id='xp-need'))
+	t_own <= TR(TD('Weapon XP') + TD('0', Id='wep_xp-total_req') + INPUT(Type='number', min='0', step="1", value='0', Id='wep_xp-user', Class='save') + TD('0', Id='wep_xp-need'))
+	t_own <= TR(TD('Mora') + TD('0', Id='mora-total_req') + INPUT(Type='number', min='0', step="1", value='0', Id='mora-user', Class='save') + TD('0', Id='mora-need'))
 	grind_table_state['id'][f"xp-total"] = 0
 	grind_table_state['id'][f"wep_xp-total"] = 0
 	grind_table_state['id'][f"mora-total"] = 0
-	for section in ['boss', 'element_1', 'element_2', 'local', 'common', 'common_rare', 'wam', 'talent']:
+	for section in ['common', 'common_rare', 'boss', 'element_2', 'element_1', 'talent', 'wam', 'local']:
 		if section in ['boss', 'element_2', 'local']:
 			for item in groups[section]:
 				grind_table_state['id'][f"{item}-total"] = 0
 				t <= TR(TD(strings[item]) + TD('0', Id=f"{item}-total"), Id=f"{item}-total_row")
+				t_own <= TR(TD(strings[item]) + TD('0', Id=f"{item}-total_req") + INPUT(Type='number', min='0', step="1", value='0', Id=f"{item}-user", Class='save') + TD('0', Id=f"{item}-need"))
 		if section in ['element_1', 'common', 'common_rare', 'wam', 'talent']:
 			for item in groups[section]:
 				for i in range(len(strings[item])):
 					grind_table_state['id'][f"{item}_{i}-total"] = 0
 					t <= TR(TD(strings[item][i]) + TD('0', Id=f"{item}_{i}-total"), Id=f"{item}_{i}-total_row")
+					t_own <= TR(TD(strings[item][i]) + TD('0', Id=f"{item}_{i}-total_req") + INPUT(Type='number', min='0', step="1", value='0', Id=f"{item}_{i}-user", Class='save') + TD('0', Id=f"{item}_{i}-need"))
 	doc['farm'] <= H2(strings['missing']) + t
+	doc['inven'] <= t_own
 
 	for k, v in list_storage():
 		if v == 'checked':
@@ -186,6 +193,8 @@ def init_page():
 			b = BUTTON(strings[ev_id], Class=f'text_button saved_arti {target.split("-")[1]}', Id=f"{target}-{ev_id}", data_arti=ev_id)
 			b.bind('click', delete_me)
 			doc[target] <= b
+		elif '-user' in k:
+			doc[k].value = v
 		else:
 			print(f"Invalid stored data: {k}, {v}")
 
@@ -214,6 +223,12 @@ def init_page():
 				set_storage(ev.target.id, f"select-{ev.target.value}")
 			else:
 				del_storage(ev.target.id)
+		elif ev.target.type == 'number':
+			if not ev.target.value.isnumeric() or int(ev.target.value) < 0:
+				ev.target.value = 0
+			else:
+				ev.target.value = int(ev.target.value)
+			set_storage(ev.target.id, ev.target.value)
 		else:
 			print(f"Unhandled element type for storage: {ev.target.type}")
 		calculate_change()
@@ -263,14 +278,6 @@ def calculate_change():
 				add_value_int(totals, characters[char]['ascension']['element_2'], temp['element_2'])
 				add_value_int(totals, characters[char]['ascension']['local'], temp['local'])
 				add_value_int(totals, f"{characters[char]['ascension']['common']}_{temp['common'][1]}", temp['common'][0])
-				if temp['element_1'][0]:
-					grind_daily_tracker.add(characters[char]['ascension']['element_1'])
-				if temp['element_2']:
-					grind_daily_tracker.add(characters[char]['ascension']['element_2'])
-				if temp['local']:
-					grind_daily_tracker.add(characters[char]['ascension']['local'])
-				if temp['common'][0]:
-					grind_daily_tracker.add(characters[char]['ascension']['common'])
 
 		# calculate mats for talent
 		talent_1_c = int(doc[f'talent_1_c-{char}'].value)
@@ -287,12 +294,6 @@ def calculate_change():
 					add_value_int(totals, f"{characters[char]['talent']['talent']}_{temp['talent'][1]}", temp['talent'][0])
 					add_value_int(totals, f"{characters[char]['talent']['common']}_{temp['common'][1]}", temp['common'][0])
 					add_value_int(totals, characters[char]['talent']['boss'], temp['boss'])
-					if temp['talent'][0]:
-						grind_daily_tracker.add(characters[char]['talent']['talent'])
-					if temp['common'][0]:
-						grind_daily_tracker.add(characters[char]['talent']['common'])
-					if temp['boss']:
-						grind_daily_tracker.add(characters[char]['talent']['boss'])
 		# calculate mats for weapon
 		weapon_c = int(doc[f'weapon_c-{char}'].value)
 		weapon_t = int(doc[f'weapon_t-{char}'].value)
@@ -305,12 +306,6 @@ def calculate_change():
 				add_value_int(totals, f"{weapon['wam']}_{temp['wam'][1]}", temp['wam'][0])
 				add_value_int(totals, f"{weapon['common_rare']}_{temp['common_rare'][1]}", temp['common_rare'][0])
 				add_value_int(totals, f"{weapon['common']}_{temp['common'][1]}", temp['common'][0])
-				if temp['wam'][0]:
-					grind_daily_tracker.add(weapon['wam'])
-				if temp['common_rare'][0]:
-					grind_daily_tracker.add(weapon['common_rare'])
-				if temp['common'][0]:
-					grind_daily_tracker.add(weapon['common'])
 
 	# Get a list of all chosen artifacts so we know what to farm
 	for elt in doc.get(selector=f'.saved_arti'):
@@ -320,13 +315,24 @@ def calculate_change():
 	for item in grind_table_state['id']:
 		key = item.split('-')[0]
 		if key in totals:
-			grind_table_state['id'][item] = totals[key]
-			doc[item].text = f"{totals[key]:,}"
-			doc[f"{item}_row"].style.display = 'table-row' if totals[key] else 'none'
-		elif grind_table_state['id'][item]:
+			new_val = totals[key]-int(doc[f'{key}-user'].value)
+			grind_table_state['id'][item] = new_val
+			doc[item].text = f"{new_val:,}"
+			doc[f"{key}-total_req"].text = f"{totals[key]:,}"
+			doc[f"{key}-need"].text = f"{new_val:,}"
+			if new_val > 0:
+				grind_daily_tracker.add(key[:-2] if key[-1].isnumeric() else key)
+				doc[f"{item}_row"].style.display = 'table-row'
+			else:
+				doc[f"{item}_row"].style.display = 'none'
+		elif grind_table_state['id'][item] > 0:
 			grind_table_state['id'][item] = 0
-			doc[item].text = f"0"
+			doc[f"{key}-total_req"].text = "0"
+			doc[f"{key}-need"].text = f"{-int(doc[f'{key}-user'].value):,}"
+			doc[item].text = "0"
 			doc[f"{item}_row"].style.display = 'none'
+	grind_daily_tracker.discard('xp')
+	grind_daily_tracker.discard('mora')
 	# Build up and display farm table
 	data = {
 		'any': {0: {}, 20: {}, 40: {}, 60: {}},
@@ -408,6 +414,22 @@ def custom_menu(ev):
 		doc.unbind('mouseclick', custom_menu)
 
 
+def show_characters(ev):
+	doc["inven"].style.display = 'none'
+	doc["main"].style.display = 'block'
+
+
+def show_inventory(ev):
+	doc["main"].style.display = 'none'
+	doc["inven"].style.display = 'block'
+
+
+b_char = BUTTON("Characters")
+b_char.bind("click", show_characters)
+doc["character"] <= b_char
+b_inven = BUTTON("Inventory")
+b_inven.bind("click", show_inventory)
+doc["inventory"] <= b_inven
 b_reset = BUTTON("Reset Data")
 b_reset.bind("click", reset_data)
 doc["reset"] <= b_reset

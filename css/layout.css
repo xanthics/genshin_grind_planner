@@ -28,7 +28,6 @@ input {
 }
 
 span {
-    width: 1.5em;
     height: 1.5em;
     display: inline-block;
     vertical-align: middle;
@@ -61,7 +60,6 @@ button {
     width: fit-content;
     border: 1px solid rgb(0,0,0);
     background-color: rgb(250,250,250);
-    display: inline-block;
 }
 
 .text_button {
@@ -166,4 +164,9 @@ tr[data-color='geo'].checked {
     border: 1px solid rgb(0,0,0);
     background-color: var(--geo-color);
     margin: 0px 2px;
+}
+
+input[type=number] {
+    max-width: 5em;
+    width: 5em;
 }
