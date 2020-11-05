@@ -374,6 +374,9 @@ def calculate_change():
 		level_c = int(doc[f'level_c-{char}'].value)
 		level_t = int(doc[f'level_t-{char}'].value)
 		if level_t > level_c:
+			if 'good' not in doc[f'level_c-{char}'].attrs['class']:
+				doc[f'level_c-{char}'].attrs['class'] += ' good'
+				doc[f'level_t-{char}'].attrs['class'] += ' good'
 			for i in range(level_c+1, level_t+1):
 				temp = costs['character'][i]
 				add_value_int(totals, 'xp', temp['xp'])
@@ -390,16 +393,24 @@ def calculate_change():
 					add_value_set(char_tracker, characters[char]['ascension']['local'], char)
 				if temp['common'][0]:
 					add_value_set(char_tracker, characters[char]['ascension']['common'], char)
+		elif 'good' in doc[f'level_c-{char}'].attrs['class']:
+			cl = doc[f'level_c-{char}'].attrs['class'].split()
+			del cl[cl.index('good')]
+			clt = ' '.join(cl)
+			doc[f'level_c-{char}'].attrs['class'] = clt
+			doc[f'level_t-{char}'].attrs['class'] = clt
 
 		# calculate mats for talent
-		talent_1_c = int(doc[f'talent_1_c-{char}'].value)
-		talent_1_t = int(doc[f'talent_1_t-{char}'].value)
-		talent_2_c = int(doc[f'talent_2_c-{char}'].value)
-		talent_2_t = int(doc[f'talent_2_t-{char}'].value)
-		talent_3_c = int(doc[f'talent_3_c-{char}'].value)
-		talent_3_t = int(doc[f'talent_3_t-{char}'].value)
-		for t_c, t_t in [(talent_1_c, talent_1_t), (talent_2_c, talent_2_t), (talent_3_c, talent_3_t)]:
+		for t_c_e, t_t_e in [(doc[f'talent_1_c-{char}'], doc[f'talent_1_t-{char}']),
+							 (doc[f'talent_2_c-{char}'], doc[f'talent_2_t-{char}']),
+							 (doc[f'talent_3_c-{char}'], doc[f'talent_3_t-{char}'])]:
+			t_c = int(t_c_e.value)
+			t_t = int(t_t_e.value)
 			if t_t > t_c:
+				if 'good' not in t_c_e.attrs['class']:
+					t_c_e.attrs['class'] += ' good'
+					t_t_e.attrs['class'] += ' good'
+
 				for i in range(t_c + 1, t_t + 1):
 					temp = costs['talent'][i]
 					add_value_int(totals, 'mora', temp['mora'])
@@ -412,25 +423,43 @@ def calculate_change():
 						add_value_set(char_tracker, characters[char]['talent']['common'], char)
 					if temp['boss']:
 						add_value_set(char_tracker, characters[char]['talent']['boss'], char)
+			elif 'good' in t_c_e.attrs['class']:
+				cl = t_c_e.attrs['class'].split()
+				del cl[cl.index('good')]
+				clt = ' '.join(cl)
+				t_c_e.attrs['class'] = clt
+				t_t_e.attrs['class'] = clt
 
 		# calculate mats for weapon
-		weapon_c = int(doc[f'weapon_c-{char}'].value)
-		weapon_t = int(doc[f'weapon_t-{char}'].value)
-		if weapon_t > weapon_c:
-			weapon = weapons[characters[char]['weapon']][doc[f'weapon-{char}'].value]
-			for i in range(weapon_c + 1, weapon_t + 1):
-				temp = costs[weapon['tier']][i]
-				add_value_int(totals, 'wep_xp', temp['xp'])
-				add_value_int(totals, 'mora', temp['mora'])
-				add_value_int(totals, f"{weapon['wam']}_{temp['wam'][1]}", temp['wam'][0])
-				add_value_int(totals, f"{weapon['common_rare']}_{temp['common_rare'][1]}", temp['common_rare'][0])
-				add_value_int(totals, f"{weapon['common']}_{temp['common'][1]}", temp['common'][0])
-				if temp['wam'][0]:
-					add_value_set(char_tracker, weapon['wam'], char)
-				if temp['common_rare'][0]:
-					add_value_set(char_tracker, weapon['common_rare'], char)
-				if temp['common'][0]:
-					add_value_set(char_tracker, weapon['common'], char)
+		if doc[f'weapon-{char}'].value != '--':
+			weapon_c = int(doc[f'weapon_c-{char}'].value)
+			weapon_t = int(doc[f'weapon_t-{char}'].value)
+			if weapon_t > weapon_c:
+				if 'good' not in doc[f'weapon_c-{char}'].attrs['class']:
+					doc[f'weapon_c-{char}'].attrs['class'] += ' good'
+					doc[f'weapon_t-{char}'].attrs['class'] += ' good'
+
+				weapon = weapons[characters[char]['weapon']][doc[f'weapon-{char}'].value]
+				for i in range(weapon_c + 1, weapon_t + 1):
+					temp = costs[weapon['tier']][i]
+					add_value_int(totals, 'wep_xp', temp['xp'])
+					add_value_int(totals, 'mora', temp['mora'])
+					add_value_int(totals, f"{weapon['wam']}_{temp['wam'][1]}", temp['wam'][0])
+					add_value_int(totals, f"{weapon['common_rare']}_{temp['common_rare'][1]}", temp['common_rare'][0])
+					add_value_int(totals, f"{weapon['common']}_{temp['common'][1]}", temp['common'][0])
+					if temp['wam'][0]:
+						add_value_set(char_tracker, weapon['wam'], char)
+					if temp['common_rare'][0]:
+						add_value_set(char_tracker, weapon['common_rare'], char)
+					if temp['common'][0]:
+						add_value_set(char_tracker, weapon['common'], char)
+			elif 'good' in doc[f'weapon_c-{char}'].attrs['class']:
+				cl = doc[f'weapon_c-{char}'].attrs['class'].split()
+				del cl[cl.index('good')]
+				clt = ' '.join(cl)
+				doc[f'weapon_c-{char}'].attrs['class'] = clt
+				doc[f'weapon_t-{char}'].attrs['class'] = clt
+
 
 	# Get a list of all chosen artifacts so we know what to farm
 	for elt in doc.get(selector=f'.saved_arti'):
