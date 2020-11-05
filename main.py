@@ -175,7 +175,7 @@ def init_page():
 		# Create table row for character
 		t <= TR(
 			TD(INPUT(Id=f"check-{char}", type='checkbox', data_id=f"check-{char}", Class='char_select save')) +
-			TD(strings[char]) +
+			TD(IMG(src=f"img/{char}.png", alt=strings[char], title=strings[char])) +
 			TD(lvlc) +
 			TD(lvlt) +
 			TD(t1c) +
@@ -508,10 +508,9 @@ def calculate_change():
 			t = TABLE(TR(TH("Location") + TH("Item(s)") + TH("Character(s)")), Class='borders')
 			for loc in sorted(data[day]):
 				new_set = {y for x in data[day][loc] for y in char_tracker[x]}
-				# IMG(src=f"img/{item}_{i}.png", alt=
-				# t <= TR(TD(strings[loc]) + TD(', '.join([strings[x] if isinstance(strings[x], str) else strings[x][0] for x in data[day][loc]])) + TD(', '.join([strings[x] for x in sorted(new_set)])))
 				v = (IMG(src=f"img/{x}.png", alt=(strings[x] if isinstance(strings[x], str) else strings[x][0]), title=(strings[x] if isinstance(strings[x], str) else strings[x][0])) for x in data[day][loc])
-				t <= TR(TD(strings[loc]) + TD(v) + TD(', '.join([strings[x] for x in sorted(new_set)])))
+				c = (IMG(src=f"img/{x}.png", alt=strings[x], title=strings[x]) for x in sorted(new_set))
+				t <= TR(TD(strings[loc]) + TD(v) + TD(c))
 			doc['daily'] <= t
 	if any([data['any'][x] for x in [0, 20, 40, 60]]):
 		doc['daily'] <= H2([strings['any']])
@@ -521,9 +520,9 @@ def calculate_change():
 				t = TABLE(TR(TH("Location") + TH("Item(s)") + TH("Character(s)")), Class='borders')
 				for loc in sorted(data['any'][cost]):
 					new_set = {y for x in data['any'][cost][loc] for y in char_tracker[x]}
-					# t <= TR(TD(strings[loc]) + TD(', '.join([strings[x] if isinstance(strings[x], str) else strings[x][0] for x in data['any'][cost][loc]])) + TD(', '.join([strings[x] for x in sorted(new_set)])))
 					v = (IMG(src=f"img/{x}.png", alt=(strings[x] if isinstance(strings[x], str) else strings[x][0]), title=(strings[x] if isinstance(strings[x], str) else strings[x][0])) for x in data['any'][cost][loc])
-					t <= TR(TD(strings[loc]) + TD(v) + TD(', '.join([strings[x] for x in sorted(new_set)])))
+					c = (IMG(src=f"img/{x}.png", alt=strings[x], title=strings[x]) for x in sorted(new_set))
+					t <= TR(TD(strings[loc]) + TD(v) + TD(c))
 				doc['daily'] <= t
 
 
