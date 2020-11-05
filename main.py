@@ -94,188 +94,17 @@ def list_storage():
 
 
 def init_page():
-	t = TABLE(Class='body')
-	t <= COLGROUP(
-		COL() +
-		COL() +
-		COL(Class='left_border') +
-		COL(Class='left_dotted') +
-		COL(Class='left_border') +
-		COL(Class='left_dotted') +
-		COL(Class='left_border') +
-		COL(Class='left_dotted') +
-		COL(Class='left_border') +
-		COL(Class='left_dotted') +
-		COL(Class='left_border') +
-		COL(Class='left_dotted') +
-		COL(Class='left_dotted') +
-		COL(Class='left_border') +
-		COL(Class='left_dotted')
-	)
-	t <= TR(
-		TH("Character", colspan=2) +
-		TH("Level", colspan=2) +
-		TH("Normal", colspan=2) +
-		TH("Skill", colspan=2) +
-		TH("Burst", colspan=2) +
-		TH("Weapon", colspan=3) +
-		TH("Artifacts", colspan=2)
-	)
-	t <= TR(
-		TH() +
-		TH("Name") +
-		TH("Now") +
-		TH("Goal") +
-		TH("Now") +
-		TH("Goal") +
-		TH("Now") +
-		TH("Goal") +
-		TH("Now") +
-		TH("Goal") +
-		TH("") +
-		TH("Now") +
-		TH("Goal") +
-		TH("Click to remove", colspan=2)
-	)
-	for char in characters:
-		# set up level select
-		lvlc = SELECT(Id=f"level_c-{char}", Class=f"{char} save")
-		lvlt = SELECT(Id=f"level_t-{char}", Class=f"{char} save")
-		for lvl in [lvlc, lvlt]:
-			for c, val in enumerate([1, 20, 40, 50, 60, 70, 80, 90]):
-				lvl <= OPTION(f"{val}", value=c)
-		# Set up talent select
-		t1c = SELECT(Id=f"talent_1_c-{char}", Class=f"{char} save")
-		t1t = SELECT(Id=f"talent_1_t-{char}", Class=f"{char} save")
-		t2c = SELECT(Id=f"talent_2_c-{char}", Class=f"{char} save")
-		t2t = SELECT(Id=f"talent_2_t-{char}", Class=f"{char} save")
-		t3c = SELECT(Id=f"talent_3_c-{char}", Class=f"{char} save")
-		t3t = SELECT(Id=f"talent_3_t-{char}", Class=f"{char} save")
-		for st in [t1t, t1c, t2t, t2c, t3t, t3c]:
-			for cost in costs['talent']:
-				st <= OPTION(cost)
-		# Set up weapon select
-		ws = SELECT(Id=f"weapon-{char}", data_id=f"select-{char}", Class=f'weapon {char} save')
-		ws <= OPTION('--')
-		sort_dict_wep = {}
-		for item in weapons[characters[char]['weapon']]:
-			if weapons[characters[char]['weapon']][item]['wam'] != 'unk':
-				sort_dict_wep[strings[item]] = item
-			else:
-				if f"missing-{item}" not in doc:
-					doc['missing'] <= LI(strings[item], Id=f"missing-{item}")
-
-		for k in sorted(sort_dict_wep):
-			ws <= OPTION(k, value=sort_dict_wep[k])
-		wlvlc = SELECT(Id=f"weapon_c-{char}", Class=f"{char} save")
-		wlvlt = SELECT(Id=f"weapon_t-{char}", Class=f"{char} save")
-		for lvl in [wlvlc, wlvlt]:
-			for c, val in enumerate([1, 20, 40, 50, 60, 70, 80, 90]):
-				lvl <= OPTION(f"{val}", value=c)
-		# Create table row for character
-		t <= TR(
-			TD(INPUT(Id=f"check-{char}", type='checkbox', data_id=f"check-{char}", Class='char_select save')) +
-			TD(IMG(src=f"img/{char}.png", alt=strings[char], title=strings[char])) +
-			TD(lvlc) +
-			TD(lvlt) +
-			TD(t1c) +
-			TD(t1t) +
-			TD(t2c) +
-			TD(t2t) +
-			TD(t3c) +
-			TD(t3t) +
-			TD(ws) +
-			TD(wlvlc) +
-			TD(wlvlt) +
-			TD(BUTTON("Add", Class='arti_list text_button', data_id=f"arti-{char}")) +
-			TD(DIV(Id=f"arti-{char}", Class=f'arti_span'))
-			,
-			data_id=f"check-{char}", Class='unchecked', data_color=characters[char]['element']
-		)
-
-	doc['test'] <= t
-	# In game order is inconsistent manual list to override
-	ingame_order = [
-		('common', 'slime'),
-		('common', 'mask'),
-		('common', 'scroll'),
-		('common', 'arrowhead'),
-		('common_rare', 'horn'),
-		('common_rare', 'ley_line'),
-		('common_rare', 'chaos'),
-		('common_rare', 'mist'),
-		('common_rare', 'sacrificial_knife'),
-		('common', 'f_insignia'),
-		('common', 'th_insignia'),
-		('boss', 'dvalins_claw'),
-		('boss', 'dvalins_plume'),
-		('boss', 'dvalins_sigh'),
-		('boss', 'ring_of_boreas'),
-		('boss', 'spirit_locket_of_boreas'),
-		('boss', 'tail_of_boreas'),
-		('element_2', 'basalt_pillar'),
-		('element_2', 'cleansing_heart'),
-		('element_2', 'everflame_seed'),
-		('element_2', 'hoarfrost_core'),
-		('element_2', 'hurricane_seed'),
-		('element_2', 'lightning_prism'),
-		('common', 'nectar'),
-		('element_1', 'brilliant_diamond'),
-		('common_rare', 'bone_shard'),
-		('element_1', 'agnidus_agate'),
-		('element_1', 'varunada_lazurite'),
-		('element_1', 'vajrada_amethyst'),
-		('element_1', 'vayuda_turqoise'),
-		('element_1', 'shivada_jade'),
-		('element_1', 'prithiva_topaz'),
-		('talent', 'freedom'),
-		('talent', 'resistance'),
-		('talent', 'ballad'),
-		('talent', 'prosperity'),
-		('talent', 'diligence'),
-		('talent', 'gold'),
-		('wam', 'decarabian'),
-		('wam', 'boreal_wolf'),
-		('wam', 'dandelion_gladiator'),
-		('wam', 'guyun'),
-		('wam', 'mist_veiled_elixer'),
-		('wam', 'aerosiderite'),
-		('local', 'calla_lily'),
-		('local', 'wolfhook'),
-		('local', 'valberry'),
-		('local', 'cecilia'),
-		('local', 'windwheel_aster'),
-		('local', 'philanemo_mushroom'),
-		('local', 'jueyun_chili'),
-		('local', 'noctilucous_jade'),
-		('local', 'silk_flower'),
-		('local', 'glaze_lilly'),
-		('local', 'violetgrass'),
-		('local', 'small_lamp_grass'),
-		('local', 'dandelion_seed'),
-		('local', 'cor_lapis')
-	]
-
-	# Create a table of items we might need and store their ids in a lookup table
-	# char xp, weapon xp, and mora
-	t_own = TABLE(Class='borders')
-	t_own <= TR(TH("Item") + TH("Need") + TH("Have") + TH("Missing"))
-	t_own <= TR(TD(IMG(src=f"img/xp.png", alt=strings['xp'], title=strings['xp'])) + TD('0', Id='xp-total') + TD(INPUT(Type='number', min='0', step="1", value='0', Id='xp-user', Class='save')) + TD('0', Id='xp-need', Class='good'))
-	t_own <= TR(TD(IMG(src=f"img/wep_xp.png", alt=strings['wep_xp'], title=strings['wep_xp'])) + TD('0', Id='wep_xp-total') + TD(INPUT(Type='number', min='0', step="1", value='0', Id='wep_xp-user', Class='save')) + TD('0', Id='wep_xp-need', Class='good'))
-	t_own <= TR(TD(IMG(src=f"img/mora.png", alt=strings['mora'], title=strings['mora'])) + TD('0', Id='mora-total') + TD(INPUT(Type='number', min='0', step="1", value='0', Id='mora-user', Class='save')) + TD('0', Id='mora-need', Class='good'))
 	grind_table_state['id'][f"xp-total"] = 0
 	grind_table_state['id'][f"wep_xp-total"] = 0
 	grind_table_state['id'][f"mora-total"] = 0
-	for section, item in ingame_order:
+	for section in groups:
 		if section in ['boss', 'element_2', 'local']:
-			grind_table_state['id'][f"{item}-total"] = 0
-			t_own <= TR(TD(IMG(src=f"img/{item}.png", alt=strings[item], title=strings[item])) + TD('0', Id=f"{item}-total") + TD(INPUT(Type='number', min='0', step="1", value='0', Id=f"{item}-user", Class='save')) + TD('0', Id=f"{item}-need", Class='good'))
+			for item in groups[section]:
+				grind_table_state['id'][f"{item}-total"] = 0
 		if section in ['element_1', 'common', 'common_rare', 'wam', 'talent']:
-			for i in range(len(strings[item])-1, -1, -1):
-				grind_table_state['id'][f"{item}_{i}-total"] = 0
-				t_own <= TR(TD(IMG(src=f"img/{item}_{i}.png", alt=strings[item][i], title=strings[item][i])) + TD('0', Id=f"{item}_{i}-total") + TD(INPUT(Type='number', min='0', step="1", value='0', Id=f"{item}_{i}-user", Class='save')) + TD('0', Id=f"{item}_{i}-need", Class='good'))
-
-	doc['inven'] <= t_own
+			for item in groups[section]:
+				for i in range(len(strings[item])-1, -1, -1):
+					grind_table_state['id'][f"{item}_{i}-total"] = 0
 
 	for k, v in list_storage():
 		if v == 'checked':
@@ -298,54 +127,6 @@ def init_page():
 			print(f"Invalid stored data: {k}, {v}")
 
 	calculate_change()
-
-	# Function for saving changes
-	@bind('.save', 'change')
-	def save_state(ev):
-		if ev.target.type == 'checkbox':
-			binstate = ev.target.checked
-			newstate = 'checked' if binstate else 'unchecked'
-			for elt in doc.get(selector=f'TR[data-id="{ev.target.attrs["data-id"]}"]'):
-				elt.attrs['class'] = newstate
-			if ev.target.checked:
-				grind_table_state['checked'].add(ev.target.id.split('-')[1])
-				set_storage(ev.target.id, 'checked')
-			else:
-				grind_table_state['checked'].discard(ev.target.id.split('-')[1])
-				del_storage(ev.target.id)
-		elif ev.target.type == 'select-one':
-			if ev.target.selectedIndex:
-				set_storage(ev.target.id, f"select-{ev.target.value}")
-			else:
-				del_storage(ev.target.id)
-		elif ev.target.type == 'number':
-			if not ev.target.value.isnumeric() or int(ev.target.value) < 0:
-				ev.target.value = 0
-			else:
-				ev.target.value = int(ev.target.value)
-			set_storage(ev.target.id, ev.target.value)
-		else:
-			print(f"Unhandled element type for storage: {ev.target.type}")
-		calculate_change()
-
-	# Function for showing a list of artifacts on click
-	@bind('.arti_list', 'click')
-	def showartis(ev):
-		if 'vertical-menu' in doc:
-			del doc['vertical-menu']
-		doc.unbind('mouseclick', custom_menu)
-
-		ev.stopPropagation()
-		# Set up artifact select
-		arti = DIV(Id='vertical-menu', Class='vertical-menu')
-		for art in artifacts:
-			temp = DIV(strings[art], Id=art, data_id=ev.target.attrs["data-id"], Class='vertical-menu menu-item')
-			temp.bind('click', custom_menu)
-			arti <= temp
-		arti.top = ev.y
-		arti.left = ev.x
-		doc <= arti
-		doc.bind('click', custom_menu)
 
 
 # custom implementation of default dict for int
@@ -459,7 +240,6 @@ def calculate_change():
 				clt = ' '.join(cl)
 				doc[f'weapon_c-{char}'].attrs['class'] = clt
 				doc[f'weapon_t-{char}'].attrs['class'] = clt
-
 
 	# Get a list of all chosen artifacts so we know what to farm
 	for elt in doc.get(selector=f'.saved_arti'):
@@ -592,25 +372,62 @@ def show_inventory(ev):
 	doc["button_character"].attrs['class'] = ''
 
 
-b_char = BUTTON("Characters", Id='button_character', Class='current_tab')
-b_char.bind("click", show_characters)
-doc["character"] <= b_char
+# Function for saving changes
+@bind('.save', 'change')
+def save_state(ev):
+	if ev.target.type == 'checkbox':
+		binstate = ev.target.checked
+		newstate = 'checked' if binstate else 'unchecked'
+		for elt in doc.get(selector=f'TR[data-id="{ev.target.attrs["data-id"]}"]'):
+			elt.attrs['class'] = newstate
+		if ev.target.checked:
+			grind_table_state['checked'].add(ev.target.id.split('-')[1])
+			set_storage(ev.target.id, 'checked')
+		else:
+			grind_table_state['checked'].discard(ev.target.id.split('-')[1])
+			del_storage(ev.target.id)
+	elif ev.target.type == 'select-one':
+		if ev.target.selectedIndex:
+			set_storage(ev.target.id, f"select-{ev.target.value}")
+		else:
+			del_storage(ev.target.id)
+	elif ev.target.type == 'number':
+		if not ev.target.value.isnumeric() or int(ev.target.value) < 0:
+			ev.target.value = 0
+		else:
+			ev.target.value = int(ev.target.value)
+		set_storage(ev.target.id, ev.target.value)
+	else:
+		print(f"Unhandled element type for storage: {ev.target.type}")
+	calculate_change()
 
-b_inven = BUTTON("Inventory", Id="button_inventory")
-b_inven.bind("click", show_inventory)
-doc["inventory"] <= b_inven
 
-b_reset = BUTTON("Reset All Data")
-b_reset.bind("click", reset_data)
-doc["reset"] <= b_reset
+# Function for showing a list of artifacts on click
+@bind('.arti_list', 'click')
+def showartis(ev):
+	if 'vertical-menu' in doc:
+		del doc['vertical-menu']
+	doc.unbind('mouseclick', custom_menu)
 
-b_reset = BUTTON("Reset Character")
-b_reset.bind("click", reset_character)
-doc["reset"] <= b_reset
+	ev.stopPropagation()
+	# Set up artifact select
+	arti = DIV(Id='vertical-menu', Class='vertical-menu')
+	for art in artifacts:
+		temp = DIV(strings[art], Id=art, data_id=ev.target.attrs["data-id"], Class='vertical-menu menu-item')
+		temp.bind('click', custom_menu)
+		arti <= temp
+	arti.top = ev.y
+	arti.left = ev.x
+	doc <= arti
+	doc.bind('click', custom_menu)
 
-b_reset = BUTTON("Reset Inventory")
-b_reset.bind("click", reset_inventory)
-doc["reset"] <= b_reset
+
+doc["button_character"] .bind("click", show_characters)
+doc["button_inventory"].bind("click", show_inventory)
+doc["reset"].bind("click", reset_data)
+doc["reset"].bind("click", reset_character)
+doc["reset"].bind("click", reset_inventory)
+
 init_page()
 del doc['loading']
 

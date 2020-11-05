@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Genshin Impact Grind Target Tracker</title>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.9.0/brython.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.9.0/brython_stdlib.js"></script>
+        <link href="css/layout.css" rel="stylesheet" type="text/css" />
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    </head>
+    <body onload="brython(1)">
+        <section class="main">
+            <p><strong>This page requires local storage to save state.</strong></p>
+            <p>Current TODO list:</p>
+            <ul>
+                <li>Goal needs reworks to have "legal" values.  Eg talent goals can't be higher than level goal.</li>
+                <li>toggle to set if that characer's artifacts are tracked in farm goal.</li>
+                <li>Implement Traveler.</li>
+                <li>Code cleanup. Remove some loops if possible.</li>
+                <li>Character icons, when I have them all.</li>
+                <li>Add missing icons when those days are live.</li>
+                <li>Add charxp, wepxp, mora to grind guide</li>
+           </ul>
+            <div id="loading">
+                This page requires javascript in order to work correctly.
+                <br><br>
+                This page may take a moment to load.
+            </div>
+            <span id="character"></span><span id="inventory"></span>
+            <div id="main">
+                <div id="test"></div>
+                <div id="daily"></div>
+                </div>
+            <div id="inven" style="display: none;"><p>No materials are automatically converted up.  If you have more than you need of something, it won't show on the grind table.</p></div>
+            <p>Some information is missing from the wiki, the following weapons are missing ascension information and thus aren't selectable:</p>
+            <ul id="missing"></ul>
+            <p>Additionally I could not find data on the xp/mora costs for levelling 3* weapons.</p>
+            <p>Data is primarily sourced from in game and, if needed, verified with <a href="https://genshin-impact.fandom.com/wiki/Genshin_Impact_Wiki">The fandom wiki</a></p>
+            <h3>Notice of Non-Affiliation</h3>
+            <p>This site is not affiliated, associated, authorized, endorsed by, or in any way officially connected with any other company, agency or government agency.  The information on this website is provided “as is” without any representations or warranties, express or implied.</p>
+            <p>All product and company names are trademarks™ or registered® trademarks of their respective holders. Use of them does not imply any affiliation with or endorsement by them.</p>
+            <br /><span id="reset"></span><br />(warning not reversible)
+            <div id="patreon"><a href="https://www.patreon.com/xanthics"><img alt="Become a Patron!" src="img/become_a_patron_button@2x.png" id="patreon_image"></a></div>
+        </section>
+        <script type="text/python" src="gen_page.py"></script>
+    </body>
+</html>
