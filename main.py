@@ -223,7 +223,21 @@ def init_page():
 		('wam', 'dandelion_gladiator'),
 		('wam', 'guyun'),
 		('wam', 'mist_veiled_elixer'),
-		('wam', 'aerosiderite')
+		('wam', 'aerosiderite'),
+		('local', 'calla_lily'),
+		('local', 'wolfhook'),
+		('local', 'valberry'),
+		('local', 'cecilia'),
+		('local', 'windwheel_aster'),
+		('local', 'philanemo_mushroom'),
+		('local', 'jueyun_chili'),
+		('local', 'noctilucous_jade'),
+		('local', 'silk_flower'),
+		('local', 'glaze_lilly'),
+		('local', 'violetgrass'),
+		('local', 'small_lamp_grass'),
+		('local', 'dandelion_seed'),
+		('local', 'cor_lapis')
 	]
 
 	# Create a table of items we might need and store their ids in a lookup table
