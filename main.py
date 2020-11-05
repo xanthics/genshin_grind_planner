@@ -1,6 +1,6 @@
 from browser import document as doc
 from browser import bind
-from browser.html import TABLE, TR, TH, TD, INPUT, SELECT, OPTION, DIV, BUTTON, SPAN, LI, H2, H3, IMG
+from browser.html import TABLE, TR, TH, TD, INPUT, SELECT, OPTION, DIV, BUTTON, SPAN, LI, H2, H3, IMG, COLGROUP, COL
 from browser.local_storage import storage
 
 from characters import characters
@@ -95,6 +95,23 @@ def list_storage():
 
 def init_page():
 	t = TABLE(Class='body')
+	t <= COLGROUP(
+		COL() +
+		COL() +
+		COL(Class='left_border') +
+		COL(Class='left_dotted') +
+		COL(Class='left_border') +
+		COL(Class='left_dotted') +
+		COL(Class='left_border') +
+		COL(Class='left_dotted') +
+		COL(Class='left_border') +
+		COL(Class='left_dotted') +
+		COL(Class='left_border') +
+		COL(Class='left_dotted') +
+		COL(Class='left_dotted') +
+		COL(Class='left_border') +
+		COL(Class='left_dotted')
+	)
 	t <= TR(
 		TH("Character", colspan=2) +
 		TH("Level", colspan=2) +
@@ -118,8 +135,7 @@ def init_page():
 		TH("") +
 		TH("Now") +
 		TH("Goal") +
-		TH("") +
-		TH("Click to remove")
+		TH("Click to remove", colspan=2)
 	)
 	for char in characters:
 		# set up level select
@@ -489,7 +505,7 @@ def calculate_change():
 	for day in ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']:
 		if data[day]:
 			doc['daily'] <= H2([strings[day]])
-			t = TABLE(TR(TH("Location") + TH("Item(s)") + TH("Character(s)")))
+			t = TABLE(TR(TH("Location") + TH("Item(s)") + TH("Character(s)")), Class='borders')
 			for loc in sorted(data[day]):
 				new_set = {y for x in data[day][loc] for y in char_tracker[x]}
 				# IMG(src=f"img/{item}_{i}.png", alt=
@@ -502,7 +518,7 @@ def calculate_change():
 		for cost in [0, 20, 40, 60]:
 			if data['any'][cost]:
 				doc['daily'] <= H3(f"{cost} {strings['resin']}")
-				t = TABLE(TR(TH("Location") + TH("Item(s)") + TH("Character(s)")))
+				t = TABLE(TR(TH("Location") + TH("Item(s)") + TH("Character(s)")), Class='borders')
 				for loc in sorted(data['any'][cost]):
 					new_set = {y for x in data['any'][cost][loc] for y in char_tracker[x]}
 					# t <= TR(TD(strings[loc]) + TD(', '.join([strings[x] if isinstance(strings[x], str) else strings[x][0] for x in data['any'][cost][loc]])) + TD(', '.join([strings[x] for x in sorted(new_set)])))
