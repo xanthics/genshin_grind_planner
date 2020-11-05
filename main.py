@@ -529,10 +529,9 @@ def custom_menu(ev):
 			calculate_change()
 
 		ev.stopPropagation()
-	else:
-		if 'vertical-menu' in doc:
-			del doc['vertical-menu']
-		doc.unbind('mouseclick', custom_menu)
+	if 'vertical-menu' in doc:
+		del doc['vertical-menu']
+	doc.unbind('mouseclick', custom_menu)
 
 
 def show_characters(ev):
