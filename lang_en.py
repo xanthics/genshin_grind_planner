@@ -89,7 +89,8 @@ strings = {
 	'resistance': ['Teachings of "Resistance"', 'Guide to "Resistance"', 'Philosophies of "Resistance"'],
 	# ui strings
 	'mora': "Mora",
-	'xp': 'Exp',
+	'xp': 'Character Exp',
+	'wep_xp': 'Weapon Exp',
 	'resin': 'Resin',
 	'missing': 'Missing Material',
 	# bows
@@ -240,8 +241,7 @@ strings = {
 	'electro_cicin_mage': "Electro Cicin Mage",
 	'geovishap_hatchling': "Geovishap Hatchling",
 	'mitachurl': "Mitachurl",
-	'ruin_guard': "Ruin Guard",
-	'ruin_hunter': "Ruin Hunter",
+	'ruin_guard': "Ruin Guard or Hunter",
 	'skirmisher': "Fatui Skirmisher",
 	'whopperflower': "Whopperflower",
 	# elite bosses

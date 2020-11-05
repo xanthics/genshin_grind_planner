@@ -1,6 +1,6 @@
 from browser import document as doc
 from browser import bind
-from browser.html import TABLE, TR, TH, TD, INPUT, SELECT, OPTION, DIV, BUTTON, SPAN, LI, H2, H3
+from browser.html import TABLE, TR, TH, TD, INPUT, SELECT, OPTION, DIV, BUTTON, SPAN, LI, H2, H3, IMG
 from browser.local_storage import storage
 
 from characters import characters
@@ -49,9 +49,39 @@ def reset_data(ev):
 		elt.attrs['class'] = 'unchecked'
 	for elt in doc.get(selector='.saved_arti'):
 		del doc[elt.id]
+	for elt in doc.get(selector='input[type=number]'):
+		elt.value = 0
 
 	for key in storage.keys():
 		if key.startswith(storage_key):
+			del storage[key]
+	calculate_change()
+
+
+# Reset that only deletes values for this site
+def reset_character(ev):
+	for elt in doc.get(selector='input[type=checkbox]'):
+		doc[elt.id].checked = False
+	for elt in doc.get(selector='select'):
+		elt.selectedIndex = 0
+	for elt in doc.get(selector='TR[data-id]'):
+		elt.attrs['class'] = 'unchecked'
+	for elt in doc.get(selector='.saved_arti'):
+		del doc[elt.id]
+
+	for key in storage.keys():
+		if key.startswith(storage_key) and not key.endswith('-user'):
+			del storage[key]
+	calculate_change()
+
+
+# Reset that only deletes values for this site
+def reset_inventory(ev):
+	for elt in doc.get(selector='input[type=number]'):
+		elt.value = 0
+
+	for key in storage.keys():
+		if key.startswith(storage_key) and key.endswith('-user'):
 			del storage[key]
 	calculate_change()
 
@@ -148,27 +178,72 @@ def init_page():
 		)
 
 	doc['test'] <= t
+	# In game order is inconsistent manual list to override
+	ingame_order = [
+		('common', 'slime'),
+		('common', 'mask'),
+		('common', 'scroll'),
+		('common', 'arrowhead'),
+		('common_rare', 'horn'),
+		('common_rare', 'ley_line'),
+		('common_rare', 'chaos'),
+		('common_rare', 'mist'),
+		('common_rare', 'sacrificial_knife'),
+		('common', 'f_insignia'),
+		('common', 'th_insignia'),
+		('boss', 'dvalins_claw'),
+		('boss', 'dvalins_plume'),
+		('boss', 'dvalins_sigh'),
+		('boss', 'ring_of_boreas'),
+		('boss', 'spirit_locket_of_boreas'),
+		('boss', 'tail_of_boreas'),
+		('element_2', 'basalt_pillar'),
+		('element_2', 'cleansing_heart'),
+		('element_2', 'everflame_seed'),
+		('element_2', 'hoarfrost_core'),
+		('element_2', 'hurricane_seed'),
+		('element_2', 'lightning_prism'),
+		('common', 'nectar'),
+		('element_1', 'brilliant_diamond'),
+		('common_rare', 'bone_shard'),
+		('element_1', 'agnidus_agate'),
+		('element_1', 'varunada_lazurite'),
+		('element_1', 'vajrada_amethyst'),
+		('element_1', 'vayuda_turqoise'),
+		('element_1', 'shivada_jade'),
+		('element_1', 'prithiva_topaz'),
+		('talent', 'freedom'),
+		('talent', 'resistance'),
+		('talent', 'ballad'),
+		('talent', 'prosperity'),
+		('talent', 'diligence'),
+		('talent', 'gold'),
+		('wam', 'decarabian'),
+		('wam', 'boreal_wolf'),
+		('wam', 'dandelion_gladiator'),
+		('wam', 'guyun'),
+		('wam', 'mist_veiled_elixer'),
+		('wam', 'aerosiderite')
+	]
 
 	# Create a table of items we might need and store their ids in a lookup table
 	# char xp, weapon xp, and mora
-	t_own = TABLE()
+	t_own = TABLE(Class='borders')
 	t_own <= TR(TH("Item") + TH("Need") + TH("Have") + TH("Missing"))
-	t_own <= TR(TD('Character XP') + TD('0', Id='xp-total') + INPUT(Type='number', min='0', step="1", value='0', Id='xp-user', Class='save') + TD('0', Id='xp-need'))
-	t_own <= TR(TD('Weapon XP') + TD('0', Id='wep_xp-total') + INPUT(Type='number', min='0', step="1", value='0', Id='wep_xp-user', Class='save') + TD('0', Id='wep_xp-need'))
-	t_own <= TR(TD('Mora') + TD('0', Id='mora-total') + INPUT(Type='number', min='0', step="1", value='0', Id='mora-user', Class='save') + TD('0', Id='mora-need'))
+	t_own <= TR(TD(IMG(src=f"img/xp.png", alt=strings['xp'], title=strings['xp'])) + TD('0', Id='xp-total') + TD(INPUT(Type='number', min='0', step="1", value='0', Id='xp-user', Class='save')) + TD('0', Id='xp-need', Class='good'))
+	t_own <= TR(TD(IMG(src=f"img/wep_xp.png", alt=strings['wep_xp'], title=strings['wep_xp'])) + TD('0', Id='wep_xp-total') + TD(INPUT(Type='number', min='0', step="1", value='0', Id='wep_xp-user', Class='save')) + TD('0', Id='wep_xp-need', Class='good'))
+	t_own <= TR(TD(IMG(src=f"img/mora.png", alt=strings['mora'], title=strings['mora'])) + TD('0', Id='mora-total') + TD(INPUT(Type='number', min='0', step="1", value='0', Id='mora-user', Class='save')) + TD('0', Id='mora-need', Class='good'))
 	grind_table_state['id'][f"xp-total"] = 0
 	grind_table_state['id'][f"wep_xp-total"] = 0
 	grind_table_state['id'][f"mora-total"] = 0
-	for section in ['common', 'common_rare', 'boss', 'element_2', 'element_1', 'talent', 'wam', 'local']:
+	for section, item in ingame_order:
 		if section in ['boss', 'element_2', 'local']:
-			for item in groups[section]:
-				grind_table_state['id'][f"{item}-total"] = 0
-				t_own <= TR(TD(strings[item]) + TD('0', Id=f"{item}-total") + INPUT(Type='number', min='0', step="1", value='0', Id=f"{item}-user", Class='save') + TD('0', Id=f"{item}-need", Class='good'))
+			grind_table_state['id'][f"{item}-total"] = 0
+			t_own <= TR(TD(IMG(src=f"img/{item}.png", alt=strings[item], title=strings[item])) + TD('0', Id=f"{item}-total") + TD(INPUT(Type='number', min='0', step="1", value='0', Id=f"{item}-user", Class='save')) + TD('0', Id=f"{item}-need", Class='good'))
 		if section in ['element_1', 'common', 'common_rare', 'wam', 'talent']:
-			for item in groups[section]:
-				for i in range(len(strings[item])):
-					grind_table_state['id'][f"{item}_{i}-total"] = 0
-					t_own <= TR(TD(strings[item][i]) + TD('0', Id=f"{item}_{i}-total") + INPUT(Type='number', min='0', step="1", value='0', Id=f"{item}_{i}-user", Class='save') + TD('0', Id=f"{item}_{i}-need", Class='good'))
+			for i in range(len(strings[item])-1, -1, -1):
+				grind_table_state['id'][f"{item}_{i}-total"] = 0
+				t_own <= TR(TD(IMG(src=f"img/{item}_{i}.png", alt=strings[item][i], title=strings[item][i])) + TD('0', Id=f"{item}_{i}-total") + TD(INPUT(Type='number', min='0', step="1", value='0', Id=f"{item}_{i}-user", Class='save')) + TD('0', Id=f"{item}_{i}-need", Class='good'))
 
 	doc['inven'] <= t_own
 
@@ -333,16 +408,22 @@ def calculate_change():
 			grind_daily_tracker.add(elt.id.split('-')[-1])
 			add_value_set(char_tracker, elt.id.split('-')[-1], elt.id.split('-')[1])
 
+	if 'xp' in totals:
+		totals['xp'] = (totals['xp'] + 10000) // 20000
+	if 'wep_xp' in totals:
+		totals['wep_xp'] = (totals['wep_xp'] + 5000) // 10000
+
 	for item in grind_table_state['id']:
 		key = item.split('-')[0]
 		if key in totals:
 			new_val = totals[key]-int(doc[f'{key}-user'].value)
+			new_val = new_val if new_val > 0 else 0
 			grind_table_state['id'][item] = new_val
 			doc[item].text = f"{new_val:,}"
 			doc[f"{key}-total"].text = f"{totals[key]:,}"
 			doc[f"{key}-need"].text = f"{new_val:,}"
-			doc[f"{key}-need"].attrs['class'] = 'bad' if new_val > 0 else 'good'
-			if new_val > 0:
+			doc[f"{key}-need"].attrs['class'] = 'bad' if new_val else 'good'
+			if new_val:
 				grind_daily_tracker.add(key[:-2] if key[-1].isnumeric() else key)
 		elif grind_table_state['id'][item] > 0:
 			grind_table_state['id'][item] = 0
@@ -397,7 +478,10 @@ def calculate_change():
 			t = TABLE(TR(TH("Location") + TH("Item(s)") + TH("Character(s)")))
 			for loc in sorted(data[day]):
 				new_set = {y for x in data[day][loc] for y in char_tracker[x]}
-				t <= TR(TD(strings[loc]) + TD(', '.join([strings[x] if isinstance(strings[x], str) else strings[x][0] for x in data[day][loc]])) + TD(', '.join([strings[x] for x in sorted(new_set)])))
+				# IMG(src=f"img/{item}_{i}.png", alt=
+				# t <= TR(TD(strings[loc]) + TD(', '.join([strings[x] if isinstance(strings[x], str) else strings[x][0] for x in data[day][loc]])) + TD(', '.join([strings[x] for x in sorted(new_set)])))
+				v = (IMG(src=f"img/{x}.png", alt=(strings[x] if isinstance(strings[x], str) else strings[x][0]), title=(strings[x] if isinstance(strings[x], str) else strings[x][0])) for x in data[day][loc])
+				t <= TR(TD(strings[loc]) + TD(v) + TD(', '.join([strings[x] for x in sorted(new_set)])))
 			doc['daily'] <= t
 	if any([data['any'][x] for x in [0, 20, 40, 60]]):
 		doc['daily'] <= H2([strings['any']])
@@ -407,7 +491,9 @@ def calculate_change():
 				t = TABLE(TR(TH("Location") + TH("Item(s)") + TH("Character(s)")))
 				for loc in sorted(data['any'][cost]):
 					new_set = {y for x in data['any'][cost][loc] for y in char_tracker[x]}
-					t <= TR(TD(strings[loc]) + TD(', '.join([strings[x] if isinstance(strings[x], str) else strings[x][0] for x in data['any'][cost][loc]])) + TD(', '.join([strings[x] for x in sorted(new_set)])))
+					# t <= TR(TD(strings[loc]) + TD(', '.join([strings[x] if isinstance(strings[x], str) else strings[x][0] for x in data['any'][cost][loc]])) + TD(', '.join([strings[x] for x in sorted(new_set)])))
+					v = (IMG(src=f"img/{x}.png", alt=(strings[x] if isinstance(strings[x], str) else strings[x][0]), title=(strings[x] if isinstance(strings[x], str) else strings[x][0])) for x in data['any'][cost][loc])
+					t <= TR(TD(strings[loc]) + TD(v) + TD(', '.join([strings[x] for x in sorted(new_set)])))
 				doc['daily'] <= t
 
 
@@ -438,21 +524,35 @@ def custom_menu(ev):
 def show_characters(ev):
 	doc["inven"].style.display = 'none'
 	doc["main"].style.display = 'block'
+	doc["button_character"].attrs['class'] = 'current_tab'
+	doc["button_inventory"].attrs['class'] = ''
 
 
 def show_inventory(ev):
 	doc["main"].style.display = 'none'
 	doc["inven"].style.display = 'block'
+	doc["button_inventory"].attrs['class'] = 'current_tab'
+	doc["button_character"].attrs['class'] = ''
 
 
-b_char = BUTTON("Characters")
+b_char = BUTTON("Characters", Id='button_character', Class='current_tab')
 b_char.bind("click", show_characters)
 doc["character"] <= b_char
-b_inven = BUTTON("Inventory")
+
+b_inven = BUTTON("Inventory", Id="button_inventory")
 b_inven.bind("click", show_inventory)
 doc["inventory"] <= b_inven
+
 b_reset = BUTTON("Reset All Data")
 b_reset.bind("click", reset_data)
+doc["reset"] <= b_reset
+
+b_reset = BUTTON("Reset Character")
+b_reset.bind("click", reset_character)
+doc["reset"] <= b_reset
+
+b_reset = BUTTON("Reset Inventory")
+b_reset.bind("click", reset_inventory)
 doc["reset"] <= b_reset
 init_page()
 del doc['loading']

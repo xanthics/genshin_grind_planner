@@ -165,7 +165,7 @@ farming_data = {
 	},
 	'chaos': {
 		'when': ['any'],
-		'where': ['ruin_guard', 'ruin_hunter']
+		'where': ['ruin_guard']
 	},
 	'horn': {
 		'when': ['any'],
