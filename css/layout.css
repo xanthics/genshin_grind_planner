@@ -40,7 +40,7 @@ select.weapon {
 }
 
 img {
-    display: block;
+    vertical-align: middle;
 }
 
 #vertical-menu {
