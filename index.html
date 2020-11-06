@@ -1,31 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <title>Genshin Impact Grind Target Tracker</title>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.9.0/brython.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.9.0/brython_stdlib.js"></script>
-    <link href="css/layout.css" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <link href="css/layout.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
   </head>
   <body onload="brython(1)">
     <section class="main">
       <p><strong>This page requires local storage to save state.</strong></p>
       <p>Current TODO list:</p>
       <ul>
-        <li>Goal needs reworks to have "legal" values. Eg talent goals can't be higher than level goal.</li>
         <li>toggle to set if that characer's artifacts are tracked in farm goal.</li>
         <li>Implement Traveler.</li>
         <li>Code cleanup. Remove some loops if possible.</li>
-        <li>Character icons, when I have them all.</li>
-        <li>Add missing icons when those days are live.</li>
         <li>Add charxp, wepxp, mora to grind guide</li>
         <li>Add styling for checkboxes.</li>
+        <li>Artifact Menu set bonus hints.</li>
       </ul>
       <div id="loading">
         This page requires javascript in order to work correctly.
-        <br />
-        <br />
+        <br><br>
         This page may take a moment to load.
       </div>
       <span id="character"><button id="button_character" class="current_tab">Characters</button></span><span id="inventory"><button id="button_inventory">Inventory</button></span>
@@ -33,21 +30,21 @@
         <div id="test">
           <table class="body">
             <colgroup>
-              <col />
-              <col />
-              <col class="left_border" />
-              <col class="left_dotted" />
-              <col class="left_border" />
-              <col class="left_dotted" />
-              <col class="left_border" />
-              <col class="left_dotted" />
-              <col class="left_border" />
-              <col class="left_dotted" />
-              <col class="left_border" />
-              <col class="left_dotted" />
-              <col class="left_dotted" />
-              <col class="left_border" />
-              <col class="left_dotted" />
+              <col>
+              <col>
+              <col class="left_border">
+              <col class="left_dotted">
+              <col class="left_border">
+              <col class="left_dotted">
+              <col class="left_border">
+              <col class="left_dotted">
+              <col class="left_border">
+              <col class="left_dotted">
+              <col class="left_border">
+              <col class="left_dotted">
+              <col class="left_dotted">
+              <col class="left_border">
+              <col class="left_dotted">
             </colgroup>
             <tr>
               <th colspan="2">Character</th>
@@ -75,8 +72,8 @@
               <th colspan="2">Click to remove</th>
             </tr>
             <tr data-id="check-amber" class="unchecked" data-color="pyro">
-              <td><input id="check-amber" type="checkbox" data-id="check-amber" class="char_select save" /></td>
-              <td><img src="img/amber.png" alt="Amber" title="Amber" /></td>
+              <td><input id="check-amber" type="checkbox" data-id="check-amber" class="char_select save"></td>
+              <td><img src="img/amber.png" alt="Amber" title="Amber"></td>
               <td>
                 <select id="level_c-amber" class="amber save">
                   <option value="0">1</option>
@@ -226,11 +223,13 @@
                 </select>
               </td>
               <td><button class="arti_list text_button" data-id="arti-amber">Add</button></td>
-              <td><div id="arti-amber" class="arti_span"></div></td>
+              <td>
+                <div id="arti-amber" class="arti_span"></div>
+              </td>
             </tr>
             <tr data-id="check-barbara" class="unchecked" data-color="hydro">
-              <td><input id="check-barbara" type="checkbox" data-id="check-barbara" class="char_select save" /></td>
-              <td><img src="img/barbara.png" alt="Barbara" title="Barbara" /></td>
+              <td><input id="check-barbara" type="checkbox" data-id="check-barbara" class="char_select save"></td>
+              <td><img src="img/barbara.png" alt="Barbara" title="Barbara"></td>
               <td>
                 <select id="level_c-barbara" class="barbara save">
                   <option value="0">1</option>
@@ -379,11 +378,13 @@
                 </select>
               </td>
               <td><button class="arti_list text_button" data-id="arti-barbara">Add</button></td>
-              <td><div id="arti-barbara" class="arti_span"></div></td>
+              <td>
+                <div id="arti-barbara" class="arti_span"></div>
+              </td>
             </tr>
             <tr data-id="check-beidou" class="unchecked" data-color="electro">
-              <td><input id="check-beidou" type="checkbox" data-id="check-beidou" class="char_select save" /></td>
-              <td><img src="img/beidou.png" alt="Beidou" title="Beidou" /></td>
+              <td><input id="check-beidou" type="checkbox" data-id="check-beidou" class="char_select save"></td>
+              <td><img src="img/beidou.png" alt="Beidou" title="Beidou"></td>
               <td>
                 <select id="level_c-beidou" class="beidou save">
                   <option value="0">1</option>
@@ -532,11 +533,13 @@
                 </select>
               </td>
               <td><button class="arti_list text_button" data-id="arti-beidou">Add</button></td>
-              <td><div id="arti-beidou" class="arti_span"></div></td>
+              <td>
+                <div id="arti-beidou" class="arti_span"></div>
+              </td>
             </tr>
             <tr data-id="check-bennett" class="unchecked" data-color="pyro">
-              <td><input id="check-bennett" type="checkbox" data-id="check-bennett" class="char_select save" /></td>
-              <td><img src="img/bennett.png" alt="Bennett" title="Bennett" /></td>
+              <td><input id="check-bennett" type="checkbox" data-id="check-bennett" class="char_select save"></td>
+              <td><img src="img/bennett.png" alt="Bennett" title="Bennett"></td>
               <td>
                 <select id="level_c-bennett" class="bennett save">
                   <option value="0">1</option>
@@ -685,11 +688,13 @@
                 </select>
               </td>
               <td><button class="arti_list text_button" data-id="arti-bennett">Add</button></td>
-              <td><div id="arti-bennett" class="arti_span"></div></td>
+              <td>
+                <div id="arti-bennett" class="arti_span"></div>
+              </td>
             </tr>
             <tr data-id="check-chongyun" class="unchecked" data-color="cryo">
-              <td><input id="check-chongyun" type="checkbox" data-id="check-chongyun" class="char_select save" /></td>
-              <td><img src="img/chongyun.png" alt="Chongyun" title="Chongyun" /></td>
+              <td><input id="check-chongyun" type="checkbox" data-id="check-chongyun" class="char_select save"></td>
+              <td><img src="img/chongyun.png" alt="Chongyun" title="Chongyun"></td>
               <td>
                 <select id="level_c-chongyun" class="chongyun save">
                   <option value="0">1</option>
@@ -838,11 +843,13 @@
                 </select>
               </td>
               <td><button class="arti_list text_button" data-id="arti-chongyun">Add</button></td>
-              <td><div id="arti-chongyun" class="arti_span"></div></td>
+              <td>
+                <div id="arti-chongyun" class="arti_span"></div>
+              </td>
             </tr>
             <tr data-id="check-diluc" class="unchecked" data-color="pyro">
-              <td><input id="check-diluc" type="checkbox" data-id="check-diluc" class="char_select save" /></td>
-              <td><img src="img/diluc.png" alt="Diluc" title="Diluc" /></td>
+              <td><input id="check-diluc" type="checkbox" data-id="check-diluc" class="char_select save"></td>
+              <td><img src="img/diluc.png" alt="Diluc" title="Diluc"></td>
               <td>
                 <select id="level_c-diluc" class="diluc save">
                   <option value="0">1</option>
@@ -991,11 +998,13 @@
                 </select>
               </td>
               <td><button class="arti_list text_button" data-id="arti-diluc">Add</button></td>
-              <td><div id="arti-diluc" class="arti_span"></div></td>
+              <td>
+                <div id="arti-diluc" class="arti_span"></div>
+              </td>
             </tr>
             <tr data-id="check-fischl" class="unchecked" data-color="electro">
-              <td><input id="check-fischl" type="checkbox" data-id="check-fischl" class="char_select save" /></td>
-              <td><img src="img/fischl.png" alt="Fischl" title="Fischl" /></td>
+              <td><input id="check-fischl" type="checkbox" data-id="check-fischl" class="char_select save"></td>
+              <td><img src="img/fischl.png" alt="Fischl" title="Fischl"></td>
               <td>
                 <select id="level_c-fischl" class="fischl save">
                   <option value="0">1</option>
@@ -1145,11 +1154,13 @@
                 </select>
               </td>
               <td><button class="arti_list text_button" data-id="arti-fischl">Add</button></td>
-              <td><div id="arti-fischl" class="arti_span"></div></td>
+              <td>
+                <div id="arti-fischl" class="arti_span"></div>
+              </td>
             </tr>
             <tr data-id="check-jean" class="unchecked" data-color="anemo">
-              <td><input id="check-jean" type="checkbox" data-id="check-jean" class="char_select save" /></td>
-              <td><img src="img/jean.png" alt="Jean" title="Jean" /></td>
+              <td><input id="check-jean" type="checkbox" data-id="check-jean" class="char_select save"></td>
+              <td><img src="img/jean.png" alt="Jean" title="Jean"></td>
               <td>
                 <select id="level_c-jean" class="jean save">
                   <option value="0">1</option>
@@ -1298,11 +1309,13 @@
                 </select>
               </td>
               <td><button class="arti_list text_button" data-id="arti-jean">Add</button></td>
-              <td><div id="arti-jean" class="arti_span"></div></td>
+              <td>
+                <div id="arti-jean" class="arti_span"></div>
+              </td>
             </tr>
             <tr data-id="check-kaeya" class="unchecked" data-color="cryo">
-              <td><input id="check-kaeya" type="checkbox" data-id="check-kaeya" class="char_select save" /></td>
-              <td><img src="img/kaeya.png" alt="Kaeya" title="Kaeya" /></td>
+              <td><input id="check-kaeya" type="checkbox" data-id="check-kaeya" class="char_select save"></td>
+              <td><img src="img/kaeya.png" alt="Kaeya" title="Kaeya"></td>
               <td>
                 <select id="level_c-kaeya" class="kaeya save">
                   <option value="0">1</option>
@@ -1451,11 +1464,13 @@
                 </select>
               </td>
               <td><button class="arti_list text_button" data-id="arti-kaeya">Add</button></td>
-              <td><div id="arti-kaeya" class="arti_span"></div></td>
+              <td>
+                <div id="arti-kaeya" class="arti_span"></div>
+              </td>
             </tr>
             <tr data-id="check-keqing" class="unchecked" data-color="electro">
-              <td><input id="check-keqing" type="checkbox" data-id="check-keqing" class="char_select save" /></td>
-              <td><img src="img/keqing.png" alt="Keqing" title="Keqing" /></td>
+              <td><input id="check-keqing" type="checkbox" data-id="check-keqing" class="char_select save"></td>
+              <td><img src="img/keqing.png" alt="Keqing" title="Keqing"></td>
               <td>
                 <select id="level_c-keqing" class="keqing save">
                   <option value="0">1</option>
@@ -1604,11 +1619,13 @@
                 </select>
               </td>
               <td><button class="arti_list text_button" data-id="arti-keqing">Add</button></td>
-              <td><div id="arti-keqing" class="arti_span"></div></td>
+              <td>
+                <div id="arti-keqing" class="arti_span"></div>
+              </td>
             </tr>
             <tr data-id="check-klee" class="unchecked" data-color="pyro">
-              <td><input id="check-klee" type="checkbox" data-id="check-klee" class="char_select save" /></td>
-              <td><img src="img/klee.png" alt="Klee" title="Klee" /></td>
+              <td><input id="check-klee" type="checkbox" data-id="check-klee" class="char_select save"></td>
+              <td><img src="img/klee.png" alt="Klee" title="Klee"></td>
               <td>
                 <select id="level_c-klee" class="klee save">
                   <option value="0">1</option>
@@ -1757,11 +1774,13 @@
                 </select>
               </td>
               <td><button class="arti_list text_button" data-id="arti-klee">Add</button></td>
-              <td><div id="arti-klee" class="arti_span"></div></td>
+              <td>
+                <div id="arti-klee" class="arti_span"></div>
+              </td>
             </tr>
             <tr data-id="check-lisa" class="unchecked" data-color="electro">
-              <td><input id="check-lisa" type="checkbox" data-id="check-lisa" class="char_select save" /></td>
-              <td><img src="img/lisa.png" alt="Lisa" title="Lisa" /></td>
+              <td><input id="check-lisa" type="checkbox" data-id="check-lisa" class="char_select save"></td>
+              <td><img src="img/lisa.png" alt="Lisa" title="Lisa"></td>
               <td>
                 <select id="level_c-lisa" class="lisa save">
                   <option value="0">1</option>
@@ -1910,11 +1929,13 @@
                 </select>
               </td>
               <td><button class="arti_list text_button" data-id="arti-lisa">Add</button></td>
-              <td><div id="arti-lisa" class="arti_span"></div></td>
+              <td>
+                <div id="arti-lisa" class="arti_span"></div>
+              </td>
             </tr>
             <tr data-id="check-mona" class="unchecked" data-color="hydro">
-              <td><input id="check-mona" type="checkbox" data-id="check-mona" class="char_select save" /></td>
-              <td><img src="img/mona.png" alt="Mona" title="Mona" /></td>
+              <td><input id="check-mona" type="checkbox" data-id="check-mona" class="char_select save"></td>
+              <td><img src="img/mona.png" alt="Mona" title="Mona"></td>
               <td>
                 <select id="level_c-mona" class="mona save">
                   <option value="0">1</option>
@@ -2063,11 +2084,13 @@
                 </select>
               </td>
               <td><button class="arti_list text_button" data-id="arti-mona">Add</button></td>
-              <td><div id="arti-mona" class="arti_span"></div></td>
+              <td>
+                <div id="arti-mona" class="arti_span"></div>
+              </td>
             </tr>
             <tr data-id="check-ningguang" class="unchecked" data-color="geo">
-              <td><input id="check-ningguang" type="checkbox" data-id="check-ningguang" class="char_select save" /></td>
-              <td><img src="img/ningguang.png" alt="Ningguang" title="Ningguang" /></td>
+              <td><input id="check-ningguang" type="checkbox" data-id="check-ningguang" class="char_select save"></td>
+              <td><img src="img/ningguang.png" alt="Ningguang" title="Ningguang"></td>
               <td>
                 <select id="level_c-ningguang" class="ningguang save">
                   <option value="0">1</option>
@@ -2216,11 +2239,13 @@
                 </select>
               </td>
               <td><button class="arti_list text_button" data-id="arti-ningguang">Add</button></td>
-              <td><div id="arti-ningguang" class="arti_span"></div></td>
+              <td>
+                <div id="arti-ningguang" class="arti_span"></div>
+              </td>
             </tr>
             <tr data-id="check-noelle" class="unchecked" data-color="geo">
-              <td><input id="check-noelle" type="checkbox" data-id="check-noelle" class="char_select save" /></td>
-              <td><img src="img/noelle.png" alt="Noelle" title="Noelle" /></td>
+              <td><input id="check-noelle" type="checkbox" data-id="check-noelle" class="char_select save"></td>
+              <td><img src="img/noelle.png" alt="Noelle" title="Noelle"></td>
               <td>
                 <select id="level_c-noelle" class="noelle save">
                   <option value="0">1</option>
@@ -2369,11 +2394,13 @@
                 </select>
               </td>
               <td><button class="arti_list text_button" data-id="arti-noelle">Add</button></td>
-              <td><div id="arti-noelle" class="arti_span"></div></td>
+              <td>
+                <div id="arti-noelle" class="arti_span"></div>
+              </td>
             </tr>
             <tr data-id="check-qiqi" class="unchecked" data-color="cryo">
-              <td><input id="check-qiqi" type="checkbox" data-id="check-qiqi" class="char_select save" /></td>
-              <td><img src="img/qiqi.png" alt="Qiqi" title="Qiqi" /></td>
+              <td><input id="check-qiqi" type="checkbox" data-id="check-qiqi" class="char_select save"></td>
+              <td><img src="img/qiqi.png" alt="Qiqi" title="Qiqi"></td>
               <td>
                 <select id="level_c-qiqi" class="qiqi save">
                   <option value="0">1</option>
@@ -2522,11 +2549,13 @@
                 </select>
               </td>
               <td><button class="arti_list text_button" data-id="arti-qiqi">Add</button></td>
-              <td><div id="arti-qiqi" class="arti_span"></div></td>
+              <td>
+                <div id="arti-qiqi" class="arti_span"></div>
+              </td>
             </tr>
             <tr data-id="check-razor" class="unchecked" data-color="electro">
-              <td><input id="check-razor" type="checkbox" data-id="check-razor" class="char_select save" /></td>
-              <td><img src="img/razor.png" alt="Razor" title="Razor" /></td>
+              <td><input id="check-razor" type="checkbox" data-id="check-razor" class="char_select save"></td>
+              <td><img src="img/razor.png" alt="Razor" title="Razor"></td>
               <td>
                 <select id="level_c-razor" class="razor save">
                   <option value="0">1</option>
@@ -2675,11 +2704,13 @@
                 </select>
               </td>
               <td><button class="arti_list text_button" data-id="arti-razor">Add</button></td>
-              <td><div id="arti-razor" class="arti_span"></div></td>
+              <td>
+                <div id="arti-razor" class="arti_span"></div>
+              </td>
             </tr>
             <tr data-id="check-sucrose" class="unchecked" data-color="anemo">
-              <td><input id="check-sucrose" type="checkbox" data-id="check-sucrose" class="char_select save" /></td>
-              <td><img src="img/sucrose.png" alt="Sucrose" title="Sucrose" /></td>
+              <td><input id="check-sucrose" type="checkbox" data-id="check-sucrose" class="char_select save"></td>
+              <td><img src="img/sucrose.png" alt="Sucrose" title="Sucrose"></td>
               <td>
                 <select id="level_c-sucrose" class="sucrose save">
                   <option value="0">1</option>
@@ -2828,11 +2859,13 @@
                 </select>
               </td>
               <td><button class="arti_list text_button" data-id="arti-sucrose">Add</button></td>
-              <td><div id="arti-sucrose" class="arti_span"></div></td>
+              <td>
+                <div id="arti-sucrose" class="arti_span"></div>
+              </td>
             </tr>
             <tr data-id="check-venti" class="unchecked" data-color="anemo">
-              <td><input id="check-venti" type="checkbox" data-id="check-venti" class="char_select save" /></td>
-              <td><img src="img/venti.png" alt="Venti" title="Venti" /></td>
+              <td><input id="check-venti" type="checkbox" data-id="check-venti" class="char_select save"></td>
+              <td><img src="img/venti.png" alt="Venti" title="Venti"></td>
               <td>
                 <select id="level_c-venti" class="venti save">
                   <option value="0">1</option>
@@ -2982,11 +3015,13 @@
                 </select>
               </td>
               <td><button class="arti_list text_button" data-id="arti-venti">Add</button></td>
-              <td><div id="arti-venti" class="arti_span"></div></td>
+              <td>
+                <div id="arti-venti" class="arti_span"></div>
+              </td>
             </tr>
             <tr data-id="check-xiangling" class="unchecked" data-color="pyro">
-              <td><input id="check-xiangling" type="checkbox" data-id="check-xiangling" class="char_select save" /></td>
-              <td><img src="img/xiangling.png" alt="Xiangling" title="Xiangling" /></td>
+              <td><input id="check-xiangling" type="checkbox" data-id="check-xiangling" class="char_select save"></td>
+              <td><img src="img/xiangling.png" alt="Xiangling" title="Xiangling"></td>
               <td>
                 <select id="level_c-xiangling" class="xiangling save">
                   <option value="0">1</option>
@@ -3129,11 +3164,13 @@
                 </select>
               </td>
               <td><button class="arti_list text_button" data-id="arti-xiangling">Add</button></td>
-              <td><div id="arti-xiangling" class="arti_span"></div></td>
+              <td>
+                <div id="arti-xiangling" class="arti_span"></div>
+              </td>
             </tr>
             <tr data-id="check-xingqiu" class="unchecked" data-color="hydro">
-              <td><input id="check-xingqiu" type="checkbox" data-id="check-xingqiu" class="char_select save" /></td>
-              <td><img src="img/xingqiu.png" alt="Xingqiu" title="Xingqiu" /></td>
+              <td><input id="check-xingqiu" type="checkbox" data-id="check-xingqiu" class="char_select save"></td>
+              <td><img src="img/xingqiu.png" alt="Xingqiu" title="Xingqiu"></td>
               <td>
                 <select id="level_c-xingqiu" class="xingqiu save">
                   <option value="0">1</option>
@@ -3282,14 +3319,16 @@
                 </select>
               </td>
               <td><button class="arti_list text_button" data-id="arti-xingqiu">Add</button></td>
-              <td><div id="arti-xingqiu" class="arti_span"></div></td>
+              <td>
+                <div id="arti-xingqiu" class="arti_span"></div>
+              </td>
             </tr>
           </table>
         </div>
         <div id="daily"></div>
       </div>
       <div id="inven" style="display: none;">
-        <p>No materials are automatically converted up. If you have more than you need of something, it won't show on the grind table.</p>
+        <p>No materials are automatically converted up.  If you have more than you need of something, it won't show on the grind table.</p>
         <table class="borders">
           <tr>
             <th>Item</th>
@@ -3298,831 +3337,831 @@
             <th>Missing</th>
           </tr>
           <tr>
-            <td><img src="img/xp.png" alt="Character Exp" title="Character Exp" /></td>
+            <td><img src="img/xp.png" alt="Character Exp" title="Character Exp"></td>
             <td id="xp-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="xp-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="xp-user" class="save"></td>
             <td id="xp-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/wep_xp.png" alt="Weapon Exp" title="Weapon Exp" /></td>
+            <td><img src="img/wep_xp.png" alt="Weapon Exp" title="Weapon Exp"></td>
             <td id="wep_xp-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="wep_xp-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="wep_xp-user" class="save"></td>
             <td id="wep_xp-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/mora.png" alt="Mora" title="Mora" /></td>
+            <td><img src="img/mora.png" alt="Mora" title="Mora"></td>
             <td id="mora-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="mora-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="mora-user" class="save"></td>
             <td id="mora-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/slime_2.png" alt="Slime Concentrate" title="Slime Concentrate" /></td>
+            <td><img src="img/slime_2.png" alt="Slime Concentrate" title="Slime Concentrate"></td>
             <td id="slime_2-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="slime_2-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="slime_2-user" class="save"></td>
             <td id="slime_2-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/slime_1.png" alt="Slime Secretions" title="Slime Secretions" /></td>
+            <td><img src="img/slime_1.png" alt="Slime Secretions" title="Slime Secretions"></td>
             <td id="slime_1-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="slime_1-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="slime_1-user" class="save"></td>
             <td id="slime_1-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/slime_0.png" alt="Slime Condensate" title="Slime Condensate" /></td>
+            <td><img src="img/slime_0.png" alt="Slime Condensate" title="Slime Condensate"></td>
             <td id="slime_0-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="slime_0-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="slime_0-user" class="save"></td>
             <td id="slime_0-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/mask_2.png" alt="Ominous Mask" title="Ominous Mask" /></td>
+            <td><img src="img/mask_2.png" alt="Ominous Mask" title="Ominous Mask"></td>
             <td id="mask_2-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="mask_2-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="mask_2-user" class="save"></td>
             <td id="mask_2-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/mask_1.png" alt="Stained Mask" title="Stained Mask" /></td>
+            <td><img src="img/mask_1.png" alt="Stained Mask" title="Stained Mask"></td>
             <td id="mask_1-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="mask_1-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="mask_1-user" class="save"></td>
             <td id="mask_1-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/mask_0.png" alt="Damaged Mask" title="Damaged Mask" /></td>
+            <td><img src="img/mask_0.png" alt="Damaged Mask" title="Damaged Mask"></td>
             <td id="mask_0-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="mask_0-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="mask_0-user" class="save"></td>
             <td id="mask_0-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/scroll_2.png" alt="Forbidden Curse Scroll" title="Forbidden Curse Scroll" /></td>
+            <td><img src="img/scroll_2.png" alt="Forbidden Curse Scroll" title="Forbidden Curse Scroll"></td>
             <td id="scroll_2-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="scroll_2-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="scroll_2-user" class="save"></td>
             <td id="scroll_2-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/scroll_1.png" alt="Sealed Scroll" title="Sealed Scroll" /></td>
+            <td><img src="img/scroll_1.png" alt="Sealed Scroll" title="Sealed Scroll"></td>
             <td id="scroll_1-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="scroll_1-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="scroll_1-user" class="save"></td>
             <td id="scroll_1-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/scroll_0.png" alt="Divining Scroll" title="Divining Scroll" /></td>
+            <td><img src="img/scroll_0.png" alt="Divining Scroll" title="Divining Scroll"></td>
             <td id="scroll_0-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="scroll_0-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="scroll_0-user" class="save"></td>
             <td id="scroll_0-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/arrowhead_2.png" alt="Weathered Arrowhead" title="Weathered Arrowhead" /></td>
+            <td><img src="img/arrowhead_2.png" alt="Weathered Arrowhead" title="Weathered Arrowhead"></td>
             <td id="arrowhead_2-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="arrowhead_2-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="arrowhead_2-user" class="save"></td>
             <td id="arrowhead_2-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/arrowhead_1.png" alt="Sharp Arrowhead" title="Sharp Arrowhead" /></td>
+            <td><img src="img/arrowhead_1.png" alt="Sharp Arrowhead" title="Sharp Arrowhead"></td>
             <td id="arrowhead_1-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="arrowhead_1-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="arrowhead_1-user" class="save"></td>
             <td id="arrowhead_1-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/arrowhead_0.png" alt="Firm Arrowhead" title="Firm Arrowhead" /></td>
+            <td><img src="img/arrowhead_0.png" alt="Firm Arrowhead" title="Firm Arrowhead"></td>
             <td id="arrowhead_0-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="arrowhead_0-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="arrowhead_0-user" class="save"></td>
             <td id="arrowhead_0-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/horn_2.png" alt="Black Crystal Horn" title="Black Crystal Horn" /></td>
+            <td><img src="img/horn_2.png" alt="Black Crystal Horn" title="Black Crystal Horn"></td>
             <td id="horn_2-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="horn_2-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="horn_2-user" class="save"></td>
             <td id="horn_2-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/horn_1.png" alt="Black Copper Horn" title="Black Copper Horn" /></td>
+            <td><img src="img/horn_1.png" alt="Black Copper Horn" title="Black Copper Horn"></td>
             <td id="horn_1-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="horn_1-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="horn_1-user" class="save"></td>
             <td id="horn_1-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/horn_0.png" alt="Heavy Horn" title="Heavy Horn" /></td>
+            <td><img src="img/horn_0.png" alt="Heavy Horn" title="Heavy Horn"></td>
             <td id="horn_0-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="horn_0-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="horn_0-user" class="save"></td>
             <td id="horn_0-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/ley_line_2.png" alt="Ley Line Sprouts" title="Ley Line Sprouts" /></td>
+            <td><img src="img/ley_line_2.png" alt="Ley Line Sprouts" title="Ley Line Sprouts"></td>
             <td id="ley_line_2-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="ley_line_2-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="ley_line_2-user" class="save"></td>
             <td id="ley_line_2-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/ley_line_1.png" alt="Dead Ley Line Leaves" title="Dead Ley Line Leaves" /></td>
+            <td><img src="img/ley_line_1.png" alt="Dead Ley Line Leaves" title="Dead Ley Line Leaves"></td>
             <td id="ley_line_1-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="ley_line_1-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="ley_line_1-user" class="save"></td>
             <td id="ley_line_1-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/ley_line_0.png" alt="Dead Ley Line Branches" title="Dead Ley Line Branches" /></td>
+            <td><img src="img/ley_line_0.png" alt="Dead Ley Line Branches" title="Dead Ley Line Branches"></td>
             <td id="ley_line_0-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="ley_line_0-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="ley_line_0-user" class="save"></td>
             <td id="ley_line_0-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/chaos_2.png" alt="Chaos Core" title="Chaos Core" /></td>
+            <td><img src="img/chaos_2.png" alt="Chaos Core" title="Chaos Core"></td>
             <td id="chaos_2-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="chaos_2-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="chaos_2-user" class="save"></td>
             <td id="chaos_2-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/chaos_1.png" alt="Chaos Circuit" title="Chaos Circuit" /></td>
+            <td><img src="img/chaos_1.png" alt="Chaos Circuit" title="Chaos Circuit"></td>
             <td id="chaos_1-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="chaos_1-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="chaos_1-user" class="save"></td>
             <td id="chaos_1-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/chaos_0.png" alt="Chaos Device" title="Chaos Device" /></td>
+            <td><img src="img/chaos_0.png" alt="Chaos Device" title="Chaos Device"></td>
             <td id="chaos_0-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="chaos_0-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="chaos_0-user" class="save"></td>
             <td id="chaos_0-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/mist_2.png" alt="Mist Grass Lamp" title="Mist Grass Lamp" /></td>
+            <td><img src="img/mist_2.png" alt="Mist Grass Lamp" title="Mist Grass Lamp"></td>
             <td id="mist_2-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="mist_2-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="mist_2-user" class="save"></td>
             <td id="mist_2-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/mist_1.png" alt="Mist Grass" title="Mist Grass" /></td>
+            <td><img src="img/mist_1.png" alt="Mist Grass" title="Mist Grass"></td>
             <td id="mist_1-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="mist_1-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="mist_1-user" class="save"></td>
             <td id="mist_1-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/mist_0.png" alt="Mist Flower Pollen" title="Mist Flower Pollen" /></td>
+            <td><img src="img/mist_0.png" alt="Mist Flower Pollen" title="Mist Flower Pollen"></td>
             <td id="mist_0-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="mist_0-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="mist_0-user" class="save"></td>
             <td id="mist_0-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/sacrificial_knife_2.png" alt="Inspector's Sacrificial Knife" title="Inspector's Sacrificial Knife" /></td>
+            <td><img src="img/sacrificial_knife_2.png" alt="Inspector's Sacrificial Knife" title="Inspector's Sacrificial Knife"></td>
             <td id="sacrificial_knife_2-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="sacrificial_knife_2-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="sacrificial_knife_2-user" class="save"></td>
             <td id="sacrificial_knife_2-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/sacrificial_knife_1.png" alt="Agent's Sacrificial Knife" title="Agent's Sacrificial Knife" /></td>
+            <td><img src="img/sacrificial_knife_1.png" alt="Agent's Sacrificial Knife" title="Agent's Sacrificial Knife"></td>
             <td id="sacrificial_knife_1-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="sacrificial_knife_1-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="sacrificial_knife_1-user" class="save"></td>
             <td id="sacrificial_knife_1-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/sacrificial_knife_0.png" alt="Hunter's Sacrificial Knife" title="Hunter's Sacrificial Knife" /></td>
+            <td><img src="img/sacrificial_knife_0.png" alt="Hunter's Sacrificial Knife" title="Hunter's Sacrificial Knife"></td>
             <td id="sacrificial_knife_0-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="sacrificial_knife_0-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="sacrificial_knife_0-user" class="save"></td>
             <td id="sacrificial_knife_0-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/f_insignia_2.png" alt="Lieutenant's Insignia" title="Lieutenant's Insignia" /></td>
+            <td><img src="img/f_insignia_2.png" alt="Lieutenant's Insignia" title="Lieutenant's Insignia"></td>
             <td id="f_insignia_2-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="f_insignia_2-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="f_insignia_2-user" class="save"></td>
             <td id="f_insignia_2-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/f_insignia_1.png" alt="Sergeant's Insignia" title="Sergeant's Insignia" /></td>
+            <td><img src="img/f_insignia_1.png" alt="Sergeant's Insignia" title="Sergeant's Insignia"></td>
             <td id="f_insignia_1-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="f_insignia_1-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="f_insignia_1-user" class="save"></td>
             <td id="f_insignia_1-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/f_insignia_0.png" alt="Recruit's Insignia" title="Recruit's Insignia" /></td>
+            <td><img src="img/f_insignia_0.png" alt="Recruit's Insignia" title="Recruit's Insignia"></td>
             <td id="f_insignia_0-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="f_insignia_0-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="f_insignia_0-user" class="save"></td>
             <td id="f_insignia_0-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/th_insignia_2.png" alt="Golden Raven Insignia" title="Golden Raven Insignia" /></td>
+            <td><img src="img/th_insignia_2.png" alt="Golden Raven Insignia" title="Golden Raven Insignia"></td>
             <td id="th_insignia_2-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="th_insignia_2-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="th_insignia_2-user" class="save"></td>
             <td id="th_insignia_2-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/th_insignia_1.png" alt="Silver Raven Insignia" title="Silver Raven Insignia" /></td>
+            <td><img src="img/th_insignia_1.png" alt="Silver Raven Insignia" title="Silver Raven Insignia"></td>
             <td id="th_insignia_1-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="th_insignia_1-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="th_insignia_1-user" class="save"></td>
             <td id="th_insignia_1-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/th_insignia_0.png" alt="Treasure Hoarder Insignia" title="Treasure Hoarder Insignia" /></td>
+            <td><img src="img/th_insignia_0.png" alt="Treasure Hoarder Insignia" title="Treasure Hoarder Insignia"></td>
             <td id="th_insignia_0-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="th_insignia_0-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="th_insignia_0-user" class="save"></td>
             <td id="th_insignia_0-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/dvalins_claw.png" alt="Dvalin's Claw" title="Dvalin's Claw" /></td>
+            <td><img src="img/dvalins_claw.png" alt="Dvalin's Claw" title="Dvalin's Claw"></td>
             <td id="dvalins_claw-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="dvalins_claw-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="dvalins_claw-user" class="save"></td>
             <td id="dvalins_claw-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/dvalins_plume.png" alt="Dvalin's Plume" title="Dvalin's Plume" /></td>
+            <td><img src="img/dvalins_plume.png" alt="Dvalin's Plume" title="Dvalin's Plume"></td>
             <td id="dvalins_plume-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="dvalins_plume-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="dvalins_plume-user" class="save"></td>
             <td id="dvalins_plume-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/dvalins_sigh.png" alt="Dvalin's Sigh" title="Dvalin's Sigh" /></td>
+            <td><img src="img/dvalins_sigh.png" alt="Dvalin's Sigh" title="Dvalin's Sigh"></td>
             <td id="dvalins_sigh-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="dvalins_sigh-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="dvalins_sigh-user" class="save"></td>
             <td id="dvalins_sigh-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/ring_of_boreas.png" alt="Ring of Boreas" title="Ring of Boreas" /></td>
+            <td><img src="img/ring_of_boreas.png" alt="Ring of Boreas" title="Ring of Boreas"></td>
             <td id="ring_of_boreas-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="ring_of_boreas-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="ring_of_boreas-user" class="save"></td>
             <td id="ring_of_boreas-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/spirit_locket_of_boreas.png" alt="Spirit Locket of Boreas" title="Spirit Locket of Boreas" /></td>
+            <td><img src="img/spirit_locket_of_boreas.png" alt="Spirit Locket of Boreas" title="Spirit Locket of Boreas"></td>
             <td id="spirit_locket_of_boreas-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="spirit_locket_of_boreas-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="spirit_locket_of_boreas-user" class="save"></td>
             <td id="spirit_locket_of_boreas-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/tail_of_boreas.png" alt="Tail of Boreas" title="Tail of Boreas" /></td>
+            <td><img src="img/tail_of_boreas.png" alt="Tail of Boreas" title="Tail of Boreas"></td>
             <td id="tail_of_boreas-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="tail_of_boreas-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="tail_of_boreas-user" class="save"></td>
             <td id="tail_of_boreas-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/basalt_pillar.png" alt="Basalt Pillar" title="Basalt Pillar" /></td>
+            <td><img src="img/basalt_pillar.png" alt="Basalt Pillar" title="Basalt Pillar"></td>
             <td id="basalt_pillar-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="basalt_pillar-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="basalt_pillar-user" class="save"></td>
             <td id="basalt_pillar-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/cleansing_heart.png" alt="Cleansing Heart" title="Cleansing Heart" /></td>
-            <td id="cleansing_heart-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="cleansing_heart-user" class="save" /></td>
-            <td id="cleansing_heart-need" class="good">0</td>
-          </tr>
-          <tr>
-            <td><img src="img/everflame_seed.png" alt="Everflame Seed" title="Everflame Seed" /></td>
-            <td id="everflame_seed-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="everflame_seed-user" class="save" /></td>
-            <td id="everflame_seed-need" class="good">0</td>
-          </tr>
-          <tr>
-            <td><img src="img/hoarfrost_core.png" alt="Hoarfrost Core" title="Hoarfrost Core" /></td>
-            <td id="hoarfrost_core-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="hoarfrost_core-user" class="save" /></td>
-            <td id="hoarfrost_core-need" class="good">0</td>
-          </tr>
-          <tr>
-            <td><img src="img/hurricane_seed.png" alt="Hurricane Seed" title="Hurricane Seed" /></td>
+            <td><img src="img/hurricane_seed.png" alt="Hurricane Seed" title="Hurricane Seed"></td>
             <td id="hurricane_seed-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="hurricane_seed-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="hurricane_seed-user" class="save"></td>
             <td id="hurricane_seed-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/lightning_prism.png" alt="Lightning Prism" title="Lightning Prism" /></td>
+            <td><img src="img/lightning_prism.png" alt="Lightning Prism" title="Lightning Prism"></td>
             <td id="lightning_prism-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="lightning_prism-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="lightning_prism-user" class="save"></td>
             <td id="lightning_prism-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/nectar_2.png" alt="Energy Nectar" title="Energy Nectar" /></td>
+            <td><img src="img/hoarfrost_core.png" alt="Hoarfrost Core" title="Hoarfrost Core"></td>
+            <td id="hoarfrost_core-total">0</td>
+            <td><input type="number" min="0" step="1" value="0" id="hoarfrost_core-user" class="save"></td>
+            <td id="hoarfrost_core-need" class="good">0</td>
+          </tr>
+          <tr>
+            <td><img src="img/everflame_seed.png" alt="Everflame Seed" title="Everflame Seed"></td>
+            <td id="everflame_seed-total">0</td>
+            <td><input type="number" min="0" step="1" value="0" id="everflame_seed-user" class="save"></td>
+            <td id="everflame_seed-need" class="good">0</td>
+          </tr>
+          <tr>
+            <td><img src="img/cleansing_heart.png" alt="Cleansing Heart" title="Cleansing Heart"></td>
+            <td id="cleansing_heart-total">0</td>
+            <td><input type="number" min="0" step="1" value="0" id="cleansing_heart-user" class="save"></td>
+            <td id="cleansing_heart-need" class="good">0</td>
+          </tr>
+          <tr>
+            <td><img src="img/nectar_2.png" alt="Energy Nectar" title="Energy Nectar"></td>
             <td id="nectar_2-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="nectar_2-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="nectar_2-user" class="save"></td>
             <td id="nectar_2-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/nectar_1.png" alt="Shimmering Nectar" title="Shimmering Nectar" /></td>
+            <td><img src="img/nectar_1.png" alt="Shimmering Nectar" title="Shimmering Nectar"></td>
             <td id="nectar_1-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="nectar_1-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="nectar_1-user" class="save"></td>
             <td id="nectar_1-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/nectar_0.png" alt="Whopperflower Nectar" title="Whopperflower Nectar" /></td>
+            <td><img src="img/nectar_0.png" alt="Whopperflower Nectar" title="Whopperflower Nectar"></td>
             <td id="nectar_0-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="nectar_0-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="nectar_0-user" class="save"></td>
             <td id="nectar_0-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/brilliant_diamond_3.png" alt="Brilliant Diamond Gemstone" title="Brilliant Diamond Gemstone" /></td>
+            <td><img src="img/brilliant_diamond_3.png" alt="Brilliant Diamond Gemstone" title="Brilliant Diamond Gemstone"></td>
             <td id="brilliant_diamond_3-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="brilliant_diamond_3-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="brilliant_diamond_3-user" class="save"></td>
             <td id="brilliant_diamond_3-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/brilliant_diamond_2.png" alt="Brilliant Diamond Chunk" title="Brilliant Diamond Chunk" /></td>
+            <td><img src="img/brilliant_diamond_2.png" alt="Brilliant Diamond Chunk" title="Brilliant Diamond Chunk"></td>
             <td id="brilliant_diamond_2-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="brilliant_diamond_2-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="brilliant_diamond_2-user" class="save"></td>
             <td id="brilliant_diamond_2-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/brilliant_diamond_1.png" alt="Brilliant Diamond Fragment" title="Brilliant Diamond Fragment" /></td>
+            <td><img src="img/brilliant_diamond_1.png" alt="Brilliant Diamond Fragment" title="Brilliant Diamond Fragment"></td>
             <td id="brilliant_diamond_1-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="brilliant_diamond_1-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="brilliant_diamond_1-user" class="save"></td>
             <td id="brilliant_diamond_1-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/brilliant_diamond_0.png" alt="Brilliant Diamond Sliver" title="Brilliant Diamond Sliver" /></td>
+            <td><img src="img/brilliant_diamond_0.png" alt="Brilliant Diamond Sliver" title="Brilliant Diamond Sliver"></td>
             <td id="brilliant_diamond_0-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="brilliant_diamond_0-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="brilliant_diamond_0-user" class="save"></td>
             <td id="brilliant_diamond_0-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/bone_shard_2.png" alt="Fossilized Bone Shard" title="Fossilized Bone Shard" /></td>
+            <td><img src="img/bone_shard_2.png" alt="Fossilized Bone Shard" title="Fossilized Bone Shard"></td>
             <td id="bone_shard_2-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="bone_shard_2-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="bone_shard_2-user" class="save"></td>
             <td id="bone_shard_2-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/bone_shard_1.png" alt="Sturdy Bone Shard" title="Sturdy Bone Shard" /></td>
+            <td><img src="img/bone_shard_1.png" alt="Sturdy Bone Shard" title="Sturdy Bone Shard"></td>
             <td id="bone_shard_1-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="bone_shard_1-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="bone_shard_1-user" class="save"></td>
             <td id="bone_shard_1-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/bone_shard_0.png" alt="Fragile Bone Shard" title="Fragile Bone Shard" /></td>
+            <td><img src="img/bone_shard_0.png" alt="Fragile Bone Shard" title="Fragile Bone Shard"></td>
             <td id="bone_shard_0-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="bone_shard_0-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="bone_shard_0-user" class="save"></td>
             <td id="bone_shard_0-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/agnidus_agate_3.png" alt="Agnidus Agate Gemstone" title="Agnidus Agate Gemstone" /></td>
+            <td><img src="img/agnidus_agate_3.png" alt="Agnidus Agate Gemstone" title="Agnidus Agate Gemstone"></td>
             <td id="agnidus_agate_3-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="agnidus_agate_3-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="agnidus_agate_3-user" class="save"></td>
             <td id="agnidus_agate_3-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/agnidus_agate_2.png" alt="Agnidus Agate Chunk" title="Agnidus Agate Chunk" /></td>
+            <td><img src="img/agnidus_agate_2.png" alt="Agnidus Agate Chunk" title="Agnidus Agate Chunk"></td>
             <td id="agnidus_agate_2-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="agnidus_agate_2-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="agnidus_agate_2-user" class="save"></td>
             <td id="agnidus_agate_2-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/agnidus_agate_1.png" alt="Agnidus Agate Fragment" title="Agnidus Agate Fragment" /></td>
+            <td><img src="img/agnidus_agate_1.png" alt="Agnidus Agate Fragment" title="Agnidus Agate Fragment"></td>
             <td id="agnidus_agate_1-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="agnidus_agate_1-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="agnidus_agate_1-user" class="save"></td>
             <td id="agnidus_agate_1-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/agnidus_agate_0.png" alt="Agnidus Agate Sliver" title="Agnidus Agate Sliver" /></td>
+            <td><img src="img/agnidus_agate_0.png" alt="Agnidus Agate Sliver" title="Agnidus Agate Sliver"></td>
             <td id="agnidus_agate_0-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="agnidus_agate_0-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="agnidus_agate_0-user" class="save"></td>
             <td id="agnidus_agate_0-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/varunada_lazurite_3.png" alt="Varunada Lazurite Gemstone" title="Varunada Lazurite Gemstone" /></td>
+            <td><img src="img/varunada_lazurite_3.png" alt="Varunada Lazurite Gemstone" title="Varunada Lazurite Gemstone"></td>
             <td id="varunada_lazurite_3-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="varunada_lazurite_3-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="varunada_lazurite_3-user" class="save"></td>
             <td id="varunada_lazurite_3-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/varunada_lazurite_2.png" alt="Varunada Lazurite Chunk" title="Varunada Lazurite Chunk" /></td>
+            <td><img src="img/varunada_lazurite_2.png" alt="Varunada Lazurite Chunk" title="Varunada Lazurite Chunk"></td>
             <td id="varunada_lazurite_2-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="varunada_lazurite_2-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="varunada_lazurite_2-user" class="save"></td>
             <td id="varunada_lazurite_2-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/varunada_lazurite_1.png" alt="Varunada Lazurite Fragment" title="Varunada Lazurite Fragment" /></td>
+            <td><img src="img/varunada_lazurite_1.png" alt="Varunada Lazurite Fragment" title="Varunada Lazurite Fragment"></td>
             <td id="varunada_lazurite_1-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="varunada_lazurite_1-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="varunada_lazurite_1-user" class="save"></td>
             <td id="varunada_lazurite_1-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/varunada_lazurite_0.png" alt="Varunada Lazurite Sliver" title="Varunada Lazurite Sliver" /></td>
+            <td><img src="img/varunada_lazurite_0.png" alt="Varunada Lazurite Sliver" title="Varunada Lazurite Sliver"></td>
             <td id="varunada_lazurite_0-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="varunada_lazurite_0-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="varunada_lazurite_0-user" class="save"></td>
             <td id="varunada_lazurite_0-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/vajrada_amethyst_3.png" alt="Vajrada Amethyst Gemstone" title="Vajrada Amethyst Gemstone" /></td>
+            <td><img src="img/vajrada_amethyst_3.png" alt="Vajrada Amethyst Gemstone" title="Vajrada Amethyst Gemstone"></td>
             <td id="vajrada_amethyst_3-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="vajrada_amethyst_3-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="vajrada_amethyst_3-user" class="save"></td>
             <td id="vajrada_amethyst_3-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/vajrada_amethyst_2.png" alt="Vajrada Amethyst Chunk" title="Vajrada Amethyst Chunk" /></td>
+            <td><img src="img/vajrada_amethyst_2.png" alt="Vajrada Amethyst Chunk" title="Vajrada Amethyst Chunk"></td>
             <td id="vajrada_amethyst_2-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="vajrada_amethyst_2-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="vajrada_amethyst_2-user" class="save"></td>
             <td id="vajrada_amethyst_2-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/vajrada_amethyst_1.png" alt="Vajrada Amethyst Fragment" title="Vajrada Amethyst Fragment" /></td>
+            <td><img src="img/vajrada_amethyst_1.png" alt="Vajrada Amethyst Fragment" title="Vajrada Amethyst Fragment"></td>
             <td id="vajrada_amethyst_1-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="vajrada_amethyst_1-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="vajrada_amethyst_1-user" class="save"></td>
             <td id="vajrada_amethyst_1-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/vajrada_amethyst_0.png" alt="Vajrada Amethyst Sliver" title="Vajrada Amethyst Sliver" /></td>
+            <td><img src="img/vajrada_amethyst_0.png" alt="Vajrada Amethyst Sliver" title="Vajrada Amethyst Sliver"></td>
             <td id="vajrada_amethyst_0-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="vajrada_amethyst_0-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="vajrada_amethyst_0-user" class="save"></td>
             <td id="vajrada_amethyst_0-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/vayuda_turqoise_3.png" alt="Vayuda Turquoise Gemstone" title="Vayuda Turquoise Gemstone" /></td>
+            <td><img src="img/vayuda_turqoise_3.png" alt="Vayuda Turquoise Gemstone" title="Vayuda Turquoise Gemstone"></td>
             <td id="vayuda_turqoise_3-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="vayuda_turqoise_3-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="vayuda_turqoise_3-user" class="save"></td>
             <td id="vayuda_turqoise_3-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/vayuda_turqoise_2.png" alt="Vayuda Turquoise Chunk" title="Vayuda Turquoise Chunk" /></td>
+            <td><img src="img/vayuda_turqoise_2.png" alt="Vayuda Turquoise Chunk" title="Vayuda Turquoise Chunk"></td>
             <td id="vayuda_turqoise_2-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="vayuda_turqoise_2-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="vayuda_turqoise_2-user" class="save"></td>
             <td id="vayuda_turqoise_2-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/vayuda_turqoise_1.png" alt="Vayuda Turquoise Fragment" title="Vayuda Turquoise Fragment" /></td>
+            <td><img src="img/vayuda_turqoise_1.png" alt="Vayuda Turquoise Fragment" title="Vayuda Turquoise Fragment"></td>
             <td id="vayuda_turqoise_1-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="vayuda_turqoise_1-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="vayuda_turqoise_1-user" class="save"></td>
             <td id="vayuda_turqoise_1-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/vayuda_turqoise_0.png" alt="Vayuda Turquoise Sliver" title="Vayuda Turquoise Sliver" /></td>
+            <td><img src="img/vayuda_turqoise_0.png" alt="Vayuda Turquoise Sliver" title="Vayuda Turquoise Sliver"></td>
             <td id="vayuda_turqoise_0-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="vayuda_turqoise_0-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="vayuda_turqoise_0-user" class="save"></td>
             <td id="vayuda_turqoise_0-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/shivada_jade_3.png" alt="Shivada Jade Gemstone" title="Shivada Jade Gemstone" /></td>
+            <td><img src="img/shivada_jade_3.png" alt="Shivada Jade Gemstone" title="Shivada Jade Gemstone"></td>
             <td id="shivada_jade_3-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="shivada_jade_3-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="shivada_jade_3-user" class="save"></td>
             <td id="shivada_jade_3-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/shivada_jade_2.png" alt="Shivada Jade Chunk" title="Shivada Jade Chunk" /></td>
+            <td><img src="img/shivada_jade_2.png" alt="Shivada Jade Chunk" title="Shivada Jade Chunk"></td>
             <td id="shivada_jade_2-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="shivada_jade_2-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="shivada_jade_2-user" class="save"></td>
             <td id="shivada_jade_2-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/shivada_jade_1.png" alt="Shivada Jade Fragment" title="Shivada Jade Fragment" /></td>
+            <td><img src="img/shivada_jade_1.png" alt="Shivada Jade Fragment" title="Shivada Jade Fragment"></td>
             <td id="shivada_jade_1-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="shivada_jade_1-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="shivada_jade_1-user" class="save"></td>
             <td id="shivada_jade_1-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/shivada_jade_0.png" alt="Shivada Jade Sliver" title="Shivada Jade Sliver" /></td>
+            <td><img src="img/shivada_jade_0.png" alt="Shivada Jade Sliver" title="Shivada Jade Sliver"></td>
             <td id="shivada_jade_0-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="shivada_jade_0-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="shivada_jade_0-user" class="save"></td>
             <td id="shivada_jade_0-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/prithiva_topaz_3.png" alt="Prithiva Topaz Gemstone" title="Prithiva Topaz Gemstone" /></td>
+            <td><img src="img/prithiva_topaz_3.png" alt="Prithiva Topaz Gemstone" title="Prithiva Topaz Gemstone"></td>
             <td id="prithiva_topaz_3-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="prithiva_topaz_3-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="prithiva_topaz_3-user" class="save"></td>
             <td id="prithiva_topaz_3-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/prithiva_topaz_2.png" alt="Prithiva Topaz Chunk" title="Prithiva Topaz Chunk" /></td>
+            <td><img src="img/prithiva_topaz_2.png" alt="Prithiva Topaz Chunk" title="Prithiva Topaz Chunk"></td>
             <td id="prithiva_topaz_2-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="prithiva_topaz_2-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="prithiva_topaz_2-user" class="save"></td>
             <td id="prithiva_topaz_2-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/prithiva_topaz_1.png" alt="Prithiva Topaz Fragment" title="Prithiva Topaz Fragment" /></td>
+            <td><img src="img/prithiva_topaz_1.png" alt="Prithiva Topaz Fragment" title="Prithiva Topaz Fragment"></td>
             <td id="prithiva_topaz_1-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="prithiva_topaz_1-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="prithiva_topaz_1-user" class="save"></td>
             <td id="prithiva_topaz_1-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/prithiva_topaz_0.png" alt="Prithiva Topaz Sliver" title="Prithiva Topaz Sliver" /></td>
+            <td><img src="img/prithiva_topaz_0.png" alt="Prithiva Topaz Sliver" title="Prithiva Topaz Sliver"></td>
             <td id="prithiva_topaz_0-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="prithiva_topaz_0-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="prithiva_topaz_0-user" class="save"></td>
             <td id="prithiva_topaz_0-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/freedom_2.png" alt='Philosophies of "Freedom"' title='Philosophies of "Freedom"' /></td>
+            <td><img src="img/freedom_2.png" alt="Philosophies of &quot;Freedom&quot;" title="Philosophies of &quot;Freedom&quot;"></td>
             <td id="freedom_2-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="freedom_2-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="freedom_2-user" class="save"></td>
             <td id="freedom_2-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/freedom_1.png" alt='Guide to "Freedom"' title='Guide to "Freedom"' /></td>
+            <td><img src="img/freedom_1.png" alt="Guide to &quot;Freedom&quot;" title="Guide to &quot;Freedom&quot;"></td>
             <td id="freedom_1-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="freedom_1-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="freedom_1-user" class="save"></td>
             <td id="freedom_1-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/freedom_0.png" alt='Teachings of "Freedom"' title='Teachings of "Freedom"' /></td>
+            <td><img src="img/freedom_0.png" alt="Teachings of &quot;Freedom&quot;" title="Teachings of &quot;Freedom&quot;"></td>
             <td id="freedom_0-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="freedom_0-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="freedom_0-user" class="save"></td>
             <td id="freedom_0-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/resistance_2.png" alt='Philosophies of "Resistance"' title='Philosophies of "Resistance"' /></td>
+            <td><img src="img/resistance_2.png" alt="Philosophies of &quot;Resistance&quot;" title="Philosophies of &quot;Resistance&quot;"></td>
             <td id="resistance_2-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="resistance_2-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="resistance_2-user" class="save"></td>
             <td id="resistance_2-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/resistance_1.png" alt='Guide to "Resistance"' title='Guide to "Resistance"' /></td>
+            <td><img src="img/resistance_1.png" alt="Guide to &quot;Resistance&quot;" title="Guide to &quot;Resistance&quot;"></td>
             <td id="resistance_1-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="resistance_1-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="resistance_1-user" class="save"></td>
             <td id="resistance_1-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/resistance_0.png" alt='Teachings of "Resistance"' title='Teachings of "Resistance"' /></td>
+            <td><img src="img/resistance_0.png" alt="Teachings of &quot;Resistance&quot;" title="Teachings of &quot;Resistance&quot;"></td>
             <td id="resistance_0-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="resistance_0-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="resistance_0-user" class="save"></td>
             <td id="resistance_0-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/ballad_2.png" alt='Philosophies of "Ballad"' title='Philosophies of "Ballad"' /></td>
+            <td><img src="img/ballad_2.png" alt="Philosophies of &quot;Ballad&quot;" title="Philosophies of &quot;Ballad&quot;"></td>
             <td id="ballad_2-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="ballad_2-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="ballad_2-user" class="save"></td>
             <td id="ballad_2-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/ballad_1.png" alt='Guide to "Ballad"' title='Guide to "Ballad"' /></td>
+            <td><img src="img/ballad_1.png" alt="Guide to &quot;Ballad&quot;" title="Guide to &quot;Ballad&quot;"></td>
             <td id="ballad_1-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="ballad_1-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="ballad_1-user" class="save"></td>
             <td id="ballad_1-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/ballad_0.png" alt='Teachings of "Ballad"' title='Teachings of "Ballad"' /></td>
+            <td><img src="img/ballad_0.png" alt="Teachings of &quot;Ballad&quot;" title="Teachings of &quot;Ballad&quot;"></td>
             <td id="ballad_0-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="ballad_0-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="ballad_0-user" class="save"></td>
             <td id="ballad_0-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/prosperity_2.png" alt='Philosophies of "Prosperity"' title='Philosophies of "Prosperity"' /></td>
+            <td><img src="img/prosperity_2.png" alt="Philosophies of &quot;Prosperity&quot;" title="Philosophies of &quot;Prosperity&quot;"></td>
             <td id="prosperity_2-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="prosperity_2-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="prosperity_2-user" class="save"></td>
             <td id="prosperity_2-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/prosperity_1.png" alt='Guide to "Prosperity"' title='Guide to "Prosperity"' /></td>
+            <td><img src="img/prosperity_1.png" alt="Guide to &quot;Prosperity&quot;" title="Guide to &quot;Prosperity&quot;"></td>
             <td id="prosperity_1-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="prosperity_1-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="prosperity_1-user" class="save"></td>
             <td id="prosperity_1-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/prosperity_0.png" alt='Teachings of "Prosperity"' title='Teachings of "Prosperity"' /></td>
+            <td><img src="img/prosperity_0.png" alt="Teachings of &quot;Prosperity&quot;" title="Teachings of &quot;Prosperity&quot;"></td>
             <td id="prosperity_0-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="prosperity_0-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="prosperity_0-user" class="save"></td>
             <td id="prosperity_0-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/diligence_2.png" alt='Philosophies of "Diligence"' title='Philosophies of "Diligence"' /></td>
+            <td><img src="img/diligence_2.png" alt="Philosophies of &quot;Diligence&quot;" title="Philosophies of &quot;Diligence&quot;"></td>
             <td id="diligence_2-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="diligence_2-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="diligence_2-user" class="save"></td>
             <td id="diligence_2-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/diligence_1.png" alt='Guide to "Diligence"' title='Guide to "Diligence"' /></td>
+            <td><img src="img/diligence_1.png" alt="Guide to &quot;Diligence&quot;" title="Guide to &quot;Diligence&quot;"></td>
             <td id="diligence_1-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="diligence_1-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="diligence_1-user" class="save"></td>
             <td id="diligence_1-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/diligence_0.png" alt='Teachings of "Diligence"' title='Teachings of "Diligence"' /></td>
+            <td><img src="img/diligence_0.png" alt="Teachings of &quot;Diligence&quot;" title="Teachings of &quot;Diligence&quot;"></td>
             <td id="diligence_0-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="diligence_0-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="diligence_0-user" class="save"></td>
             <td id="diligence_0-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/gold_2.png" alt='Philosophies of "Gold"' title='Philosophies of "Gold"' /></td>
+            <td><img src="img/gold_2.png" alt="Philosophies of &quot;Gold&quot;" title="Philosophies of &quot;Gold&quot;"></td>
             <td id="gold_2-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="gold_2-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="gold_2-user" class="save"></td>
             <td id="gold_2-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/gold_1.png" alt='Guide to "Gold"' title='Guide to "Gold"' /></td>
+            <td><img src="img/gold_1.png" alt="Guide to &quot;Gold&quot;" title="Guide to &quot;Gold&quot;"></td>
             <td id="gold_1-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="gold_1-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="gold_1-user" class="save"></td>
             <td id="gold_1-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/gold_0.png" alt='Teachings of "Gold"' title='Teachings of "Gold"' /></td>
+            <td><img src="img/gold_0.png" alt="Teachings of &quot;Gold&quot;" title="Teachings of &quot;Gold&quot;"></td>
             <td id="gold_0-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="gold_0-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="gold_0-user" class="save"></td>
             <td id="gold_0-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/decarabian_3.png" alt="Scattered Piece of Decarabian's Dream" title="Scattered Piece of Decarabian's Dream" /></td>
+            <td><img src="img/decarabian_3.png" alt="Scattered Piece of Decarabian's Dream" title="Scattered Piece of Decarabian's Dream"></td>
             <td id="decarabian_3-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="decarabian_3-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="decarabian_3-user" class="save"></td>
             <td id="decarabian_3-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/decarabian_2.png" alt="Fragment of Decarabian's Epic" title="Fragment of Decarabian's Epic" /></td>
+            <td><img src="img/decarabian_2.png" alt="Fragment of Decarabian's Epic" title="Fragment of Decarabian's Epic"></td>
             <td id="decarabian_2-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="decarabian_2-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="decarabian_2-user" class="save"></td>
             <td id="decarabian_2-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/decarabian_1.png" alt="Debris of Decarabian's City" title="Debris of Decarabian's City" /></td>
+            <td><img src="img/decarabian_1.png" alt="Debris of Decarabian's City" title="Debris of Decarabian's City"></td>
             <td id="decarabian_1-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="decarabian_1-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="decarabian_1-user" class="save"></td>
             <td id="decarabian_1-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/decarabian_0.png" alt="Tile of Decarabian's Tower" title="Tile of Decarabian's Tower" /></td>
+            <td><img src="img/decarabian_0.png" alt="Tile of Decarabian's Tower" title="Tile of Decarabian's Tower"></td>
             <td id="decarabian_0-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="decarabian_0-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="decarabian_0-user" class="save"></td>
             <td id="decarabian_0-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/boreal_wolf_3.png" alt="Boreal Wolf's Nostalgia" title="Boreal Wolf's Nostalgia" /></td>
+            <td><img src="img/boreal_wolf_3.png" alt="Boreal Wolf's Nostalgia" title="Boreal Wolf's Nostalgia"></td>
             <td id="boreal_wolf_3-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="boreal_wolf_3-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="boreal_wolf_3-user" class="save"></td>
             <td id="boreal_wolf_3-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/boreal_wolf_2.png" alt="Boreal Wolf's Broken Fang" title="Boreal Wolf's Broken Fang" /></td>
+            <td><img src="img/boreal_wolf_2.png" alt="Boreal Wolf's Broken Fang" title="Boreal Wolf's Broken Fang"></td>
             <td id="boreal_wolf_2-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="boreal_wolf_2-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="boreal_wolf_2-user" class="save"></td>
             <td id="boreal_wolf_2-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/boreal_wolf_1.png" alt="Boreal Wolf's Cracked Tooth" title="Boreal Wolf's Cracked Tooth" /></td>
+            <td><img src="img/boreal_wolf_1.png" alt="Boreal Wolf's Cracked Tooth" title="Boreal Wolf's Cracked Tooth"></td>
             <td id="boreal_wolf_1-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="boreal_wolf_1-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="boreal_wolf_1-user" class="save"></td>
             <td id="boreal_wolf_1-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/boreal_wolf_0.png" alt="Boreal Wolf's Milk Tooth" title="Boreal Wolf's Milk Tooth" /></td>
+            <td><img src="img/boreal_wolf_0.png" alt="Boreal Wolf's Milk Tooth" title="Boreal Wolf's Milk Tooth"></td>
             <td id="boreal_wolf_0-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="boreal_wolf_0-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="boreal_wolf_0-user" class="save"></td>
             <td id="boreal_wolf_0-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/dandelion_gladiator_3.png" alt="Dream of the Dandelion Gladiator" title="Dream of the Dandelion Gladiator" /></td>
+            <td><img src="img/dandelion_gladiator_3.png" alt="Dream of the Dandelion Gladiator" title="Dream of the Dandelion Gladiator"></td>
             <td id="dandelion_gladiator_3-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="dandelion_gladiator_3-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="dandelion_gladiator_3-user" class="save"></td>
             <td id="dandelion_gladiator_3-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/dandelion_gladiator_2.png" alt="Shackles of the Dandelion Gladiator" title="Shackles of the Dandelion Gladiator" /></td>
+            <td><img src="img/dandelion_gladiator_2.png" alt="Shackles of the Dandelion Gladiator" title="Shackles of the Dandelion Gladiator"></td>
             <td id="dandelion_gladiator_2-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="dandelion_gladiator_2-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="dandelion_gladiator_2-user" class="save"></td>
             <td id="dandelion_gladiator_2-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/dandelion_gladiator_1.png" alt="Chains of the Dandelion Gladiator" title="Chains of the Dandelion Gladiator" /></td>
+            <td><img src="img/dandelion_gladiator_1.png" alt="Chains of the Dandelion Gladiator" title="Chains of the Dandelion Gladiator"></td>
             <td id="dandelion_gladiator_1-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="dandelion_gladiator_1-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="dandelion_gladiator_1-user" class="save"></td>
             <td id="dandelion_gladiator_1-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/dandelion_gladiator_0.png" alt="Fetters of the Dandelion Gladiator" title="Fetters of the Dandelion Gladiator" /></td>
+            <td><img src="img/dandelion_gladiator_0.png" alt="Fetters of the Dandelion Gladiator" title="Fetters of the Dandelion Gladiator"></td>
             <td id="dandelion_gladiator_0-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="dandelion_gladiator_0-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="dandelion_gladiator_0-user" class="save"></td>
             <td id="dandelion_gladiator_0-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/guyun_3.png" alt="Divine Body from Guyun" title="Divine Body from Guyun" /></td>
+            <td><img src="img/guyun_3.png" alt="Divine Body from Guyun" title="Divine Body from Guyun"></td>
             <td id="guyun_3-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="guyun_3-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="guyun_3-user" class="save"></td>
             <td id="guyun_3-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/guyun_2.png" alt="Relic from Guyun" title="Relic from Guyun" /></td>
+            <td><img src="img/guyun_2.png" alt="Relic from Guyun" title="Relic from Guyun"></td>
             <td id="guyun_2-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="guyun_2-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="guyun_2-user" class="save"></td>
             <td id="guyun_2-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/guyun_1.png" alt="Lustrous Stone from Guyun" title="Lustrous Stone from Guyun" /></td>
+            <td><img src="img/guyun_1.png" alt="Lustrous Stone from Guyun" title="Lustrous Stone from Guyun"></td>
             <td id="guyun_1-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="guyun_1-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="guyun_1-user" class="save"></td>
             <td id="guyun_1-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/guyun_0.png" alt="Luminous Sands from Guyun" title="Luminous Sands from Guyun" /></td>
+            <td><img src="img/guyun_0.png" alt="Luminous Sands from Guyun" title="Luminous Sands from Guyun"></td>
             <td id="guyun_0-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="guyun_0-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="guyun_0-user" class="save"></td>
             <td id="guyun_0-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/mist_veiled_elixer_3.png" alt="Mist Veiled Primo Elixir" title="Mist Veiled Primo Elixir" /></td>
+            <td><img src="img/mist_veiled_elixer_3.png" alt="Mist Veiled Primo Elixir" title="Mist Veiled Primo Elixir"></td>
             <td id="mist_veiled_elixer_3-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="mist_veiled_elixer_3-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="mist_veiled_elixer_3-user" class="save"></td>
             <td id="mist_veiled_elixer_3-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/mist_veiled_elixer_2.png" alt="Mist Veiled Gold Elixir" title="Mist Veiled Gold Elixir" /></td>
+            <td><img src="img/mist_veiled_elixer_2.png" alt="Mist Veiled Gold Elixir" title="Mist Veiled Gold Elixir"></td>
             <td id="mist_veiled_elixer_2-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="mist_veiled_elixer_2-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="mist_veiled_elixer_2-user" class="save"></td>
             <td id="mist_veiled_elixer_2-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/mist_veiled_elixer_1.png" alt="Mist Veiled Mercury Elixir" title="Mist Veiled Mercury Elixir" /></td>
+            <td><img src="img/mist_veiled_elixer_1.png" alt="Mist Veiled Mercury Elixir" title="Mist Veiled Mercury Elixir"></td>
             <td id="mist_veiled_elixer_1-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="mist_veiled_elixer_1-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="mist_veiled_elixer_1-user" class="save"></td>
             <td id="mist_veiled_elixer_1-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/mist_veiled_elixer_0.png" alt="Mist Veiled Lead Elixir" title="Mist Veiled Lead Elixir" /></td>
+            <td><img src="img/mist_veiled_elixer_0.png" alt="Mist Veiled Lead Elixir" title="Mist Veiled Lead Elixir"></td>
             <td id="mist_veiled_elixer_0-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="mist_veiled_elixer_0-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="mist_veiled_elixer_0-user" class="save"></td>
             <td id="mist_veiled_elixer_0-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/aerosiderite_3.png" alt="Chunk of Aerosiderite" title="Chunk of Aerosiderite" /></td>
+            <td><img src="img/aerosiderite_3.png" alt="Chunk of Aerosiderite" title="Chunk of Aerosiderite"></td>
             <td id="aerosiderite_3-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="aerosiderite_3-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="aerosiderite_3-user" class="save"></td>
             <td id="aerosiderite_3-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/aerosiderite_2.png" alt="Bit of Aerosiderite" title="Bit of Aerosiderite" /></td>
+            <td><img src="img/aerosiderite_2.png" alt="Bit of Aerosiderite" title="Bit of Aerosiderite"></td>
             <td id="aerosiderite_2-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="aerosiderite_2-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="aerosiderite_2-user" class="save"></td>
             <td id="aerosiderite_2-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/aerosiderite_1.png" alt="Piece of Aerosiderite" title="Piece of Aerosiderite" /></td>
+            <td><img src="img/aerosiderite_1.png" alt="Piece of Aerosiderite" title="Piece of Aerosiderite"></td>
             <td id="aerosiderite_1-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="aerosiderite_1-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="aerosiderite_1-user" class="save"></td>
             <td id="aerosiderite_1-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/aerosiderite_0.png" alt="Grain of Aerosiderite" title="Grain of Aerosiderite" /></td>
+            <td><img src="img/aerosiderite_0.png" alt="Grain of Aerosiderite" title="Grain of Aerosiderite"></td>
             <td id="aerosiderite_0-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="aerosiderite_0-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="aerosiderite_0-user" class="save"></td>
             <td id="aerosiderite_0-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/calla_lily.png" alt="Calla Lily" title="Calla Lily" /></td>
+            <td><img src="img/calla_lily.png" alt="Calla Lily" title="Calla Lily"></td>
             <td id="calla_lily-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="calla_lily-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="calla_lily-user" class="save"></td>
             <td id="calla_lily-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/wolfhook.png" alt="Wolfhook" title="Wolfhook" /></td>
+            <td><img src="img/wolfhook.png" alt="Wolfhook" title="Wolfhook"></td>
             <td id="wolfhook-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="wolfhook-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="wolfhook-user" class="save"></td>
             <td id="wolfhook-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/valberry.png" alt="Valberry" title="Valberry" /></td>
+            <td><img src="img/valberry.png" alt="Valberry" title="Valberry"></td>
             <td id="valberry-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="valberry-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="valberry-user" class="save"></td>
             <td id="valberry-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/cecilia.png" alt="Cecilia" title="Cecilia" /></td>
+            <td><img src="img/cecilia.png" alt="Cecilia" title="Cecilia"></td>
             <td id="cecilia-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="cecilia-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="cecilia-user" class="save"></td>
             <td id="cecilia-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/windwheel_aster.png" alt="Windwheel Aster" title="Windwheel Aster" /></td>
+            <td><img src="img/windwheel_aster.png" alt="Windwheel Aster" title="Windwheel Aster"></td>
             <td id="windwheel_aster-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="windwheel_aster-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="windwheel_aster-user" class="save"></td>
             <td id="windwheel_aster-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/philanemo_mushroom.png" alt="Philanemo Mushroom" title="Philanemo Mushroom" /></td>
+            <td><img src="img/philanemo_mushroom.png" alt="Philanemo Mushroom" title="Philanemo Mushroom"></td>
             <td id="philanemo_mushroom-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="philanemo_mushroom-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="philanemo_mushroom-user" class="save"></td>
             <td id="philanemo_mushroom-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/jueyun_chili.png" alt="Jueyun Chili" title="Jueyun Chili" /></td>
+            <td><img src="img/jueyun_chili.png" alt="Jueyun Chili" title="Jueyun Chili"></td>
             <td id="jueyun_chili-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="jueyun_chili-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="jueyun_chili-user" class="save"></td>
             <td id="jueyun_chili-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/noctilucous_jade.png" alt="Noctilucous Jade" title="Noctilucous Jade" /></td>
+            <td><img src="img/noctilucous_jade.png" alt="Noctilucous Jade" title="Noctilucous Jade"></td>
             <td id="noctilucous_jade-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="noctilucous_jade-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="noctilucous_jade-user" class="save"></td>
             <td id="noctilucous_jade-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/silk_flower.png" alt="Silk Flower" title="Silk Flower" /></td>
+            <td><img src="img/silk_flower.png" alt="Silk Flower" title="Silk Flower"></td>
             <td id="silk_flower-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="silk_flower-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="silk_flower-user" class="save"></td>
             <td id="silk_flower-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/glaze_lilly.png" alt="Glaze Lily" title="Glaze Lily" /></td>
+            <td><img src="img/glaze_lilly.png" alt="Glaze Lily" title="Glaze Lily"></td>
             <td id="glaze_lilly-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="glaze_lilly-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="glaze_lilly-user" class="save"></td>
             <td id="glaze_lilly-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/violetgrass.png" alt="Violetgrass" title="Violetgrass" /></td>
+            <td><img src="img/violetgrass.png" alt="Violetgrass" title="Violetgrass"></td>
             <td id="violetgrass-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="violetgrass-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="violetgrass-user" class="save"></td>
             <td id="violetgrass-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/small_lamp_grass.png" alt="Small Lamp Grass" title="Small Lamp Grass" /></td>
+            <td><img src="img/small_lamp_grass.png" alt="Small Lamp Grass" title="Small Lamp Grass"></td>
             <td id="small_lamp_grass-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="small_lamp_grass-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="small_lamp_grass-user" class="save"></td>
             <td id="small_lamp_grass-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/dandelion_seed.png" alt="Dandelion Seed" title="Dandelion Seed" /></td>
+            <td><img src="img/dandelion_seed.png" alt="Dandelion Seed" title="Dandelion Seed"></td>
             <td id="dandelion_seed-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="dandelion_seed-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="dandelion_seed-user" class="save"></td>
             <td id="dandelion_seed-need" class="good">0</td>
           </tr>
           <tr>
-            <td><img src="img/cor_lapis.png" alt="Cor Lapis" title="Cor Lapis" /></td>
+            <td><img src="img/cor_lapis.png" alt="Cor Lapis" title="Cor Lapis"></td>
             <td id="cor_lapis-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="cor_lapis-user" class="save" /></td>
+            <td><input type="number" min="0" step="1" value="0" id="cor_lapis-user" class="save"></td>
             <td id="cor_lapis-need" class="good">0</td>
           </tr>
         </table>
@@ -4144,17 +4183,10 @@
       <p>Additionally I could not find data on the xp/mora costs for levelling 3* weapons.</p>
       <p>Data is primarily sourced from in game and, if needed, verified with <a href="https://genshin-impact.fandom.com/wiki/Genshin_Impact_Wiki">The fandom wiki</a></p>
       <h3>Notice of Non-Affiliation</h3>
-      <p>
-        This site is not affiliated, associated, authorized, endorsed by, or in any way officially connected with any other company, agency or government agency. The information on this website is provided “as is” without any
-        representations or warranties, express or implied.
-      </p>
+      <p>This site is not affiliated, associated, authorized, endorsed by, or in any way officially connected with any other company, agency or government agency.  The information on this website is provided “as is” without any representations or warranties, express or implied.</p>
       <p>All product and company names are trademarks™ or registered® trademarks of their respective holders. Use of them does not imply any affiliation with or endorsement by them.</p>
-      <br />
-      <span id="reset"><button id="reset_all">Reset All Data</button><button id="reset_character">Reset Character</button><button id="reset_inventory">Reset Inventory</button></span><br />
-      (warning not reversible)
-      <div id="patreon">
-        <a href="https://www.patreon.com/xanthics"><img alt="Become a Patron!" src="img/become_a_patron_button@2x.png" id="patreon_image" /></a>
-      </div>
+      <br><span id="reset"><button id="reset_all">Reset All Data</button><button id="reset_character">Reset Character</button><button id="reset_inventory">Reset Inventory</button></span><br>(warning not reversible)
+      <div id="patreon"><a href="https://www.patreon.com/xanthics"><img alt="Become a Patron!" src="img/become_a_patron_button@2x.png" id="patreon_image"></a></div>
     </section>
     <script type="text/python" src="main.py"></script>
   </body>
