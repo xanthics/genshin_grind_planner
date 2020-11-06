@@ -166,7 +166,7 @@ tr.checked {
     --pyro-color: rgb(102,68,44);
     --hydro-color: rgb(4,91,102);
     --electro-color: rgb(89,75,101);
-    --cryo-color: rgb(65,100,100);
+    --cryo-color: rgb(90,110,115);
     --anemo-color: rgb(60,102,75);
     --geo-color: rgb(98,86,39);
 }
@@ -200,11 +200,13 @@ input[type=number] {
 }
 
 .bad {
-    background-color: rgb(35, 5, 5);
+	color: rgb(250, 250, 250);
+    background-color: rgb(50, 0, 0);
 }
 
 .good {
-    background-color: rgb(5, 35, 5);
+	color: rgb(250, 250, 250);
+    background-color: rgb(0, 50, 0);
 }
 
 .left_border {
