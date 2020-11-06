@@ -424,9 +424,9 @@ def showartis(ev):
 
 doc["button_character"] .bind("click", show_characters)
 doc["button_inventory"].bind("click", show_inventory)
-doc["reset"].bind("click", reset_data)
-doc["reset"].bind("click", reset_character)
-doc["reset"].bind("click", reset_inventory)
+doc["reset_all"].bind("click", reset_data)
+doc["reset_character"].bind("click", reset_character)
+doc["reset_inventory"].bind("click", reset_inventory)
 
 init_page()
 del doc['loading']
