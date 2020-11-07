@@ -216,3 +216,12 @@ input[type=number] {
 .left_dotted {
     border-left: 1px dashed rgba(0,0,0,.8);
 }
+
+/* link legibility tweak */
+a:link {
+    color: rgb(98, 110, 250);
+}
+
+a:visited {
+    color: rgb(137, 117, 162);
+}
