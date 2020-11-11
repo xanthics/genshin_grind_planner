@@ -115,6 +115,10 @@ farming_data = {
 		'when': ['any'],
 		'where': ['special_mondstadt']
 	},
+	'starconch': {
+		'when': ['any'],
+		'where': ['special_liyue']
+	},
 	'valberry': {
 		'when': ['any'],
 		'where': ['special_mondstadt']

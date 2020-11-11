@@ -19,7 +19,7 @@
         <li>Add charxp, wepxp, mora to grind guide</li>
         <li>Add styling for checkboxes.</li>
         <li>Artifact Menu set bonus hints.</li>
-        <li>Support for autoconverting up, if needed.</li>
+        <li>Support for autoconverting up, if needed.  Or color code for "can convert to it"</li>
       </ul>
       <div id="loading">
         This page requires javascript in order to work correctly.
@@ -1001,6 +1001,162 @@
               <td><button class="arti_list text_button" data-id="arti-diluc">Add</button></td>
               <td>
                 <div id="arti-diluc" class="arti_span"></div>
+              </td>
+            </tr>
+            <tr data-id="check-diona" class="unchecked" data-color="cryo">
+              <td><input id="check-diona" type="checkbox" data-id="check-diona" class="char_select save"></td>
+              <td><img src="img/diona.png" alt="Diona" title="Diona"></td>
+              <td>
+                <select id="level_c-diona" class="diona save">
+                  <option value="0">1</option>
+                  <option value="1">20</option>
+                  <option value="2">40</option>
+                  <option value="3">50</option>
+                  <option value="4">60</option>
+                  <option value="5">70</option>
+                  <option value="6">80</option>
+                  <option value="7">90</option>
+                </select>
+              </td>
+              <td>
+                <select id="level_t-diona" class="diona save">
+                  <option value="0">1</option>
+                  <option value="1">20</option>
+                  <option value="2">40</option>
+                  <option value="3">50</option>
+                  <option value="4">60</option>
+                  <option value="5">70</option>
+                  <option value="6">80</option>
+                  <option value="7">90</option>
+                </select>
+              </td>
+              <td>
+                <select id="talent_1_c-diona" class="diona save">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                </select>
+              </td>
+              <td>
+                <select id="talent_1_t-diona" class="diona save">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                </select>
+              </td>
+              <td>
+                <select id="talent_2_c-diona" class="diona save">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                </select>
+              </td>
+              <td>
+                <select id="talent_2_t-diona" class="diona save">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                </select>
+              </td>
+              <td>
+                <select id="talent_3_c-diona" class="diona save">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                </select>
+              </td>
+              <td>
+                <select id="talent_3_t-diona" class="diona save">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                </select>
+              </td>
+              <td>
+                <select id="weapon-diona" data-id="select-diona" class="weapon diona save">
+                  <option>--</option>
+                  <option value="alley_hunter">Alley Hunter</option>
+                  <option value="amos_bow">Amos' Bow</option>
+                  <option value="blackcliff_warbow">Blackcliff Warbow</option>
+                  <option value="compound_bow">Compound Bow</option>
+                  <option value="favonius_warbow">Favonius Warbow</option>
+                  <option value="messenger">Messenger</option>
+                  <option value="prototype_crescent">Prototype Crescent</option>
+                  <option value="raven_bow">Raven Bow</option>
+                  <option value="recurve_bow">Recurve Bow</option>
+                  <option value="royal_bow">Royal Bow</option>
+                  <option value="rust">Rust</option>
+                  <option value="sacrificial_bow">Sacrificial Bow</option>
+                  <option value="sharpshooters_oath">Sharpshooter's Oath</option>
+                  <option value="skyward_harp">Skyward Harp</option>
+                  <option value="slingshot">Slingshot</option>
+                  <option value="the_stringless">The Stringless</option>
+                  <option value="the_viridescent_hunt">The Viridescent Hunt</option>
+                </select>
+              </td>
+              <td>
+                <select id="weapon_c-diona" class="diona save">
+                  <option value="0">1</option>
+                  <option value="1">20</option>
+                  <option value="2">40</option>
+                  <option value="3">50</option>
+                  <option value="4">60</option>
+                  <option value="5">70</option>
+                  <option value="6">80</option>
+                  <option value="7">90</option>
+                </select>
+              </td>
+              <td>
+                <select id="weapon_t-diona" class="diona save">
+                  <option value="0">1</option>
+                  <option value="1">20</option>
+                  <option value="2">40</option>
+                  <option value="3">50</option>
+                  <option value="4">60</option>
+                  <option value="5">70</option>
+                  <option value="6">80</option>
+                  <option value="7">90</option>
+                </select>
+              </td>
+              <td><button class="arti_list text_button" data-id="arti-diona">Add</button></td>
+              <td>
+                <div id="arti-diona" class="arti_span"></div>
               </td>
             </tr>
             <tr data-id="check-fischl" class="unchecked" data-color="electro">
@@ -2864,6 +3020,162 @@
                 <div id="arti-sucrose" class="arti_span"></div>
               </td>
             </tr>
+            <tr data-id="check-tartaglia" class="unchecked" data-color="hydro">
+              <td><input id="check-tartaglia" type="checkbox" data-id="check-tartaglia" class="char_select save"></td>
+              <td><img src="img/tartaglia.png" alt="Tartaglia" title="Tartaglia"></td>
+              <td>
+                <select id="level_c-tartaglia" class="tartaglia save">
+                  <option value="0">1</option>
+                  <option value="1">20</option>
+                  <option value="2">40</option>
+                  <option value="3">50</option>
+                  <option value="4">60</option>
+                  <option value="5">70</option>
+                  <option value="6">80</option>
+                  <option value="7">90</option>
+                </select>
+              </td>
+              <td>
+                <select id="level_t-tartaglia" class="tartaglia save">
+                  <option value="0">1</option>
+                  <option value="1">20</option>
+                  <option value="2">40</option>
+                  <option value="3">50</option>
+                  <option value="4">60</option>
+                  <option value="5">70</option>
+                  <option value="6">80</option>
+                  <option value="7">90</option>
+                </select>
+              </td>
+              <td>
+                <select id="talent_1_c-tartaglia" class="tartaglia save">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                </select>
+              </td>
+              <td>
+                <select id="talent_1_t-tartaglia" class="tartaglia save">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                </select>
+              </td>
+              <td>
+                <select id="talent_2_c-tartaglia" class="tartaglia save">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                </select>
+              </td>
+              <td>
+                <select id="talent_2_t-tartaglia" class="tartaglia save">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                </select>
+              </td>
+              <td>
+                <select id="talent_3_c-tartaglia" class="tartaglia save">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                </select>
+              </td>
+              <td>
+                <select id="talent_3_t-tartaglia" class="tartaglia save">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                </select>
+              </td>
+              <td>
+                <select id="weapon-tartaglia" data-id="select-tartaglia" class="weapon tartaglia save">
+                  <option>--</option>
+                  <option value="alley_hunter">Alley Hunter</option>
+                  <option value="amos_bow">Amos' Bow</option>
+                  <option value="blackcliff_warbow">Blackcliff Warbow</option>
+                  <option value="compound_bow">Compound Bow</option>
+                  <option value="favonius_warbow">Favonius Warbow</option>
+                  <option value="messenger">Messenger</option>
+                  <option value="prototype_crescent">Prototype Crescent</option>
+                  <option value="raven_bow">Raven Bow</option>
+                  <option value="recurve_bow">Recurve Bow</option>
+                  <option value="royal_bow">Royal Bow</option>
+                  <option value="rust">Rust</option>
+                  <option value="sacrificial_bow">Sacrificial Bow</option>
+                  <option value="sharpshooters_oath">Sharpshooter's Oath</option>
+                  <option value="skyward_harp">Skyward Harp</option>
+                  <option value="slingshot">Slingshot</option>
+                  <option value="the_stringless">The Stringless</option>
+                  <option value="the_viridescent_hunt">The Viridescent Hunt</option>
+                </select>
+              </td>
+              <td>
+                <select id="weapon_c-tartaglia" class="tartaglia save">
+                  <option value="0">1</option>
+                  <option value="1">20</option>
+                  <option value="2">40</option>
+                  <option value="3">50</option>
+                  <option value="4">60</option>
+                  <option value="5">70</option>
+                  <option value="6">80</option>
+                  <option value="7">90</option>
+                </select>
+              </td>
+              <td>
+                <select id="weapon_t-tartaglia" class="tartaglia save">
+                  <option value="0">1</option>
+                  <option value="1">20</option>
+                  <option value="2">40</option>
+                  <option value="3">50</option>
+                  <option value="4">60</option>
+                  <option value="5">70</option>
+                  <option value="6">80</option>
+                  <option value="7">90</option>
+                </select>
+              </td>
+              <td><button class="arti_list text_button" data-id="arti-tartaglia">Add</button></td>
+              <td>
+                <div id="arti-tartaglia" class="arti_span"></div>
+              </td>
+            </tr>
             <tr data-id="check-venti" class="unchecked" data-color="anemo">
               <td><input id="check-venti" type="checkbox" data-id="check-venti" class="char_select save"></td>
               <td><img src="img/venti.png" alt="Venti" title="Venti"></td>
@@ -4140,6 +4452,12 @@
             <td id="glaze_lilly-total">0</td>
             <td><input type="number" min="0" step="1" value="0" id="glaze_lilly-user" class="save"></td>
             <td id="glaze_lilly-need" class="good">0</td>
+          </tr>
+          <tr>
+            <td><img src="img/starconch.png" alt="Starconch" title="Starconch"></td>
+            <td id="starconch-total">0</td>
+            <td><input type="number" min="0" step="1" value="0" id="starconch-user" class="save"></td>
+            <td id="starconch-need" class="good">0</td>
           </tr>
           <tr>
             <td><img src="img/violetgrass.png" alt="Violetgrass" title="Violetgrass"></td>

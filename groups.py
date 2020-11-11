@@ -29,6 +29,8 @@ groups = {
 		'venti',
 		'xiangling',
 		'xingqiu',
+		'tartaglia',
+		'diona',
 	],
 	'element_1': [
 		'brilliant_diamond',
@@ -58,6 +60,7 @@ groups = {
 		'philanemo_mushroom',
 		'silk_flower',
 		'small_lamp_grass',
+		'starconch',
 		'valberry',
 		'violetgrass',
 		'windwheel_aster',

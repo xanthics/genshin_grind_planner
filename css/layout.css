@@ -225,3 +225,7 @@ a:link {
 a:visited {
     color: rgb(137, 117, 162);
 }
+
+figure {
+    margin: 0;
+}

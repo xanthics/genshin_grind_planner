@@ -315,4 +315,34 @@ characters = {
 		'weapon': 'sword',
 		'element': 'hydro'
 	},
+	"tartaglia": {
+		'ascension': {
+			'element_1': 'varunada_lazurite',
+			'element_2': 'cleansing_heart',
+			'local': 'starconch',
+			'common': 'f_insignia'
+		},
+		'talent': {
+			'talent': 'freedom',
+			'common': 'f_insignia',
+			'boss': ''
+		},
+		'weapon': 'bow',
+		'element': 'hydro'
+	},
+	"diona": {
+		'ascension': {
+			'element_1': 'shivada_jade',
+			'element_2': 'hoarfrost_core',
+			'local': 'calla_lily',
+			'common': 'arrowhead'
+		},
+		'talent': {
+			'talent': 'freedom',
+			'common': 'arrowhead',
+			'boss': ''
+		},
+		'weapon': 'bow',
+		'element': 'cryo'
+	},
 }

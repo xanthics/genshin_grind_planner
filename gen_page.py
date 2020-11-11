@@ -52,7 +52,7 @@ def init_page():
 		TH("Goal") +
 		TH("Click to remove", colspan=2)
 	)
-	for char in characters:
+	for char in sorted(characters):
 		# set up level select
 		lvlc = SELECT(Id=f"level_c-{char}", Class=f"{char} save")
 		lvlt = SELECT(Id=f"level_t-{char}", Class=f"{char} save")
@@ -165,6 +165,7 @@ def init_page():
 		('local', 'noctilucous_jade'),
 		('local', 'silk_flower'),
 		('local', 'glaze_lilly'),
+		('local', 'starconch'),
 		('local', 'violetgrass'),
 		('local', 'small_lamp_grass'),
 		('local', 'dandelion_seed'),

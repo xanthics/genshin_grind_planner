@@ -28,6 +28,8 @@ strings = {
 	'venti': 'Venti',
 	'xiangling': 'Xiangling',
 	'xingqiu': 'Xingqiu',
+	'tartaglia': 'Tartaglia',
+	'diona': 'Diona',
 	# Character Ascention materials 1
 	'agnidus_agate': ['Agnidus Agate Sliver', 'Agnidus Agate Fragment', 'Agnidus Agate Chunk', 'Agnidus Agate Gemstone'],
 	'brilliant_diamond': ['Brilliant Diamond Sliver', 'Brilliant Diamond Fragment', 'Brilliant Diamond Chunk', 'Brilliant Diamond Gemstone'],
@@ -54,6 +56,7 @@ strings = {
 	'philanemo_mushroom': 'Philanemo Mushroom',
 	'silk_flower': 'Silk Flower',
 	'small_lamp_grass': 'Small Lamp Grass',
+	'starconch': 'Starconch',
 	'valberry': 'Valberry',
 	'violetgrass': 'Violetgrass',
 	'windwheel_aster': 'Windwheel Aster',
