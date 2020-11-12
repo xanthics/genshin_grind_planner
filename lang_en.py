@@ -1,5 +1,8 @@
 strings = {
 	# Weekly Boss Talent Drop
+	'tusk_of_monoceros_caeli': "Tusk of Monoceros Caeli",
+	'shard_of_a_foul_legacy': "Shard of a Foul Legacy",
+	'shadow_of_the_warrior': "Shadow of the Warrior",
 	'dvalins_claw': "Dvalin's Claw",
 	'dvalins_plume': "Dvalin's Plume",
 	'dvalins_sigh': "Dvalin's Sigh",
@@ -134,6 +137,7 @@ strings = {
 	'thrilling_tales_of_dragon_slayers': 'Thrilling Tales of Dragon Slayers',
 	'twin_nephrite': 'Twin Nephrite',
 	'wine_and_song': 'Wine and Song',
+	'memory_of_dust': 'Memory of Dust',
 	# Claymores
 	'blackcliff_slasher': 'Blackcliff Slasher',
 	'bloodtainted_greatsword': 'Bloodtainted Greatsword',
@@ -153,6 +157,7 @@ strings = {
 	'white_iron_greatsword': 'White Iron Greatsword',
 	'whiteblind': 'Whiteblind',
 	'wolfs_gravestone': "Wolf's Gravestone",
+	'the_unforged': 'The Unforged',
 	# Polearms
 	'black_tassel': 'Black Tassel',
 	'blackcliff_pole': 'Blackcliff Pole',
@@ -167,6 +172,8 @@ strings = {
 	'prototype_grudge': 'Prototype Grudge',
 	'skyward_spine': 'Skyward Spine',
 	'white_tassel': 'White Tassel',
+	'vortex_vanquisher': 'Vortex Vanquisher',
+	'royal_spear': 'Royal Spear',
 	# Swords
 	'aquila_favonia': 'Aquila Favonia',
 	'blackcliff_longsword': 'Blackcliff Longsword',
@@ -257,6 +264,7 @@ strings = {
 	# weekly boss
 	'stormterror': "Stormterror",
 	'wolf_of_the_north': "Wolf of the North",
+	'golden_house': "Golden House",
 	# Domain: Weapon Ascension Materials
 	'cecilia_garden': "Cecilia Garden",
 	'hidden_palace_of_lianshan_formula': "Hidden Palace of Lianshan Formula",

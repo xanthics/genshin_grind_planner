@@ -1,5 +1,8 @@
 groups = {
 	'boss': [
+		'tusk_of_monoceros_caeli',
+		'shard_of_a_foul_legacy',
+		'shadow_of_the_warrior'
 		'dvalins_claw',
 		'dvalins_plume',
 		'dvalins_sigh',
@@ -138,6 +141,7 @@ groups = {
 		'thrilling_tales_of_dragon_slayers',
 		'twin_nephrite',
 		'wine_and_song',
+		'memory_of_dust',
 	],
 	'claymore': [
 		'blackcliff_slasher',
@@ -158,6 +162,7 @@ groups = {
 		'white_iron_greatsword',
 		'whiteblind',
 		'wolfs_gravestone',
+		'the_unforged',
 	],
 	'polearm': [
 		'black_tassel',
@@ -173,6 +178,8 @@ groups = {
 		'prototype_grudge',
 		'skyward_spine',
 		'white_tassel',
+		'vortex_vanquisher',
+		'royal_spear',
 	],
 	'sword': [
 		'aquila_favonia',
@@ -269,6 +276,7 @@ groups = {
 		# weekly boss
 		'stormterror',
 		'wolf_of_the_north',
+		'golden_house',
 		# Domain: Weapon Ascension Materials
 		'cecilia_garden',
 		'hidden_palace_of_lianshan_formula',

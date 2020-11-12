@@ -20,6 +20,7 @@ weapons = {
 		'recurve_bow': {'wam': 'dandelion_gladiator', 'common_rare': 'chaos', 'common': 'scroll', 'tier': '3_weapon'},
 	},
 	'catalyst': {
+		'memory_of_dust': {'wam': 'unk', 'common_rare': '', 'common': '', 'tier': '5_weapon'},
 		'skyward_atlas': {'wam': 'boreal_wolf', 'common_rare': 'ley_line', 'common': 'arrowhead', 'tier': '5_weapon'},
 		'lost_prayer_to_the_sacred_winds': {'wam': 'dandelion_gladiator', 'common_rare': 'chaos', 'common': 'slime', 'tier': '5_weapon'},
 		'eye_of_perception': {'wam': 'mist_veiled_elixer', 'common_rare': 'mist', 'common': 'mask', 'tier': '4_weapon'},
@@ -40,6 +41,7 @@ weapons = {
 		'otherworldly_story': {'wam': 'dandelion_gladiator', 'common_rare': 'chaos', 'common': 'mask', 'tier': '3_weapon'},
 	},
 	'claymore': {
+		'the_unforged': {'wam': 'unk', 'common_rare': '', 'common': '', 'tier': '5_weapon'},
 		'skyward_pride': {'wam': 'boreal_wolf', 'common_rare': 'ley_line', 'common': 'slime', 'tier': '5_weapon'},
 		'wolfs_gravestone': {'wam': 'dandelion_gladiator', 'common_rare': 'chaos', 'common': 'scroll', 'tier': '5_weapon'},
 		'sacrificial_greatsword': {'wam': 'boreal_wolf', 'common_rare': 'ley_line', 'common': 'arrowhead', 'tier': '4_weapon'},
@@ -60,9 +62,11 @@ weapons = {
 		'bloodtainted_greatsword': {'wam': 'boreal_wolf', 'common_rare': 'ley_line', 'common': 'arrowhead', 'tier': '3_weapon'},
 	},
 	'polearm': {
+		'vortex_vanquisher': {'wam': 'unk', 'common_rare': '', 'common': '', 'tier': '5_weapon'},
 		'primordial_jade_winged-spear': {'wam': 'guyun', 'common_rare': 'sacrificial_knife', 'common': 'f_insignia', 'tier': '5_weapon'},
 		'kunwus_iris_rift': {'wam': 'unk', 'common_rare': '', 'common': '', 'tier': '5_weapon'},
 		'skyward_spine': {'wam': 'dandelion_gladiator', 'common_rare': 'chaos', 'common': 'scroll', 'tier': '5_weapon'},
+		'royal_spear': {'wam': 'unk', 'common_rare': '', 'common': '', 'tier': '4_weapon'},
 		'crescent_pike': {'wam': 'guyun', 'common_rare': 'sacrificial_knife', 'common': 'th_insignia', 'tier': '4_weapon'},
 		'blackcliff_pole': {'wam': 'unk', 'common_rare': '', 'common': '', 'tier': '4_weapon'},
 		'dragons_bane': {'wam': 'mist_veiled_elixer', 'common_rare': 'mist', 'common': 'scroll', 'tier': '4_weapon'},

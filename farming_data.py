@@ -1,4 +1,16 @@
 farming_data = {
+	'tusk_of_monoceros_caeli': {
+		'when': ['any'],
+		'where': ['golden_house']
+	},
+	'shard_of_a_foul_legacy': {
+		'when': ['any'],
+		'where': ['golden_house']
+	},
+	'shadow_of_the_warrior': {
+		'when': ['any'],
+		'where': ['golden_house']
+	},
 	'dvalins_claw': {
 		'when': ['any'],
 		'where': ['stormterror']
@@ -37,15 +49,15 @@ farming_data = {
 	},
 	'shivada_jade': {
 		'when': ['any'],
-		'where': ['cryo_regisvine', 'wolf_of_the_north']
+		'where': ['cryo_regisvine', 'wolf_of_the_north', 'golden_house']
 	},
 	'vajrada_amethyst': {
 		'when': ['any'],
-		'where': ['electro_hypostasis', 'stormterror']
+		'where': ['electro_hypostasis', 'stormterror', 'golden_house']
 	},
 	'varunada_lazurite': {
 		'when': ['any'],
-		'where': ['oceanid', 'stormterror']
+		'where': ['oceanid', 'stormterror', 'golden_house']
 	},
 	'vayuda_turqoise': {
 		'when': ['any'],
@@ -269,7 +281,7 @@ farming_data = {
 	},
 	'gladiators_finale': {
 		'when': ['any'],
-		'where': ['stormterror', 'geo_hypostasis', 'oceanid', 'pyro_regisvine', 'cryo_regisvine', 'anemo_hypostasis', 'electro_hypostasis', 'wolf_of_the_north']
+		'where': ['golden_house', 'stormterror', 'geo_hypostasis', 'oceanid', 'pyro_regisvine', 'cryo_regisvine', 'anemo_hypostasis', 'electro_hypostasis', 'wolf_of_the_north']
 	},
 	'instructor': {
 		'when': ['any'],
@@ -349,6 +361,6 @@ farming_data = {
 	},
 	'wanderers_troupe': {
 		'when': ['any'],
-		'where': ['stormterror', 'geo_hypostasis', 'oceanid', 'pyro_regisvine', 'cryo_regisvine', 'anemo_hypostasis', 'electro_hypostasis', 'wolf_of_the_north']
+		'where': ['golden_house', 'stormterror', 'geo_hypostasis', 'oceanid', 'pyro_regisvine', 'cryo_regisvine', 'anemo_hypostasis', 'electro_hypostasis', 'wolf_of_the_north']
 	}
 }

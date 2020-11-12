@@ -286,6 +286,7 @@ def calculate_change():
 	resin = {
 		'stormterror': 60,
 		'wolf_of_the_north': 60,
+		'golden_house': 60,
 		'anemo_hypostasis': 40,
 		'cryo_regisvine': 40,
 		'electro_hypostasis': 40,
