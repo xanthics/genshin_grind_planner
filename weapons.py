@@ -20,7 +20,7 @@ weapons = {
 		'recurve_bow': {'wam': 'dandelion_gladiator', 'common_rare': 'chaos', 'common': 'scroll', 'tier': '3_weapon'},
 	},
 	'catalyst': {
-		'memory_of_dust': {'wam': 'unk', 'common_rare': '', 'common': '', 'tier': '5_weapon'},
+		'memory_of_dust': {'wam': 'aerosiderite', 'common_rare': 'bone_shard', 'common': 'mask', 'tier': '5_weapon'},
 		'skyward_atlas': {'wam': 'boreal_wolf', 'common_rare': 'ley_line', 'common': 'arrowhead', 'tier': '5_weapon'},
 		'lost_prayer_to_the_sacred_winds': {'wam': 'dandelion_gladiator', 'common_rare': 'chaos', 'common': 'slime', 'tier': '5_weapon'},
 		'eye_of_perception': {'wam': 'mist_veiled_elixer', 'common_rare': 'mist', 'common': 'mask', 'tier': '4_weapon'},

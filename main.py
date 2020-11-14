@@ -336,29 +336,6 @@ def calculate_change():
 				doc['daily'] <= t
 
 
-# Function to handle deleting artifacts
-def delete_me(ev):
-	del_storage(ev.target.id)
-	del doc[ev.target.id]
-	calculate_change()
-
-
-# Handle mouse clicks when the custom menu is present
-def custom_menu(ev):
-	if 'data-id' in ev.target.attrs and 'menu-item' in ev.target.attrs['class'] and 'vertical-menu' in ev.target.attrs['class']:
-		if f"{ev.target.attrs['data-id']}-{ev.target.id}" not in doc:
-			b = BUTTON(strings[ev.target.id], Class=f'text_button saved_arti {ev.target.attrs["data-id"].split("-")[1]}', Id=f"{ev.target.attrs['data-id']}-{ev.target.id}", data_arti=ev.target.id)
-			b.bind('click', delete_me)
-			doc[ev.target.attrs["data-id"]] <= b
-			set_storage(f"{ev.target.attrs['data-id']}-{ev.target.id}", 'y')
-			calculate_change()
-
-		ev.stopPropagation()
-	if 'vertical-menu' in doc:
-		del doc['vertical-menu']
-	doc.unbind('mouseclick', custom_menu)
-
-
 def show_characters(ev):
 	doc["inven"].style.display = 'none'
 	doc["main"].style.display = 'block'
@@ -401,6 +378,29 @@ def save_state(ev):
 	else:
 		print(f"Unhandled element type for storage: {ev.target.type}")
 	calculate_change()
+
+
+# Function to handle deleting artifacts
+def delete_me(ev):
+	del_storage(ev.target.id)
+	del doc[ev.target.id]
+	calculate_change()
+
+
+# Handle mouse clicks when the custom menu is present
+def custom_menu(ev):
+	if 'data-id' in ev.target.attrs and 'menu-item' in ev.target.attrs['class'] and 'vertical-menu' in ev.target.attrs['class']:
+		if f"{ev.target.attrs['data-id']}-{ev.target.id}" not in doc:
+			b = BUTTON(strings[ev.target.id], Class=f'text_button saved_arti {ev.target.attrs["data-id"].split("-")[1]}', Id=f"{ev.target.attrs['data-id']}-{ev.target.id}", data_arti=ev.target.id)
+			b.bind('click', delete_me)
+			doc[ev.target.attrs["data-id"]] <= b
+			set_storage(f"{ev.target.attrs['data-id']}-{ev.target.id}", 'y')
+			calculate_change()
+
+		ev.stopPropagation()
+	if 'vertical-menu' in doc:
+		del doc['vertical-menu']
+	doc.unbind('mouseclick', custom_menu)
 
 
 # Function for showing a list of artifacts on click

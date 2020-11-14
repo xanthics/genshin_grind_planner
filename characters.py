@@ -325,7 +325,7 @@ characters = {
 		'talent': {
 			'talent': 'freedom',
 			'common': 'f_insignia',
-			'boss': ''
+			'boss': 'shard_of_a_foul_legacy'
 		},
 		'weapon': 'bow',
 		'element': 'hydro'
@@ -340,7 +340,7 @@ characters = {
 		'talent': {
 			'talent': 'freedom',
 			'common': 'arrowhead',
-			'boss': ''
+			'boss': 'shard_of_a_foul_legacy'
 		},
 		'weapon': 'bow',
 		'element': 'cryo'

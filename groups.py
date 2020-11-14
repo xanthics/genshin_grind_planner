@@ -2,7 +2,7 @@ groups = {
 	'boss': [
 		'tusk_of_monoceros_caeli',
 		'shard_of_a_foul_legacy',
-		'shadow_of_the_warrior'
+		'shadow_of_the_warrior',
 		'dvalins_claw',
 		'dvalins_plume',
 		'dvalins_sigh',

@@ -71,7 +71,7 @@ def init_page():
 				st <= OPTION(cost)
 		# Set up weapon select
 		ws = SELECT(Id=f"weapon-{char}", data_id=f"select-{char}", Class=f'weapon {char} save')
-		ws <= OPTION('--')
+		ws <= OPTION('--', value='--')
 		sort_dict_wep = {}
 		for item in weapons[characters[char]['weapon']]:
 			if weapons[characters[char]['weapon']][item]['wam'] != 'unk':
@@ -122,15 +122,15 @@ def init_page():
 		('common_rare', 'sacrificial_knife'),
 		('common', 'f_insignia'),
 		('common', 'th_insignia'),
-		('boss', 'tusk_of_monoceros_caeli'),
-		('boss', 'shard_of_a_foul_legacy'),
-		('boss', 'shadow_of_the_warrior'),
 		('boss', 'dvalins_claw'),
 		('boss', 'dvalins_plume'),
 		('boss', 'dvalins_sigh'),
 		('boss', 'ring_of_boreas'),
 		('boss', 'spirit_locket_of_boreas'),
 		('boss', 'tail_of_boreas'),
+		('boss', 'tusk_of_monoceros_caeli'),
+		('boss', 'shard_of_a_foul_legacy'),
+		('boss', 'shadow_of_the_warrior'),
 		('element_2', 'hurricane_seed'),
 		('element_2', 'lightning_prism'),
 		('element_2', 'basalt_pillar'),
