@@ -475,7 +475,7 @@ def calculate_change():
 	for day in ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']:
 		if data[day]:
 			d <= H2([strings[day]])
-			t = TABLE(TR(TH("Location") + TH("Item(s)") + TH("Character(s)")), Class='borders')
+			t = TABLE(TR(TH("Location") + TH("Item(s)") + TH("Character(s)")), Class='borders body')
 			for loc in sorted(data[day]):
 				char_set = {y for x in data[day][loc] for y in char_tracker[x]}
 				item_set = {}
@@ -496,7 +496,7 @@ def calculate_change():
 		for cost in [0, 20, 40, 60]:
 			if data['any'][cost]:
 				d <= H3(f"{cost} {strings['resin']}")
-				t = TABLE(TR(TH("Location") + TH("Item(s)") + TH("Character(s)")), Class='borders')
+				t = TABLE(TR(TH("Location") + TH("Item(s)") + TH("Character(s)")), Class='borders body')
 				for loc in sorted(data['any'][cost]):
 					char_set = {y for x in data['any'][cost][loc] for y in char_tracker[x]}
 					item_set = {}
