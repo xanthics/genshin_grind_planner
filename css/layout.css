@@ -125,6 +125,7 @@ button.current_tab {
 
 table {
 	border-collapse: collapse;
+	width: 100%;
 }
 
 table.borders th,
@@ -135,7 +136,6 @@ table.borders {
 
 table.body {
     border: 1px solid black;
-	width: 100%;
 }
 
 /* Alternating list background Styles */
