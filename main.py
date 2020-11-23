@@ -9,7 +9,7 @@ from artifacts import artifacts
 from lang_en import strings
 from costs import costs
 from farming_data import farming_data
-from groups import groups
+from traveler import traveler
 
 
 storage_key = "genshin_grind_planner"
@@ -291,6 +291,107 @@ def update_per_character(char, char_tracker):
 			doc[f'weapon_t-{char}'].attrs['class'] = clt
 
 
+# Function for calculating a specific character's "cost"
+# This function also updates table select box classes
+def update_traveler(char, char_tracker):
+	character = grind_table_state['characters'][char]
+	if char == 'traveler':
+		if character['level_t'] > character['level_c']:
+			if 'good' not in doc[f'level_c-{char}'].attrs['class']:
+				doc[f'level_c-{char}'].attrs['class'] += ' good'
+				doc[f'level_t-{char}'].attrs['class'] += ' good'
+			for i in range(character['level_c'] + 1, character['level_t'] + 1):
+				temp = costs['character'][i]
+				grind_table_state['total']['xp'] += temp['xp']
+				grind_table_state['total']['mora'] += temp['mora']
+				grind_table_state['total'][f"{characters[char]['ascension']['element_1']}_{temp['element_1'][1]}"] += temp['element_1'][0]
+				grind_table_state['total'][characters[char]['ascension']['local']] += temp['local']
+				grind_table_state['total'][f"{characters[char]['ascension']['common']}_{temp['common'][1]}"] += temp['common'][0]
+				if temp['xp']:
+					add_value_set(char_tracker, 'xp', char)
+				if temp['mora']:
+					add_value_set(char_tracker, 'mora', char)
+				if temp['element_1'][0]:
+					add_value_set(char_tracker, characters[char]['ascension']['element_1'], char)
+				if temp['local']:
+					add_value_set(char_tracker, characters[char]['ascension']['local'], char)
+				if temp['common'][0]:
+					add_value_set(char_tracker, characters[char]['ascension']['common'], char)
+		elif 'good' in doc[f'level_c-{char}'].attrs['class']:
+			cl = doc[f'level_c-{char}'].attrs['class'].split()
+			del cl[cl.index('good')]
+			clt = ' '.join(cl)
+			doc[f'level_c-{char}'].attrs['class'] = clt
+			doc[f'level_t-{char}'].attrs['class'] = clt
+
+		# calculate mats for weapon
+		if character['weapon'] != '--':
+			if character['weapon_t'] > character['weapon_c']:
+				if 'good' not in doc[f'weapon_c-{char}'].attrs['class']:
+					doc[f'weapon_c-{char}'].attrs['class'] += ' good'
+					doc[f'weapon_t-{char}'].attrs['class'] += ' good'
+
+				weapon = weapons[characters[char]['weapon']][character['weapon']]
+				for i in range(character['weapon_c'] + 1, character['weapon_t'] + 1):
+					temp = costs[weapon['tier']][i]
+					grind_table_state['total']['wep_xp'] += temp['xp']
+					grind_table_state['total']['mora'] += temp['mora']
+					grind_table_state['total'][f"{weapon['wam']}_{temp['wam'][1]}"] += temp['wam'][0]
+					grind_table_state['total'][f"{weapon['common_rare']}_{temp['common_rare'][1]}"] += temp['common_rare'][0]
+					grind_table_state['total'][f"{weapon['common']}_{temp['common'][1]}"] += temp['common'][0]
+					if temp['xp']:
+						add_value_set(char_tracker, 'wep_xp', char)
+					if temp['mora']:
+						add_value_set(char_tracker, 'mora', char)
+					if temp['wam'][0]:
+						add_value_set(char_tracker, weapon['wam'], char)
+					if temp['common_rare'][0]:
+						add_value_set(char_tracker, weapon['common_rare'], char)
+					if temp['common'][0]:
+						add_value_set(char_tracker, weapon['common'], char)
+			elif 'good' in doc[f'weapon_c-{char}'].attrs['class']:
+				cl = doc[f'weapon_c-{char}'].attrs['class'].split()
+				del cl[cl.index('good')]
+				clt = ' '.join(cl)
+				doc[f'weapon_c-{char}'].attrs['class'] = clt
+				doc[f'weapon_t-{char}'].attrs['class'] = clt
+	else:
+		# calculate mats for talent
+		for t_c_t, t_t_t in [('talent_1_c', 'talent_1_t'),
+							 ('talent_2_c', 'talent_2_t'),
+							 ('talent_3_c', 'talent_3_t')]:
+			t_c = character[t_c_t]
+			t_t = character[t_t_t]
+			if t_t > t_c:
+				if 'good' not in doc[f'{t_c_t}-{char}'].attrs['class']:
+					doc[f'{t_c_t}-{char}'].attrs['class'] += ' good'
+					doc[f'{t_t_t}-{char}'].attrs['class'] += ' good'
+				if char == 'traveler_anemo' or (char == 'traveler_geo' and t_c_t == 'talent_1_c'):
+					travel_key = 'talent_1'
+				else:
+					travel_key = 'talent_2'
+				for i in range(t_c + 1, t_t + 1):
+					temp = costs['talent'][i]
+					grind_table_state['total']['mora'] += temp['mora']
+					grind_table_state['total'][f"{traveler[travel_key][i]['talent']}_{temp['talent'][1]}"] += temp['talent'][0]
+					grind_table_state['total'][f"{traveler[travel_key][i]['common']}_{temp['common'][1]}"] += temp['common'][0]
+					grind_table_state['total'][traveler[travel_key][i]['boss']] += temp['boss']
+					if temp['mora']:
+						add_value_set(char_tracker, 'mora', char)
+					if temp['talent'][0]:
+						add_value_set(char_tracker, traveler[travel_key][i]['talent'], char)
+					if temp['common'][0]:
+						add_value_set(char_tracker, traveler[travel_key][i]['common'], char)
+					if temp['boss']:
+						add_value_set(char_tracker, traveler[travel_key][i]['boss'], char)
+			elif 'good' in doc[f'{t_c_t}-{char}'].attrs['class']:
+				cl = doc[f'{t_c_t}-{char}'].attrs['class'].split()
+				del cl[cl.index('good')]
+				clt = ' '.join(cl)
+				doc[f'{t_c_t}-{char}'].attrs['class'] = clt
+				doc[f'{t_t_t}-{char}'].attrs['class'] = clt
+
+
 # Convert a number to an appropriate string
 def readable_number(val):
 	for num, fact, affix in [(100000, 6, 'm'),
@@ -306,7 +407,10 @@ def calculate_change():
 	for val in grind_table_state['total']:
 		grind_table_state['total'][val] = 0
 	for char in grind_table_state['checked']:
-		update_per_character(char, char_tracker)
+		if 'traveler' in char:
+			update_traveler(char, char_tracker)
+		else:
+			update_per_character(char, char_tracker)
 
 	# Get a list of all chosen artifacts so we know what to farm
 	for elt in doc.get(selector=f'.saved_arti'):

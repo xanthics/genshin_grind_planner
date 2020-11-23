@@ -345,4 +345,14 @@ characters = {
 		'weapon': 'bow',
 		'element': 'cryo'
 	},
+	"traveler": {
+		'ascension': {
+			'element_1': 'brilliant_diamond',
+			'element_2': '',
+			'local': 'windwheel_aster',
+			'common': 'mask'
+		},
+		'weapon': 'sword',
+		'elenent': 'none'
+	}
 }

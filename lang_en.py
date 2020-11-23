@@ -33,6 +33,13 @@ strings = {
 	'xingqiu': 'Xingqiu',
 	'tartaglia': 'Tartaglia',
 	'diona': 'Diona',
+	'traveler': "Traveler",
+	'traveler_pyro': "Traveler (Pyro)",
+	'traveler_hydro': "Traveler (Hydro)",
+	'traveler_electro': "Traveler (Electro)",
+	'traveler_geo': "Traveler (Geo)",
+	'traveler_anemo': "Traveler (Anemo)",
+	'traveler_cryo': "Traveler (Cryo)",
 	# Character Ascention materials 1
 	'agnidus_agate': ['Agnidus Agate Sliver', 'Agnidus Agate Fragment', 'Agnidus Agate Chunk', 'Agnidus Agate Gemstone'],
 	'brilliant_diamond': ['Brilliant Diamond Sliver', 'Brilliant Diamond Fragment', 'Brilliant Diamond Chunk', 'Brilliant Diamond Gemstone'],
