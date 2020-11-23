@@ -246,7 +246,6 @@ groups = {
 	'where': [
 		# general gameplay
 		'adventure_rank',
-		'chests',
 		'special_liyue',
 		'special_mondstadt',
 		# common mobs

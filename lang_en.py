@@ -99,6 +99,9 @@ strings = {
 	'wep_xp': 'Weapon Exp',
 	'resin': 'Resin',
 	'missing': 'Missing Material',
+	'xp_leyline': 'Exp Leyline',
+	'crystal_ore': 'Crystal Ore',
+	'mora_leyline': 'Mora Leyline',
 	# bows
 	'alley_hunter': 'Alley Hunter',
 	'amos_bow': "Amos' Bow",
@@ -235,7 +238,6 @@ strings = {
 	'sun': 'Sunday',
 	# general gameplay
 	'adventure_rank': "Adventure Rank Reward",
-	'chests': "Open Chests",
 	'special_liyue': "Found around Liyue",
 	'special_mondstadt': "Found around Mondstadt",
 	# common mobs
@@ -245,7 +247,7 @@ strings = {
 	'slimes': "Slimes",
 	'treasure_hoarder': "Treasure Hoarders",
 	# bosses
-	'bosses': "Any Boss: Normal, Elite, or Weekly",
+	'bosses': "World (Bosses)",
 	'abyss_mage': "Abyss Mage",
 	'agent': "Fatui Agent",
 	'electro_cicin_mage': "Electro Cicin Mage",

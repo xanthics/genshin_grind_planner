@@ -13,13 +13,11 @@
       <p><strong>This page requires local storage to save state.</strong></p>
       <p>Current TODO list:</p>
       <ul>
-        <li>toggle to set if that characer's artifacts are tracked in farm goal.</li>
         <li>Implement Traveler.</li>
-        <li>Code cleanup. Remove some loops if possible.</li>
-        <li>Add charxp, wepxp, mora to grind guide</li>
-        <li>Add styling for checkboxes.</li>
+        <li>Expand to all 3 tiers of xp sources on inventory page</li>
         <li>Artifact Menu set bonus hints.</li>
         <li>Support for autoconverting up, if needed.  Or color code for "can convert to it"</li>
+        <li>Move all calculations to a web worker (responsive ui)</li>
       </ul>
       <div id="loading">
         This page requires javascript in order to work correctly.
@@ -46,6 +44,7 @@
               <col class="left_dotted">
               <col class="left_border">
               <col class="left_dotted">
+              <col class="left_dotted">
             </colgroup>
             <tr>
               <th colspan="2">Character</th>
@@ -54,7 +53,7 @@
               <th colspan="2">Skill</th>
               <th colspan="2">Burst</th>
               <th colspan="3">Weapon</th>
-              <th colspan="2">Artifacts</th>
+              <th colspan="3">Artifacts</th>
             </tr>
             <tr>
               <th></th>
@@ -70,7 +69,7 @@
               <th></th>
               <th>Now</th>
               <th>Goal</th>
-              <th colspan="2">Click to remove</th>
+              <th colspan="3">Click to remove</th>
             </tr>
             <tr data-id="check-amber" class="unchecked" data-color="pyro">
               <td><input id="check-amber" type="checkbox" data-id="check-amber" class="char_select save"></td>
@@ -223,6 +222,7 @@
                   <option value="7">90</option>
                 </select>
               </td>
+              <td><input id="use_arti-amber" type="checkbox" class="save"></td>
               <td><button class="arti_list text_button" data-id="arti-amber">Add</button></td>
               <td>
                 <div id="arti-amber" class="arti_span"></div>
@@ -336,6 +336,7 @@
               <td>
                 <select id="weapon-barbara" data-id="select-barbara" class="weapon barbara save">
                   <option value="--">--</option>
+                  <option value="blackcliff_amulet">Blackcliff Amulet</option>
                   <option value="emerald_orb">Emerald Orb</option>
                   <option value="eye_of_perception">Eye of Perception</option>
                   <option value="favonius_codex">Favonius Codex</option>
@@ -379,6 +380,7 @@
                   <option value="7">90</option>
                 </select>
               </td>
+              <td><input id="use_arti-barbara" type="checkbox" class="save"></td>
               <td><button class="arti_list text_button" data-id="arti-barbara">Add</button></td>
               <td>
                 <div id="arti-barbara" class="arti_span"></div>
@@ -534,6 +536,7 @@
                   <option value="7">90</option>
                 </select>
               </td>
+              <td><input id="use_arti-beidou" type="checkbox" class="save"></td>
               <td><button class="arti_list text_button" data-id="arti-beidou">Add</button></td>
               <td>
                 <div id="arti-beidou" class="arti_span"></div>
@@ -689,6 +692,7 @@
                   <option value="7">90</option>
                 </select>
               </td>
+              <td><input id="use_arti-bennett" type="checkbox" class="save"></td>
               <td><button class="arti_list text_button" data-id="arti-bennett">Add</button></td>
               <td>
                 <div id="arti-bennett" class="arti_span"></div>
@@ -844,6 +848,7 @@
                   <option value="7">90</option>
                 </select>
               </td>
+              <td><input id="use_arti-chongyun" type="checkbox" class="save"></td>
               <td><button class="arti_list text_button" data-id="arti-chongyun">Add</button></td>
               <td>
                 <div id="arti-chongyun" class="arti_span"></div>
@@ -999,6 +1004,7 @@
                   <option value="7">90</option>
                 </select>
               </td>
+              <td><input id="use_arti-diluc" type="checkbox" class="save"></td>
               <td><button class="arti_list text_button" data-id="arti-diluc">Add</button></td>
               <td>
                 <div id="arti-diluc" class="arti_span"></div>
@@ -1155,6 +1161,7 @@
                   <option value="7">90</option>
                 </select>
               </td>
+              <td><input id="use_arti-diona" type="checkbox" class="save"></td>
               <td><button class="arti_list text_button" data-id="arti-diona">Add</button></td>
               <td>
                 <div id="arti-diona" class="arti_span"></div>
@@ -1311,6 +1318,7 @@
                   <option value="7">90</option>
                 </select>
               </td>
+              <td><input id="use_arti-fischl" type="checkbox" class="save"></td>
               <td><button class="arti_list text_button" data-id="arti-fischl">Add</button></td>
               <td>
                 <div id="arti-fischl" class="arti_span"></div>
@@ -1466,6 +1474,7 @@
                   <option value="7">90</option>
                 </select>
               </td>
+              <td><input id="use_arti-jean" type="checkbox" class="save"></td>
               <td><button class="arti_list text_button" data-id="arti-jean">Add</button></td>
               <td>
                 <div id="arti-jean" class="arti_span"></div>
@@ -1621,6 +1630,7 @@
                   <option value="7">90</option>
                 </select>
               </td>
+              <td><input id="use_arti-kaeya" type="checkbox" class="save"></td>
               <td><button class="arti_list text_button" data-id="arti-kaeya">Add</button></td>
               <td>
                 <div id="arti-kaeya" class="arti_span"></div>
@@ -1776,6 +1786,7 @@
                   <option value="7">90</option>
                 </select>
               </td>
+              <td><input id="use_arti-keqing" type="checkbox" class="save"></td>
               <td><button class="arti_list text_button" data-id="arti-keqing">Add</button></td>
               <td>
                 <div id="arti-keqing" class="arti_span"></div>
@@ -1889,6 +1900,7 @@
               <td>
                 <select id="weapon-klee" data-id="select-klee" class="weapon klee save">
                   <option value="--">--</option>
+                  <option value="blackcliff_amulet">Blackcliff Amulet</option>
                   <option value="emerald_orb">Emerald Orb</option>
                   <option value="eye_of_perception">Eye of Perception</option>
                   <option value="favonius_codex">Favonius Codex</option>
@@ -1932,6 +1944,7 @@
                   <option value="7">90</option>
                 </select>
               </td>
+              <td><input id="use_arti-klee" type="checkbox" class="save"></td>
               <td><button class="arti_list text_button" data-id="arti-klee">Add</button></td>
               <td>
                 <div id="arti-klee" class="arti_span"></div>
@@ -2045,6 +2058,7 @@
               <td>
                 <select id="weapon-lisa" data-id="select-lisa" class="weapon lisa save">
                   <option value="--">--</option>
+                  <option value="blackcliff_amulet">Blackcliff Amulet</option>
                   <option value="emerald_orb">Emerald Orb</option>
                   <option value="eye_of_perception">Eye of Perception</option>
                   <option value="favonius_codex">Favonius Codex</option>
@@ -2088,6 +2102,7 @@
                   <option value="7">90</option>
                 </select>
               </td>
+              <td><input id="use_arti-lisa" type="checkbox" class="save"></td>
               <td><button class="arti_list text_button" data-id="arti-lisa">Add</button></td>
               <td>
                 <div id="arti-lisa" class="arti_span"></div>
@@ -2201,6 +2216,7 @@
               <td>
                 <select id="weapon-mona" data-id="select-mona" class="weapon mona save">
                   <option value="--">--</option>
+                  <option value="blackcliff_amulet">Blackcliff Amulet</option>
                   <option value="emerald_orb">Emerald Orb</option>
                   <option value="eye_of_perception">Eye of Perception</option>
                   <option value="favonius_codex">Favonius Codex</option>
@@ -2244,6 +2260,7 @@
                   <option value="7">90</option>
                 </select>
               </td>
+              <td><input id="use_arti-mona" type="checkbox" class="save"></td>
               <td><button class="arti_list text_button" data-id="arti-mona">Add</button></td>
               <td>
                 <div id="arti-mona" class="arti_span"></div>
@@ -2357,6 +2374,7 @@
               <td>
                 <select id="weapon-ningguang" data-id="select-ningguang" class="weapon ningguang save">
                   <option value="--">--</option>
+                  <option value="blackcliff_amulet">Blackcliff Amulet</option>
                   <option value="emerald_orb">Emerald Orb</option>
                   <option value="eye_of_perception">Eye of Perception</option>
                   <option value="favonius_codex">Favonius Codex</option>
@@ -2400,6 +2418,7 @@
                   <option value="7">90</option>
                 </select>
               </td>
+              <td><input id="use_arti-ningguang" type="checkbox" class="save"></td>
               <td><button class="arti_list text_button" data-id="arti-ningguang">Add</button></td>
               <td>
                 <div id="arti-ningguang" class="arti_span"></div>
@@ -2555,6 +2574,7 @@
                   <option value="7">90</option>
                 </select>
               </td>
+              <td><input id="use_arti-noelle" type="checkbox" class="save"></td>
               <td><button class="arti_list text_button" data-id="arti-noelle">Add</button></td>
               <td>
                 <div id="arti-noelle" class="arti_span"></div>
@@ -2710,6 +2730,7 @@
                   <option value="7">90</option>
                 </select>
               </td>
+              <td><input id="use_arti-qiqi" type="checkbox" class="save"></td>
               <td><button class="arti_list text_button" data-id="arti-qiqi">Add</button></td>
               <td>
                 <div id="arti-qiqi" class="arti_span"></div>
@@ -2865,6 +2886,7 @@
                   <option value="7">90</option>
                 </select>
               </td>
+              <td><input id="use_arti-razor" type="checkbox" class="save"></td>
               <td><button class="arti_list text_button" data-id="arti-razor">Add</button></td>
               <td>
                 <div id="arti-razor" class="arti_span"></div>
@@ -2978,6 +3000,7 @@
               <td>
                 <select id="weapon-sucrose" data-id="select-sucrose" class="weapon sucrose save">
                   <option value="--">--</option>
+                  <option value="blackcliff_amulet">Blackcliff Amulet</option>
                   <option value="emerald_orb">Emerald Orb</option>
                   <option value="eye_of_perception">Eye of Perception</option>
                   <option value="favonius_codex">Favonius Codex</option>
@@ -3021,6 +3044,7 @@
                   <option value="7">90</option>
                 </select>
               </td>
+              <td><input id="use_arti-sucrose" type="checkbox" class="save"></td>
               <td><button class="arti_list text_button" data-id="arti-sucrose">Add</button></td>
               <td>
                 <div id="arti-sucrose" class="arti_span"></div>
@@ -3177,6 +3201,7 @@
                   <option value="7">90</option>
                 </select>
               </td>
+              <td><input id="use_arti-tartaglia" type="checkbox" class="save"></td>
               <td><button class="arti_list text_button" data-id="arti-tartaglia">Add</button></td>
               <td>
                 <div id="arti-tartaglia" class="arti_span"></div>
@@ -3333,6 +3358,7 @@
                   <option value="7">90</option>
                 </select>
               </td>
+              <td><input id="use_arti-venti" type="checkbox" class="save"></td>
               <td><button class="arti_list text_button" data-id="arti-venti">Add</button></td>
               <td>
                 <div id="arti-venti" class="arti_span"></div>
@@ -3482,6 +3508,7 @@
                   <option value="7">90</option>
                 </select>
               </td>
+              <td><input id="use_arti-xiangling" type="checkbox" class="save"></td>
               <td><button class="arti_list text_button" data-id="arti-xiangling">Add</button></td>
               <td>
                 <div id="arti-xiangling" class="arti_span"></div>
@@ -3637,6 +3664,7 @@
                   <option value="7">90</option>
                 </select>
               </td>
+              <td><input id="use_arti-xingqiu" type="checkbox" class="save"></td>
               <td><button class="arti_list text_button" data-id="arti-xingqiu">Add</button></td>
               <td>
                 <div id="arti-xingqiu" class="arti_span"></div>
@@ -3890,6 +3918,12 @@
             <td id="dvalins_sigh-need" class="good">0</td>
           </tr>
           <tr>
+            <td><img src="img/tail_of_boreas.png" alt="Tail of Boreas" title="Tail of Boreas"></td>
+            <td id="tail_of_boreas-total">0</td>
+            <td><input type="number" min="0" step="1" value="0" id="tail_of_boreas-user" class="save"></td>
+            <td id="tail_of_boreas-need" class="good">0</td>
+          </tr>
+          <tr>
             <td><img src="img/ring_of_boreas.png" alt="Ring of Boreas" title="Ring of Boreas"></td>
             <td id="ring_of_boreas-total">0</td>
             <td><input type="number" min="0" step="1" value="0" id="ring_of_boreas-user" class="save"></td>
@@ -3900,12 +3934,6 @@
             <td id="spirit_locket_of_boreas-total">0</td>
             <td><input type="number" min="0" step="1" value="0" id="spirit_locket_of_boreas-user" class="save"></td>
             <td id="spirit_locket_of_boreas-need" class="good">0</td>
-          </tr>
-          <tr>
-            <td><img src="img/tail_of_boreas.png" alt="Tail of Boreas" title="Tail of Boreas"></td>
-            <td id="tail_of_boreas-total">0</td>
-            <td><input type="number" min="0" step="1" value="0" id="tail_of_boreas-user" class="save"></td>
-            <td id="tail_of_boreas-need" class="good">0</td>
           </tr>
           <tr>
             <td><img src="img/tusk_of_monoceros_caeli.png" alt="Tusk of Monoceros Caeli" title="Tusk of Monoceros Caeli"></td>
@@ -4512,7 +4540,6 @@
       <p>Some information is missing from the wiki, the following weapons are missing ascension information and thus aren't selectable:</p>
       <ul id="missing">
         <li id="missing-ebony_bow">Ebony Bow</li>
-        <li id="missing-blackcliff_amulet">Blackcliff Amulet</li>
         <li id="missing-amber_catalyst">Amber Catalyst</li>
         <li id="missing-the_unforged">The Unforged</li>
         <li id="missing-lithic_blade">Lithic Blade</li>

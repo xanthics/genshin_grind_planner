@@ -1,4 +1,16 @@
 farming_data = {
+	'xp': {
+		'when': ['any'],
+		'where': ['xp_leyline']
+	},
+	'wep_xp': {
+		'when': ['any'],
+		'where': ['crystal_ore']
+	},
+	'mora': {
+		'when': ['any'],
+		'where': ['mora_leyline']
+	},
 	'tusk_of_monoceros_caeli': {
 		'when': ['any'],
 		'where': ['golden_house']
@@ -249,7 +261,7 @@ farming_data = {
 	},
 	'adventurer': {
 		'when': ['any'],
-		'where': ['chests', 'midsummer_courtyard']
+		'where': ['midsummer_courtyard']
 	},
 	'archaic_petra': {
 		'when': ['any'],
@@ -257,7 +269,7 @@ farming_data = {
 	},
 	'berserker': {
 		'when': ['any'],
-		'where': ['chests', 'bosses']
+		'where': ['bosses']
 	},
 	'bloodstained_chivalry': {
 		'when': ['any'],
@@ -293,7 +305,7 @@ farming_data = {
 	},
 	'lucky_dog': {
 		'when': ['any'],
-		'where': ['chests', 'domain_of_guyun']
+		'where': ['domain_of_guyun']
 	},
 	'maiden_beloved': {
 		'when': ['any'],
@@ -353,7 +365,7 @@ farming_data = {
 	},
 	'traveling_doctor': {
 		'when': ['any'],
-		'where': ['chests', 'valley_of_remembrance', 'bosses']
+		'where': ['valley_of_remembrance', 'bosses']
 	},
 	'viridescent_venerer': {
 		'when': ['any'],

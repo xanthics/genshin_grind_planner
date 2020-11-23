@@ -24,7 +24,7 @@ weapons = {
 		'skyward_atlas': {'wam': 'boreal_wolf', 'common_rare': 'ley_line', 'common': 'arrowhead', 'tier': '5_weapon'},
 		'lost_prayer_to_the_sacred_winds': {'wam': 'dandelion_gladiator', 'common_rare': 'chaos', 'common': 'slime', 'tier': '5_weapon'},
 		'eye_of_perception': {'wam': 'mist_veiled_elixer', 'common_rare': 'mist', 'common': 'mask', 'tier': '4_weapon'},
-		'blackcliff_amulet': {'wam': 'unk', 'common_rare': '', 'common': '', 'tier': '4_weapon'},
+		'blackcliff_amulet': {'wam': 'guyun', 'common_rare': 'sacrificial_knife', 'common': 'scroll', 'tier': '4_weapon'},
 		'favonius_codex': {'wam': 'decarabian', 'common_rare': 'horn', 'common': 'scroll', 'tier': '4_weapon'},
 		'mappa_mare': {'wam': 'aerosiderite', 'common_rare': 'bone_shard', 'common': 'slime', 'tier': '4_weapon'},
 		'prototype_malice': {'wam': 'mist_veiled_elixer', 'common_rare': 'mist', 'common': 'arrowhead', 'tier': '4_weapon'},

@@ -25,6 +25,7 @@ def init_page():
 		COL(Class='left_dotted') +
 		COL(Class='left_dotted') +
 		COL(Class='left_border') +
+		COL(Class='left_dotted') +
 		COL(Class='left_dotted')
 	)
 	t <= TR(
@@ -34,7 +35,7 @@ def init_page():
 		TH("Skill", colspan=2) +
 		TH("Burst", colspan=2) +
 		TH("Weapon", colspan=3) +
-		TH("Artifacts", colspan=2)
+		TH("Artifacts", colspan=3)
 	)
 	t <= TR(
 		TH() +
@@ -50,7 +51,7 @@ def init_page():
 		TH("") +
 		TH("Now") +
 		TH("Goal") +
-		TH("Click to remove", colspan=2)
+		TH("Click to remove", colspan=3)
 	)
 	for char in sorted(characters):
 		# set up level select
@@ -102,6 +103,7 @@ def init_page():
 			TD(ws) +
 			TD(wlvlc) +
 			TD(wlvlt) +
+			TD(INPUT(Id=f"use_arti-{char}", type='checkbox', Class='save')) +
 			TD(BUTTON("Add", Class='arti_list text_button', data_id=f"arti-{char}")) +
 			TD(DIV(Id=f"arti-{char}", Class=f'arti_span'))
 			,
@@ -125,9 +127,9 @@ def init_page():
 		('boss', 'dvalins_claw'),
 		('boss', 'dvalins_plume'),
 		('boss', 'dvalins_sigh'),
+		('boss', 'tail_of_boreas'),
 		('boss', 'ring_of_boreas'),
 		('boss', 'spirit_locket_of_boreas'),
-		('boss', 'tail_of_boreas'),
 		('boss', 'tusk_of_monoceros_caeli'),
 		('boss', 'shard_of_a_foul_legacy'),
 		('boss', 'shadow_of_the_warrior'),
