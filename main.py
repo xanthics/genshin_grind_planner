@@ -575,10 +575,8 @@ def save_state(ev):
 		oldval = grind_table_state['user'][key]
 		grind_table_state['user'][key] = newval
 		set_storage(ev.target.id, ev.target.value)
-		if (newval >= grind_table_state['total'][key] > oldval) or (newval < grind_table_state['total'][key] <= oldval):
+		if oldval < grind_table_state['total'][key] or newval < grind_table_state['total'][key]:
 			calculate_change()
-		elif oldval < grind_table_state['total'][key]:
-			doc[f"{key}-need"].text = f"{grind_table_state['total'][key] - newval:,}"
 	else:
 		print(f"Unhandled element type for storage: {ev.target.type}")
 
