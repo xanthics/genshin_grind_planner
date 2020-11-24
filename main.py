@@ -471,7 +471,7 @@ def calculate_change():
 						data[day][loc] = []
 					data[day][loc].append(item)
 
-	d = SECTION()
+	d = SECTION(Class='grind')
 	for day in ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']:
 		if data[day]:
 			d <= H2([strings[day]])
