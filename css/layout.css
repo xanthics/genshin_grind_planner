@@ -217,6 +217,11 @@ input[type=number] {
     background-color: rgb(0, 50, 0);
 }
 
+.convert {
+	color: rgb(200, 200, 200);
+    background-color: rgb(55, 45, 0);
+}
+
 .left_border {
     border-left: 3px double black;
 }
