@@ -102,6 +102,9 @@ groups = {
 		'diligence',
 		'gold',
 	],
+	'special': [
+		'crown'
+	],
 	'bow': [
 		'alley_hunter',
 		'amos_bow',

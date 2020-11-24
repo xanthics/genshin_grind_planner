@@ -215,6 +215,10 @@ farming_data = {
 		'when': ['wed', 'sat', 'sun'],
 		'where': ['hidden_palace_of_lianshan_formula']
 	},
+	'crown': {
+		'when': ['any'],
+		'where': ['event']
+	},
 	'boreal_wolf': {
 		'when': ['tue', 'fri', 'sun'],
 		'where': ['cecilia_garden']

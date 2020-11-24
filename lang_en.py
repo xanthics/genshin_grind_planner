@@ -100,6 +100,7 @@ strings = {
 	'gold': ['Teachings of "Gold"', 'Guide to "Gold"', 'Philosophies of "Gold"'],
 	'prosperity': ['Teachings of "Prosperity"', 'Guide to "Prosperity"', 'Philosophies of "Prosperity"'],
 	'resistance': ['Teachings of "Resistance"', 'Guide to "Resistance"', 'Philosophies of "Resistance"'],
+	'crown': 'Crown of Sagehood',
 	# ui strings
 	'mora': "Mora",
 	'xp': 'Character Exp',
@@ -247,6 +248,7 @@ strings = {
 	'adventure_rank': "Adventure Rank Reward",
 	'special_liyue': "Found around Liyue",
 	'special_mondstadt': "Found around Mondstadt",
+	'event': 'Event item',
 	# common mobs
 	'hilichurl': "Melee Hilichurls",
 	'ranged_hilichurl': "Ranged Hilichurls",

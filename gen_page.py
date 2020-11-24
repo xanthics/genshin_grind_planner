@@ -208,8 +208,8 @@ def init_page():
 		('common_rare', 'sacrificial_knife'),
 		('common', 'f_insignia'),
 		('common', 'th_insignia'),
-		('boss', 'dvalins_claw'),
 		('boss', 'dvalins_plume'),
+		('boss', 'dvalins_claw'),
 		('boss', 'dvalins_sigh'),
 		('boss', 'tail_of_boreas'),
 		('boss', 'ring_of_boreas'),
@@ -238,6 +238,7 @@ def init_page():
 		('talent', 'prosperity'),
 		('talent', 'diligence'),
 		('talent', 'gold'),
+		('special', 'crown'),
 		('wam', 'decarabian'),
 		('wam', 'boreal_wolf'),
 		('wam', 'dandelion_gladiator'),
@@ -269,11 +270,11 @@ def init_page():
 	t_own <= TR(TD(IMG(src=f"img/wep_xp.png", alt=strings['wep_xp'], title=strings['wep_xp'])) + TD('0', Id='wep_xp-total') + TD(INPUT(Type='number', min='0', step="1", value='0', Id='wep_xp-user', Class='save')) + TD('0', Id='wep_xp-need', Class='good'))
 	t_own <= TR(TD(IMG(src=f"img/xp.png", alt=strings['xp'], title=strings['xp'])) + TD('0', Id='xp-total') + TD(INPUT(Type='number', min='0', step="1", value='0', Id='xp-user', Class='save')) + TD('0', Id='xp-need', Class='good'))
 	for section, item in ingame_order:
-		if section in ['boss', 'element_2', 'local']:
-			t_own <= TR(TD(IMG(src=f"img/{item}.png", alt=strings[item], title=strings[item])) + TD('0', Id=f"{item}-total") + TD(INPUT(Type='number', min='0', step="1", value='0', Id=f"{item}-user", Class='save')) + TD('0', Id=f"{item}-need", Class='good'))
 		if section in ['element_1', 'common', 'common_rare', 'wam', 'talent']:
 			for i in range(len(strings[item])-1, -1, -1):
 				t_own <= TR(TD(IMG(src=f"img/{item}_{i}.png", alt=strings[item][i], title=strings[item][i])) + TD('0', Id=f"{item}_{i}-total") + TD(INPUT(Type='number', min='0', step="1", value='0', Id=f"{item}_{i}-user", Class='save')) + TD('0', Id=f"{item}_{i}-need", Class='good'))
+		else: # section in ['boss', 'element_2', 'local', 'special']:
+			t_own <= TR(TD(IMG(src=f"img/{item}.png", alt=strings[item], title=strings[item])) + TD('0', Id=f"{item}-total") + TD(INPUT(Type='number', min='0', step="1", value='0', Id=f"{item}-user", Class='save')) + TD('0', Id=f"{item}-need", Class='good'))
 
 	doc['inven'] <= t_own
 
