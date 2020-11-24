@@ -439,14 +439,18 @@ def calculate_change():
 		doc[f"{key}-total"].text = f"{grind_table_state['total'][key]:,}"
 		doc[f"{key}-need"].text = f"{val if val > 0 else 0:,}"
 
-		if val <= 0:
-			doc[f"{key}-need"].attrs['class'] = ''
-		elif key[-1].isnumeric() and int(key[-1]):  # last character is numeric and non-zero
-			idx = int(key[-1])-1
-			newkey = f"{key[:-1]}{idx}"
-			doc[f"{key}-need"].attrs['class'] = 'convert' if (grind_table_state['user'][newkey] - grind_table_state['total'][newkey]) >= 3 else 'bad'
-		else:
-			doc[f"{key}-need"].attrs['class'] = 'bad'
+		doc[f"{key}-need"].attrs['class'] = '' if val <= 0 else 'bad'
+
+		if key[-1].isnumeric():
+			root, num = key.rsplit('_', maxsplit=1)
+			if val > 0 and int(num):  # last character is numeric and non-zero
+				idx = int(num)-1
+				newkey = f"{root}_{idx}"
+				can_convert_up = (grind_table_state['user'][newkey] - grind_table_state['total'][newkey]) >= 3
+				doc[f"{key}-need"].attrs['class'] = 'convert' if can_convert_up else 'bad'
+			elif val <= -3 and int(num) + 1 < len(strings[root]):  # We have enough of this material
+				doc[f"{key}-need"].text += f" ({int((grind_table_state['total'][key] - grind_table_state['user'][key]) // -3)})"
+				doc[f"{key}-need"].attrs['class'] = 'good'
 
 	# Build up and display farm table
 	data = {

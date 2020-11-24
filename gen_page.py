@@ -1,5 +1,5 @@
 from browser import document as doc
-from browser.html import TABLE, TR, TH, TD, INPUT, SELECT, OPTION, DIV, BUTTON, SPAN, LI, H2, H3, IMG, COLGROUP, COL
+from browser.html import TABLE, TR, TH, TD, INPUT, SELECT, OPTION, DIV, BUTTON, SPAN, LI, H2, H3, IMG, COLGROUP, COL, P
 
 from characters import characters
 from weapons import weapons
@@ -277,10 +277,10 @@ def init_page():
 		if section in ['element_1', 'common', 'common_rare', 'wam', 'talent']:
 			for i in range(len(strings[item])-1, -1, -1):
 				t_own <= TR(TD(IMG(src=f"img/{item}_{i}.png", alt=strings[item][i], title=strings[item][i])) + TD('0', Id=f"{item}_{i}-total") + TD(INPUT(Type='number', min='0', step="1", value='0', Id=f"{item}_{i}-user", Class='save')) + TD('0', Id=f"{item}_{i}-need", Class='good'))
-		else: # section in ['boss', 'element_2', 'local', 'special']:
+		else:  # section in ['boss', 'element_2', 'local', 'special']:
 			t_own <= TR(TD(IMG(src=f"img/{item}.png", alt=strings[item], title=strings[item])) + TD('0', Id=f"{item}-total") + TD(INPUT(Type='number', min='0', step="1", value='0', Id=f"{item}-user", Class='save')) + TD('0', Id=f"{item}-need", Class='good'))
 
-	doc['inven'] <= t_own
+	doc['inven'] <= P(strings['convert_notice']) + t_own
 
 	b_char = BUTTON(strings["characters"], Id='button_character', Class='current_tab')
 	doc["character"] <= b_char
