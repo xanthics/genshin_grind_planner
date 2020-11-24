@@ -29,29 +29,29 @@ def init_page():
 		COL(Class='left_dotted')
 	)
 	t <= TR(
-		TH("Character", colspan=2) +
-		TH("Level", colspan=2) +
-		TH("Normal", colspan=2) +
-		TH("Skill", colspan=2) +
-		TH("Burst", colspan=2) +
-		TH("Weapon", colspan=3) +
-		TH("Artifacts", colspan=3)
+		TH(strings["character"], colspan=2) +
+		TH(strings["level"], colspan=2) +
+		TH(strings["normal"], colspan=2) +
+		TH(strings["skill"], colspan=2) +
+		TH(strings["burst"], colspan=2) +
+		TH(strings["weapon"], colspan=3) +
+		TH(strings["artifacts"], colspan=3)
 	)
 	t <= TR(
 		TH() +
-		TH("Name") +
-		TH("Now") +
-		TH("Goal") +
-		TH("Now") +
-		TH("Goal") +
-		TH("Now") +
-		TH("Goal") +
-		TH("Now") +
-		TH("Goal") +
-		TH("") +
-		TH("Now") +
-		TH("Goal") +
-		TH("Click to remove", colspan=3)
+		TH(strings["name"]) +
+		TH(strings["now"]) +
+		TH(strings["goal"]) +
+		TH(strings["now"]) +
+		TH(strings["goal"]) +
+		TH(strings["now"]) +
+		TH(strings["goal"]) +
+		TH(strings["now"]) +
+		TH(strings["goal"]) +
+		TH() +
+		TH(strings["now"]) +
+		TH(strings["goal"]) +
+		TH(strings["click_to_remove"], colspan=3)
 	)
 	for char in sorted(characters):
 		if char == 'traveler':
@@ -106,7 +106,7 @@ def init_page():
 			TD(wlvlc) +
 			TD(wlvlt) +
 			TD(INPUT(Id=f"use_arti-{char}", type='checkbox', Class='save')) +
-			TD(BUTTON("Add", Class='arti_list text_button', data_id=f"arti-{char}")) +
+			TD(BUTTON(strings["add"], Class='arti_list text_button', data_id=f"arti-{char}")) +
 			TD(DIV(Id=f"arti-{char}", Class=f'arti_span'))
 			,
 			data_id=f"check-{char}", Class='unchecked', data_color=characters[char]['element']
@@ -153,7 +153,7 @@ def init_page():
 		TD(wlvlc) +
 		TD(wlvlt) +
 		TD(INPUT(Id=f"use_arti-{char}", type='checkbox', Class='save')) +
-		TD(BUTTON("Add", Class='arti_list text_button', data_id=f"arti-{char}")) +
+		TD(BUTTON(strings["add"], Class='arti_list text_button', data_id=f"arti-{char}")) +
 		TD(DIV(Id=f"arti-{char}", Class=f'arti_span'))
 		,
 		data_id=f"check-{char}", Class='unchecked',
@@ -194,7 +194,7 @@ def init_page():
 
 	# set up traveler geo row
 
-	doc['test'] <= t
+	doc['character_list'] <= t
 	# In game order is inconsistent manual list to override
 	ingame_order = [
 		('common', 'slime'),
@@ -265,7 +265,7 @@ def init_page():
 	# Create a table of items we might need and store their ids in a lookup table
 	# char xp, weapon xp, and mora
 	t_own = TABLE(Class='borders')
-	t_own <= TR(TH("Item") + TH("Need") + TH("Have") + TH("Missing"))
+	t_own <= TR(TH(strings["item"]) + TH(strings["need"]) + TH(strings["have"]) + TH(strings["missing_"]))
 	t_own <= TR(TD(IMG(src=f"img/mora.png", alt=strings['mora'], title=strings['mora'])) + TD('0', Id='mora-total') + TD(INPUT(Type='number', min='0', step="1", value='0', Id='mora-user', Class='save')) + TD('0', Id='mora-need', Class='good'))
 	t_own <= TR(TD(IMG(src=f"img/wep_xp.png", alt=strings['wep_xp'], title=strings['wep_xp'])) + TD('0', Id='wep_xp-total') + TD(INPUT(Type='number', min='0', step="1", value='0', Id='wep_xp-user', Class='save')) + TD('0', Id='wep_xp-need', Class='good'))
 	t_own <= TR(TD(IMG(src=f"img/wep_xp_sub_1.png", alt=strings['wep_xp'], title=strings['wep_xp'])) + TD() + TD(INPUT(Type='number', min='0', step="1", value='0', Id='wep_xp_sub_1-user', Class='save')) + TD())
@@ -282,20 +282,21 @@ def init_page():
 
 	doc['inven'] <= t_own
 
-	b_char = BUTTON("Characters", Id='button_character', Class='current_tab')
+	b_char = BUTTON(strings["characters"], Id='button_character', Class='current_tab')
 	doc["character"] <= b_char
 
-	b_inven = BUTTON("Inventory", Id="button_inventory")
+	b_inven = BUTTON(strings["inventory"], Id="button_inventory")
 	doc["inventory"] <= b_inven
 
-	b_reset = BUTTON("Reset All Data", Id='reset_all')
+	b_reset = BUTTON(strings["reset_all_data"], Id='reset_all')
 	doc["reset"] <= b_reset
 
-	b_reset = BUTTON("Reset Character", Id='reset_character')
+	b_reset = BUTTON(strings["reset_character"], Id='reset_character')
 	doc["reset"] <= b_reset
 
-	b_reset = BUTTON("Reset Inventory", Id='reset_inventory')
+	b_reset = BUTTON(strings["reset_inventory"], Id='reset_inventory')
 	doc["reset"] <= b_reset
+
 
 init_page()
 
