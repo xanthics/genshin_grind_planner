@@ -297,7 +297,7 @@ farming_data = {
 	},
 	'gladiators_finale': {
 		'when': ['any'],
-		'where': ['golden_house', 'stormterror', 'geo_hypostasis', 'oceanid', 'pyro_regisvine', 'cryo_regisvine', 'anemo_hypostasis', 'electro_hypostasis', 'wolf_of_the_north']
+		'where': ['40_boss', '60_boss']
 	},
 	'instructor': {
 		'when': ['any'],
@@ -377,6 +377,6 @@ farming_data = {
 	},
 	'wanderers_troupe': {
 		'when': ['any'],
-		'where': ['golden_house', 'stormterror', 'geo_hypostasis', 'oceanid', 'pyro_regisvine', 'cryo_regisvine', 'anemo_hypostasis', 'electro_hypostasis', 'wolf_of_the_north']
+		'where': ['40_boss', '60_boss']
 	}
 }
