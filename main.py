@@ -133,7 +133,11 @@ def init_page():
 
 	# for tracking state without querying the DOM constantly
 	grind_table_state['user'][f"xp"] = 0
+	grind_table_state['user'][f"xp_sub_1"] = 0
+	grind_table_state['user'][f"xp_sub_0"] = 0
 	grind_table_state['user'][f"wep_xp"] = 0
+	grind_table_state['user'][f"wep_xp_sub_1"] = 0
+	grind_table_state['user'][f"wep_xp_sub_0"] = 0
 	grind_table_state['user'][f"mora"] = 0
 	grind_table_state['total'][f"xp"] = 0
 	grind_table_state['total'][f"wep_xp"] = 0
@@ -424,7 +428,14 @@ def calculate_change():
 
 	# update inventory page
 	for key in grind_table_state['total']:
-		val = grind_table_state['total'][key] - grind_table_state['user'][key]
+		if '_sub_' in key:
+			continue
+		elif 'xp' == key:
+			val = grind_table_state['total'][key] - grind_table_state['user'][key] - grind_table_state['user'][f"{key}_sub_1"] / 5 - grind_table_state['user'][f"{key}_sub_0"] / 25
+		elif 'wep_xp' == key:
+			val = grind_table_state['total'][key] - grind_table_state['user'][key] - grind_table_state['user'][f"{key}_sub_1"] / 4 - grind_table_state['user'][f"{key}_sub_0"] / 20
+		else:
+			val = grind_table_state['total'][key] - grind_table_state['user'][key]
 		doc[f"{key}-total"].text = f"{grind_table_state['total'][key]:,}"
 		doc[f"{key}-need"].text = f"{val if val > 0 else 0:,}"
 		doc[f"{key}-need"].attrs['class'] = 'bad' if val > 0 else 'good'
@@ -503,8 +514,15 @@ def calculate_change():
 					for x in data['any'][cost][loc]:
 						if isinstance(strings[x], str):
 							if x in grind_table_state['total']:
-								if grind_table_state['total'][x] - grind_table_state['user'][x] > 0:
-									item_set[x] = {'text': strings[x], 'count': readable_number(grind_table_state['total'][x] - grind_table_state['user'][x])}
+								if 'xp' == x:
+									val = int(grind_table_state['total'][x] - grind_table_state['user'][x] - grind_table_state['user'][f"{x}_sub_1"] / 5 - grind_table_state['user'][f"{x}_sub_0"] / 25 + .5)
+								elif 'wep_xp' == x:
+									val = int(grind_table_state['total'][x] - grind_table_state['user'][x] - grind_table_state['user'][f"{x}_sub_1"] / 4 - grind_table_state['user'][f"{x}_sub_0"] / 20 + .5)
+								else:
+									val = grind_table_state['total'][x] - grind_table_state['user'][x]
+
+								if val > 0:
+									item_set[x] = {'text': strings[x], 'count': readable_number(val)}
 							else:
 								item_set[x] = {'text': strings[x], 'count': ''}
 						else:
@@ -575,7 +593,7 @@ def save_state(ev):
 		oldval = grind_table_state['user'][key]
 		grind_table_state['user'][key] = newval
 		set_storage(ev.target.id, ev.target.value)
-		if oldval < grind_table_state['total'][key] or newval < grind_table_state['total'][key]:
+		if '_sub_' in key or oldval < grind_table_state['total'][key] or newval < grind_table_state['total'][key]:
 			calculate_change()
 	else:
 		print(f"Unhandled element type for storage: {ev.target.type}")
