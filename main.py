@@ -441,9 +441,9 @@ def calculate_change():
 		if key[-1].isnumeric() and int(key[-1]):
 			idx = int(key[-1])-1
 			newkey = f"{key[:-1]}{idx}"
-			doc[f"{key}-need"].attrs['class'] = 'good' if val <= 0 else 'convert' if (grind_table_state['user'][newkey] - grind_table_state['total'][newkey]) >= 3 else 'bad'
+			doc[f"{key}-need"].attrs['class'] = '' if val <= 0 else 'convert' if (grind_table_state['user'][newkey] - grind_table_state['total'][newkey]) >= 3 else 'bad'
 		else:
-			doc[f"{key}-need"].attrs['class'] = 'good' if val <= 0 else 'bad'
+			doc[f"{key}-need"].attrs['class'] = '' if val <= 0 else 'bad'
 
 	# Build up and display farm table
 	data = {
