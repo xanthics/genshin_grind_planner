@@ -438,12 +438,15 @@ def calculate_change():
 			val = grind_table_state['total'][key] - grind_table_state['user'][key]
 		doc[f"{key}-total"].text = f"{grind_table_state['total'][key]:,}"
 		doc[f"{key}-need"].text = f"{val if val > 0 else 0:,}"
-		if key[-1].isnumeric() and int(key[-1]):
+
+		if val <= 0:
+			doc[f"{key}-need"].attrs['class'] = ''
+		elif key[-1].isnumeric() and int(key[-1]):  # last character is numeric and non-zero
 			idx = int(key[-1])-1
 			newkey = f"{key[:-1]}{idx}"
-			doc[f"{key}-need"].attrs['class'] = '' if val <= 0 else 'convert' if (grind_table_state['user'][newkey] - grind_table_state['total'][newkey]) >= 3 else 'bad'
+			doc[f"{key}-need"].attrs['class'] = 'convert' if (grind_table_state['user'][newkey] - grind_table_state['total'][newkey]) >= 3 else 'bad'
 		else:
-			doc[f"{key}-need"].attrs['class'] = '' if val <= 0 else 'bad'
+			doc[f"{key}-need"].attrs['class'] = 'bad'
 
 	# Build up and display farm table
 	data = {
