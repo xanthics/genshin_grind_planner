@@ -489,7 +489,7 @@ def calculate_change():
 				if item_set:
 					v = (DIV(IMG(src=f"img/{x}.png", alt=item_set[x]['text'], title=item_set[x]['text']) + DIV(item_set[x]['count'], Class='bottom-right'), Class='container') for x in sorted(item_set))
 					c = (IMG(src=f"img/{x}.png", alt=strings[x], title=strings[x]) for x in sorted(char_set))
-					t <= TR(TD(strings[loc]) + TD(v) + TD(c))
+					t <= TR(TD(strings[loc], Class="location") + TD(v) + TD(c))
 			d <= t
 	if any([data['any'][x] for x in [0, 20, 40, 60]]):
 		d <= H2([strings['any']])
@@ -514,7 +514,7 @@ def calculate_change():
 					if item_set:
 						v = (DIV(IMG(src=f"img/{x}.png", alt=item_set[x]['text'], title=item_set[x]['text']) + DIV(item_set[x]['count'], Class='bottom-right'), Class='container') for x in sorted(item_set))
 						c = (IMG(src=f"img/{x}.png", alt=strings[x], title=strings[x]) for x in sorted(char_set))
-						t <= TR(TD(strings[loc]) + TD(v) + TD(c))
+						t <= TR(TD(strings[loc], Class="location") + TD(v) + TD(c))
 				d <= t
 	doc['daily'].text = ''
 	doc['daily'] <= d

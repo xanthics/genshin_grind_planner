@@ -2,7 +2,7 @@ body {
 	background-color: rgb(100,100,100);
 	background-image: url('../img/sbg.gif');
 	background-attachment: fixed;
-	font-family: Arial, sans-serif;
+	font-family: Arial, Helvetica, sans-seriff;
 	text-rendering: optimizeLegibility;
 }
 
@@ -273,4 +273,10 @@ input[type=checkbox]:checked:after {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	color: rgb(0, 0, 0);
+}
+
+.location {
+    font-family: "Arial Black", Gadget, sans-serif;
+/*	font-variant: small-caps;
+	font-weight: 500;*/
 }
