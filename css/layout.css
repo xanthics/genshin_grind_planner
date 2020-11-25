@@ -222,6 +222,11 @@ input[type=number] {
     background-color: rgb(75, 30, 0);
 }
 
+.selected {
+	color: rgb(200, 200, 200);
+    background-color: rgb(0, 35, 35);
+}
+
 .left_border {
     border-left: 3px double black;
 }

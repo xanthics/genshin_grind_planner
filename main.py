@@ -201,9 +201,9 @@ def add_value_set(i_dict, key, val):
 def update_per_character(char, char_tracker):
 	character = grind_table_state['characters'][char]
 	if character['level_t'] > character['level_c']:
-		if 'good' not in doc[f'level_c-{char}'].attrs['class']:
-			doc[f'level_c-{char}'].attrs['class'] += ' good'
-			doc[f'level_t-{char}'].attrs['class'] += ' good'
+		if 'selected' not in doc[f'level_c-{char}'].attrs['class']:
+			doc[f'level_c-{char}'].attrs['class'] += ' selected'
+			doc[f'level_t-{char}'].attrs['class'] += ' selected'
 		for i in range(character['level_c']+1, character['level_t']+1):
 			temp = costs['character'][i]
 			grind_table_state['total']['xp'] += temp['xp']
@@ -224,9 +224,9 @@ def update_per_character(char, char_tracker):
 				add_value_set(char_tracker, characters[char]['ascension']['local'], char)
 			if temp['common'][0]:
 				add_value_set(char_tracker, characters[char]['ascension']['common'], char)
-	elif 'good' in doc[f'level_c-{char}'].attrs['class']:
+	elif 'selected' in doc[f'level_c-{char}'].attrs['class']:
 		cl = doc[f'level_c-{char}'].attrs['class'].split()
-		del cl[cl.index('good')]
+		del cl[cl.index('selected')]
 		clt = ' '.join(cl)
 		doc[f'level_c-{char}'].attrs['class'] = clt
 		doc[f'level_t-{char}'].attrs['class'] = clt
@@ -238,9 +238,9 @@ def update_per_character(char, char_tracker):
 		t_c = character[t_c_t]
 		t_t = character[t_t_t]
 		if t_t > t_c:
-			if 'good' not in doc[f'{t_c_t}-{char}'].attrs['class']:
-				doc[f'{t_c_t}-{char}'].attrs['class'] += ' good'
-				doc[f'{t_t_t}-{char}'].attrs['class'] += ' good'
+			if 'selected' not in doc[f'{t_c_t}-{char}'].attrs['class']:
+				doc[f'{t_c_t}-{char}'].attrs['class'] += ' selected'
+				doc[f'{t_t_t}-{char}'].attrs['class'] += ' selected'
 
 			for i in range(t_c + 1, t_t + 1):
 				temp = costs['talent'][i]
@@ -256,9 +256,9 @@ def update_per_character(char, char_tracker):
 					add_value_set(char_tracker, characters[char]['talent']['common'], char)
 				if temp['boss']:
 					add_value_set(char_tracker, characters[char]['talent']['boss'], char)
-		elif 'good' in doc[f'{t_c_t}-{char}'].attrs['class']:
+		elif 'selected' in doc[f'{t_c_t}-{char}'].attrs['class']:
 			cl = doc[f'{t_c_t}-{char}'].attrs['class'].split()
-			del cl[cl.index('good')]
+			del cl[cl.index('selected')]
 			clt = ' '.join(cl)
 			doc[f'{t_c_t}-{char}'].attrs['class'] = clt
 			doc[f'{t_t_t}-{char}'].attrs['class'] = clt
@@ -266,9 +266,9 @@ def update_per_character(char, char_tracker):
 	# calculate mats for weapon
 	if character['weapon'] != '--':
 		if character['weapon_t'] > character['weapon_c']:
-			if 'good' not in doc[f'weapon_c-{char}'].attrs['class']:
-				doc[f'weapon_c-{char}'].attrs['class'] += ' good'
-				doc[f'weapon_t-{char}'].attrs['class'] += ' good'
+			if 'selected' not in doc[f'weapon_c-{char}'].attrs['class']:
+				doc[f'weapon_c-{char}'].attrs['class'] += ' selected'
+				doc[f'weapon_t-{char}'].attrs['class'] += ' selected'
 
 			weapon = weapons[characters[char]['weapon']][character['weapon']]
 			for i in range(character['weapon_c'] + 1, character['weapon_t'] + 1):
@@ -288,9 +288,9 @@ def update_per_character(char, char_tracker):
 					add_value_set(char_tracker, weapon['common_rare'], char)
 				if temp['common'][0]:
 					add_value_set(char_tracker, weapon['common'], char)
-		elif 'good' in doc[f'weapon_c-{char}'].attrs['class']:
+		elif 'selected' in doc[f'weapon_c-{char}'].attrs['class']:
 			cl = doc[f'weapon_c-{char}'].attrs['class'].split()
-			del cl[cl.index('good')]
+			del cl[cl.index('selected')]
 			clt = ' '.join(cl)
 			doc[f'weapon_c-{char}'].attrs['class'] = clt
 			doc[f'weapon_t-{char}'].attrs['class'] = clt
@@ -302,9 +302,9 @@ def update_traveler(char, char_tracker):
 	character = grind_table_state['characters'][char]
 	if char == 'traveler':
 		if character['level_t'] > character['level_c']:
-			if 'good' not in doc[f'level_c-{char}'].attrs['class']:
-				doc[f'level_c-{char}'].attrs['class'] += ' good'
-				doc[f'level_t-{char}'].attrs['class'] += ' good'
+			if 'selected' not in doc[f'level_c-{char}'].attrs['class']:
+				doc[f'level_c-{char}'].attrs['class'] += ' selected'
+				doc[f'level_t-{char}'].attrs['class'] += ' selected'
 			for i in range(character['level_c'] + 1, character['level_t'] + 1):
 				temp = costs['character'][i]
 				grind_table_state['total']['xp'] += temp['xp']
@@ -322,9 +322,9 @@ def update_traveler(char, char_tracker):
 					add_value_set(char_tracker, characters[char]['ascension']['local'], char)
 				if temp['common'][0]:
 					add_value_set(char_tracker, characters[char]['ascension']['common'], char)
-		elif 'good' in doc[f'level_c-{char}'].attrs['class']:
+		elif 'selected' in doc[f'level_c-{char}'].attrs['class']:
 			cl = doc[f'level_c-{char}'].attrs['class'].split()
-			del cl[cl.index('good')]
+			del cl[cl.index('selected')]
 			clt = ' '.join(cl)
 			doc[f'level_c-{char}'].attrs['class'] = clt
 			doc[f'level_t-{char}'].attrs['class'] = clt
@@ -332,9 +332,9 @@ def update_traveler(char, char_tracker):
 		# calculate mats for weapon
 		if character['weapon'] != '--':
 			if character['weapon_t'] > character['weapon_c']:
-				if 'good' not in doc[f'weapon_c-{char}'].attrs['class']:
-					doc[f'weapon_c-{char}'].attrs['class'] += ' good'
-					doc[f'weapon_t-{char}'].attrs['class'] += ' good'
+				if 'selected' not in doc[f'weapon_c-{char}'].attrs['class']:
+					doc[f'weapon_c-{char}'].attrs['class'] += ' selected'
+					doc[f'weapon_t-{char}'].attrs['class'] += ' selected'
 
 				weapon = weapons[characters[char]['weapon']][character['weapon']]
 				for i in range(character['weapon_c'] + 1, character['weapon_t'] + 1):
@@ -354,9 +354,9 @@ def update_traveler(char, char_tracker):
 						add_value_set(char_tracker, weapon['common_rare'], char)
 					if temp['common'][0]:
 						add_value_set(char_tracker, weapon['common'], char)
-			elif 'good' in doc[f'weapon_c-{char}'].attrs['class']:
+			elif 'selected' in doc[f'weapon_c-{char}'].attrs['class']:
 				cl = doc[f'weapon_c-{char}'].attrs['class'].split()
-				del cl[cl.index('good')]
+				del cl[cl.index('selected')]
 				clt = ' '.join(cl)
 				doc[f'weapon_c-{char}'].attrs['class'] = clt
 				doc[f'weapon_t-{char}'].attrs['class'] = clt
@@ -368,9 +368,9 @@ def update_traveler(char, char_tracker):
 			t_c = character[t_c_t]
 			t_t = character[t_t_t]
 			if t_t > t_c:
-				if 'good' not in doc[f'{t_c_t}-{char}'].attrs['class']:
-					doc[f'{t_c_t}-{char}'].attrs['class'] += ' good'
-					doc[f'{t_t_t}-{char}'].attrs['class'] += ' good'
+				if 'selected' not in doc[f'{t_c_t}-{char}'].attrs['class']:
+					doc[f'{t_c_t}-{char}'].attrs['class'] += ' selected'
+					doc[f'{t_t_t}-{char}'].attrs['class'] += ' selected'
 				if char == 'traveler_anemo' or (char == 'traveler_geo' and t_c_t == 'talent_1_c'):
 					travel_key = 'talent_1'
 				else:
@@ -389,9 +389,9 @@ def update_traveler(char, char_tracker):
 						add_value_set(char_tracker, traveler[travel_key][i]['common'], char)
 					if temp['boss']:
 						add_value_set(char_tracker, traveler[travel_key][i]['boss'], char)
-			elif 'good' in doc[f'{t_c_t}-{char}'].attrs['class']:
+			elif 'selected' in doc[f'{t_c_t}-{char}'].attrs['class']:
 				cl = doc[f'{t_c_t}-{char}'].attrs['class'].split()
-				del cl[cl.index('good')]
+				del cl[cl.index('selected')]
 				clt = ' '.join(cl)
 				doc[f'{t_c_t}-{char}'].attrs['class'] = clt
 				doc[f'{t_t_t}-{char}'].attrs['class'] = clt
