@@ -481,8 +481,8 @@ def update_character():
 			add_value_set(char_tracker, elt.id.split('-')[-1], elt.id.split('-')[1])
 
 	# adjust xp totals to units of their base type.
-	grind_table_state['total']['xp'] = grind_table_state['total']['xp'] / 20000
-	grind_table_state['total']['wep_xp'] = grind_table_state['total']['wep_xp'] / 10000
+	grind_table_state['total']['xp'] = round(grind_table_state['total']['xp'] / 20000, 2)
+	grind_table_state['total']['wep_xp'] = round(grind_table_state['total']['wep_xp'] / 10000, 2)
 
 	# Build up and display farm table
 	data = {
