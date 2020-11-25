@@ -441,9 +441,9 @@ def update_inventory():
 		if '_sub_' in key:
 			continue
 		elif 'xp' == key:
-			val = round(grind_table_state['total'][key] - grind_table_state['user'][key] - grind_table_state['user'][f"{key}_sub_1"] / 5 - grind_table_state['user'][f"{key}_sub_0"] / 25, 2)
-		elif 'wep_xp' == key:
 			val = round(grind_table_state['total'][key] - grind_table_state['user'][key] - grind_table_state['user'][f"{key}_sub_1"] / 4 - grind_table_state['user'][f"{key}_sub_0"] / 20, 2)
+		elif 'wep_xp' == key:
+			val = round(grind_table_state['total'][key] - grind_table_state['user'][key] - grind_table_state['user'][f"{key}_sub_1"] / 5 - grind_table_state['user'][f"{key}_sub_0"] / 25, 2)
 		else:
 			val = grind_table_state['total'][key] - grind_table_state['user'][key]
 		doc[f"{key}-total"].text = f"{grind_table_state['total'][key]:,}"
@@ -561,9 +561,9 @@ def update_character():
 						if isinstance(strings[x], str):
 							if x in grind_table_state['total']:
 								if 'xp' == x:
-									val = int(grind_table_state['total'][x] - grind_table_state['user'][x] - grind_table_state['user'][f"{x}_sub_1"] / 5 - grind_table_state['user'][f"{x}_sub_0"] / 25 + .5)
-								elif 'wep_xp' == x:
 									val = int(grind_table_state['total'][x] - grind_table_state['user'][x] - grind_table_state['user'][f"{x}_sub_1"] / 4 - grind_table_state['user'][f"{x}_sub_0"] / 20 + .5)
+								elif 'wep_xp' == x:
+									val = int(grind_table_state['total'][x] - grind_table_state['user'][x] - grind_table_state['user'][f"{x}_sub_1"] / 5 - grind_table_state['user'][f"{x}_sub_0"] / 25 + .5)
 								else:
 									val = grind_table_state['total'][x] - grind_table_state['user'][x]
 
