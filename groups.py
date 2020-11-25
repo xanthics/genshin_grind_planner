@@ -177,7 +177,7 @@ groups = {
 		'halberd',
 		'kunwus_iris_rift',
 		'lithic_spear',
-		'primordial_jade_winged-spear',
+		'primordial_jade_winged_spear',
 		'prototype_grudge',
 		'skyward_spine',
 		'white_tassel',

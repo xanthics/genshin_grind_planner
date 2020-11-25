@@ -63,7 +63,7 @@ weapons = {
 	},
 	'polearm': {
 		'vortex_vanquisher': {'wam': 'unk', 'common_rare': '', 'common': '', 'tier': '5_weapon'},
-		'primordial_jade_winged-spear': {'wam': 'guyun', 'common_rare': 'sacrificial_knife', 'common': 'f_insignia', 'tier': '5_weapon'},
+		'primordial_jade_winged_spear': {'wam': 'guyun', 'common_rare': 'sacrificial_knife', 'common': 'f_insignia', 'tier': '5_weapon'},
 		'kunwus_iris_rift': {'wam': 'unk', 'common_rare': '', 'common': '', 'tier': '5_weapon'},
 		'skyward_spine': {'wam': 'dandelion_gladiator', 'common_rare': 'chaos', 'common': 'scroll', 'tier': '5_weapon'},
 		'royal_spear': {'wam': 'unk', 'common_rare': '', 'common': '', 'tier': '4_weapon'},

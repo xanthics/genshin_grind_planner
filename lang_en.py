@@ -202,7 +202,7 @@ strings = {
 	'halberd': 'Halberd',
 	'kunwus_iris_rift': "Kunwu's Iris Rift",
 	'lithic_spear': 'Lithic Spear',
-	'primordial_jade_winged-spear': 'Primordial Jade Winged-Spear',
+	'primordial_jade_winged_spear': 'Primordial Jade Winged-Spear',
 	'prototype_grudge': 'Prototype Grudge',
 	'skyward_spine': 'Skyward Spine',
 	'white_tassel': 'White Tassel',
