@@ -265,6 +265,8 @@ def update_per_character(char, char_tracker):
 
 	# calculate mats for weapon
 	if character['weapon'] != '--':
+		if 'selected' not in doc[f'weapon-{char}'].attrs['class']:
+			doc[f'weapon-{char}'].attrs['class'] += ' selected'
 		if character['weapon_t'] > character['weapon_c']:
 			if 'selected' not in doc[f'weapon_c-{char}'].attrs['class']:
 				doc[f'weapon_c-{char}'].attrs['class'] += ' selected'
@@ -294,6 +296,11 @@ def update_per_character(char, char_tracker):
 			clt = ' '.join(cl)
 			doc[f'weapon_c-{char}'].attrs['class'] = clt
 			doc[f'weapon_t-{char}'].attrs['class'] = clt
+	elif 'selected' in doc[f'weapon-{char}'].attrs['class']:
+		cl = doc[f'weapon-{char}'].attrs['class'].split()
+		del cl[cl.index('selected')]
+		clt = ' '.join(cl)
+		doc[f'weapon-{char}'].attrs['class'] = clt
 
 
 # Function for calculating a specific character's "cost"
@@ -331,6 +338,8 @@ def update_traveler(char, char_tracker):
 
 		# calculate mats for weapon
 		if character['weapon'] != '--':
+			if 'selected' not in doc[f'weapon-{char}'].attrs['class']:
+				doc[f'weapon-{char}'].attrs['class'] += ' selected'
 			if character['weapon_t'] > character['weapon_c']:
 				if 'selected' not in doc[f'weapon_c-{char}'].attrs['class']:
 					doc[f'weapon_c-{char}'].attrs['class'] += ' selected'
@@ -360,6 +369,11 @@ def update_traveler(char, char_tracker):
 				clt = ' '.join(cl)
 				doc[f'weapon_c-{char}'].attrs['class'] = clt
 				doc[f'weapon_t-{char}'].attrs['class'] = clt
+		elif 'selected' in doc[f'weapon-{char}'].attrs['class']:
+			cl = doc[f'weapon-{char}'].attrs['class'].split()
+			del cl[cl.index('selected')]
+			clt = ' '.join(cl)
+			doc[f'weapon-{char}'].attrs['class'] = clt
 	else:
 		# calculate mats for talent
 		for t_c_t, t_t_t in [('talent_1_c', 'talent_1_t'),
