@@ -273,7 +273,7 @@ strings = {
 	'special_mondstadt': "Found around Mondstadt",
 	'event': 'Event item',
 	'xp_leyline': 'Exp Leyline',
-	'crystal_ore': 'Crystal Ore',
+	'blacksmith': 'Blacksmith (Refine Ore)',
 	'mora_leyline': 'Mora Leyline',
 	# common mobs
 	'hilichurl': "Melee Hilichurls",

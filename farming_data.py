@@ -5,7 +5,7 @@ farming_data = {
 	},
 	'wep_xp': {
 		'when': ['any'],
-		'where': ['crystal_ore']
+		'where': ['blacksmith']
 	},
 	'mora': {
 		'when': ['any'],
