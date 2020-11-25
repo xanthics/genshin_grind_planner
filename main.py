@@ -474,9 +474,9 @@ def update_character():
 		if char in grind_table_state['checked'] and char in grind_table_state['arti_check']:
 			add_value_set(char_tracker, elt.id.split('-')[-1], elt.id.split('-')[1])
 
-	# adjust xp totals to units of their base type.  Round up
-	grind_table_state['total']['xp'] = (grind_table_state['total']['xp'] + 19999) // 20000
-	grind_table_state['total']['wep_xp'] = (grind_table_state['total']['wep_xp'] + 9999) // 10000
+	# adjust xp totals to units of their base type.
+	grind_table_state['total']['xp'] = grind_table_state['total']['xp'] / 20000
+	grind_table_state['total']['wep_xp'] = grind_table_state['total']['wep_xp'] / 10000
 
 	# Build up and display farm table
 	data = {
