@@ -13,6 +13,7 @@ from traveler import traveler
 
 
 storage_key = "genshin_grind_planner"
+current_page = 'character'  # are we on character or inventory page
 # dict to store states for the grind table
 grind_table_state = {
 	'checked': set(),  # is a character selected
@@ -407,25 +408,14 @@ def readable_number(val):
 
 # called when grind tracker needs to be updated
 def calculate_change():
-	char_tracker = {}
-	for val in grind_table_state['total']:
-		grind_table_state['total'][val] = 0
-	for char in grind_table_state['checked']:
-		if 'traveler' in char:
-			update_traveler(char, char_tracker)
-		else:
-			update_per_character(char, char_tracker)
+	if current_page == 'character':
+		update_character()
+	elif current_page == 'inventory':
+		update_inventory()
 
-	# Get a list of all chosen artifacts so we know what to farm
-	for elt in doc.get(selector=f'.saved_arti'):
-		char = elt.id.split('-')[1]
-		if char in grind_table_state['checked'] and char in grind_table_state['arti_check']:
-			add_value_set(char_tracker, elt.id.split('-')[-1], elt.id.split('-')[1])
 
-	# adjust xp totals to units of their base type.  Round up
-	grind_table_state['total']['xp'] = (grind_table_state['total']['xp'] + 19999) // 20000
-	grind_table_state['total']['wep_xp'] = (grind_table_state['total']['wep_xp'] + 9999) // 10000
-
+# update displayed values on the inventory page
+def update_inventory():
 	# update inventory page
 	for key in grind_table_state['total']:
 		if '_sub_' in key:
@@ -451,6 +441,28 @@ def calculate_change():
 			elif val <= -3 and int(num) + 1 < len(strings[root]):  # We have enough of this material
 				doc[f"{key}-need"].text = f" ({int((grind_table_state['total'][key] - grind_table_state['user'][key]) // -3):,})"
 				doc[f"{key}-need"].attrs['class'] = 'good'
+
+
+# update diplayed values on the character page
+def update_character():
+	char_tracker = {}
+	for val in grind_table_state['total']:
+		grind_table_state['total'][val] = 0
+	for char in grind_table_state['checked']:
+		if 'traveler' in char:
+			update_traveler(char, char_tracker)
+		else:
+			update_per_character(char, char_tracker)
+
+	# Get a list of all chosen artifacts so we know what to farm
+	for elt in doc.get(selector=f'.saved_arti'):
+		char = elt.id.split('-')[1]
+		if char in grind_table_state['checked'] and char in grind_table_state['arti_check']:
+			add_value_set(char_tracker, elt.id.split('-')[-1], elt.id.split('-')[1])
+
+	# adjust xp totals to units of their base type.  Round up
+	grind_table_state['total']['xp'] = (grind_table_state['total']['xp'] + 19999) // 20000
+	grind_table_state['total']['wep_xp'] = (grind_table_state['total']['wep_xp'] + 9999) // 10000
 
 	# Build up and display farm table
 	data = {
@@ -553,6 +565,9 @@ def calculate_change():
 
 
 def show_characters(ev):
+	global current_page
+	current_page = 'character'
+	calculate_change()
 	doc["inven"].style.display = 'none'
 	doc["main"].style.display = 'block'
 	doc["button_character"].attrs['class'] = 'current_tab'
@@ -560,6 +575,9 @@ def show_characters(ev):
 
 
 def show_inventory(ev):
+	global current_page
+	current_page = 'inventory'
+	calculate_change()
 	doc["main"].style.display = 'none'
 	doc["inven"].style.display = 'block'
 	doc["button_inventory"].attrs['class'] = 'current_tab'
