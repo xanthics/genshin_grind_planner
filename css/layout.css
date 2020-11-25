@@ -209,17 +209,17 @@ input[type=number] {
 
 .bad {
 	color: rgb(200, 200, 200);
-    background-color: rgb(50, 0, 0);
+    background-color: rgb(75, 0, 0);
 }
 
 .good {
 	color: rgb(200, 200, 200);
-    background-color: rgb(0, 50, 0);
+    background-color: rgb(0, 75, 0);
 }
 
 .convert {
 	color: rgb(200, 200, 200);
-    background-color: rgb(50, 25, 0);
+    background-color: rgb(75, 30, 0);
 }
 
 .left_border {
