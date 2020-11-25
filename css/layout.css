@@ -19,12 +19,12 @@ section {
 	border-width:1px;
 	border-color: rgb(75,75,75);}
 
-section.main {
+.main {
 	z-index: 1;
 	width: 1100px;
 	position: relative;}
 
-section.grind {
+.grind {
 	background-color: rgb(30,30,30);
     margin: 10px;
     padding: 20px;
@@ -37,19 +37,24 @@ span {
     background-size: 1.5em 1.5em;
 }
 
-select.weapon {
+.weapon {
     width: 10em;
     max-width: 10em;
 }
 
 input[type=number],
 select {
+    text-align: right;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom: 1px solid rgb(0,0,0);
+    color: rgb(200, 200, 200);
+    background: rgba(0, 0, 0, .1);
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     padding: .25em .5em;
-    border: none;
-    border-radius: 3px;
 }
 
 
@@ -84,19 +89,13 @@ button {
     white-space: nowrap;
     width: fit-content;
     border: 1px solid rgb(0,0,0);
-    background: rgb(25,25,25);
+    background: rgba(0, 0, 0, .5);
     color: rgb(200,200,200);
 }
 
 button:hover {
     background: rgb(100,100,100);
     color: rgb(255, 255, 255);
-}
-
-select,
-input {
-    color: rgb(200,200,200);
-    background-color: rgb(20,20,20);
 }
 
 button.current_tab {
@@ -106,7 +105,7 @@ button.current_tab {
 
 .text_button {
     border-style: solid;
-    margin: 0px 2px;
+    margin: 0 2px;
     cursor: pointer;
     display: inline-block;
 }
@@ -156,6 +155,7 @@ tr {
 	margin: 1px
 	line-height: 1em;
 }
+
 tr:nth-child(even) {
 	background-color: rgb(35,35,35);
 }
@@ -164,10 +164,11 @@ tr:nth-child(odd) {
 }
 
 tr.unchecked {
-	opacity:0.25;}
+	opacity: 0.25;}
 
 tr.checked {
-	opacity:1.0;}
+	opacity: 1.0;
+}
 
 /* Set up color variables */
 :root {
@@ -252,8 +253,8 @@ a:visited {
 
 .bottom-right {
     position: absolute;
-    bottom: 0px;
-    right: 0px;
+    bottom: 0;
+    right: 0;
     padding: 2px 2px 0px;
     color: rgb(220, 220, 220);
     background-color: rgba(0, 0, 0, .8);
@@ -297,13 +298,3 @@ option {
     background-color: rgb(20, 20, 20);
 }
 
-select,
-input[type=number] {
-    width: 80%;
-    text-align: right;
-    border-top-style: hidden;
-    border-right-style: hidden;
-    border-left-style: hidden;
-    border-bottom: 1px solid rgb(0,0,0);
-    background: rgba(0, 0, 0, .1);
-}
