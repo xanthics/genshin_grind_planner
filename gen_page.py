@@ -9,6 +9,11 @@ from costs import costs
 
 # Create the static elements of the home page
 def init_page():
+	init_characters()
+	init_inventory()
+
+
+def init_characters():
 	t = TABLE(Class='body')
 	t <= COLGROUP(
 		COL() +
@@ -191,10 +196,10 @@ def init_page():
 			,
 			data_id=f"check-{char}", Class='unchecked', data_color=ele
 		)
-
-	# set up traveler geo row
-
 	doc['character_list'] <= t
+
+
+def init_inventory():
 	# In game order is inconsistent manual list to override
 	ingame_order = [
 		('common', 'slime'),
@@ -264,7 +269,7 @@ def init_page():
 
 	# Create a table of items we might need and store their ids in a lookup table
 	# char xp, weapon xp, and mora
-	t_own = TABLE(Class='borders')
+	t_own = TABLE(Class='borders center')
 	t_own <= TR(TH(strings["item"]) + TH(strings["need"]) + TH(strings["have"]) + TH(strings["missing_"]))
 	t_own <= TR(TD(IMG(src=f"img/mora.png", alt=strings['mora'], title=strings['mora'])) + TD('0', Id='mora-total') + TD(INPUT(Type='number', min='0', step="1", value='0', Id='mora-user', Class='save')) + TD('0', Id='mora-need', Class='good'))
 	t_own <= TR(TD(IMG(src=f"img/wep_xp.png", alt=strings['wep_xp'], title=strings['wep_xp'])) + TD('0', Id='wep_xp-total') + TD(INPUT(Type='number', min='0', step="1", value='0', Id='wep_xp-user', Class='save')) + TD('0', Id='wep_xp-need', Class='good'))

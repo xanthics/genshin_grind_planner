@@ -298,3 +298,8 @@ option {
     background-color: rgb(20, 20, 20);
 }
 
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+

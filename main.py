@@ -435,9 +435,9 @@ def update_inventory():
 		if '_sub_' in key:
 			continue
 		elif 'xp' == key:
-			val = grind_table_state['total'][key] - grind_table_state['user'][key] - grind_table_state['user'][f"{key}_sub_1"] / 5 - grind_table_state['user'][f"{key}_sub_0"] / 25
+			val = round(grind_table_state['total'][key] - grind_table_state['user'][key] - grind_table_state['user'][f"{key}_sub_1"] / 5 - grind_table_state['user'][f"{key}_sub_0"] / 25, 2)
 		elif 'wep_xp' == key:
-			val = grind_table_state['total'][key] - grind_table_state['user'][key] - grind_table_state['user'][f"{key}_sub_1"] / 4 - grind_table_state['user'][f"{key}_sub_0"] / 20
+			val = round(grind_table_state['total'][key] - grind_table_state['user'][key] - grind_table_state['user'][f"{key}_sub_1"] / 4 - grind_table_state['user'][f"{key}_sub_0"] / 20, 2)
 		else:
 			val = grind_table_state['total'][key] - grind_table_state['user'][key]
 		doc[f"{key}-total"].text = f"{grind_table_state['total'][key]:,}"
@@ -633,14 +633,12 @@ def save_state(ev):
 			calculate_change()
 	elif ev.target.type == 'number':
 		if not ev.target.value.isnumeric() or int(ev.target.value) < 0:
-			ev.target.value = newval = 0
+			ev.target.value = 0
 		else:
-			ev.target.value = newval = int(ev.target.value)
-		oldval = grind_table_state['user'][key]
-		grind_table_state['user'][key] = newval
+			ev.target.value = int(ev.target.value)
+		grind_table_state['user'][key] = int(ev.target.value)
 		set_storage(ev.target.id, ev.target.value)
-		if '_sub_' in key or oldval < grind_table_state['total'][key] or newval < grind_table_state['total'][key]:
-			calculate_change()
+		calculate_change()
 	else:
 		print(f"Unhandled element type for storage: {ev.target.type}")
 
