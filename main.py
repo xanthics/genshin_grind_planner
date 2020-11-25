@@ -248,6 +248,9 @@ def update_per_character(char, char_tracker):
 				grind_table_state['total'][f"{characters[char]['talent']['talent']}_{temp['talent'][1]}"] += temp['talent'][0]
 				grind_table_state['total'][f"{characters[char]['talent']['common']}_{temp['common'][1]}"] += temp['common'][0]
 				grind_table_state['total'][characters[char]['talent']['boss']] += temp['boss']
+				grind_table_state['total']['crown'] += temp['crown']
+				if temp['crown']:
+					add_value_set(char_tracker, 'crown', char)
 				if temp['mora']:
 					add_value_set(char_tracker, 'mora', char)
 				if temp['talent'][0]:
@@ -395,6 +398,9 @@ def update_traveler(char, char_tracker):
 					grind_table_state['total'][f"{traveler[travel_key][i]['talent']}_{temp['talent'][1]}"] += temp['talent'][0]
 					grind_table_state['total'][f"{traveler[travel_key][i]['common']}_{temp['common'][1]}"] += temp['common'][0]
 					grind_table_state['total'][traveler[travel_key][i]['boss']] += temp['boss']
+					grind_table_state['total']['crown'] += temp['crown']
+					if temp['crown']:
+						add_value_set(char_tracker, 'crown', char)
 					if temp['mora']:
 						add_value_set(char_tracker, 'mora', char)
 					if temp['talent'][0]:
