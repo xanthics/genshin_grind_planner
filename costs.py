@@ -28,8 +28,8 @@ costs = {
 		3: {'xp': 276350, 'mora': 27640, 'wam': (2, 1), 'common_rare': (8, 0), 'common': (5, 0)},
 		4: {'xp': 408150, 'mora': 40820, 'wam': (4, 1), 'common_rare': (4, 1), 'common': (4, 1)},
 		5: {'xp': 571625, 'mora': 57180, 'wam': (2, 2), 'common_rare': (8, 1), 'common': (6, 1)},
-		6: {'xp': 770125, 'mora': 77020, 'wam': (4, 2), 'common_rare': (6, 2), 'common': (4, 4)},
-		7: {'xp': 3988200, 'mora': 163460, 'wam': (3, 3), 'common_rare': (12, 2), 'common': (8, 8)},
+		6: {'xp': 770125, 'mora': 77020, 'wam': (4, 2), 'common_rare': (6, 2), 'common': (4, 2)},
+		7: {'xp': 3988200, 'mora': 163460, 'wam': (3, 3), 'common_rare': (12, 2), 'common': (8, 2)},
 	},
 	"4_weapon": {  # (amount, tier)
 		0: {'xp': 0, 'mora': 0, 'wam': (0, 0), 'common_rare': (0, 0), 'common': (0, 0)},
