@@ -10,6 +10,7 @@ from lang_en import strings
 from costs import costs
 from farming_data import farming_data
 from traveler import traveler
+from ingame_order import ingame_order
 
 
 storage_key = "genshin_grind_planner"
@@ -515,18 +516,20 @@ def update_character():
 		'xp_leyline': 20,
 		'mora_leyline': 20
 	}
-	for item in char_tracker:
-		for day in farming_data[item]['when']:
-			for loc in farming_data[item]['where']:
-				if day == 'any':
-					cost = 0 if loc not in resin else resin[loc]
-					if loc not in data[day][cost]:
-						data[day][cost][loc] = []
-					data[day][cost][loc].append(item)
-				else:
-					if loc not in data[day]:
-						data[day][loc] = []
-					data[day][loc].append(item)
+	print(char_tracker.keys())
+	for section, item in [('base', 'xp'), ('base', 'wep_xp'), ('base', 'mora')] + ingame_order:
+		if item in char_tracker:
+			for day in farming_data[item]['when']:
+				for loc in farming_data[item]['where']:
+					if day == 'any':
+						cost = 0 if loc not in resin else resin[loc]
+						if loc not in data[day][cost]:
+							data[day][cost][loc] = []
+						data[day][cost][loc].append(item)
+					else:
+						if loc not in data[day]:
+							data[day][loc] = []
+						data[day][loc].append(item)
 
 	d = SECTION(Class='grind')
 	for day in ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']:
@@ -546,7 +549,7 @@ def update_character():
 								char_set.update(char_tracker[x])
 								item_set[f"{x}_{i}"] = {'text': strings[x][i], 'count': readable_number(grind_table_state['total'][f"{x}_{i}"] - grind_table_state['user'][f"{x}_{i}"])}
 				if item_set:
-					v = (DIV(IMG(src=f"img/{x}.png", alt=item_set[x]['text'], title=item_set[x]['text']) + DIV(item_set[x]['count'], Class='bottom-right'), Class='container') for x in sorted(item_set))
+					v = (DIV(IMG(src=f"img/{x}.png", alt=item_set[x]['text'], title=item_set[x]['text']) + DIV(item_set[x]['count'], Class='bottom-right'), Class='container') for x in item_set)
 					c = (IMG(src=f"img/{x}.png", alt=strings[x], title=strings[x]) for x in sorted(char_set))
 					t <= TR(TD(strings[loc], Class="location") + TD(v) + TD(c))
 			d <= t
@@ -581,7 +584,7 @@ def update_character():
 									char_set.update(char_tracker[x])
 									item_set[f"{x}_{i}"] = {'text': strings[x][i], 'count': readable_number(grind_table_state['total'][f"{x}_{i}"] - grind_table_state['user'][f"{x}_{i}"])}
 					if item_set:
-						v = (DIV(IMG(src=f"img/{x}.png", alt=item_set[x]['text'], title=item_set[x]['text']) + DIV(item_set[x]['count'], Class='bottom-right'), Class='container') for x in sorted(item_set))
+						v = (DIV(IMG(src=f"img/{x}.png", alt=item_set[x]['text'], title=item_set[x]['text']) + DIV(item_set[x]['count'], Class='bottom-right'), Class='container') for x in item_set)
 						c = (IMG(src=f"img/{x}.png", alt=strings[x], title=strings[x]) for x in sorted(char_set))
 						t <= TR(TD(strings[loc], Class="location") + TD(v) + TD(c))
 				d <= t
