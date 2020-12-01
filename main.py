@@ -516,8 +516,9 @@ def update_character():
 		'xp_leyline': 20,
 		'mora_leyline': 20
 	}
-	print(char_tracker.keys())
-	for section, item in [('base', 'xp'), ('base', 'wep_xp'), ('base', 'mora')] + ingame_order:
+	arti_keys = set(x for x in char_tracker if x not in ingame_order)
+	print(arti_keys)
+	for section, item in [('base', 'xp'), ('base', 'wep_xp'), ('base', 'mora')] + ingame_order + [('arti', x) for x in arti_keys]:
 		if item in char_tracker:
 			for day in farming_data[item]['when']:
 				for loc in farming_data[item]['where']:
