@@ -34,6 +34,8 @@ groups = {
 		'xingqiu',
 		'tartaglia',
 		'diona',
+		'zhongli',
+		'xinyan'
 	],
 	'element_1': [
 		'brilliant_diamond',

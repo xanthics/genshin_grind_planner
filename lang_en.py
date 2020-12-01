@@ -65,6 +65,8 @@ strings = {
 	'xingqiu': 'Xingqiu',
 	'tartaglia': 'Tartaglia',
 	'diona': 'Diona',
+	'zhongli': 'Zhongli',
+	'xinyan': 'Xinyan',
 	'traveler': "Traveler",
 	'traveler_pyro': "Traveler (Pyro)",
 	'traveler_hydro': "Traveler (Hydro)",

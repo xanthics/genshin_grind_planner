@@ -64,7 +64,6 @@ weapons = {
 	'polearm': {
 		'vortex_vanquisher': {'wam': 'unk', 'common_rare': '', 'common': '', 'tier': '5_weapon'},
 		'primordial_jade_winged_spear': {'wam': 'guyun', 'common_rare': 'sacrificial_knife', 'common': 'f_insignia', 'tier': '5_weapon'},
-		'kunwus_iris_rift': {'wam': 'unk', 'common_rare': '', 'common': '', 'tier': '5_weapon'},
 		'skyward_spine': {'wam': 'dandelion_gladiator', 'common_rare': 'chaos', 'common': 'scroll', 'tier': '5_weapon'},
 		'royal_spear': {'wam': 'unk', 'common_rare': '', 'common': '', 'tier': '4_weapon'},
 		'crescent_pike': {'wam': 'guyun', 'common_rare': 'sacrificial_knife', 'common': 'th_insignia', 'tier': '4_weapon'},
@@ -81,7 +80,7 @@ weapons = {
 	'sword': {
 		'skyward_blade': {'wam': 'boreal_wolf', 'common_rare': 'ley_line', 'common': 'slime', 'tier': '5_weapon'},
 		'aquila_favonia': {'wam': 'decarabian', 'common_rare': 'horn', 'common': 'arrowhead', 'tier': '5_weapon'},
-		'blackcliff_longsword': {'wam': 'unk', 'common_rare': '', 'common': '', 'tier': '4_weapon'},
+		'blackcliff_longsword': {'wam': 'guyun', 'common_rare': 'sacrificial_knife', 'common': 'arrowhead', 'tier': '4_weapon'},
 		'royal_longsword': {'wam': 'unk', 'common_rare': '', 'common': '', 'tier': '4_weapon'},
 		'the_alley_flash': {'wam': 'unk', 'common_rare': '', 'common': '', 'tier': '4_weapon'},
 		'favonius_sword': {'wam': 'decarabian', 'common_rare': 'horn', 'common': 'arrowhead', 'tier': '4_weapon'},

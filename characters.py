@@ -345,6 +345,36 @@ characters = {
 		'weapon': 'bow',
 		'element': 'cryo'
 	},
+	"zhongli": {
+		'ascension': {
+			'element_1': 'prithiva_topaz',
+			'element_2': 'basalt_pillar',
+			'local': 'cor_lapis',
+			'common': 'slime'
+		},
+		'talent': {
+			'talent': 'gold',
+			'common': 'slime',
+			'boss': 'tusk_of_monoceros_caeli'
+		},
+		'weapon': 'polearm',
+		'element': 'geo'
+	},
+	"xinyan": {
+		'ascension': {
+			'element_1': 'agnidus_agate',
+			'element_2': 'everflame_seed',
+			'local': 'violetgrass',
+			'common': 'th_insignia'
+		},
+		'talent': {
+			'talent': 'gold',
+			'common': 'th_insignia',
+			'boss': 'tusk_of_monoceros_caeli'
+		},
+		'weapon': 'claymore',
+		'element': 'pyro'
+	},
 	"traveler": {
 		'ascension': {
 			'element_1': 'brilliant_diamond',
