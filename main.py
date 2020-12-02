@@ -461,7 +461,8 @@ def update_inventory():
 				doc[f"{key}-need"].attrs['class'] = 'convert' if can_convert_up else 'bad'
 			elif val <= -3 and int(num) + 1 < len(strings[root]):  # We have enough of this material
 				doc[f"{key}-need"].text = f" ({int((grind_table_state['total'][key] - grind_table_state['user'][key]) // -3):,})"
-				doc[f"{key}-need"].attrs['class'] = 'good'
+				if any(grind_table_state['total'][f"{root}_{x}"] for x in range(0, len(strings[root]))):
+					doc[f"{key}-need"].attrs['class'] = 'good'
 
 
 # update diplayed values on the character page
