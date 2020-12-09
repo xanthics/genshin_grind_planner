@@ -422,7 +422,7 @@ def update_traveler(char, char_tracker):
 def readable_number(val):
 	for num, fact, affix in [(100000, 6, 'm'),
 							 (1000, 3, 'k')]:
-		if val >= num and affix:
+		if val >= num:
 			return f"{val/(10**fact):.1f}{affix}"
 	return f"{val}"
 
@@ -449,7 +449,6 @@ def update_inventory():
 			val = grind_table_state['total'][key] - grind_table_state['user'][key]
 		doc[f"{key}-total"].text = f"{grind_table_state['total'][key]:,}"
 		doc[f"{key}-need"].text = f"{val if val > 0 else 0:,}"
-
 		doc[f"{key}-need"].attrs['class'] = '' if val <= 0 else 'bad'
 
 		if key[-1].isnumeric():
@@ -459,8 +458,9 @@ def update_inventory():
 				newkey = f"{root}_{idx}"
 				can_convert_up = (grind_table_state['user'][newkey] - grind_table_state['total'][newkey]) >= 3
 				doc[f"{key}-need"].attrs['class'] = 'convert' if can_convert_up else 'bad'
-			elif val <= -3 and int(num) + 1 < len(strings[root]):  # We have enough of this material
+			elif int(num) < len(strings[root])-1 and val <= -3:  # We have enough of this material to convert
 				doc[f"{key}-need"].text = f" ({int((grind_table_state['total'][key] - grind_table_state['user'][key]) // -3):,})"
+				# Only highlight green if item type is used in guide
 				if any(grind_table_state['total'][f"{root}_{x}"] for x in range(0, len(strings[root]))):
 					doc[f"{key}-need"].attrs['class'] = 'good'
 
@@ -483,6 +483,7 @@ def update_character():
 			add_value_set(char_tracker, elt.id.split('-')[-1], elt.id.split('-')[1])
 
 	# adjust xp totals to units of their base type.
+	grind_table_state['total']['mora'] += grind_table_state['total']['xp'] // 5
 	grind_table_state['total']['xp'] = round(grind_table_state['total']['xp'] / 20000, 2)
 	grind_table_state['total']['wep_xp'] = round(grind_table_state['total']['wep_xp'] / 10000, 2)
 

@@ -1,13 +1,13 @@
 costs = {
 	"character": {  # (amount, tier)
-		0: {'xp': 0, 'mora': 0, 'element_1': (0, 0), 'element_2': 0, 'local': 0, 'common': (0, 0)},
-		1: {'xp': 120175, 'mora': 24035, 'element_1': (0, 0), 'element_2': 0, 'local': 0, 'common': (0, 0)},
-		2: {'xp': 578325, 'mora': 135665, 'element_1': (1, 0), 'element_2': 0, 'local': 3, 'common': (3, 0)},
-		3: {'xp': 579100, 'mora': 155820, 'element_1': (3, 1), 'element_2': 2, 'local': 10, 'common': (15, 0)},
-		4: {'xp': 854125, 'mora': 230825, 'element_1': (6, 1), 'element_2': 4, 'local': 20, 'common': (12, 1)},
-		5: {'xp': 1195925, 'mora': 319185, 'element_1': (3, 2), 'element_2': 8, 'local': 30, 'common': (18, 1)},
-		6: {'xp': 1611875, 'mora': 422375, 'element_1': (6, 2), 'element_2': 12, 'local': 45, 'common': (16, 2)},
-		7: {'xp': 3423125, 'mora': 804625, 'element_1': (6, 3), 'element_2': 20, 'local': 60, 'common': (24, 2)},
+		0: {'xp': 0, 'mora': 0, 'element_1': (0, 0), 'element_2': 0, 'local': 0, 'common': (0, 0)},  # lvl 1, asc 0
+		1: {'xp': 120175, 'mora': 0, 'element_1': (0, 0), 'element_2': 0, 'local': 0, 'common': (0, 0)},  # lvl 20, asc 0
+		2: {'xp': 578325, 'mora': 20000, 'element_1': (1, 0), 'element_2': 0, 'local': 3, 'common': (3, 0)},  # lvl 40, asc 1
+		3: {'xp': 579100, 'mora': 40000, 'element_1': (3, 1), 'element_2': 2, 'local': 10, 'common': (15, 0)},  # lvl 50, asc 2
+		4: {'xp': 854125, 'mora': 60000, 'element_1': (6, 1), 'element_2': 4, 'local': 20, 'common': (12, 1)},  # lvl 60, asc 3
+		5: {'xp': 1195925, 'mora': 80000, 'element_1': (3, 2), 'element_2': 8, 'local': 30, 'common': (18, 1)},  # lvl 70, asc 4
+		6: {'xp': 1611875, 'mora': 100000, 'element_1': (6, 2), 'element_2': 12, 'local': 45, 'common': (16, 2)},  # lvl 80, asc 5
+		7: {'xp': 3423125, 'mora': 120000, 'element_1': (6, 3), 'element_2': 20, 'local': 60, 'common': (24, 2)},  # lvl 90, asc 6
 	},
 	"talent": {  # (amount, tier)
 		1: {'mora': 0, 'talent': (0, 0), 'common': (0, 0), 'boss': 0, 'character': 0},
