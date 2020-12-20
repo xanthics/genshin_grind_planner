@@ -66,7 +66,14 @@ def init_characters():
 		lvlc = SELECT(Id=f"level_c-{char}", Class=f"{char} save")
 		lvlt = SELECT(Id=f"level_t-{char}", Class=f"{char} save")
 		for lvl in [lvlc, lvlt]:
-			for c, val in enumerate([1, 20, 40, 50, 60, 70, 80, 90]):
+			for c, val in [(0, "1"),
+						   (1, "20"), (11, "20 A"),
+						   (2, "40"), (12, "40 A"),
+						   (3, "50"), (13, "50 A"),
+						   (4, "60"), (14, "60 A"),
+						   (5, "70"), (15, "70 A"),
+						   (6, "80"), (16, "80 A"),
+						   (7, "90")]:
 				lvl <= OPTION(f"{val}", value=c)
 		# Set up talent select
 		t1c = SELECT(Id=f"talent_1_c-{char}", Class=f"{char} save")
@@ -111,7 +118,7 @@ def init_characters():
 			TD(ws) +
 			TD(wlvlc) +
 			TD(wlvlt) +
-			TD(INPUT(Id=f"use_arti-{char}", type='checkbox', Class='save')) +
+			TD(INPUT(Id=f"use_arti-{char}", type='checkbox', Class='save', checked=True)) +
 			TD(BUTTON(strings["add"], Class='arti_list text_button', data_id=f"arti-{char}")) +
 			TD(DIV(Id=f"arti-{char}", Class=f'arti_span'))
 			,
@@ -123,7 +130,14 @@ def init_characters():
 	lvlc = SELECT(Id=f"level_c-{char}", Class=f"{char} save")
 	lvlt = SELECT(Id=f"level_t-{char}", Class=f"{char} save")
 	for lvl in [lvlc, lvlt]:
-		for c, val in enumerate([1, 20, 40, 50, 60, 70, 80, 90]):
+		for c, val in [(0, "1"),
+					   (1, "20"), (11, "20 A"),
+					   (2, "40"), (12, "40 A"),
+					   (3, "50"), (13, "50 A"),
+					   (4, "60"), (14, "60 A"),
+					   (5, "70"), (15, "70 A"),
+					   (6, "80"), (16, "80 A"),
+					   (7, "90")]:
 			lvl <= OPTION(f"{val}", value=c)
 	# Set up weapon select
 	ws = SELECT(Id=f"weapon-{char}", data_id=f"select-{char}", Class=f'weapon {char} save')
@@ -158,7 +172,7 @@ def init_characters():
 		TD(ws) +
 		TD(wlvlc) +
 		TD(wlvlt) +
-		TD(INPUT(Id=f"use_arti-{char}", type='checkbox', Class='save')) +
+		TD(INPUT(Id=f"use_arti-{char}", type='checkbox', Class='save', checked=True)) +
 		TD(BUTTON(strings["add"], Class='arti_list text_button', data_id=f"arti-{char}")) +
 		TD(DIV(Id=f"arti-{char}", Class=f'arti_span'))
 		,
