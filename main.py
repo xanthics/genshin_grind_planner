@@ -55,13 +55,16 @@ def reset_data(ev):
 	grind_table_state['checked'] = set()
 	for char in grind_table_state['characters']:
 		grind_table_state['characters'][char] = char_dict.copy()
-	grind_table_state['arti_check'] = set()
+		grind_table_state['arti_check'].add(char)
 	grind_table_state['artifacts'] = set()
 	for val in grind_table_state['user']:
 		grind_table_state['user'][val] = 0
 		grind_table_state['total'][val] = 0
 	for elt in doc.get(selector='input[type=checkbox]'):
-		doc[elt.id].checked = False
+		if 'char_select' in elt.attrs['class']:
+			doc[elt.id].checked = False
+		else:
+			doc[elt.id].checked = True
 	for elt in doc.get(selector='select'):
 		elt.selectedIndex = 0
 	for elt in doc.get(selector='TR[data-id]'):
@@ -82,12 +85,15 @@ def reset_character(ev):
 	grind_table_state['checked'] = set()
 	for char in grind_table_state['characters']:
 		grind_table_state['characters'][char] = char_dict.copy()
-	grind_table_state['arti_check'] = set()
+		grind_table_state['arti_check'].add(char)
 	grind_table_state['artifacts'] = set()
 	for val in grind_table_state['total']:
 		grind_table_state['total'][val] = 0
 	for elt in doc.get(selector='input[type=checkbox]'):
-		doc[elt.id].checked = False
+		if 'char_select' in elt.attrs['class']:
+			doc[elt.id].checked = False
+		else:
+			doc[elt.id].checked = True
 	for elt in doc.get(selector='select'):
 		elt.selectedIndex = 0
 	for elt in doc.get(selector='TR[data-id]'):
@@ -132,6 +138,7 @@ def init_page():
 	for elt in doc.get(selector='.char_select'):
 		name = elt.id.split('-')[1]
 		grind_table_state['characters'][name] = char_dict.copy()
+		grind_table_state['arti_check'].add(name)
 
 	# for tracking state without querying the DOM constantly
 	grind_table_state['user'][f"xp"] = 0
@@ -157,10 +164,10 @@ def init_page():
 			doc[k].checked = True
 			for elt in doc.get(selector=f'TR[data-id="{k}"]'):
 				elt.attrs['class'] = 'checked'
-		elif v == 'checked':
+		elif v == 'unchecked':
 			sub_key, char = k.split('-')
-			grind_table_state['arti_check'].add(char)
-			doc[k].checked = True
+			grind_table_state['arti_check'].discard(char)
+			doc[k].checked = False
 		elif 'select' in v:
 			sub_key, char = k.split('-')
 			val = v.split('-')[1]
@@ -591,7 +598,6 @@ def update_character():
 						t <= TR(TD(strings[loc], Class="location") + TD(v) + TD(c))
 				d <= t
 
-
 	doc['daily'].text = ''
 	doc['daily'] <= d
 
@@ -635,10 +641,10 @@ def save_state(ev):
 	elif ev.target.type == 'checkbox':
 		if ev.target.checked:
 			grind_table_state['arti_check'].add(ev.target.id.split('-')[1])
-			set_storage(ev.target.id, 'checked')
+			del_storage(ev.target.id)
 		else:
 			grind_table_state['arti_check'].discard(ev.target.id.split('-')[1])
-			del_storage(ev.target.id)
+			set_storage(ev.target.id, 'unchecked')
 		if char in grind_table_state['checked']:
 			calculate_change()
 	elif ev.target.type == 'select-one':
