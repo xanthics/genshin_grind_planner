@@ -208,11 +208,35 @@ def add_value_set(i_dict, key, val):
 # This function also updates table select box classes
 def update_per_character(char, char_tracker):
 	character = grind_table_state['characters'][char]
-	if character['level_t'] > character['level_c']:
+	level_c, level_c_flag = character['level_c'] % 10, character['level_c'] // 10
+	level_t, level_t_flag = character['level_t'] % 10, character['level_t'] // 10
+	if level_t > level_c or (level_t == level_c and level_t_flag > level_c_flag):
 		if 'selected' not in doc[f'level_c-{char}'].attrs['class']:
 			doc[f'level_c-{char}'].attrs['class'] += ' selected'
 			doc[f'level_t-{char}'].attrs['class'] += ' selected'
-		for i in range(character['level_c']+1, character['level_t']+1):
+		if level_c_flag:
+			temp = costs['character'][level_c+1]
+			grind_table_state['total']['xp'] += temp['xp']
+			if temp['xp']:
+				add_value_set(char_tracker, 'xp', char)
+		if level_t_flag:
+			temp = costs['character'][level_t+1]
+			grind_table_state['total']['mora'] += temp['mora']
+			grind_table_state['total'][f"{characters[char]['ascension']['element_1']}_{temp['element_1'][1]}"] += temp['element_1'][0]
+			grind_table_state['total'][characters[char]['ascension']['element_2']] += temp['element_2']
+			grind_table_state['total'][characters[char]['ascension']['local']] += temp['local']
+			grind_table_state['total'][f"{characters[char]['ascension']['common']}_{temp['common'][1]}"] += temp['common'][0]
+			if temp['mora']:
+				add_value_set(char_tracker, 'mora', char)
+			if temp['element_1'][0]:
+				add_value_set(char_tracker, characters[char]['ascension']['element_1'], char)
+			if temp['element_2']:
+				add_value_set(char_tracker, characters[char]['ascension']['element_2'], char)
+			if temp['local']:
+				add_value_set(char_tracker, characters[char]['ascension']['local'], char)
+			if temp['common'][0]:
+				add_value_set(char_tracker, characters[char]['ascension']['common'], char)
+		for i in range(level_c+1+level_c_flag, level_t+1):
 			temp = costs['character'][i]
 			grind_table_state['total']['xp'] += temp['xp']
 			grind_table_state['total']['mora'] += temp['mora']
@@ -319,11 +343,32 @@ def update_per_character(char, char_tracker):
 def update_traveler(char, char_tracker):
 	character = grind_table_state['characters'][char]
 	if char == 'traveler':
-		if character['level_t'] > character['level_c']:
+		level_c, level_c_flag = character['level_c'] % 10, character['level_c'] // 10
+		level_t, level_t_flag = character['level_t'] % 10, character['level_t'] // 10
+		if level_t > level_c or (level_t == level_c and level_t_flag > level_c_flag):
 			if 'selected' not in doc[f'level_c-{char}'].attrs['class']:
 				doc[f'level_c-{char}'].attrs['class'] += ' selected'
 				doc[f'level_t-{char}'].attrs['class'] += ' selected'
-			for i in range(character['level_c'] + 1, character['level_t'] + 1):
+			if level_c_flag:
+				temp = costs['character'][level_c + 1]
+				grind_table_state['total']['xp'] += temp['xp']
+				if temp['xp']:
+					add_value_set(char_tracker, 'xp', char)
+			if level_t_flag:
+				temp = costs['character'][level_t + 1]
+				grind_table_state['total']['mora'] += temp['mora']
+				grind_table_state['total'][f"{characters[char]['ascension']['element_1']}_{temp['element_1'][1]}"] += temp['element_1'][0]
+				grind_table_state['total'][characters[char]['ascension']['local']] += temp['local']
+				grind_table_state['total'][f"{characters[char]['ascension']['common']}_{temp['common'][1]}"] += temp['common'][0]
+				if temp['mora']:
+					add_value_set(char_tracker, 'mora', char)
+				if temp['element_1'][0]:
+					add_value_set(char_tracker, characters[char]['ascension']['element_1'], char)
+				if temp['local']:
+					add_value_set(char_tracker, characters[char]['ascension']['local'], char)
+				if temp['common'][0]:
+					add_value_set(char_tracker, characters[char]['ascension']['common'], char)
+			for i in range(level_c + 1 + level_c_flag, level_t + 1):
 				temp = costs['character'][i]
 				grind_table_state['total']['xp'] += temp['xp']
 				grind_table_state['total']['mora'] += temp['mora']
