@@ -251,17 +251,18 @@ def update_xp(char, character, char_tracker):
 			grind_table_state['total']['xp'] += temp['xp']
 			grind_table_state['total']['mora'] += temp['mora']
 			grind_table_state['total'][f"{characters[char]['ascension']['element_1']}_{temp['element_1'][1]}"] += temp['element_1'][0]
-			grind_table_state['total'][characters[char]['ascension']['element_2']] += temp['element_2']
 			grind_table_state['total'][characters[char]['ascension']['local']] += temp['local']
 			grind_table_state['total'][f"{characters[char]['ascension']['common']}_{temp['common'][1]}"] += temp['common'][0]
+			if char != 'traveler':
+				grind_table_state['total'][characters[char]['ascension']['element_2']] += temp['element_2']
+				if temp['element_2']:
+					add_value_set(char_tracker, characters[char]['ascension']['element_2'], char)
 			if temp['xp']:
 				add_value_set(char_tracker, 'xp', char)
 			if temp['mora']:
 				add_value_set(char_tracker, 'mora', char)
 			if temp['element_1'][0]:
 				add_value_set(char_tracker, characters[char]['ascension']['element_1'], char)
-			if temp['element_2']:
-				add_value_set(char_tracker, characters[char]['ascension']['element_2'], char)
 			if temp['local']:
 				add_value_set(char_tracker, characters[char]['ascension']['local'], char)
 			if temp['common'][0]:
