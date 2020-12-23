@@ -52,7 +52,7 @@ weapons = {
 		'rainslasher': {'wam': 'mist_veiled_elixer', 'common_rare': 'mist', 'common': 'scroll', 'tier': '4_weapon'},
 		'prototype_aminus': {'wam': 'aerosiderite', 'common_rare': 'bone_shard', 'common': 'mask', 'tier': '4_weapon'},
 		'favonius_greatsword': {'wam': 'dandelion_gladiator', 'common_rare': 'chaos', 'common': 'f_insignia', 'tier': '4_weapon'},
-		'snow_tombed_starsliver': {'wam': 'unk', 'common_rare': '', 'common': '', 'tier': '4_weapon'},
+		'snow_tombed_starsliver': {'wam': 'decarabian', 'common_rare': 'horn', 'common': 'slime', 'tier': '4_weapon'},
 		'skyrider_greatsword': {'wam': 'aerosiderite', 'common_rare': 'bone_shard', 'common': 'th_insignia', 'tier': '3_weapon'},
 		'white_iron_greatsword': {'wam': 'dandelion_gladiator', 'common_rare': 'chaos', 'common': 'slime', 'tier': '3_weapon'},
 		'ferrous_shadow': {'wam': 'decarabian', 'common_rare': 'horn', 'common': 'nectar', 'tier': '3_weapon'},
