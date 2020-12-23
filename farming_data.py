@@ -378,5 +378,13 @@ farming_data = {
 	'wanderers_troupe': {
 		'when': ['any'],
 		'where': ['40_boss', '60_boss']
-	}
+	},
+	'blizzard_strayer': {
+		'when': ['any'],
+		'where': ['peak_of_vindagnyr']
+	},
+	'heart_of_depth': {
+		'when': ['any'],
+		'where': ['peak_of_vindagnyr']
+	},
 }

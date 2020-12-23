@@ -375,6 +375,21 @@ characters = {
 		'weapon': 'claymore',
 		'element': 'pyro'
 	},
+	"albedo": {
+		'ascension': {
+			'element_1': 'prithiva_topaz',
+			'element_2': 'basalt_pillar',
+			'local': 'cecilia',
+			'common': 'scroll'
+		},
+		'talent': {
+			'talent': 'ballad',
+			'common': 'mask',
+			'boss': 'tusk_of_monoceros_caeli'  # TODO: Verify
+		},
+		'weapon': 'sword',
+		'element': 'geo'
+	},
 	"traveler": {
 		'ascension': {
 			'element_1': 'brilliant_diamond',

@@ -35,7 +35,8 @@ groups = {
 		'tartaglia',
 		'diona',
 		'zhongli',
-		'xinyan'
+		'xinyan',
+		'albedo'
 	],
 	'element_1': [
 		'brilliant_diamond',
@@ -145,6 +146,7 @@ groups = {
 		'twin_nephrite',
 		'wine_and_song',
 		'memory_of_dust',
+		'frostbearer',
 	],
 	'claymore': [
 		'blackcliff_slasher',
@@ -164,6 +166,7 @@ groups = {
 		'whiteblind',
 		'wolfs_gravestone',
 		'the_unforged',
+		'snow_tombed_starsliver',
 	],
 	'polearm': [
 		'black_tassel',
@@ -180,6 +183,7 @@ groups = {
 		'white_tassel',
 		'vortex_vanquisher',
 		'royal_spear',
+		'dragonspine_spear'
 	],
 	'sword': [
 		'aquila_favonia',
@@ -200,6 +204,8 @@ groups = {
 		'the_black_sword',
 		'the_flute',
 		'travelers_handy_sword',
+		'summit_shaper',
+		'festering_desire',
 	],
 	'artifacts': [
 		'adventurer',
@@ -231,6 +237,8 @@ groups = {
 		'traveling_doctor',
 		'viridescent_venerer',
 		'wanderers_troupe',
+		'blizzard_strayer',
+		'heart_of_depth',
 	],
 	'when': [
 		'any',
@@ -287,5 +295,6 @@ groups = {
 		'hidden_palace_of_zhou_formula',
 		'midsummer_courtyard',
 		'valley_of_remembrance',
+		'peak_of_vindagnyr',
 	]
 }
