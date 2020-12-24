@@ -135,8 +135,7 @@ table {
 }
 
 table.borders th,
-table.borders td,
-table.borders {
+table.borders td {
     border: 1px solid black;
 }
 
@@ -317,4 +316,5 @@ table.spacer th:nth-child(10),
 table.spacer td:nth-child(10){
     width: 3px;
     visibility: hidden;
+    border-style: none;
 }
