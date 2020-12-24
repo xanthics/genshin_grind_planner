@@ -303,3 +303,14 @@ option {
     margin-right: auto;
 }
 
+.spacer {
+    margin-top: 1em;
+}
+
+table.spacer th:nth-child(5),
+table.spacer td:nth-child(5),
+table.spacer th:nth-child(10),
+table.spacer td:nth-child(10){
+    min-width: .5em;
+    visibility: hidden;
+}
