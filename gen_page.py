@@ -230,32 +230,56 @@ def init_inventory():
 
 	c = 0
 	width = 3
+	alt_width = 2
+	prev_section = "init"
 	t_own = TABLE(Class='borders center spacer')
-	t_own <= TR((TH(strings["item"]) + TH(strings["need"]) + TH(strings["have"]) + TH(strings["missing_"]) + (TH(Class="spacer") if _ < width-1 else "") for _ in range(width)))
+	t_head = TR()
+	for c in range(width):
+		t_head <= TH(strings["item"]) + TH(strings["need"]) + TH(strings["have"]) + TH(strings["missing_"])
+		if c < width - 1:
+			t_head <= TH(Class="spacer")
+	t_own <= t_head
 	t_row = TR()
 
 	for section, item in ingame_order:
+		if section != prev_section:
+			if c % width:
+				t_own <= t_row
+				t_row = TR()
+				c = 0
+			if prev_section != 'init':
+				t_own <= TR(Class='empty_row')
+			prev_section = section
 		if section in ['element_1', 'common', 'common_rare', 'wam', 'talent']:
+			if section in ['element_1', 'wam']:
+				if c:
+					c = 0
+					t_own <= t_row
+					t_row = TR()
+				t_width = alt_width
+			else:
+				t_width = width
+			prev_section = 'end section'
 			for i in range(len(strings[item])-1, -1, -1):
-				t_td = TD(IMG(src=f"img/{item}_{i}.png", alt=strings[item][i], title=strings[item][i])) + TD('0', Id=f"{item}_{i}-total") + TD(INPUT(Type='number', min='0', step="1", value='0', Id=f"{item}_{i}-user", Class='save')) + TD('0', Id=f"{item}_{i}-need", Class='good')
-				#t_own <= TR(TD(IMG(src=f"img/{item}_{i}.png", alt=strings[item][i], title=strings[item][i])) + TD('0', Id=f"{item}_{i}-total") + TD(INPUT(Type='number', min='0', step="1", value='0', Id=f"{item}_{i}-user", Class='save')) + TD('0', Id=f"{item}_{i}-need", Class='good'))
+				t_td = TD(IMG(src=f"img/{item}_{i}.png", alt=strings[item][i], title=strings[item][i])) + TD('0', Id=f"{item}_{i}-total") + TD(INPUT(Type='number', min='0', step="1", value='0', Id=f"{item}_{i}-user", Class='save')) + TD('0', Id=f"{item}_{i}-need")
+				#t_own <= TR(TD(IMG(src=f"img/{item}_{i}.png", alt=strings[item][i], title=strings[item][i])) + TD('0', Id=f"{item}_{i}-total") + TD(INPUT(Type='number', min='0', step="1", value='0', Id=f"{item}_{i}-user", Class='save')) + TD('0', Id=f"{item}_{i}-need"))
 				c += 1
 				t_row <= t_td
-				if not (c % width):
+				if not (c % t_width):
 					t_own <= t_row
 					t_row = TR()
 				elif c % width < width:
-					t_row <= TD("")
+					t_row <= TD()
 		else:  # section in ['boss', 'element_2', 'local', 'special']:
-			t_td = TD(IMG(src=f"img/{item}.png", alt=strings[item], title=strings[item])) + TD('0', Id=f"{item}-total") + TD(INPUT(Type='number', min='0', step="1", value='0', Id=f"{item}-user", Class='save')) + TD('0', Id=f"{item}-need", Class='good')
-			#t_own <= TR(TD(IMG(src=f"img/{item}.png", alt=strings[item], title=strings[item])) + TD('0', Id=f"{item}-total") + TD(INPUT(Type='number', min='0', step="1", value='0', Id=f"{item}-user", Class='save')) + TD('0', Id=f"{item}-need", Class='good'))
+			t_td = TD(IMG(src=f"img/{item}.png", alt=strings[item], title=strings[item])) + TD('0', Id=f"{item}-total") + TD(INPUT(Type='number', min='0', step="1", value='0', Id=f"{item}-user", Class='save')) + TD('0', Id=f"{item}-need")
+			#t_own <= TR(TD(IMG(src=f"img/{item}.png", alt=strings[item], title=strings[item])) + TD('0', Id=f"{item}-total") + TD(INPUT(Type='number', min='0', step="1", value='0', Id=f"{item}-user", Class='save')) + TD('0', Id=f"{item}-need"))
 			c += 1
 			t_row <= t_td
 			if not (c % width):
 				t_own <= t_row
 				t_row = TR()
 			elif c % width < width:
-				t_row <= TD("")
+				t_row <= TD()
 
 	if c % width:
 		t_own <= t_row

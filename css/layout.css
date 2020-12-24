@@ -304,13 +304,17 @@ option {
 }
 
 .spacer {
-    margin-top: 1em;
+    margin-top: 7px;
+}
+
+.empty_row {
+    height: 7px;
 }
 
 table.spacer th:nth-child(5),
 table.spacer td:nth-child(5),
 table.spacer th:nth-child(10),
 table.spacer td:nth-child(10){
-    min-width: .5em;
+    width: 3px;
     visibility: hidden;
 }
