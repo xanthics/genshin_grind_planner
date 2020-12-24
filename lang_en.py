@@ -75,6 +75,7 @@ strings = {
 	'traveler_geo': "Traveler (Geo)",
 	'traveler_anemo': "Traveler (Anemo)",
 	'traveler_cryo': "Traveler (Cryo)",
+	'many': 'Many characters need this',
 	# Character Ascention materials 1
 	'agnidus_agate': ['Agnidus Agate Sliver', 'Agnidus Agate Fragment', 'Agnidus Agate Chunk', 'Agnidus Agate Gemstone'],
 	'brilliant_diamond': ['Brilliant Diamond Sliver', 'Brilliant Diamond Fragment', 'Brilliant Diamond Chunk', 'Brilliant Diamond Gemstone'],

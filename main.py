@@ -517,7 +517,11 @@ def update_character():
 									val = grind_table_state['total'][x] - grind_table_state['user'][x]
 
 								if val > 0:
-									char_set.update(char_tracker[x])
+									print(char_tracker[x])
+									if x in ['xp', 'wep_xp', 'mora'] and len(char_tracker[x]) > 5:
+										char_set.add('many')
+									else:
+										char_set.update(char_tracker[x])
 									item_set[x] = {'text': strings[x], 'count': readable_number(val)}
 							else:
 								char_set.update(char_tracker[x])
