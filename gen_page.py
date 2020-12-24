@@ -219,9 +219,9 @@ def init_inventory():
 	# char xp, weapon xp, and mora
 	t_own = TABLE(Class='borders center')
 	t_own <= TR(TH(strings["item"]) + TH(strings["need"]) + TH(strings["have"]) + TH(strings["missing_"]))
-	t_own <= TR(TD(IMG(src=f"img/wep_xp_sub_0.png", alt=strings['wep_xp'], title=strings['wep_xp'])) + TD() + TD(INPUT(Type='number', min='0', step="1", value='0', Id='wep_xp_sub_0-user', Class='save')) + TD())
-	t_own <= TR(TD(IMG(src=f"img/wep_xp_sub_1.png", alt=strings['wep_xp'], title=strings['wep_xp'])) + TD() + TD(INPUT(Type='number', min='0', step="1", value='0', Id='wep_xp_sub_1-user', Class='save')) + TD())
 	t_own <= TR(TD(IMG(src=f"img/wep_xp.png", alt=strings['wep_xp'], title=strings['wep_xp'])) + TD('0', Id='wep_xp-total') + TD(INPUT(Type='number', min='0', step="1", value='0', Id='wep_xp-user', Class='save')) + TD('0', Id='wep_xp-need', Class='good'))
+	t_own <= TR(TD(IMG(src=f"img/wep_xp_sub_1.png", alt=strings['wep_xp'], title=strings['wep_xp'])) + TD() + TD(INPUT(Type='number', min='0', step="1", value='0', Id='wep_xp_sub_1-user', Class='save')) + TD())
+	t_own <= TR(TD(IMG(src=f"img/wep_xp_sub_0.png", alt=strings['wep_xp'], title=strings['wep_xp'])) + TD() + TD(INPUT(Type='number', min='0', step="1", value='0', Id='wep_xp_sub_0-user', Class='save')) + TD())
 	t_own <= TR(TD(IMG(src=f"img/mora.png", alt=strings['mora'], title=strings['mora'])) + TD('0', Id='mora-total') + TD(INPUT(Type='number', min='0', step="1", value='0', Id='mora-user', Class='save')) + TD('0', Id='mora-need', Class='good'))
 	t_own <= TR(TD(IMG(src=f"img/xp.png", alt=strings['xp'], title=strings['xp'])) + TD('0', Id='xp-total') + TD(INPUT(Type='number', min='0', step="1", value='0', Id='xp-user', Class='save')) + TD('0', Id='xp-need', Class='good'))
 	t_own <= TR(TD(IMG(src=f"img/xp_sub_1.png", alt=strings['xp'], title=strings['xp'])) + TD() + TD(INPUT(Type='number', min='0', step="1", value='0', Id='xp_sub_1-user', Class='save')) + TD())
