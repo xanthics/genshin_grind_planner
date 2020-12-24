@@ -231,6 +231,7 @@ def init_inventory():
 	c = 0
 	width = 3
 	alt_width = 2
+	row = 0
 	prev_section = "init"
 	t_own = TABLE(Class='borders center spacer')
 	t_head = TR()
@@ -239,15 +240,17 @@ def init_inventory():
 		if c < width - 1:
 			t_head <= TH(Class="spacer")
 	t_own <= t_head
-	t_row = TR()
+	t_row = TR(Class='tr_odd')
 
 	for section, item in ingame_order:
 		if section != prev_section:
 			if c % width:
 				t_own <= t_row
-				t_row = TR()
+				t_row = TR(Class='tr_odd' if row % 2 else 'tr_even')
+				row += 1
 				c = 0
 			if prev_section != 'init':
+				c = 0
 				t_own <= TR(Class='empty_row')
 			prev_section = section
 		if section in ['element_1', 'common', 'common_rare', 'wam', 'talent']:
@@ -255,7 +258,8 @@ def init_inventory():
 				if c:
 					c = 0
 					t_own <= t_row
-					t_row = TR()
+					t_row = TR(Class='tr_odd' if row % 2 else 'tr_even')
+					row += 1
 				t_width = alt_width
 			else:
 				t_width = width
@@ -266,8 +270,10 @@ def init_inventory():
 				c += 1
 				t_row <= t_td
 				if not (c % t_width):
+					c = 0
 					t_own <= t_row
-					t_row = TR()
+					t_row = TR(Class='tr_odd' if row % 2 else 'tr_even')
+					row += 1
 				elif c % width < width:
 					t_row <= TD()
 		else:  # section in ['boss', 'element_2', 'local', 'special']:
@@ -277,7 +283,8 @@ def init_inventory():
 			t_row <= t_td
 			if not (c % width):
 				t_own <= t_row
-				t_row = TR()
+				t_row = TR(Class='tr_odd' if row % 2 else 'tr_even')
+				row += 1
 			elif c % width < width:
 				t_row <= TD()
 
@@ -301,6 +308,7 @@ def init_inventory():
 	b_reset = BUTTON(strings["reset_inventory"], Id='reset_inventory')
 	doc["reset"] <= b_reset
 
-
+#doc["main"].style.display = 'none'
+#doc["inven"].style.display = 'block'
 init_page()
 

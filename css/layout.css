@@ -155,11 +155,22 @@ tr {
 	line-height: 1em;
 }
 
-tr:nth-child(even) {
+tr:nth-child(even)  {
 	background-color: rgb(35,35,35);
 }
+
 tr:nth-child(odd) {
 	background-color: rgb(45,45,45);
+}
+
+/* Override odd/even rules because table has invisible rows */
+
+tr.tr_even {
+	background-color: rgb(35,35,35) !important;
+}
+
+tr.tr_odd {
+	background-color: rgb(45,45,45) !important;
 }
 
 tr.unchecked {
