@@ -457,6 +457,7 @@ def update_character():
 		'hidden_palace_of_zhou_formula': 20,
 		'midsummer_courtyard': 20,
 		'valley_of_remembrance': 20,
+		'peak_of_vindagnyr': 20,
 		'xp_leyline': 20,
 		'mora_leyline': 20
 	}
