@@ -197,11 +197,11 @@ def add_value_int(i_dict, key, val):
 
 
 # custom implementation of default dict for int
-def add_value_set(i_dict, key, val):
-	if key not in i_dict:
-		i_dict[key] = {val, }
+def add_value_set(i_set, key, val):
+	if key not in i_set:
+		i_set[key] = {val, }
 	else:
-		i_dict[key].add(val)
+		i_set[key].add(val)
 
 
 # Function for calculating a specific character's "cost"
@@ -220,6 +220,8 @@ def update_xp(char, character, char_tracker):
 	level_c, level_c_flag = character['level_c'] % 10, character['level_c'] // 10
 	level_t, level_t_flag = character['level_t'] % 10, character['level_t'] // 10
 	if level_t > level_c or (level_t == level_c and level_t_flag > level_c_flag):
+		# since everything costs mora, only need to check once
+		add_value_set(char_tracker, 'mora', char)
 		if 'selected' not in doc[f'level_c-{char}'].attrs['class']:
 			doc[f'level_c-{char}'].attrs['class'] += ' selected'
 			doc[f'level_t-{char}'].attrs['class'] += ' selected'
@@ -259,8 +261,8 @@ def update_xp(char, character, char_tracker):
 					add_value_set(char_tracker, characters[char]['ascension']['element_2'], char)
 			if temp['xp']:
 				add_value_set(char_tracker, 'xp', char)
-			if temp['mora']:
-				add_value_set(char_tracker, 'mora', char)
+#			if temp['mora']:
+#				add_value_set(char_tracker, 'mora', char)
 			if temp['element_1'][0]:
 				add_value_set(char_tracker, characters[char]['ascension']['element_1'], char)
 			if temp['local']:
@@ -283,6 +285,8 @@ def update_talent(char, character, char_tracker):
 		t_c = character[t_c_t]
 		t_t = character[t_t_t]
 		if t_t > t_c:
+			# since everything costs mora, only need to check once
+			add_value_set(char_tracker, 'mora', char)
 			if 'selected' not in doc[f'{t_c_t}-{char}'].attrs['class']:
 				doc[f'{t_c_t}-{char}'].attrs['class'] += ' selected'
 				doc[f'{t_t_t}-{char}'].attrs['class'] += ' selected'
@@ -305,8 +309,8 @@ def update_talent(char, character, char_tracker):
 				grind_table_state['total']['crown'] += temp['crown']
 				if temp['crown']:
 					add_value_set(char_tracker, 'crown', char)
-				if temp['mora']:
-					add_value_set(char_tracker, 'mora', char)
+#				if temp['mora']:
+#					add_value_set(char_tracker, 'mora', char)
 				if temp['talent'][0]:
 					add_value_set(char_tracker, talent_lookup['talent'], char)
 				if temp['common'][0]:
@@ -326,7 +330,9 @@ def update_talent(char, character, char_tracker):
 def update_weapon(char, character, char_tracker):
 	weapon_c, weapon_c_flag = character['weapon_c'] % 10, character['weapon_c'] // 10
 	weapon_t, weapon_t_flag = character['weapon_t'] % 10, character['weapon_t'] // 10
-	if character['weapon'] != '--' and weapon_t > weapon_c or (weapon_t == weapon_c and weapon_t_flag > weapon_c_flag):		
+	if character['weapon'] != '--' and weapon_t > weapon_c or (weapon_t == weapon_c and weapon_t_flag > weapon_c_flag):
+		# since everything costs mora, only need to check once
+		add_value_set(char_tracker, 'mora', char)
 		if 'selected' not in doc[f'weapon-{char}'].attrs['class'] or 'selected' not in doc[f'weapon_c-{char}'].attrs['class']:
 			doc[f'weapon-{char}'].attrs['class'] += ' selected'
 			doc[f'weapon_c-{char}'].attrs['class'] += ' selected'
@@ -360,8 +366,8 @@ def update_weapon(char, character, char_tracker):
 			grind_table_state['total'][f"{weapon['common']}_{temp['common'][1]}"] += temp['common'][0]
 			if temp['xp']:
 				add_value_set(char_tracker, 'wep_xp', char)
-			if temp['mora']:
-				add_value_set(char_tracker, 'mora', char)
+#			if temp['mora']:
+#				add_value_set(char_tracker, 'mora', char)
 			if temp['wam'][0]:
 				add_value_set(char_tracker, weapon['wam'], char)
 			if temp['common_rare'][0]:
