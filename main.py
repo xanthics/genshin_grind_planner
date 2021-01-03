@@ -324,43 +324,62 @@ def update_talent(char, character, char_tracker):
 
 # calculate mats for weapon
 def update_weapon(char, character, char_tracker):
-	if character['weapon'] != '--':
-		if 'selected' not in doc[f'weapon-{char}'].attrs['class']:
+	weapon_c, weapon_c_flag = character['weapon_c'] % 10, character['weapon_c'] // 10
+	weapon_t, weapon_t_flag = character['weapon_t'] % 10, character['weapon_t'] // 10
+	if character['weapon'] != '--' and weapon_t > weapon_c or (weapon_t == weapon_c and weapon_t_flag > weapon_c_flag):		
+		if 'selected' not in doc[f'weapon-{char}'].attrs['class'] or 'selected' not in doc[f'weapon_c-{char}'].attrs['class']:
 			doc[f'weapon-{char}'].attrs['class'] += ' selected'
-		if character['weapon_t'] > character['weapon_c']:
-			if 'selected' not in doc[f'weapon_c-{char}'].attrs['class']:
-				doc[f'weapon_c-{char}'].attrs['class'] += ' selected'
-				doc[f'weapon_t-{char}'].attrs['class'] += ' selected'
-
-			weapon = weapons[characters[char]['weapon']][character['weapon']]
-			for i in range(character['weapon_c'] + 1, character['weapon_t'] + 1):
-				temp = costs[weapon['tier']][i]
-				grind_table_state['total']['wep_xp'] += temp['xp']
-				grind_table_state['total']['mora'] += temp['mora']
-				grind_table_state['total'][f"{weapon['wam']}_{temp['wam'][1]}"] += temp['wam'][0]
-				grind_table_state['total'][f"{weapon['common_rare']}_{temp['common_rare'][1]}"] += temp['common_rare'][0]
-				grind_table_state['total'][f"{weapon['common']}_{temp['common'][1]}"] += temp['common'][0]
-				if temp['xp']:
-					add_value_set(char_tracker, 'wep_xp', char)
-				if temp['mora']:
-					add_value_set(char_tracker, 'mora', char)
-				if temp['wam'][0]:
-					add_value_set(char_tracker, weapon['wam'], char)
-				if temp['common_rare'][0]:
-					add_value_set(char_tracker, weapon['common_rare'], char)
-				if temp['common'][0]:
-					add_value_set(char_tracker, weapon['common'], char)
-		elif 'selected' in doc[f'weapon_c-{char}'].attrs['class']:
-			cl = doc[f'weapon_c-{char}'].attrs['class'].split()
-			del cl[cl.index('selected')]
-			clt = ' '.join(cl)
-			doc[f'weapon_c-{char}'].attrs['class'] = clt
-			doc[f'weapon_t-{char}'].attrs['class'] = clt
-	elif 'selected' in doc[f'weapon-{char}'].attrs['class']:
+			doc[f'weapon_c-{char}'].attrs['class'] += ' selected'
+			doc[f'weapon_t-{char}'].attrs['class'] += ' selected'
+		weapon = weapons[characters[char]['weapon']][character['weapon']]
+		if weapon_c_flag:
+			temp = costs[weapon['tier']][weapon_c+1]
+			grind_table_state['total']['wep_xp'] += temp['xp']
+			if temp['xp']:
+				add_value_set(char_tracker, 'wep_xp', char)
+		if weapon_t_flag:
+			temp = costs[weapon['tier']][weapon_t+1]
+			grind_table_state['total']['mora'] += temp['mora']
+			grind_table_state['total'][f"{weapon['wam']}_{temp['wam'][1]}"] += temp['wam'][0]
+			grind_table_state['total'][f"{weapon['common_rare']}_{temp['common_rare'][1]}"] += temp['common_rare'][0]
+			grind_table_state['total'][f"{weapon['common']}_{temp['common'][1]}"] += temp['common'][0]
+			if temp['mora']:
+				add_value_set(char_tracker, 'mora', char)
+			if temp['wam'][0]:
+				add_value_set(char_tracker, weapon['wam'], char)
+			if temp['common_rare'][0]:
+				add_value_set(char_tracker, weapon['common_rare'], char)
+			if temp['common'][0]:
+				add_value_set(char_tracker, weapon['common'], char)
+		for i in range(weapon_c + 1 + weapon_c_flag, weapon_t + 1):
+			temp = costs[weapon['tier']][i]
+			grind_table_state['total']['wep_xp'] += temp['xp']
+			grind_table_state['total']['mora'] += temp['mora']
+			grind_table_state['total'][f"{weapon['wam']}_{temp['wam'][1]}"] += temp['wam'][0]
+			grind_table_state['total'][f"{weapon['common_rare']}_{temp['common_rare'][1]}"] += temp['common_rare'][0]
+			grind_table_state['total'][f"{weapon['common']}_{temp['common'][1]}"] += temp['common'][0]
+			if temp['xp']:
+				add_value_set(char_tracker, 'wep_xp', char)
+			if temp['mora']:
+				add_value_set(char_tracker, 'mora', char)
+			if temp['wam'][0]:
+				add_value_set(char_tracker, weapon['wam'], char)
+			if temp['common_rare'][0]:
+				add_value_set(char_tracker, weapon['common_rare'], char)
+			if temp['common'][0]:
+				add_value_set(char_tracker, weapon['common'], char)
+	elif 'selected' in doc[f'weapon-{char}'].attrs['class'] or 'selected' in doc[f'weapon_c-{char}'].attrs['class']:
+		# weapon dropdown
 		cl = doc[f'weapon-{char}'].attrs['class'].split()
 		del cl[cl.index('selected')]
 		clt = ' '.join(cl)
 		doc[f'weapon-{char}'].attrs['class'] = clt
+		# weapon level select
+		cl = doc[f'weapon_c-{char}'].attrs['class'].split()
+		del cl[cl.index('selected')]
+		clt = ' '.join(cl)
+		doc[f'weapon_c-{char}'].attrs['class'] = clt
+		doc[f'weapon_t-{char}'].attrs['class'] = clt
 
 
 # Convert a number to an appropriate string
@@ -425,7 +444,7 @@ def update_character():
 			add_value_set(char_tracker, elt.id.split('-')[-1], elt.id.split('-')[1])
 
 	# adjust xp totals to units of their base type.
-	grind_table_state['total']['mora'] += grind_table_state['total']['xp'] // 5
+	grind_table_state['total']['mora'] += grind_table_state['total']['xp'] // 5 + grind_table_state['total']['wep_xp'] // 10
 	grind_table_state['total']['xp'] = round(grind_table_state['total']['xp'] / 20000, 2)
 	grind_table_state['total']['wep_xp'] = round(grind_table_state['total']['wep_xp'] / 10000, 2)
 
@@ -518,7 +537,6 @@ def update_character():
 									val = grind_table_state['total'][x] - grind_table_state['user'][x]
 
 								if val > 0:
-									print(char_tracker[x])
 									if x in ['xp', 'wep_xp', 'mora'] and len(char_tracker[x]) > 5:
 										char_set.add('many')
 									else:

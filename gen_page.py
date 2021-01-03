@@ -101,7 +101,14 @@ def init_characters():
 		wlvlc = SELECT(Id=f"weapon_c-{char}", Class=f"{char} save")
 		wlvlt = SELECT(Id=f"weapon_t-{char}", Class=f"{char} save")
 		for lvl in [wlvlc, wlvlt]:
-			for c, val in enumerate([1, 20, 40, 50, 60, 70, 80, 90]):
+			for c, val in [(0, "1"),
+						   (1, "20"), (11, "20 A"),
+						   (2, "40"), (12, "40 A"),
+						   (3, "50"), (13, "50 A"),
+						   (4, "60"), (14, "60 A"),
+						   (5, "70"), (15, "70 A"),
+						   (6, "80"), (16, "80 A"),
+						   (7, "90")]:
 				lvl <= OPTION(f"{val}", value=c)
 		# Create table row for character
 		t <= TR(
@@ -155,7 +162,14 @@ def init_characters():
 	wlvlc = SELECT(Id=f"weapon_c-{char}", Class=f"{char} save")
 	wlvlt = SELECT(Id=f"weapon_t-{char}", Class=f"{char} save")
 	for lvl in [wlvlc, wlvlt]:
-		for c, val in enumerate([1, 20, 40, 50, 60, 70, 80, 90]):
+		for c, val in [(0, "1"),
+					   (1, "20"), (11, "20 A"),
+					   (2, "40"), (12, "40 A"),
+					   (3, "50"), (13, "50 A"),
+					   (4, "60"), (14, "60 A"),
+					   (5, "70"), (15, "70 A"),
+					   (6, "80"), (16, "80 A"),
+					   (7, "90")]:
 			lvl <= OPTION(f"{val}", value=c)
 	# Create table row for character
 	t <= TR(
