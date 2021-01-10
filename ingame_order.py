@@ -58,6 +58,7 @@ ingame_order = [
 	('local', 'noctilucous_jade'),
 	('local', 'silk_flower'),
 	('local', 'glaze_lilly'),
+	('local', 'qingxin'),
 	('local', 'starconch'),
 	('local', 'violetgrass'),
 	('local', 'small_lamp_grass'),

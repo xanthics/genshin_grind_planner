@@ -385,10 +385,25 @@ characters = {
 		'talent': {
 			'talent': 'ballad',
 			'common': 'mask',
-			'boss': 'tusk_of_monoceros_caeli'  # TODO: Verify
+			'boss': 'tusk_of_monoceros_caeli'
 		},
 		'weapon': 'sword',
 		'element': 'geo'
+	},
+	"ganyu": {
+		'ascension': {
+			'element_1': 'shivada_jade',
+			'element_2': 'hoarfrost_core',
+			'local': 'qingxin',
+			'common': 'nectar'
+		},
+		'talent': {
+			'talent': 'diligence',
+			'common': 'nectar',
+			'boss': 'shadow_of_the_warrior'
+		},
+		'weapon': 'bow',
+		'element': 'cryo'
 	},
 	"traveler": {
 		'ascension': {

@@ -36,7 +36,8 @@ groups = {
 		'diona',
 		'zhongli',
 		'xinyan',
-		'albedo'
+		'albedo',
+		'ganyu'
 	],
 	'element_1': [
 		'brilliant_diamond',
@@ -71,6 +72,7 @@ groups = {
 		'violetgrass',
 		'windwheel_aster',
 		'wolfhook',
+		'qingxin'
 	],
 	'common': [
 		'slime',

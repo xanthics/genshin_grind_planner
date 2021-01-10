@@ -68,6 +68,7 @@ strings = {
 	'zhongli': 'Zhongli',
 	'xinyan': 'Xinyan',
 	'albedo': 'Albedo',
+	'ganyu': 'Ganyu',
 	'traveler': "Traveler",
 	'traveler_pyro': "Traveler (Pyro)",
 	'traveler_hydro': "Traveler (Hydro)",
@@ -107,6 +108,7 @@ strings = {
 	'violetgrass': 'Violetgrass',
 	'windwheel_aster': 'Windwheel Aster',
 	'wolfhook': 'Wolfhook',
+	'qingxin': 'Qingxin',
 	# common enemy drops
 	'arrowhead': ['Firm Arrowhead', 'Sharp Arrowhead', 'Weathered Arrowhead'],
 	'f_insignia': ["Recruit's Insignia", "Sergeant's Insignia", "Lieutenant's Insignia"],

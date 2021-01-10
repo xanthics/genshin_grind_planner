@@ -159,6 +159,10 @@ farming_data = {
 		'when': ['any'],
 		'where': ['special_mondstadt']
 	},
+	'qingxin': {
+		'when': ['any'],
+		'where': ['special_liyue']
+	},
 	'arrowhead': {
 		'when': ['any'],
 		'where': ['ranged_hilichurl']
