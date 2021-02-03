@@ -37,7 +37,8 @@ groups = {
 		'zhongli',
 		'xinyan',
 		'albedo',
-		'ganyu'
+		'ganyu',
+		'xiao'
 	],
 	'element_1': [
 		'brilliant_diamond',
@@ -208,6 +209,7 @@ groups = {
 		'travelers_handy_sword',
 		'summit_shaper',
 		'festering_desire',
+		'primordial_jade_winged_cutter'
 	],
 	'artifacts': [
 		'adventurer',

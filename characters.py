@@ -405,6 +405,21 @@ characters = {
 		'weapon': 'bow',
 		'element': 'cryo'
 	},
+	"xiao": {
+		'ascension': {
+			'element_1': 'vayuda_turqoise',
+			'element_2': 'hurricane_seed',
+			'local': 'qingxin',
+			'common': 'slime'
+		},
+		'talent': {
+			'talent': 'prosperity',
+			'common': 'slime',
+			'boss': 'shadow_of_the_warrior'
+		},
+		'weapon': 'polearm',
+		'element': 'anemo'
+	},
 	"traveler": {
 		'ascension': {
 			'element_1': 'brilliant_diamond',

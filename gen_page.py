@@ -325,4 +325,3 @@ def init_inventory():
 #doc["main"].style.display = 'none'
 #doc["inven"].style.display = 'block'
 init_page()
-
