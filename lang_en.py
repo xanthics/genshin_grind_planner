@@ -93,6 +93,7 @@ strings = {
 	'hoarfrost_core': 'Hoarfrost Core',
 	'hurricane_seed': 'Hurricane Seed',
 	'lightning_prism': 'Lightning Prism',
+	'juvenile_jade': 'Juvenile Jade',
 	# common gathered items
 	'calla_lily': 'Calla Lily',
 	'cecilia': 'Cecilia',
@@ -339,6 +340,7 @@ strings = {
 	'geo_hypostasis': "Geo Hypostasis",
 	'oceanid': "Oceanid",
 	'pyro_regisvine': "Pyro Regisvine",
+	'primo_geovishap': 'Primo Geovishap',
 	'40_boss': "Any 40 Resin Boss",
 	# weekly boss
 	'stormterror': "Stormterror",

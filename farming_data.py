@@ -49,7 +49,7 @@ farming_data = {
 	},
 	'agnidus_agate': {
 		'when': ['any'],
-		'where': ['pyro_regisvine', 'wolf_of_the_north']
+		'where': ['pyro_regisvine', 'wolf_of_the_north', 'primo_geovishap']
 	},
 	'brilliant_diamond': {
 		'when': ['any'],
@@ -57,19 +57,19 @@ farming_data = {
 	},
 	'prithiva_topaz': {
 		'when': ['any'],
-		'where': ['geo_hypostasis', 'wolf_of_the_north']
+		'where': ['geo_hypostasis', 'wolf_of_the_north', 'primo_geovishap']
 	},
 	'shivada_jade': {
 		'when': ['any'],
-		'where': ['cryo_regisvine', 'wolf_of_the_north', 'golden_house']
+		'where': ['cryo_regisvine', 'wolf_of_the_north', 'golden_house', 'primo_geovishap']
 	},
 	'vajrada_amethyst': {
 		'when': ['any'],
-		'where': ['electro_hypostasis', 'stormterror', 'golden_house']
+		'where': ['electro_hypostasis', 'stormterror', 'golden_house', 'primo_geovishap']
 	},
 	'varunada_lazurite': {
 		'when': ['any'],
-		'where': ['oceanid', 'stormterror', 'golden_house']
+		'where': ['oceanid', 'stormterror', 'golden_house', 'primo_geovishap']
 	},
 	'vayuda_turqoise': {
 		'when': ['any'],
@@ -98,6 +98,10 @@ farming_data = {
 	'lightning_prism': {
 		'when': ['any'],
 		'where': ['electro_hypostasis']
+	},
+	'juvenile_jade': {
+		'when': ['any'],
+		'where': ['primo_geovishap']
 	},
 	'calla_lily': {
 		'when': ['any'],

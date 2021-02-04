@@ -56,6 +56,7 @@ groups = {
 		'hoarfrost_core',
 		'hurricane_seed',
 		'lightning_prism',
+		'juvenile_jade'
 	],
 	'local': [
 		'calla_lily',
@@ -283,6 +284,7 @@ groups = {
 		'geo_hypostasis',
 		'oceanid',
 		'pyro_regisvine',
+		'primo_geovishap',
 		# weekly boss
 		'stormterror',
 		'wolf_of_the_north',
