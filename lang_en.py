@@ -198,6 +198,7 @@ strings = {
 	'wolfs_gravestone': "Wolf's Gravestone",
 	'the_unforged': 'The Unforged',
 	'snow_tombed_starsliver': 'Snow-Tombed Starsilver',
+	'lithic_blade': 'Lithic Blade',
 	# Polearms
 	'black_tassel': 'Black Tassel',
 	'blackcliff_pole': 'Blackcliff Pole',
@@ -214,6 +215,8 @@ strings = {
 	'vortex_vanquisher': 'Vortex Vanquisher',
 	'royal_spear': 'Royal Spear',
 	'dragonspine_spear': 'Dragonspine Spear',
+	'staff_of_homa': 'Staff of Homa',
+	'lithic_spear': 'Lithic Spear',
 	# Swords
 	'aquila_favonia': 'Aquila Favonia',
 	'blackcliff_longsword': 'Blackcliff Longsword',

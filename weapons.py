@@ -53,6 +53,7 @@ weapons = {
 		'prototype_aminus': {'wam': 'aerosiderite', 'common_rare': 'bone_shard', 'common': 'mask', 'tier': '4_weapon'},
 		'favonius_greatsword': {'wam': 'dandelion_gladiator', 'common_rare': 'chaos', 'common': 'f_insignia', 'tier': '4_weapon'},
 		'snow_tombed_starsliver': {'wam': 'decarabian', 'common_rare': 'horn', 'common': 'slime', 'tier': '4_weapon'},
+		'lithic_blade': {'wam': 'guyun', 'common_rare': 'sacrificial_knife', 'common': 'arrowhead', 'tier': '4_weapon'},
 		'skyrider_greatsword': {'wam': 'aerosiderite', 'common_rare': 'bone_shard', 'common': 'th_insignia', 'tier': '3_weapon'},
 		'white_iron_greatsword': {'wam': 'dandelion_gladiator', 'common_rare': 'chaos', 'common': 'slime', 'tier': '3_weapon'},
 		'ferrous_shadow': {'wam': 'decarabian', 'common_rare': 'horn', 'common': 'nectar', 'tier': '3_weapon'},
@@ -61,6 +62,7 @@ weapons = {
 	},
 	'polearm': {
 		'vortex_vanquisher': {'wam': 'aerosiderite', 'common_rare': 'bone_shard', 'common': 'th_insignia', 'tier': '5_weapon'},
+		'staff_of_homa': {'wam': 'aerosiderite', 'common_rare': 'ley_line', 'common': 'slime', 'tier': '5_weapon'},
 		'primordial_jade_winged_spear': {'wam': 'guyun', 'common_rare': 'sacrificial_knife', 'common': 'f_insignia', 'tier': '5_weapon'},
 		'skyward_spine': {'wam': 'dandelion_gladiator', 'common_rare': 'chaos', 'common': 'scroll', 'tier': '5_weapon'},
 		'royal_spear': {'wam': 'mist_veiled_elixer', 'common_rare': 'mist', 'common': 'f_insignia', 'tier': '4_weapon'},
@@ -71,6 +73,7 @@ weapons = {
 		'deathmatch': {'wam': 'boreal_wolf', 'common_rare': 'ley_line', 'common': 'nectar', 'tier': '4_weapon'},
 		'favonius_lance': {'wam': 'dandelion_gladiator', 'common_rare': 'chaos', 'common': 'slime', 'tier': '4_weapon'},
 		'dragonspine_spear': {'wam': 'boreal_wolf', 'common_rare': 'mist', 'common': 'f_insignia', 'tier': '4_weapon'},
+		'lithic_spear': {'wam': 'aerosiderite', 'common_rare': 'bone_shard', 'common': 'arrowhead', 'tier': '4_weapon'},
 		'black_tassel': {'wam': 'aerosiderite', 'common_rare': 'bone_shard', 'common': 'arrowhead', 'tier': '3_weapon'},
 		'white_tassel': {'wam': 'guyun', 'common_rare': 'sacrificial_knife', 'common': 'f_insignia', 'tier': '3_weapon'},
 		'halberd': {'wam': 'mist_veiled_elixer', 'common_rare': 'mist', 'common': 'nectar', 'tier': '3_weapon'},

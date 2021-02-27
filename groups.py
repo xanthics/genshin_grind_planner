@@ -171,6 +171,7 @@ groups = {
 		'wolfs_gravestone',
 		'the_unforged',
 		'snow_tombed_starsliver',
+		'lithic_blade'
 	],
 	'polearm': [
 		'black_tassel',
@@ -187,7 +188,9 @@ groups = {
 		'white_tassel',
 		'vortex_vanquisher',
 		'royal_spear',
-		'dragonspine_spear'
+		'dragonspine_spear',
+		'staff_of_homa',
+		'lithic_spear'
 	],
 	'sword': [
 		'aquila_favonia',
