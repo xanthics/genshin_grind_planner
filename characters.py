@@ -420,6 +420,21 @@ characters = {
 		'weapon': 'polearm',
 		'element': 'anemo'
 	},
+	"hu_tao": {
+		'ascension': {
+			'element_1': 'agnidus_agate',
+			'element_2': 'juvenile_jade',
+			'local': 'silk_flower',
+			'common': 'nectar'
+		},
+		'talent': {
+			'talent': 'diligence',
+			'common': 'nectar',
+			'boss': 'shard_of_a_foul_legacy'
+		},
+		'weapon': 'polearm',
+		'element': 'pyro'
+	},
 	"traveler": {
 		'ascension': {
 			'element_1': 'brilliant_diamond',
