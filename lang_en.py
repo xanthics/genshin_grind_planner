@@ -160,6 +160,8 @@ strings = {
 	'slingshot': 'Slingshot',
 	'the_stringless': 'The Stringless',
 	'the_viridescent_hunt': 'The Viridescent Hunt',
+	'elegy_for_the_end': 'Elegy for the End',
+	'windblume_ode': 'Windblume Ode',
 	# catalysts
 	'blackcliff_amulet': 'Blackcliff Agate',
 	'emerald_orb': 'Emerald Orb',
@@ -240,6 +242,7 @@ strings = {
 	'festering_desire': 'Festering Desire',
 	'summit_shaper': 'Summit Shaper',
 	'primordial_jade_winged_cutter': 'Primordial Jade Cutter',
+	'the_alley_flash': 'The Alley Flash',
 	# Artifacts
 	'adventurer': "Adventurer",
 	'archaic_petra': "Archaic Petra",

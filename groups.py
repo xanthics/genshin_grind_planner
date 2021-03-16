@@ -131,6 +131,8 @@ groups = {
 		'slingshot',
 		'the_stringless',
 		'the_viridescent_hunt',
+		'elegy_for_the_end',
+		'windblume_ode',
 	],
 	'catalyst': [
 		'blackcliff_amulet',
@@ -214,7 +216,8 @@ groups = {
 		'travelers_handy_sword',
 		'summit_shaper',
 		'festering_desire',
-		'primordial_jade_winged_cutter'
+		'primordial_jade_winged_cutter',
+		'the_alley_flash'
 	],
 	'artifacts': [
 		'adventurer',
