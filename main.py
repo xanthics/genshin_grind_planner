@@ -504,26 +504,29 @@ def update_character():
 
 	d = SECTION(Class='grind')
 	for day in ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']:
-		if data[day]:
-			d <= H2([strings[day]])
-			t = TABLE(TR(TH(strings["location"]) + TH(strings["item_s"]) + TH(strings["character_s"])), Class='borders body')
-			for loc in sorted(data[day]):
-				char_set = set()
-				item_set = {}
-				for x in data[day][loc]:
-					if isinstance(strings[x], str) and grind_table_state['total'][x] - grind_table_state['user'][x] > 0:
-						char_set.update(char_tracker[x])
-						item_set[x] = {'text': strings[x], 'count': readable_number(grind_table_state['total'][x] - grind_table_state['user'][x])}
-					else:
-						for i in range(len(strings[x])):
-							if grind_table_state['total'][f"{x}_{i}"] - grind_table_state['user'][f"{x}_{i}"] > 0:
-								char_set.update(char_tracker[x])
-								item_set[f"{x}_{i}"] = {'text': strings[x][i], 'count': readable_number(grind_table_state['total'][f"{x}_{i}"] - grind_table_state['user'][f"{x}_{i}"])}
-				if item_set:
-					v = (DIV(IMG(src=f"img/{x}.png", alt=item_set[x]['text'], title=item_set[x]['text']) + DIV(item_set[x]['count'], Class='bottom-right'), Class='container') for x in item_set)
-					c = (IMG(src=f"img/{x}.png", alt=strings[x], title=strings[x]) for x in sorted(char_set))
-					t <= TR(TD(strings[loc], Class="location") + TD(v) + TD(c))
-			d <= t
+		d <= H2([strings[day]])
+		t = TABLE(TR(TH(strings["location"]) + TH(strings["item_s"]) + TH(strings["character_s"])), Class='borders body')
+		empty = True
+		for loc in sorted(data[day]):
+			char_set = set()
+			item_set = {}
+			for x in data[day][loc]:
+				if isinstance(strings[x], str) and grind_table_state['total'][x] - grind_table_state['user'][x] > 0:
+					char_set.update(char_tracker[x])
+					item_set[x] = {'text': strings[x], 'count': readable_number(grind_table_state['total'][x] - grind_table_state['user'][x])}
+				else:
+					for i in range(len(strings[x])):
+						if grind_table_state['total'][f"{x}_{i}"] - grind_table_state['user'][f"{x}_{i}"] > 0:
+							char_set.update(char_tracker[x])
+							item_set[f"{x}_{i}"] = {'text': strings[x][i], 'count': readable_number(grind_table_state['total'][f"{x}_{i}"] - grind_table_state['user'][f"{x}_{i}"])}
+			if item_set:
+				empty = False
+				v = (DIV(IMG(src=f"img/{x}.png", alt=item_set[x]['text'], title=item_set[x]['text']) + DIV(item_set[x]['count'], Class='bottom-right'), Class='container') for x in item_set)
+				c = (IMG(src=f"img/{x}.png", alt=strings[x], title=strings[x]) for x in sorted(char_set))
+				t <= TR(TD(strings[loc], Class="location") + TD(v) + TD(c))
+		if empty:
+			t <= TR(TD(strings['nothing'], Class="location") + TD(strings['nothing']) + TD(strings['nothing']))
+		d <= t
 	if any([data['any'][x] for x in [0, 20, 40, 60]]):
 		d <= H2([strings['any']])
 		for cost in [0, 20, 40, 60]:

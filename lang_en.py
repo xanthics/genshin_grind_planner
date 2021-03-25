@@ -1,5 +1,6 @@
 strings = {
 	# ui strings
+	'nothing': 'None',
 	'mora': "Mora",
 	'xp': 'Character Exp',
 	'wep_xp': 'Weapon Exp',
