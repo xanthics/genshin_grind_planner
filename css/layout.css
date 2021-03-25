@@ -121,8 +121,8 @@ button.current_tab {
     display: flex;
     justify-content: space-between;
     margin-left: auto;
-    gap: 10px;
-    width: 20%;
+    gap: 5px;
+    width: 225px;
 }
 
 .sponsor_img {
