@@ -447,7 +447,7 @@ characters = {
 			'common': 'f_insignia',
 			'boss': 'shadow_of_the_warrior'
 		},
-		'weapon': 'bow',
+		'weapon': 'polearm',
 		'element': 'cryo'
 	},
 
