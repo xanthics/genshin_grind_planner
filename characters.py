@@ -435,6 +435,22 @@ characters = {
 		'weapon': 'polearm',
 		'element': 'pyro'
 	},
+	"rosaria": {
+		'ascension': {
+			'element_1': 'shivada_jade',
+			'element_2': 'hoarfrost_core',
+			'local': 'valberry',
+			'common': 'f_insignia'
+		},
+		'talent': {
+			'talent': 'ballad',
+			'common': 'f_insignia',
+			'boss': 'shadow_of_the_warrior'
+		},
+		'weapon': 'bow',
+		'element': 'cryo'
+	},
+
 	"traveler": {
 		'ascension': {
 			'element_1': 'brilliant_diamond',

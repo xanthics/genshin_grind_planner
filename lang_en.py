@@ -72,6 +72,7 @@ strings = {
 	'ganyu': 'Ganyu',
 	'xiao': 'Xiao',
 	'hu_tao': 'Hu Tao',
+	'rosaria': 'Rosaria',
 	'traveler': "Traveler",
 	'traveler_pyro': "Traveler (Pyro)",
 	'traveler_hydro': "Traveler (Hydro)",

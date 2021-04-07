@@ -39,7 +39,8 @@ groups = {
 		'albedo',
 		'ganyu',
 		'xiao',
-		'hu_tao'
+		'hu_tao',
+		'rosaria'
 	],
 	'element_1': [
 		'brilliant_diamond',
