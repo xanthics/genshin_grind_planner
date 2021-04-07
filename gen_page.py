@@ -12,7 +12,38 @@ from ingame_order import ingame_order
 def init_page():
 	init_characters()
 	init_inventory()
+	init_show_hide()
 
+
+# Initialize select boxes so you can only have certain characters show
+def init_show_hide():
+	# initialize options
+	element = set()
+	weapon = set()
+	for char in characters:
+		if char == 'traveler':
+			continue
+		element.add(characters[char]['element'])
+		weapon.add(characters[char]['weapon'])
+	# selected
+	cst = SELECT(Id=f"selected", Class=f"save onehundred")
+	for s in ['any', 'checked', 'unchecked']:
+		cst <= OPTION(s.capitalize(), value=s)
+	# element
+	est = SELECT(Id=f"element", Class=f"save onehundred")
+	for s in ['any'] + sorted(element):
+		est <= OPTION(s.capitalize(), value=s)
+	# weapon
+	wst = SELECT(Id=f"weapon", Class=f"save onehundred")
+	for s in ['any'] + sorted(weapon):
+		wst <= OPTION(s.capitalize(), value=s)
+
+	t = TABLE(TR(TH() + TH('Option')))
+	t <= TR(TD('Character') + TD(cst))
+	t <= TR(TD('Element') + TD(est))
+	t <= TR(TD('Weapon') + TD(wst))
+
+	doc['show_hide'] <= t + P("Note that all selections have to be true for a character to be visible.")
 
 def init_characters():
 	t = TABLE(Class='body')
@@ -129,7 +160,7 @@ def init_characters():
 			TD(BUTTON(strings["add"], Class='arti_list text_button', data_id=f"arti-{char}")) +
 			TD(DIV(Id=f"arti-{char}", Class=f'arti_span'))
 			,
-			data_id=f"check-{char}", Class='unchecked', data_color=characters[char]['element']
+			data_id=f"check-{char}", Class='unchecked', data_color=characters[char]['element'], data_weapon=characters[char]['weapon']
 		)
 	# set up traveler base row
 	# set up level select
@@ -190,7 +221,7 @@ def init_characters():
 		TD(BUTTON(strings["add"], Class='arti_list text_button', data_id=f"arti-{char}")) +
 		TD(DIV(Id=f"arti-{char}", Class=f'arti_span'))
 		,
-		data_id=f"check-{char}", Class='unchecked',
+		data_id=f"check-{char}", Class='unchecked', data_color='multi', data_weapon=characters[char]['weapon']
 	)
 	# set up traveler anemo/geo row
 	for char, ele in [('traveler_anemo', 'anemo'), ('traveler_geo', 'geo')]:
@@ -223,7 +254,7 @@ def init_characters():
 			TD() +
 			TD()
 			,
-			data_id=f"check-{char}", Class='unchecked', data_color=ele
+			data_id=f"check-{char}", Class='unchecked', data_color=ele, data_weapon=characters['traveler']['weapon']
 		)
 	doc['character_list'] <= t
 
@@ -325,3 +356,4 @@ def init_inventory():
 #doc["main"].style.display = 'none'
 #doc["inven"].style.display = 'block'
 init_page()
+#import main

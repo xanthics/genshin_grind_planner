@@ -6,6 +6,10 @@ body {
 	text-rendering: optimizeLegibility;
 }
 
+.onehundred{
+    width: 100%;
+}
+
 section {
 	text-align: justify;
 	color: rgb(200, 200, 200);

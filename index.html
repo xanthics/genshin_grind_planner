@@ -14,6 +14,52 @@
 		<section class="main">
 			<p><strong>This page requires local storage to save state.</strong></p>
 			<p>2021/4/6: Added Rosaria</p>
+			<div id="show_hide">
+				<table>
+					<tr>
+						<th></th>
+						<th>Option</th>
+					</tr>
+					<tr>
+						<td>Character</td>
+						<td>
+							<select id="selected" class="save onehundred">
+								<option value="any">Any</option>
+								<option value="checked">Checked</option>
+								<option value="unchecked">Unchecked</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>Element</td>
+						<td>
+							<select id="element" class="save onehundred">
+								<option value="any">Any</option>
+								<option value="anemo">Anemo</option>
+								<option value="cryo">Cryo</option>
+								<option value="electro">Electro</option>
+								<option value="geo">Geo</option>
+								<option value="hydro">Hydro</option>
+								<option value="pyro">Pyro</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>Weapon</td>
+						<td>
+							<select id="weapon" class="save onehundred">
+								<option value="any">Any</option>
+								<option value="bow">Bow</option>
+								<option value="catalyst">Catalyst</option>
+								<option value="claymore">Claymore</option>
+								<option value="polearm">Polearm</option>
+								<option value="sword">Sword</option>
+							</select>
+						</td>
+					</tr>
+				</table>
+				<p>Note that all selections have to be true for a character to be visible.</p>
+			</div>
 			<div id="loading">
 				This page requires javascript in order to work correctly.
 				<br><br>
@@ -66,7 +112,7 @@
 							<th>Goal</th>
 							<th colspan="3">Click to Remove</th>
 						</tr>
-						<tr data-id="check-albedo" class="unchecked" data-color="geo">
+						<tr data-id="check-albedo" class="unchecked" data-color="geo" data-weapon="sword">
 							<td><input id="check-albedo" type="checkbox" data-id="check-albedo" class="char_select save"></td>
 							<td><img src="img/albedo.png" alt="Albedo" title="Albedo"></td>
 							<td>
@@ -258,7 +304,7 @@
 								<div id="arti-albedo" class="arti_span"></div>
 							</td>
 						</tr>
-						<tr data-id="check-amber" class="unchecked" data-color="pyro">
+						<tr data-id="check-amber" class="unchecked" data-color="pyro" data-weapon="bow">
 							<td><input id="check-amber" type="checkbox" data-id="check-amber" class="char_select save"></td>
 							<td><img src="img/amber.png" alt="Amber" title="Amber"></td>
 							<td>
@@ -447,7 +493,7 @@
 								<div id="arti-amber" class="arti_span"></div>
 							</td>
 						</tr>
-						<tr data-id="check-barbara" class="unchecked" data-color="hydro">
+						<tr data-id="check-barbara" class="unchecked" data-color="hydro" data-weapon="catalyst">
 							<td><input id="check-barbara" type="checkbox" data-id="check-barbara" class="char_select save"></td>
 							<td><img src="img/barbara.png" alt="Barbara" title="Barbara"></td>
 							<td>
@@ -636,7 +682,7 @@
 								<div id="arti-barbara" class="arti_span"></div>
 							</td>
 						</tr>
-						<tr data-id="check-beidou" class="unchecked" data-color="electro">
+						<tr data-id="check-beidou" class="unchecked" data-color="electro" data-weapon="claymore">
 							<td><input id="check-beidou" type="checkbox" data-id="check-beidou" class="char_select save"></td>
 							<td><img src="img/beidou.png" alt="Beidou" title="Beidou"></td>
 							<td>
@@ -825,7 +871,7 @@
 								<div id="arti-beidou" class="arti_span"></div>
 							</td>
 						</tr>
-						<tr data-id="check-bennett" class="unchecked" data-color="pyro">
+						<tr data-id="check-bennett" class="unchecked" data-color="pyro" data-weapon="sword">
 							<td><input id="check-bennett" type="checkbox" data-id="check-bennett" class="char_select save"></td>
 							<td><img src="img/bennett.png" alt="Bennett" title="Bennett"></td>
 							<td>
@@ -1017,7 +1063,7 @@
 								<div id="arti-bennett" class="arti_span"></div>
 							</td>
 						</tr>
-						<tr data-id="check-chongyun" class="unchecked" data-color="cryo">
+						<tr data-id="check-chongyun" class="unchecked" data-color="cryo" data-weapon="claymore">
 							<td><input id="check-chongyun" type="checkbox" data-id="check-chongyun" class="char_select save"></td>
 							<td><img src="img/chongyun.png" alt="Chongyun" title="Chongyun"></td>
 							<td>
@@ -1206,7 +1252,7 @@
 								<div id="arti-chongyun" class="arti_span"></div>
 							</td>
 						</tr>
-						<tr data-id="check-diluc" class="unchecked" data-color="pyro">
+						<tr data-id="check-diluc" class="unchecked" data-color="pyro" data-weapon="claymore">
 							<td><input id="check-diluc" type="checkbox" data-id="check-diluc" class="char_select save"></td>
 							<td><img src="img/diluc.png" alt="Diluc" title="Diluc"></td>
 							<td>
@@ -1395,7 +1441,7 @@
 								<div id="arti-diluc" class="arti_span"></div>
 							</td>
 						</tr>
-						<tr data-id="check-diona" class="unchecked" data-color="cryo">
+						<tr data-id="check-diona" class="unchecked" data-color="cryo" data-weapon="bow">
 							<td><input id="check-diona" type="checkbox" data-id="check-diona" class="char_select save"></td>
 							<td><img src="img/diona.png" alt="Diona" title="Diona"></td>
 							<td>
@@ -1584,7 +1630,7 @@
 								<div id="arti-diona" class="arti_span"></div>
 							</td>
 						</tr>
-						<tr data-id="check-fischl" class="unchecked" data-color="electro">
+						<tr data-id="check-fischl" class="unchecked" data-color="electro" data-weapon="bow">
 							<td><input id="check-fischl" type="checkbox" data-id="check-fischl" class="char_select save"></td>
 							<td><img src="img/fischl.png" alt="Fischl" title="Fischl"></td>
 							<td>
@@ -1773,7 +1819,7 @@
 								<div id="arti-fischl" class="arti_span"></div>
 							</td>
 						</tr>
-						<tr data-id="check-ganyu" class="unchecked" data-color="cryo">
+						<tr data-id="check-ganyu" class="unchecked" data-color="cryo" data-weapon="bow">
 							<td><input id="check-ganyu" type="checkbox" data-id="check-ganyu" class="char_select save"></td>
 							<td><img src="img/ganyu.png" alt="Ganyu" title="Ganyu"></td>
 							<td>
@@ -1962,7 +2008,7 @@
 								<div id="arti-ganyu" class="arti_span"></div>
 							</td>
 						</tr>
-						<tr data-id="check-hu_tao" class="unchecked" data-color="pyro">
+						<tr data-id="check-hu_tao" class="unchecked" data-color="pyro" data-weapon="polearm">
 							<td><input id="check-hu_tao" type="checkbox" data-id="check-hu_tao" class="char_select save"></td>
 							<td><img src="img/hu_tao.png" alt="Hu Tao" title="Hu Tao"></td>
 							<td>
@@ -2148,7 +2194,7 @@
 								<div id="arti-hu_tao" class="arti_span"></div>
 							</td>
 						</tr>
-						<tr data-id="check-jean" class="unchecked" data-color="anemo">
+						<tr data-id="check-jean" class="unchecked" data-color="anemo" data-weapon="sword">
 							<td><input id="check-jean" type="checkbox" data-id="check-jean" class="char_select save"></td>
 							<td><img src="img/jean.png" alt="Jean" title="Jean"></td>
 							<td>
@@ -2340,7 +2386,7 @@
 								<div id="arti-jean" class="arti_span"></div>
 							</td>
 						</tr>
-						<tr data-id="check-kaeya" class="unchecked" data-color="cryo">
+						<tr data-id="check-kaeya" class="unchecked" data-color="cryo" data-weapon="sword">
 							<td><input id="check-kaeya" type="checkbox" data-id="check-kaeya" class="char_select save"></td>
 							<td><img src="img/kaeya.png" alt="Kaeya" title="Kaeya"></td>
 							<td>
@@ -2532,7 +2578,7 @@
 								<div id="arti-kaeya" class="arti_span"></div>
 							</td>
 						</tr>
-						<tr data-id="check-keqing" class="unchecked" data-color="electro">
+						<tr data-id="check-keqing" class="unchecked" data-color="electro" data-weapon="sword">
 							<td><input id="check-keqing" type="checkbox" data-id="check-keqing" class="char_select save"></td>
 							<td><img src="img/keqing.png" alt="Keqing" title="Keqing"></td>
 							<td>
@@ -2724,7 +2770,7 @@
 								<div id="arti-keqing" class="arti_span"></div>
 							</td>
 						</tr>
-						<tr data-id="check-klee" class="unchecked" data-color="pyro">
+						<tr data-id="check-klee" class="unchecked" data-color="pyro" data-weapon="catalyst">
 							<td><input id="check-klee" type="checkbox" data-id="check-klee" class="char_select save"></td>
 							<td><img src="img/klee.png" alt="Klee" title="Klee"></td>
 							<td>
@@ -2913,7 +2959,7 @@
 								<div id="arti-klee" class="arti_span"></div>
 							</td>
 						</tr>
-						<tr data-id="check-lisa" class="unchecked" data-color="electro">
+						<tr data-id="check-lisa" class="unchecked" data-color="electro" data-weapon="catalyst">
 							<td><input id="check-lisa" type="checkbox" data-id="check-lisa" class="char_select save"></td>
 							<td><img src="img/lisa.png" alt="Lisa" title="Lisa"></td>
 							<td>
@@ -3102,7 +3148,7 @@
 								<div id="arti-lisa" class="arti_span"></div>
 							</td>
 						</tr>
-						<tr data-id="check-mona" class="unchecked" data-color="hydro">
+						<tr data-id="check-mona" class="unchecked" data-color="hydro" data-weapon="catalyst">
 							<td><input id="check-mona" type="checkbox" data-id="check-mona" class="char_select save"></td>
 							<td><img src="img/mona.png" alt="Mona" title="Mona"></td>
 							<td>
@@ -3291,7 +3337,7 @@
 								<div id="arti-mona" class="arti_span"></div>
 							</td>
 						</tr>
-						<tr data-id="check-ningguang" class="unchecked" data-color="geo">
+						<tr data-id="check-ningguang" class="unchecked" data-color="geo" data-weapon="catalyst">
 							<td><input id="check-ningguang" type="checkbox" data-id="check-ningguang" class="char_select save"></td>
 							<td><img src="img/ningguang.png" alt="Ningguang" title="Ningguang"></td>
 							<td>
@@ -3480,7 +3526,7 @@
 								<div id="arti-ningguang" class="arti_span"></div>
 							</td>
 						</tr>
-						<tr data-id="check-noelle" class="unchecked" data-color="geo">
+						<tr data-id="check-noelle" class="unchecked" data-color="geo" data-weapon="claymore">
 							<td><input id="check-noelle" type="checkbox" data-id="check-noelle" class="char_select save"></td>
 							<td><img src="img/noelle.png" alt="Noelle" title="Noelle"></td>
 							<td>
@@ -3669,7 +3715,7 @@
 								<div id="arti-noelle" class="arti_span"></div>
 							</td>
 						</tr>
-						<tr data-id="check-qiqi" class="unchecked" data-color="cryo">
+						<tr data-id="check-qiqi" class="unchecked" data-color="cryo" data-weapon="sword">
 							<td><input id="check-qiqi" type="checkbox" data-id="check-qiqi" class="char_select save"></td>
 							<td><img src="img/qiqi.png" alt="Qiqi" title="Qiqi"></td>
 							<td>
@@ -3861,7 +3907,7 @@
 								<div id="arti-qiqi" class="arti_span"></div>
 							</td>
 						</tr>
-						<tr data-id="check-razor" class="unchecked" data-color="electro">
+						<tr data-id="check-razor" class="unchecked" data-color="electro" data-weapon="claymore">
 							<td><input id="check-razor" type="checkbox" data-id="check-razor" class="char_select save"></td>
 							<td><img src="img/razor.png" alt="Razor" title="Razor"></td>
 							<td>
@@ -4050,7 +4096,7 @@
 								<div id="arti-razor" class="arti_span"></div>
 							</td>
 						</tr>
-						<tr data-id="check-rosaria" class="unchecked" data-color="cryo">
+						<tr data-id="check-rosaria" class="unchecked" data-color="cryo" data-weapon="polearm">
 							<td><input id="check-rosaria" type="checkbox" data-id="check-rosaria" class="char_select save"></td>
 							<td><img src="img/rosaria.png" alt="Rosaria" title="Rosaria"></td>
 							<td>
@@ -4236,7 +4282,7 @@
 								<div id="arti-rosaria" class="arti_span"></div>
 							</td>
 						</tr>
-						<tr data-id="check-sucrose" class="unchecked" data-color="anemo">
+						<tr data-id="check-sucrose" class="unchecked" data-color="anemo" data-weapon="catalyst">
 							<td><input id="check-sucrose" type="checkbox" data-id="check-sucrose" class="char_select save"></td>
 							<td><img src="img/sucrose.png" alt="Sucrose" title="Sucrose"></td>
 							<td>
@@ -4425,7 +4471,7 @@
 								<div id="arti-sucrose" class="arti_span"></div>
 							</td>
 						</tr>
-						<tr data-id="check-tartaglia" class="unchecked" data-color="hydro">
+						<tr data-id="check-tartaglia" class="unchecked" data-color="hydro" data-weapon="bow">
 							<td><input id="check-tartaglia" type="checkbox" data-id="check-tartaglia" class="char_select save"></td>
 							<td><img src="img/tartaglia.png" alt="Tartaglia" title="Tartaglia"></td>
 							<td>
@@ -4614,7 +4660,7 @@
 								<div id="arti-tartaglia" class="arti_span"></div>
 							</td>
 						</tr>
-						<tr data-id="check-venti" class="unchecked" data-color="anemo">
+						<tr data-id="check-venti" class="unchecked" data-color="anemo" data-weapon="bow">
 							<td><input id="check-venti" type="checkbox" data-id="check-venti" class="char_select save"></td>
 							<td><img src="img/venti.png" alt="Venti" title="Venti"></td>
 							<td>
@@ -4803,7 +4849,7 @@
 								<div id="arti-venti" class="arti_span"></div>
 							</td>
 						</tr>
-						<tr data-id="check-xiangling" class="unchecked" data-color="pyro">
+						<tr data-id="check-xiangling" class="unchecked" data-color="pyro" data-weapon="polearm">
 							<td><input id="check-xiangling" type="checkbox" data-id="check-xiangling" class="char_select save"></td>
 							<td><img src="img/xiangling.png" alt="Xiangling" title="Xiangling"></td>
 							<td>
@@ -4989,7 +5035,7 @@
 								<div id="arti-xiangling" class="arti_span"></div>
 							</td>
 						</tr>
-						<tr data-id="check-xiao" class="unchecked" data-color="anemo">
+						<tr data-id="check-xiao" class="unchecked" data-color="anemo" data-weapon="polearm">
 							<td><input id="check-xiao" type="checkbox" data-id="check-xiao" class="char_select save"></td>
 							<td><img src="img/xiao.png" alt="Xiao" title="Xiao"></td>
 							<td>
@@ -5175,7 +5221,7 @@
 								<div id="arti-xiao" class="arti_span"></div>
 							</td>
 						</tr>
-						<tr data-id="check-xingqiu" class="unchecked" data-color="hydro">
+						<tr data-id="check-xingqiu" class="unchecked" data-color="hydro" data-weapon="sword">
 							<td><input id="check-xingqiu" type="checkbox" data-id="check-xingqiu" class="char_select save"></td>
 							<td><img src="img/xingqiu.png" alt="Xingqiu" title="Xingqiu"></td>
 							<td>
@@ -5367,7 +5413,7 @@
 								<div id="arti-xingqiu" class="arti_span"></div>
 							</td>
 						</tr>
-						<tr data-id="check-xinyan" class="unchecked" data-color="pyro">
+						<tr data-id="check-xinyan" class="unchecked" data-color="pyro" data-weapon="claymore">
 							<td><input id="check-xinyan" type="checkbox" data-id="check-xinyan" class="char_select save"></td>
 							<td><img src="img/xinyan.png" alt="Xinyan" title="Xinyan"></td>
 							<td>
@@ -5556,7 +5602,7 @@
 								<div id="arti-xinyan" class="arti_span"></div>
 							</td>
 						</tr>
-						<tr data-id="check-zhongli" class="unchecked" data-color="geo">
+						<tr data-id="check-zhongli" class="unchecked" data-color="geo" data-weapon="polearm">
 							<td><input id="check-zhongli" type="checkbox" data-id="check-zhongli" class="char_select save"></td>
 							<td><img src="img/zhongli.png" alt="Zhongli" title="Zhongli"></td>
 							<td>
@@ -5742,7 +5788,7 @@
 								<div id="arti-zhongli" class="arti_span"></div>
 							</td>
 						</tr>
-						<tr data-id="check-traveler" class="unchecked">
+						<tr data-id="check-traveler" class="unchecked" data-color="multi" data-weapon="sword">
 							<td><input id="check-traveler" type="checkbox" data-id="check-traveler" class="char_select save"></td>
 							<td><img src="img/traveler.png" alt="Traveler" title="Traveler"></td>
 							<td>
@@ -5856,7 +5902,7 @@
 								<div id="arti-traveler" class="arti_span"></div>
 							</td>
 						</tr>
-						<tr data-id="check-traveler_anemo" class="unchecked" data-color="anemo">
+						<tr data-id="check-traveler_anemo" class="unchecked" data-color="anemo" data-weapon="sword">
 							<td><input id="check-traveler_anemo" type="checkbox" data-id="check-traveler_anemo" class="char_select save"></td>
 							<td><img src="img/traveler_anemo.png" alt="Traveler" title="Traveler"></td>
 							<td></td>
@@ -5952,7 +5998,7 @@
 							<td></td>
 							<td></td>
 						</tr>
-						<tr data-id="check-traveler_geo" class="unchecked" data-color="geo">
+						<tr data-id="check-traveler_geo" class="unchecked" data-color="geo" data-weapon="sword">
 							<td><input id="check-traveler_geo" type="checkbox" data-id="check-traveler_geo" class="char_select save"></td>
 							<td><img src="img/traveler_geo.png" alt="Traveler" title="Traveler"></td>
 							<td></td>
@@ -6936,7 +6982,6 @@
 				    <li>Artifact Menu set bonus hints.</li>
 				    <li>Add a useful information page. EG which character uses what boss talent item.</li>
 				    <li>page: damage formula</li>
-				    <li>Add toggle for character select: all, selected, unselected, element</li>
 				    <li>Evaluate sort by level</li>
 				</ul> --->
 			<!--- <p>The following weapons are missing ascension information in the wiki and thus aren't selectable:</p> --->

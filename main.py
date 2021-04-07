@@ -131,7 +131,7 @@ def list_storage():
 def init_page():
 	global char_dict
 	char_keys = []
-	for elt in doc.get(selector=f".amber"):
+	for elt in doc.get(selector=".amber"):
 		char_keys.append((elt.id.split('-')[0], elt.value))
 	char_dict = {k: int(v) if v.isnumeric() else v for k, v in char_keys}
 
@@ -169,10 +169,15 @@ def init_page():
 			grind_table_state['arti_check'].discard(char)
 			doc[k].checked = False
 		elif 'select' in v:
-			sub_key, char = k.split('-')
+			if '-' in k:
+				sub_key, char = k.split('-')
+			else:
+				sub_key = k
+				char = ''
 			val = v.split('-')[1]
 			doc[k].value = val
-			grind_table_state['characters'][char][sub_key] = int(val) if val.isnumeric() else val
+			if char:
+				grind_table_state['characters'][char][sub_key] = int(val) if val.isnumeric() else val
 		elif v == 'y':
 			target, ev_id = k.rsplit('-', maxsplit=1)
 			b = BUTTON(strings[ev_id], Class=f'text_button saved_arti {target.split("-")[1]}', Id=f"{target}-{ev_id}", data_arti=ev_id)
@@ -186,6 +191,7 @@ def init_page():
 			print(f"Invalid stored data: {k}, {v}")
 	# finish updating page state after loading data
 	calculate_change()
+	update_visible()
 
 
 # custom implementation of default dict for int
@@ -593,7 +599,11 @@ def show_inventory(ev):
 # Function for saving changes
 @bind('.save', 'change')
 def save_state(ev):
-	key, char = ev.target.id.split('-')
+	if '-' in ev.target.id:
+		key, char = ev.target.id.split('-')
+	else:
+		key = ev.target.id
+		char = ''
 	if ev.target.type == 'checkbox' and 'char_select' in ev.target.attrs['class']:
 		binstate = ev.target.checked
 		newstate = 'checked' if binstate else 'unchecked'
@@ -606,6 +616,8 @@ def save_state(ev):
 			grind_table_state['checked'].discard(ev.target.id.split('-')[1])
 			del_storage(ev.target.id)
 		calculate_change()
+		if doc['selected'].value != 'All':
+			update_visible()
 	elif ev.target.type == 'checkbox':
 		if ev.target.checked:
 			grind_table_state['arti_check'].add(ev.target.id.split('-')[1])
@@ -620,9 +632,12 @@ def save_state(ev):
 			set_storage(ev.target.id, f"select-{ev.target.value}")
 		else:
 			del_storage(ev.target.id)
-		grind_table_state['characters'][char][key] = int(ev.target.value) if ev.target.value.isnumeric() else ev.target.value
-		if char in grind_table_state['checked']:
-			calculate_change()
+		if char:
+			grind_table_state['characters'][char][key] = int(ev.target.value) if ev.target.value.isnumeric() else ev.target.value
+			if char in grind_table_state['checked']:
+				calculate_change()
+		else:
+			update_visible()
 	elif ev.target.type == 'number':
 		if not ev.target.value.isnumeric() or int(ev.target.value) < 0:
 			ev.target.value = 0
@@ -633,6 +648,19 @@ def save_state(ev):
 		calculate_change()
 	else:
 		print(f"Unhandled element type for storage: {ev.target.type}")
+
+
+# Handles which characters are visible
+def update_visible():
+	c = doc['selected'].value
+	e = doc['element'].value
+	w = doc['weapon'].value
+	for el in doc.get(selector="#character_list .body tr[data-id]"):
+		if c in ['any', el.attrs['class']] and (e in ['any', el.attrs['data-color']] or (el.attrs['data-color'] == 'multi' and e in ['anemo', 'geo'])) and w in ['any', el.attrs['data-weapon']]:
+			if 'hidden' in el.attrs:
+				del el.attrs['hidden']
+		else:
+			el.attrs['hidden'] = ''
 
 
 # Function to handle deleting artifacts
@@ -689,3 +717,6 @@ doc["reset_inventory"].bind("click", reset_inventory)
 
 init_page()
 del doc['loading']
+
+
+
