@@ -490,6 +490,7 @@ def update_character():
 		'midsummer_courtyard': 20,
 		'valley_of_remembrance': 20,
 		'peak_of_vindagnyr': 20,
+		'ridge_watch': 20,
 		'xp_leyline': 20,
 		'mora_leyline': 20
 	}
