@@ -331,6 +331,10 @@ farming_data = {
 		'when': ['any'],
 		'where': ['clear_pool_and_mountain_cavern']
 	},
+	'pale_flame': {
+		'when': ['any'],
+		'where': ['ridge_watch']
+	},
 	'prayers_for_destiny': {
 		'when': ['any'],
 		'where': ['oceanid']
@@ -358,6 +362,10 @@ farming_data = {
 	'scholar': {
 		'when': ['any'],
 		'where': ['clear_pool_and_mountain_cavern']
+	},
+	'tenacity_of_the_millelith': {
+		'when': ['any'],
+		'where': ['ridge_watch']
 	},
 	'the_exile': {
 		'when': ['any'],

@@ -261,6 +261,7 @@ strings = {
 	'maiden_beloved': "Maiden Beloved",
 	'martial_artist': "Martial Artist",
 	'noblesse_oblige': "Noblesse Oblige",
+	'pale_flame': 'Pale Flame',
 	'prayers_for_destiny': "Prayers for Destiny",
 	'prayers_for_illumination': "Prayers for Illumination",
 	'prayers_for_wisdom': "Prayers for Wisdom",
@@ -268,6 +269,7 @@ strings = {
 	'resolution_of_sojourner': "Resolution of Sojourner",
 	'retracing_bolide': "Retracing Bolide",
 	'scholar': "Scholar",
+	'tenacity_of_the_millelith': 'Tenacity of the Millelith',
 	'the_exile': "The Exile",
 	'thundering_fury': "Thundering Fury",
 	'thundersoother': "Thundersoother",
@@ -369,4 +371,5 @@ strings = {
 	'midsummer_courtyard': "Midsummer Courtyard",
 	'valley_of_remembrance': "Valley of Remembrance",
 	'peak_of_vindagnyr': 'Peak of Vindagnyr',
+	'ridge_watch': 'Ridge Watch'
 }
