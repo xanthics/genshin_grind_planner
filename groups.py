@@ -9,6 +9,9 @@ groups = {
 		'ring_of_boreas',
 		'spirit_locket_of_boreas',
 		'tail_of_boreas',
+		'dragon_lords_crown',
+		'bloodjade_branch',
+		'gilded_scale',
 	],
 	'character': [
 		'amber',
@@ -40,7 +43,8 @@ groups = {
 		'ganyu',
 		'xiao',
 		'hu_tao',
-		'rosaria'
+		'rosaria',
+		'yanfei'
 	],
 	'element_1': [
 		'brilliant_diamond',
@@ -295,6 +299,7 @@ groups = {
 		'oceanid',
 		'pyro_regisvine',
 		'primo_geovishap',
+		'cryo_hypostasis',
 		# weekly boss
 		'stormterror',
 		'wolf_of_the_north',

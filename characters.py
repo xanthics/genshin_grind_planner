@@ -450,6 +450,21 @@ characters = {
 		'weapon': 'polearm',
 		'element': 'cryo'
 	},
+	"yanfei": {
+		'ascension': {
+			'element_1': 'agnidus_agate',
+			'element_2': 'juvenile_jade',
+			'local': 'noctilucous_jade',
+			'common': 'th_insignia'
+		},
+		'talent': {
+			'talent': 'gold',
+			'common': 'th_insignia',
+			'boss': 'bloodjade_branch'
+		},
+		'weapon': 'catalyst',
+		'element': 'pyro'
+	},
 
 	"traveler": {
 		'ascension': {

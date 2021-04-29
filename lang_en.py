@@ -42,6 +42,9 @@ strings = {
 	'ring_of_boreas': 'Ring of Boreas',
 	'spirit_locket_of_boreas': 'Spirit Locket of Boreas',
 	'tail_of_boreas': 'Tail of Boreas',
+	'dragon_lords_crown': "Dragon Lord's Crown",
+	'bloodjade_branch': 'Bloodjade Branch',
+	'gilded_scale': 'Gilded Scale',
 	# Characters
 	'amber': 'Amber',
 	'barbara': 'Barbara',
@@ -73,6 +76,7 @@ strings = {
 	'xiao': 'Xiao',
 	'hu_tao': 'Hu Tao',
 	'rosaria': 'Rosaria',
+	'yanfei': 'Yanfei',
 	'traveler': "Traveler",
 	'traveler_pyro': "Traveler (Pyro)",
 	'traveler_hydro': "Traveler (Hydro)",
@@ -347,6 +351,7 @@ strings = {
 	# elite bosses
 	'anemo_hypostasis': "Anemo Hypostasis",
 	'cryo_regisvine': "Cryo Regisvine",
+	'cryo_hypostasis': 'Cryo Hypostasis',
 	'electro_hypostasis': "Electro Hypostasis",
 	'geo_hypostasis': "Geo Hypostasis",
 	'oceanid': "Oceanid",
@@ -357,6 +362,7 @@ strings = {
 	'stormterror': "Stormterror",
 	'wolf_of_the_north': "Wolf of the North",
 	'golden_house': "Golden House",
+	'azhdaha': 'Azhdaha',
 	'60_boss': "Any Weekly Boss",
 	# Domain: Weapon Ascension Materials
 	'cecilia_garden': "Cecilia Garden",

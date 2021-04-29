@@ -47,6 +47,18 @@ farming_data = {
 		'when': ['any'],
 		'where': ['wolf_of_the_north']
 	},
+	'dragon_lords_crown': {
+		'when': ['any'],
+		'where': ['azhdaha']
+	},
+	'bloodjade_branch': {
+		'when': ['any'],
+		'where': ['azhdaha']
+	},
+	'gilded_scale': {
+		'when': ['any'],
+		'where': ['azhdaha']
+	},
 	'agnidus_agate': {
 		'when': ['any'],
 		'where': ['pyro_regisvine', 'wolf_of_the_north', 'primo_geovishap']
@@ -57,19 +69,19 @@ farming_data = {
 	},
 	'prithiva_topaz': {
 		'when': ['any'],
-		'where': ['geo_hypostasis', 'wolf_of_the_north', 'primo_geovishap']
+		'where': ['geo_hypostasis', 'wolf_of_the_north', 'primo_geovishap', 'azhdaha']
 	},
 	'shivada_jade': {
 		'when': ['any'],
-		'where': ['cryo_regisvine', 'wolf_of_the_north', 'golden_house', 'primo_geovishap']
+		'where': ['cryo_regisvine', 'wolf_of_the_north', 'golden_house', 'primo_geovishap', 'cryo_hypostasis']
 	},
 	'vajrada_amethyst': {
 		'when': ['any'],
-		'where': ['electro_hypostasis', 'stormterror', 'golden_house', 'primo_geovishap']
+		'where': ['electro_hypostasis', 'stormterror', 'golden_house', 'primo_geovishap', 'azhdaha']
 	},
 	'varunada_lazurite': {
 		'when': ['any'],
-		'where': ['oceanid', 'stormterror', 'golden_house', 'primo_geovishap']
+		'where': ['oceanid', 'stormterror', 'golden_house', 'primo_geovishap', 'azhdaha']
 	},
 	'vayuda_turqoise': {
 		'when': ['any'],
@@ -349,7 +361,7 @@ farming_data = {
 	},
 	'prayers_to_springtime': {
 		'when': ['any'],
-		'where': ['cryo_regisvine']
+		'where': ['cryo_regisvine', 'cryo_hypostasis']
 	},
 	'resolution_of_sojourner': {
 		'when': ['any'],
