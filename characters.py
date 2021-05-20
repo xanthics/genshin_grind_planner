@@ -465,6 +465,21 @@ characters = {
 		'weapon': 'catalyst',
 		'element': 'pyro'
 	},
+	"eula": {
+		'ascension': {
+			'element_1': 'shivada_jade',
+			'element_2': 'crystalline_bloom',
+			'local': 'dandelion_seed',
+			'common': 'mask'
+		},
+		'talent': {
+			'talent': 'resistance',
+			'common': 'mask',
+			'boss': 'dragon_lords_crown'
+		},
+		'weapon': 'claymore',
+		'element': 'cryo'
+	},
 
 	"traveler": {
 		'ascension': {

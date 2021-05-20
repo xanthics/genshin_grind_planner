@@ -115,6 +115,10 @@ farming_data = {
 		'when': ['any'],
 		'where': ['primo_geovishap']
 	},
+	'crystalline_bloom': {
+		'when': ['any'],
+		'where': ['cryo_hypostasis']
+	},
 	'calla_lily': {
 		'when': ['any'],
 		'where': ['special_mondstadt']

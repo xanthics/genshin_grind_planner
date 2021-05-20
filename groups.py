@@ -44,7 +44,8 @@ groups = {
 		'xiao',
 		'hu_tao',
 		'rosaria',
-		'yanfei'
+		'yanfei',
+		'eula'
 	],
 	'element_1': [
 		'brilliant_diamond',
@@ -62,7 +63,8 @@ groups = {
 		'hoarfrost_core',
 		'hurricane_seed',
 		'lightning_prism',
-		'juvenile_jade'
+		'juvenile_jade',
+		'crystalline_bloom'
 	],
 	'local': [
 		'calla_lily',
@@ -179,7 +181,8 @@ groups = {
 		'wolfs_gravestone',
 		'the_unforged',
 		'snow_tombed_starsliver',
-		'lithic_blade'
+		'lithic_blade',
+		'song_of_broken_pines'
 	],
 	'polearm': [
 		'black_tassel',

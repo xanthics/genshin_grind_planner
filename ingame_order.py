@@ -30,6 +30,7 @@ ingame_order = [
 	('element_2', 'everflame_seed'),
 	('element_2', 'cleansing_heart'),
 	('element_2', 'juvenile_jade'),
+	('element_2', 'crystalline_bloom'),
 	('common', 'nectar'),
 	('element_1', 'brilliant_diamond'),
 	('common_rare', 'bone_shard'),

@@ -45,6 +45,7 @@ weapons = {
 		'the_unforged': {'wam': 'mist_veiled_elixer', 'common_rare': 'mist', 'common': 'th_insignia', 'tier': '5_weapon'},
 		'skyward_pride': {'wam': 'boreal_wolf', 'common_rare': 'ley_line', 'common': 'slime', 'tier': '5_weapon'},
 		'wolfs_gravestone': {'wam': 'dandelion_gladiator', 'common_rare': 'chaos', 'common': 'scroll', 'tier': '5_weapon'},
+		'song_of_broken_pines': {'wam': 'decarabian', 'common_rare': 'horn', 'common': 'mask', 'tier': '5_weapon'},
 		'sacrificial_greatsword': {'wam': 'boreal_wolf', 'common_rare': 'ley_line', 'common': 'arrowhead', 'tier': '4_weapon'},
 		'the_bell': {'wam': 'decarabian', 'common_rare': 'horn', 'common': 'nectar', 'tier': '4_weapon'},
 		'blackcliff_slasher': {'wam': 'mist_veiled_elixer', 'common_rare': 'mist', 'common': 'f_insignia', 'tier': '4_weapon'},

@@ -77,6 +77,7 @@ strings = {
 	'hu_tao': 'Hu Tao',
 	'rosaria': 'Rosaria',
 	'yanfei': 'Yanfei',
+	'eula': "Eula",
 	'traveler': "Traveler",
 	'traveler_pyro': "Traveler (Pyro)",
 	'traveler_hydro': "Traveler (Hydro)",
@@ -101,6 +102,7 @@ strings = {
 	'hurricane_seed': 'Hurricane Seed',
 	'lightning_prism': 'Lightning Prism',
 	'juvenile_jade': 'Juvenile Jade',
+	'crystalline_bloom': 'Crystalline Bloom',
 	# common gathered items
 	'calla_lily': 'Calla Lily',
 	'cecilia': 'Cecilia',
@@ -205,6 +207,7 @@ strings = {
 	'white_iron_greatsword': 'White Iron Greatsword',
 	'whiteblind': 'Whiteblind',
 	'wolfs_gravestone': "Wolf's Gravestone",
+	'song_of_broken_pines': "Song of Broken Pines",
 	'the_unforged': 'The Unforged',
 	'snow_tombed_starsliver': 'Snow-Tombed Starsilver',
 	'lithic_blade': 'Lithic Blade',
