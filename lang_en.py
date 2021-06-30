@@ -245,6 +245,7 @@ strings = {
 	'sacrificial_sword': 'Sacrificial Sword',
 	'skyrider_sword': 'Skyrider Sword',
 	'skyward_blade': 'Skyward Blade',
+	'freedom_sworn': 'Freedom-Sworn',
 	'sword_of_descension': 'Sword of Descension',
 	'the_black_sword': 'The Black Sword',
 	'the_flute': 'The Flute',

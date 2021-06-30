@@ -85,6 +85,7 @@ weapons = {
 	'sword': {
 		'primordial_jade_winged_cutter': {'wam': 'mist_veiled_elixer', 'common_rare': 'mist', 'common': 'f_insignia', 'tier': '5_weapon'},
 		'skyward_blade': {'wam': 'boreal_wolf', 'common_rare': 'ley_line', 'common': 'slime', 'tier': '5_weapon'},
+		'freedom_sworn': {'wam': 'dandelion_gladiator', 'common_rare': 'chaos', 'common': 'scroll', 'tier': '5_weapon'},
 		'aquila_favonia': {'wam': 'decarabian', 'common_rare': 'horn', 'common': 'arrowhead', 'tier': '5_weapon'},
 		'summit_shaper': {'wam': 'guyun', 'common_rare': 'sacrificial_knife', 'common': 'mask', 'tier': '5_weapon'},
 		'blackcliff_longsword': {'wam': 'guyun', 'common_rare': 'sacrificial_knife', 'common': 'arrowhead', 'tier': '4_weapon'},

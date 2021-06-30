@@ -219,6 +219,7 @@ groups = {
 		'sacrificial_sword',
 		'skyrider_sword',
 		'skyward_blade',
+		'freedom_sworn',
 		'sword_of_descension',
 		'the_black_sword',
 		'the_flute',
