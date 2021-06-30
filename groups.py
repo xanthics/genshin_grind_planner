@@ -155,6 +155,7 @@ groups = {
 		'sacrificial_fragments',
 		'skyward_atlas',
 		'solar_pearl',
+		'dodoco_tales',
 		'the_widsith',
 		'thrilling_tales_of_dragon_slayers',
 		'twin_nephrite',

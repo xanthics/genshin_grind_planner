@@ -32,6 +32,7 @@ weapons = {
 		'royal_grimoire': {'wam': 'decarabian', 'common_rare': 'horn', 'common': 'f_insignia', 'tier': '4_weapon'},
 		'sacrificial_fragments': {'wam': 'dandelion_gladiator', 'common_rare': 'chaos', 'common': 'th_insignia', 'tier': '4_weapon'},
 		'solar_pearl': {'wam': 'guyun', 'common_rare': 'sacrificial_knife', 'common': 'nectar', 'tier': '4_weapon'},
+		'dodoco_tales': {'wam': 'boreal_wolf', 'common_rare': 'ley_line', 'common': 'mask', 'tier': '4_weapon'},
 		'the_widsith': {'wam': 'boreal_wolf', 'common_rare': 'ley_line', 'common': 'mask', 'tier': '4_weapon'},
 		'wine_and_song': {'wam': 'boreal_wolf', 'common_rare': 'ley_line', 'common': 'th_insignia', 'tier': '4_weapon'},
 		'frostbearer': {'wam': 'dandelion_gladiator', 'common_rare': 'chaos', 'common': 'nectar', 'tier': '4_weapon'},

@@ -184,6 +184,7 @@ strings = {
 	'sacrificial_fragments': 'Sacrificial Fragments',
 	'skyward_atlas': 'Skyward Atlas',
 	'solar_pearl': 'Solar Pearl',
+	'dodoco_tales': 'Dodoco Tales',
 	'the_widsith': 'The Widsith',
 	'thrilling_tales_of_dragon_slayers': 'Thrilling Tales of Dragon Slayers',
 	'twin_nephrite': 'Twin Nephrite',
