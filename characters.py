@@ -480,6 +480,21 @@ characters = {
 		'weapon': 'claymore',
 		'element': 'cryo'
 	},
+	"kaedehara_kazuha": {
+		'ascension': {
+			'element_1': 'vayuda_turqoise',
+			'element_2': 'marionette_core',
+			'local': 'sea_ganoderma',
+			'common': 'th_insignia'
+		},
+		'talent': {
+			'talent': 'diligence',
+			'common': 'th_insignia',
+			'boss': 'gilded_scale'
+		},
+		'weapon': 'sword',
+		'element': 'anemo'
+	},
 
 	"traveler": {
 		'ascension': {

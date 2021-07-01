@@ -13,7 +13,8 @@
 	<body onload="brython(1)">
 		<section class="main">
 			<p><strong>This page requires local storage to save state.</strong></p>
-			<p>2021/5/20: Added EULA(character), 1 new weapon.</p>
+			<p>2021/6/30: Added Kaedehara Kazuha (character), Dodoco Tales (Catalyst), Freedom-Sworn (Sword), Mitternachts Waltz (Bow).</p>
+			<p>2021/6/30: I am currently taking a break from Genshin.  If you notice anything missing please create a bug report and I will add it.</p>
 			<div id="show_hide">
 				<table>
 					<tr>
@@ -245,6 +246,7 @@
 									<option value="favonius_sword">Favonius Sword</option>
 									<option value="festering_desire">Festering Desire</option>
 									<option value="fillet_blade">Fillet Blade</option>
+									<option value="freedom_sworn">Freedom-Sworn</option>
 									<option value="harbinger_of_dawn">Harbinger of Dawn</option>
 									<option value="iron_sting">Iron Sting</option>
 									<option value="lions_roar">Lion's Roar</option>
@@ -620,6 +622,7 @@
 								<select id="weapon-barbara" data-id="select-barbara" class="weapon barbara save">
 									<option value="--">--</option>
 									<option value="blackcliff_amulet">Blackcliff Agate</option>
+									<option value="dodoco_tales">Dodoco Tales</option>
 									<option value="emerald_orb">Emerald Orb</option>
 									<option value="eye_of_perception">Eye of Perception</option>
 									<option value="favonius_codex">Favonius Codex</option>
@@ -1005,6 +1008,7 @@
 									<option value="favonius_sword">Favonius Sword</option>
 									<option value="festering_desire">Festering Desire</option>
 									<option value="fillet_blade">Fillet Blade</option>
+									<option value="freedom_sworn">Freedom-Sworn</option>
 									<option value="harbinger_of_dawn">Harbinger of Dawn</option>
 									<option value="iron_sting">Iron Sting</option>
 									<option value="lions_roar">Lion's Roar</option>
@@ -2520,6 +2524,7 @@
 									<option value="favonius_sword">Favonius Sword</option>
 									<option value="festering_desire">Festering Desire</option>
 									<option value="fillet_blade">Fillet Blade</option>
+									<option value="freedom_sworn">Freedom-Sworn</option>
 									<option value="harbinger_of_dawn">Harbinger of Dawn</option>
 									<option value="iron_sting">Iron Sting</option>
 									<option value="lions_roar">Lion's Roar</option>
@@ -2577,6 +2582,199 @@
 							<td><button class="arti_list text_button" data-id="arti-jean">Add</button></td>
 							<td>
 								<div id="arti-jean" class="arti_span"></div>
+							</td>
+						</tr>
+						<tr data-id="check-kaedehara_kazuha" class="unchecked" data-color="anemo" data-weapon="sword">
+							<td><input id="check-kaedehara_kazuha" type="checkbox" data-id="check-kaedehara_kazuha" class="char_select save"></td>
+							<td><img src="img/kaedehara_kazuha.png" alt="Kaedehara Kazuha" title="Kaedehara Kazuha"></td>
+							<td>
+								<select id="level_c-kaedehara_kazuha" class="kaedehara_kazuha save">
+									<option value="0">1</option>
+									<option value="1">20</option>
+									<option value="11">20 A</option>
+									<option value="2">40</option>
+									<option value="12">40 A</option>
+									<option value="3">50</option>
+									<option value="13">50 A</option>
+									<option value="4">60</option>
+									<option value="14">60 A</option>
+									<option value="5">70</option>
+									<option value="15">70 A</option>
+									<option value="6">80</option>
+									<option value="16">80 A</option>
+									<option value="7">90</option>
+								</select>
+							</td>
+							<td>
+								<select id="level_t-kaedehara_kazuha" class="kaedehara_kazuha save">
+									<option value="0">1</option>
+									<option value="1">20</option>
+									<option value="11">20 A</option>
+									<option value="2">40</option>
+									<option value="12">40 A</option>
+									<option value="3">50</option>
+									<option value="13">50 A</option>
+									<option value="4">60</option>
+									<option value="14">60 A</option>
+									<option value="5">70</option>
+									<option value="15">70 A</option>
+									<option value="6">80</option>
+									<option value="16">80 A</option>
+									<option value="7">90</option>
+								</select>
+							</td>
+							<td>
+								<select id="talent_1_c-kaedehara_kazuha" class="kaedehara_kazuha save">
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option>
+									<option>9</option>
+									<option>10</option>
+								</select>
+							</td>
+							<td>
+								<select id="talent_1_t-kaedehara_kazuha" class="kaedehara_kazuha save">
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option>
+									<option>9</option>
+									<option>10</option>
+								</select>
+							</td>
+							<td>
+								<select id="talent_2_c-kaedehara_kazuha" class="kaedehara_kazuha save">
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option>
+									<option>9</option>
+									<option>10</option>
+								</select>
+							</td>
+							<td>
+								<select id="talent_2_t-kaedehara_kazuha" class="kaedehara_kazuha save">
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option>
+									<option>9</option>
+									<option>10</option>
+								</select>
+							</td>
+							<td>
+								<select id="talent_3_c-kaedehara_kazuha" class="kaedehara_kazuha save">
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option>
+									<option>9</option>
+									<option>10</option>
+								</select>
+							</td>
+							<td>
+								<select id="talent_3_t-kaedehara_kazuha" class="kaedehara_kazuha save">
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option>
+									<option>9</option>
+									<option>10</option>
+								</select>
+							</td>
+							<td>
+								<select id="weapon-kaedehara_kazuha" data-id="select-kaedehara_kazuha" class="weapon kaedehara_kazuha save">
+									<option value="--">--</option>
+									<option value="aquila_favonia">Aquila Favonia</option>
+									<option value="blackcliff_longsword">Blackcliff Longsword</option>
+									<option value="cool_steel">Cool Steel</option>
+									<option value="dark_iron_sword">Dark Iron Sword</option>
+									<option value="favonius_sword">Favonius Sword</option>
+									<option value="festering_desire">Festering Desire</option>
+									<option value="fillet_blade">Fillet Blade</option>
+									<option value="freedom_sworn">Freedom-Sworn</option>
+									<option value="harbinger_of_dawn">Harbinger of Dawn</option>
+									<option value="iron_sting">Iron Sting</option>
+									<option value="lions_roar">Lion's Roar</option>
+									<option value="primordial_jade_winged_cutter">Primordial Jade Cutter</option>
+									<option value="prototype_rancour">Prototype Rancour</option>
+									<option value="royal_longsword">Royal Longsword</option>
+									<option value="sacrificial_sword">Sacrificial Sword</option>
+									<option value="skyrider_sword">Skyrider Sword</option>
+									<option value="skyward_blade">Skyward Blade</option>
+									<option value="summit_shaper">Summit Shaper</option>
+									<option value="sword_of_descension">Sword of Descension</option>
+									<option value="the_alley_flash">The Alley Flash</option>
+									<option value="the_black_sword">The Black Sword</option>
+									<option value="the_flute">The Flute</option>
+									<option value="travelers_handy_sword">Traveler's Handy Sword</option>
+								</select>
+							</td>
+							<td>
+								<select id="weapon_c-kaedehara_kazuha" class="kaedehara_kazuha save">
+									<option value="0">1</option>
+									<option value="1">20</option>
+									<option value="11">20 A</option>
+									<option value="2">40</option>
+									<option value="12">40 A</option>
+									<option value="3">50</option>
+									<option value="13">50 A</option>
+									<option value="4">60</option>
+									<option value="14">60 A</option>
+									<option value="5">70</option>
+									<option value="15">70 A</option>
+									<option value="6">80</option>
+									<option value="16">80 A</option>
+									<option value="7">90</option>
+								</select>
+							</td>
+							<td>
+								<select id="weapon_t-kaedehara_kazuha" class="kaedehara_kazuha save">
+									<option value="0">1</option>
+									<option value="1">20</option>
+									<option value="11">20 A</option>
+									<option value="2">40</option>
+									<option value="12">40 A</option>
+									<option value="3">50</option>
+									<option value="13">50 A</option>
+									<option value="4">60</option>
+									<option value="14">60 A</option>
+									<option value="5">70</option>
+									<option value="15">70 A</option>
+									<option value="6">80</option>
+									<option value="16">80 A</option>
+									<option value="7">90</option>
+								</select>
+							</td>
+							<td><input id="use_arti-kaedehara_kazuha" type="checkbox" class="save" checked="true"></td>
+							<td><button class="arti_list text_button" data-id="arti-kaedehara_kazuha">Add</button></td>
+							<td>
+								<div id="arti-kaedehara_kazuha" class="arti_span"></div>
 							</td>
 						</tr>
 						<tr data-id="check-kaeya" class="unchecked" data-color="cryo" data-weapon="sword">
@@ -2712,6 +2910,7 @@
 									<option value="favonius_sword">Favonius Sword</option>
 									<option value="festering_desire">Festering Desire</option>
 									<option value="fillet_blade">Fillet Blade</option>
+									<option value="freedom_sworn">Freedom-Sworn</option>
 									<option value="harbinger_of_dawn">Harbinger of Dawn</option>
 									<option value="iron_sting">Iron Sting</option>
 									<option value="lions_roar">Lion's Roar</option>
@@ -2904,6 +3103,7 @@
 									<option value="favonius_sword">Favonius Sword</option>
 									<option value="festering_desire">Festering Desire</option>
 									<option value="fillet_blade">Fillet Blade</option>
+									<option value="freedom_sworn">Freedom-Sworn</option>
 									<option value="harbinger_of_dawn">Harbinger of Dawn</option>
 									<option value="iron_sting">Iron Sting</option>
 									<option value="lions_roar">Lion's Roar</option>
@@ -3090,6 +3290,7 @@
 								<select id="weapon-klee" data-id="select-klee" class="weapon klee save">
 									<option value="--">--</option>
 									<option value="blackcliff_amulet">Blackcliff Agate</option>
+									<option value="dodoco_tales">Dodoco Tales</option>
 									<option value="emerald_orb">Emerald Orb</option>
 									<option value="eye_of_perception">Eye of Perception</option>
 									<option value="favonius_codex">Favonius Codex</option>
@@ -3279,6 +3480,7 @@
 								<select id="weapon-lisa" data-id="select-lisa" class="weapon lisa save">
 									<option value="--">--</option>
 									<option value="blackcliff_amulet">Blackcliff Agate</option>
+									<option value="dodoco_tales">Dodoco Tales</option>
 									<option value="emerald_orb">Emerald Orb</option>
 									<option value="eye_of_perception">Eye of Perception</option>
 									<option value="favonius_codex">Favonius Codex</option>
@@ -3468,6 +3670,7 @@
 								<select id="weapon-mona" data-id="select-mona" class="weapon mona save">
 									<option value="--">--</option>
 									<option value="blackcliff_amulet">Blackcliff Agate</option>
+									<option value="dodoco_tales">Dodoco Tales</option>
 									<option value="emerald_orb">Emerald Orb</option>
 									<option value="eye_of_perception">Eye of Perception</option>
 									<option value="favonius_codex">Favonius Codex</option>
@@ -3657,6 +3860,7 @@
 								<select id="weapon-ningguang" data-id="select-ningguang" class="weapon ningguang save">
 									<option value="--">--</option>
 									<option value="blackcliff_amulet">Blackcliff Agate</option>
+									<option value="dodoco_tales">Dodoco Tales</option>
 									<option value="emerald_orb">Emerald Orb</option>
 									<option value="eye_of_perception">Eye of Perception</option>
 									<option value="favonius_codex">Favonius Codex</option>
@@ -4042,6 +4246,7 @@
 									<option value="favonius_sword">Favonius Sword</option>
 									<option value="festering_desire">Festering Desire</option>
 									<option value="fillet_blade">Fillet Blade</option>
+									<option value="freedom_sworn">Freedom-Sworn</option>
 									<option value="harbinger_of_dawn">Harbinger of Dawn</option>
 									<option value="iron_sting">Iron Sting</option>
 									<option value="lions_roar">Lion's Roar</option>
@@ -4604,6 +4809,7 @@
 								<select id="weapon-sucrose" data-id="select-sucrose" class="weapon sucrose save">
 									<option value="--">--</option>
 									<option value="blackcliff_amulet">Blackcliff Agate</option>
+									<option value="dodoco_tales">Dodoco Tales</option>
 									<option value="emerald_orb">Emerald Orb</option>
 									<option value="eye_of_perception">Eye of Perception</option>
 									<option value="favonius_codex">Favonius Codex</option>
@@ -5549,6 +5755,7 @@
 									<option value="favonius_sword">Favonius Sword</option>
 									<option value="festering_desire">Festering Desire</option>
 									<option value="fillet_blade">Fillet Blade</option>
+									<option value="freedom_sworn">Freedom-Sworn</option>
 									<option value="harbinger_of_dawn">Harbinger of Dawn</option>
 									<option value="iron_sting">Iron Sting</option>
 									<option value="lions_roar">Lion's Roar</option>
@@ -5925,6 +6132,7 @@
 								<select id="weapon-yanfei" data-id="select-yanfei" class="weapon yanfei save">
 									<option value="--">--</option>
 									<option value="blackcliff_amulet">Blackcliff Agate</option>
+									<option value="dodoco_tales">Dodoco Tales</option>
 									<option value="emerald_orb">Emerald Orb</option>
 									<option value="eye_of_perception">Eye of Perception</option>
 									<option value="favonius_codex">Favonius Codex</option>
@@ -6228,6 +6436,7 @@
 									<option value="favonius_sword">Favonius Sword</option>
 									<option value="festering_desire">Festering Desire</option>
 									<option value="fillet_blade">Fillet Blade</option>
+									<option value="freedom_sworn">Freedom-Sworn</option>
 									<option value="harbinger_of_dawn">Harbinger of Dawn</option>
 									<option value="iron_sting">Iron Sting</option>
 									<option value="lions_roar">Lion's Roar</option>
@@ -6848,6 +7057,10 @@
 						<td><input type="number" min="0" step="1" value="0" id="crystalline_bloom-user" class="save"></td>
 						<td id="crystalline_bloom-need">0</td>
 						<td></td>
+						<td><img src="img/marionette_core.png" alt="Marionette Core" title="Marionette Core"></td>
+						<td id="marionette_core-total">0</td>
+						<td><input type="number" min="0" step="1" value="0" id="marionette_core-user" class="save"></td>
+						<td id="marionette_core-need">0</td>
 					</tr>
 					<tr class="empty_row"></tr>
 					<tr class="tr_even">
@@ -7378,6 +7591,11 @@
 						<td id="cor_lapis-total">0</td>
 						<td><input type="number" min="0" step="1" value="0" id="cor_lapis-user" class="save"></td>
 						<td id="cor_lapis-need">0</td>
+						<td></td>
+						<td><img src="img/sea_ganoderma.png" alt="Sea Ganoderma" title="Sea Ganoderma"></td>
+						<td id="sea_ganoderma-total">0</td>
+						<td><input type="number" min="0" step="1" value="0" id="sea_ganoderma-user" class="save"></td>
+						<td id="sea_ganoderma-need">0</td>
 						<td></td>
 					</tr>
 				</table>

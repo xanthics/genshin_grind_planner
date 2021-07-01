@@ -73,7 +73,7 @@ farming_data = {
 	},
 	'shivada_jade': {
 		'when': ['any'],
-		'where': ['cryo_regisvine', 'wolf_of_the_north', 'golden_house', 'primo_geovishap', 'cryo_hypostasis']
+		'where': ['cryo_regisvine', 'wolf_of_the_north', 'golden_house', 'primo_geovishap', 'cryo_hypostasis', 'maguu_kenki']
 	},
 	'vajrada_amethyst': {
 		'when': ['any'],
@@ -85,7 +85,7 @@ farming_data = {
 	},
 	'vayuda_turqoise': {
 		'when': ['any'],
-		'where': ['anemo_hypostasis', 'stormterror']
+		'where': ['anemo_hypostasis', 'stormterror', 'maguu_kenki']
 	},
 	'basalt_pillar': {
 		'when': ['any'],
@@ -118,6 +118,10 @@ farming_data = {
 	'crystalline_bloom': {
 		'when': ['any'],
 		'where': ['cryo_hypostasis']
+	},
+	'marionette_core': {
+		'when': ['any'],
+		'where': ['maguu_kenki']
 	},
 	'calla_lily': {
 		'when': ['any'],
@@ -178,6 +182,10 @@ farming_data = {
 	'wolfhook': {
 		'when': ['any'],
 		'where': ['special_mondstadt']
+	},
+	'sea_ganoderma': {
+		'when': ['any'],
+		'where': ['special_golden_apple']
 	},
 	'qingxin': {
 		'when': ['any'],

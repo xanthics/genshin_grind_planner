@@ -486,6 +486,7 @@ def update_character():
 		'oceanid': 40,
 		'pyro_regisvine': 40,
 		'primo_geovishap': 40,
+		'maguu_kenki': 40,
 		'clear_pool_and_mountain_cavern': 20,
 		'domain_of_guyun': 20,
 		'hidden_palace_of_zhou_formula': 20,

@@ -78,6 +78,7 @@ strings = {
 	'rosaria': 'Rosaria',
 	'yanfei': 'Yanfei',
 	'eula': "Eula",
+	'kaedehara_kazuha': 'Kaedehara Kazuha',
 	'traveler': "Traveler",
 	'traveler_pyro': "Traveler (Pyro)",
 	'traveler_hydro': "Traveler (Hydro)",
@@ -103,6 +104,7 @@ strings = {
 	'lightning_prism': 'Lightning Prism',
 	'juvenile_jade': 'Juvenile Jade',
 	'crystalline_bloom': 'Crystalline Bloom',
+	'marionette_core': 'Marionette Core',
 	# common gathered items
 	'calla_lily': 'Calla Lily',
 	'cecilia': 'Cecilia',
@@ -120,6 +122,7 @@ strings = {
 	'windwheel_aster': 'Windwheel Aster',
 	'wolfhook': 'Wolfhook',
 	'qingxin': 'Qingxin',
+	'sea_ganoderma': 'Sea Ganoderma',
 	# common enemy drops
 	'arrowhead': ['Firm Arrowhead', 'Sharp Arrowhead', 'Weathered Arrowhead'],
 	'f_insignia': ["Recruit's Insignia", "Sergeant's Insignia", "Lieutenant's Insignia"],
@@ -333,6 +336,7 @@ strings = {
 	'adventure_rank': "Adventure Rank Reward",
 	'special_liyue': "Found around Liyue",
 	'special_mondstadt': "Found around Mondstadt",
+	'special_golden_apple': "Found around Golden Apple Archipelago",
 	'event': 'Event item',
 	'xp_leyline': 'Exp Leyline',
 	'blacksmith': 'Blacksmith (Refine Ore)',
@@ -362,6 +366,7 @@ strings = {
 	'oceanid': "Oceanid",
 	'pyro_regisvine': "Pyro Regisvine",
 	'primo_geovishap': 'Primo Geovishap',
+	'maguu_kenki': 'Maguu Kenki',
 	'40_boss': "Any 40 Resin Boss",
 	# weekly boss
 	'stormterror': "Stormterror",

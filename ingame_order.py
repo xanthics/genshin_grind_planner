@@ -31,6 +31,7 @@ ingame_order = [
 	('element_2', 'cleansing_heart'),
 	('element_2', 'juvenile_jade'),
 	('element_2', 'crystalline_bloom'),
+	('element_2', 'marionette_core'),
 	('common', 'nectar'),
 	('element_1', 'brilliant_diamond'),
 	('common_rare', 'bone_shard'),
@@ -68,5 +69,6 @@ ingame_order = [
 	('local', 'violetgrass'),
 	('local', 'small_lamp_grass'),
 	('local', 'dandelion_seed'),
-	('local', 'cor_lapis')
+	('local', 'cor_lapis'),
+	('local', 'sea_ganoderma')
 ]

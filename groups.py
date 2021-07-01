@@ -45,7 +45,8 @@ groups = {
 		'hu_tao',
 		'rosaria',
 		'yanfei',
-		'eula'
+		'eula',
+		'kaedehara_kazuha'
 	],
 	'element_1': [
 		'brilliant_diamond',
@@ -64,7 +65,8 @@ groups = {
 		'hurricane_seed',
 		'lightning_prism',
 		'juvenile_jade',
-		'crystalline_bloom'
+		'crystalline_bloom',
+		'marionette_core'
 	],
 	'local': [
 		'calla_lily',
@@ -82,7 +84,8 @@ groups = {
 		'violetgrass',
 		'windwheel_aster',
 		'wolfhook',
-		'qingxin'
+		'qingxin',
+		'sea_ganoderma'
 	],
 	'common': [
 		'slime',
@@ -279,6 +282,7 @@ groups = {
 		'adventure_rank',
 		'special_liyue',
 		'special_mondstadt',
+		'special_golden_apple'
 		# common mobs
 		'hilichurl',
 		'ranged_hilichurl',
@@ -305,6 +309,7 @@ groups = {
 		'pyro_regisvine',
 		'primo_geovishap',
 		'cryo_hypostasis',
+		'maguu_kenki',
 		# weekly boss
 		'stormterror',
 		'wolf_of_the_north',
