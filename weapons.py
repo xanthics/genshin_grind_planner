@@ -14,6 +14,7 @@ weapons = {
 		'royal_bow': {'wam': 'dandelion_gladiator', 'common_rare': 'chaos', 'common': 'scroll', 'tier': '4_weapon'},
 		'favonius_warbow': {'wam': 'dandelion_gladiator', 'common_rare': 'chaos', 'common': 'nectar', 'tier': '4_weapon'},
 		'windblume_ode': {'wam': 'dandelion_gladiator', 'common_rare': 'ley_line', 'common': 'nectar', 'tier': '4_weapon'},
+		'mitternachts_waltz': {'wam': 'decarabian', 'common_rare': 'horn', 'common': 'th_insignia', 'tier': '4_weapon'},
 		'sharpshooters_oath': {'wam': 'boreal_wolf', 'common_rare': 'ley_line', 'common': 'slime', 'tier': '3_weapon'},
 		'slingshot': {'wam': 'guyun', 'common_rare': 'sacrificial_knife', 'common': 'mask', 'tier': '3_weapon'},
 		'raven_bow': {'wam': 'decarabian', 'common_rare': 'horn', 'common': 'arrowhead', 'tier': '3_weapon'},

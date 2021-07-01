@@ -143,6 +143,7 @@ groups = {
 		'the_viridescent_hunt',
 		'elegy_for_the_end',
 		'windblume_ode',
+		'mitternachts_waltz',
 	],
 	'catalyst': [
 		'blackcliff_amulet',

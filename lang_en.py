@@ -173,6 +173,7 @@ strings = {
 	'the_viridescent_hunt': 'The Viridescent Hunt',
 	'elegy_for_the_end': 'Elegy for the End',
 	'windblume_ode': 'Windblume Ode',
+	'mitternachts_waltz': 'Mitternachts Waltz',
 	# catalysts
 	'blackcliff_amulet': 'Blackcliff Agate',
 	'emerald_orb': 'Emerald Orb',
