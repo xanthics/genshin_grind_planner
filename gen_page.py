@@ -45,6 +45,7 @@ def init_show_hide():
 
 	doc['show_hide'] <= t + P("Note that all selections have to be true for a character to be visible.")
 
+
 def init_characters():
 	t = TABLE(Class='body')
 	t <= COLGROUP(
@@ -356,4 +357,5 @@ def init_inventory():
 #doc["main"].style.display = 'none'
 #doc["inven"].style.display = 'block'
 init_page()
+doc['loading'] <= DIV(Id='prerendered')
 #import main
