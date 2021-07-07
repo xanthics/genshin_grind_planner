@@ -46,6 +46,18 @@ span {
     max-width: 10em;
 }
 
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input[type=number] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
 input[type=number],
 select {
     text-align: right;
@@ -55,9 +67,6 @@ select {
     border-bottom: 1px solid rgb(0,0,0);
     color: rgb(200, 200, 200);
     background: rgba(0, 0, 0, .1);
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
     padding: .25em .5em;
 }
 
@@ -312,6 +321,7 @@ input[type=checkbox]:checked:after {
     font-family: "Arial Black", Gadget, sans-serif;
 }
 
+input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
