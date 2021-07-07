@@ -12,3 +12,5 @@ temp.py
 .idea/vcs.xml
 temp
 /temp.html
+/geckodriver.exe
+/geckodriver.log

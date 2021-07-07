@@ -157,7 +157,7 @@ def init_characters():
 			TD(ws) +
 			TD(wlvlc) +
 			TD(wlvlt) +
-			TD(INPUT(Id=f"use_arti-{char}", type='checkbox', Class='save', checked=True)) +
+			TD(INPUT(Id=f"use_arti-{char}", type='checkbox', Class='save', checked='checked')) +
 			TD(BUTTON(strings["add"], Class='arti_list text_button', data_id=f"arti-{char}")) +
 			TD(DIV(Id=f"arti-{char}", Class=f'arti_span'))
 			,
@@ -218,7 +218,7 @@ def init_characters():
 		TD(ws) +
 		TD(wlvlc) +
 		TD(wlvlt) +
-		TD(INPUT(Id=f"use_arti-{char}", type='checkbox', Class='save', checked=True)) +
+		TD(INPUT(Id=f"use_arti-{char}", type='checkbox', Class='save', checked='checked')) +
 		TD(BUTTON(strings["add"], Class='arti_list text_button', data_id=f"arti-{char}")) +
 		TD(DIV(Id=f"arti-{char}", Class=f'arti_span'))
 		,
@@ -274,7 +274,6 @@ def init_inventory():
 	t_own <= TR(TD(IMG(src=f"img/xp_sub_0.png", alt=strings['xp'], title=strings['xp'])) + TD() + TD(INPUT(Type='number', min='0', step="1", value='0', Id='xp_sub_0-user', Class='save')) + TD())
 	doc['inven'] <= P(strings['convert_notice']) + t_own
 
-	c = 0
 	width = 3
 	alt_width = 2
 	row = 0
@@ -285,56 +284,66 @@ def init_inventory():
 		t_head <= TH(strings["item"]) + TH(strings["need"]) + TH(strings["have"]) + TH(strings["missing_"])
 		if c < width - 1:
 			t_head <= TH(Class="spacer")
+	c = 0
 	t_own <= t_head
 	t_row = TR(Class='tr_odd')
-
+	lookup = {0: 14, 1: 9, 2: 4, 3: 0}
 	for section, item in ingame_order:
 		if section != prev_section:
 			if c % width:
+				if lookup[c]:
+					t_row <= TD(colspan=lookup[c], Class='notvis')
 				t_own <= t_row
 				t_row = TR(Class='tr_odd' if row % 2 else 'tr_even')
 				row += 1
 				c = 0
 			if prev_section != 'init':
 				c = 0
-				t_own <= TR(Class='empty_row')
+				t_own <= TR(TD(colspan=14), Class='empty_row')
 			prev_section = section
 		if section in ['element_1', 'common', 'common_rare', 'wam', 'talent']:
 			if section in ['element_1', 'wam']:
 				if c:
-					c = 0
+					if lookup[c]:
+						t_row <= TD(colspan=lookup[c], Class='notvis')
 					t_own <= t_row
 					t_row = TR(Class='tr_odd' if row % 2 else 'tr_even')
 					row += 1
+					c = 0
 				t_width = alt_width
 			else:
 				t_width = width
 			prev_section = 'end section'
 			for i in range(len(strings[item])-1, -1, -1):
 				t_td = TD(IMG(src=f"img/{item}_{i}.png", alt=strings[item][i], title=strings[item][i])) + TD('0', Id=f"{item}_{i}-total") + TD(INPUT(Type='number', min='0', step="1", value='0', Id=f"{item}_{i}-user", Class='save')) + TD('0', Id=f"{item}_{i}-need")
-				#t_own <= TR(TD(IMG(src=f"img/{item}_{i}.png", alt=strings[item][i], title=strings[item][i])) + TD('0', Id=f"{item}_{i}-total") + TD(INPUT(Type='number', min='0', step="1", value='0', Id=f"{item}_{i}-user", Class='save')) + TD('0', Id=f"{item}_{i}-need"))
 				c += 1
 				t_row <= t_td
 				if not (c % t_width):
-					c = 0
+					if lookup[c]:
+						t_row <= TD(colspan=lookup[c] if t_width == 3 else lookup[c] + 1, Class='notvis')
 					t_own <= t_row
 					t_row = TR(Class='tr_odd' if row % 2 else 'tr_even')
+					c = 0
 					row += 1
 				elif c % width < width:
 					t_row <= TD()
 		else:  # section in ['boss', 'element_2', 'local', 'special']:
 			t_td = TD(IMG(src=f"img/{item}.png", alt=strings[item], title=strings[item])) + TD('0', Id=f"{item}-total") + TD(INPUT(Type='number', min='0', step="1", value='0', Id=f"{item}-user", Class='save')) + TD('0', Id=f"{item}-need")
-			#t_own <= TR(TD(IMG(src=f"img/{item}.png", alt=strings[item], title=strings[item])) + TD('0', Id=f"{item}-total") + TD(INPUT(Type='number', min='0', step="1", value='0', Id=f"{item}-user", Class='save')) + TD('0', Id=f"{item}-need"))
 			c += 1
 			t_row <= t_td
 			if not (c % width):
+				if lookup[c]:
+					t_row <= TD(colspan=lookup[c], Class='notvis')
 				t_own <= t_row
 				t_row = TR(Class='tr_odd' if row % 2 else 'tr_even')
 				row += 1
+				c = 0
 			elif c % width < width:
 				t_row <= TD()
 
 	if c % width:
+		if lookup[c]:
+			t_row <= TD(colspan=lookup[c], Class='notvis')
 		t_own <= t_row
 
 	doc['inven'] <= t_own
@@ -353,6 +362,7 @@ def init_inventory():
 
 	b_reset = BUTTON(strings["reset_inventory"], Id='reset_inventory')
 	doc["reset"] <= b_reset
+
 
 #doc["main"].style.display = 'none'
 #doc["inven"].style.display = 'block'

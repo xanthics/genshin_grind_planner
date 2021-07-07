@@ -329,15 +329,25 @@ option {
     margin-top: 7px;
 }
 
-.empty_row {
-    height: 7px;
+table.spacer th:nth-child(5),
+table.spacer td:nth-child(5),
+table.spacer th:nth-child(10),
+table.spacer td:nth-child(10),
+.empty_row,
+.empty_row > td,
+.notvis {
+    visibility: hidden !important;
+    border: 0 !important;
 }
+
+.empty_row {
+    height: 6px !important;
+}
+
 
 table.spacer th:nth-child(5),
 table.spacer td:nth-child(5),
 table.spacer th:nth-child(10),
 table.spacer td:nth-child(10){
-    width: 3px;
-    visibility: hidden;
-    border-style: none;
+    width: 3px !important;
 }
