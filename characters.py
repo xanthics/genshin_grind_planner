@@ -408,7 +408,7 @@ characters = {
 	"xiao": {
 		'ascension': {
 			'element_1': 'vayuda_turqoise',
-			'element_2': 'hurricane_seed',
+			'element_2': 'juvenile_jade',
 			'local': 'qingxin',
 			'common': 'slime'
 		},
