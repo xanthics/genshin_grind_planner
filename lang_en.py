@@ -32,6 +32,7 @@ strings = {
 	'convert_notice': '<span class="bad">_Red_</span> means you need that material.<br />'
 					  '<span class="convert">_Orange_</span> means you need that material and can convert the previous tier.<br/ >'
 					  '<span class="good">_Green_(#)_</span> means you have enough of that material left over to convert up # times.',
+	'character_mats': 'The following table shows which character needs which item in order to level and improve talents.  This table is generated from config files so if there is a mistake here, there is also a mistake in the config file.',
 	# Weekly Boss Talent Drop
 	'tusk_of_monoceros_caeli': "Tusk of Monoceros Caeli",
 	'shard_of_a_foul_legacy': "Shard of a Foul Legacy",

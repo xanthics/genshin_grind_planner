@@ -1,11 +1,12 @@
 from browser import document as doc
-from browser.html import TABLE, TR, TH, TD, INPUT, SELECT, OPTION, DIV, BUTTON, SPAN, LI, H2, H3, IMG, COLGROUP, COL, P
+from browser.html import TABLE, TR, TH, TD, INPUT, SELECT, OPTION, DIV, BUTTON, SPAN, LI, H2, H3, IMG, COLGROUP, COL, P, SECTION
 
 from characters import characters
 from weapons import weapons
 from lang_en import strings
 from costs import costs
 from ingame_order import ingame_order
+from traveler import traveler
 
 
 # Create the static elements of the home page
@@ -13,6 +14,54 @@ def init_page():
 	init_characters()
 	init_inventory()
 	init_show_hide()
+	init_information()
+
+
+# Show various useful information
+def init_information():
+	data = {}
+	# iterate all the characters and add items they need to data
+	for character in characters:
+		for field in characters[character]:
+			# keys with subkeys
+			if field in ['ascension', 'talent']:
+				for key in characters[character][field]:
+					val = characters[character][field][key]
+					if val not in data:
+						data[val] = set()
+					data[val].add(character)
+			else:
+				val = characters[character][field]
+				if val not in data:
+					data[val] = []
+				data[val].append(character)
+	trav_data = {}
+	# do the same thing for traveler talents
+	for tal_group in traveler:
+		trav_data[tal_group] = set()
+		for row in traveler[tal_group]:
+			for field in row:
+				trav_data[tal_group].add(row[field])
+	# TODO: workaround for traveler.  Add this information to a global config file
+	talents = {
+		'talent_1': {'traveler_anemo', 'traveler_geo'},
+		'talent_2': {'traveler_geo', }
+	}
+	for t in talents:
+		for item in trav_data[t]:
+			data[item].update(talents[t])
+	# create a table with the dictionary we just built
+	t = TABLE(TR(TH(strings["item_s"]) + TH(strings["character_s"])), Class='borders body')
+	for typ, item in ingame_order:
+		if item in data:
+			if isinstance(strings[item], list):
+				i = (IMG(src=f"img/{item}_{c}.png", alt=strings[item][c], title=strings[item][c]) for c in range(len(strings[item])))
+			else:
+				i = IMG(src=f"img/{item}.png", alt=strings[item], title=strings[item])
+			c = (IMG(src=f"img/{x}.png", alt=strings[x], title=strings[x]) for x in sorted(data[item]))
+			t <= TR(TD(i) + TD(c))
+
+	doc['information'] <= SECTION(P(strings['character_mats']) + t, Class='grind')
 
 
 # Initialize select boxes so you can only have certain characters show
@@ -272,7 +321,7 @@ def init_inventory():
 	t_own <= TR(TD(IMG(src=f"img/xp.png", alt=strings['xp'], title=strings['xp'])) + TD('0', Id='xp-total') + TD(INPUT(Type='number', min='0', step="1", value='0', Id='xp-user', Class='save')) + TD('0', Id='xp-need', Class='good'))
 	t_own <= TR(TD(IMG(src=f"img/xp_sub_1.png", alt=strings['xp'], title=strings['xp'])) + TD() + TD(INPUT(Type='number', min='0', step="1", value='0', Id='xp_sub_1-user', Class='save')) + TD())
 	t_own <= TR(TD(IMG(src=f"img/xp_sub_0.png", alt=strings['xp'], title=strings['xp'])) + TD() + TD(INPUT(Type='number', min='0', step="1", value='0', Id='xp_sub_0-user', Class='save')) + TD())
-	doc['inven'] <= P(strings['convert_notice']) + t_own
+	doc['inventory'] <= P(strings['convert_notice']) + t_own
 
 	width = 3
 	alt_width = 2
@@ -346,13 +395,7 @@ def init_inventory():
 			t_row <= TD(colspan=lookup[c], Class='notvis')
 		t_own <= t_row
 
-	doc['inven'] <= t_own
-
-	b_char = BUTTON(strings["characters"], Id='button_character', Class='current_tab')
-	doc["character"] <= b_char
-
-	b_inven = BUTTON(strings["inventory"], Id="button_inventory")
-	doc["inventory"] <= b_inven
+	doc['inventory'] <= t_own
 
 	b_reset = BUTTON(strings["reset_all_data"], Id='reset_all')
 	doc["reset"] <= b_reset
@@ -364,8 +407,5 @@ def init_inventory():
 	doc["reset"] <= b_reset
 
 
-#doc["main"].style.display = 'none'
-#doc["inven"].style.display = 'block'
 init_page()
 doc['loading'] <= DIV(Id='prerendered')
-#import main

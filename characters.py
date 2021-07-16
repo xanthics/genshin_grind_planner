@@ -504,6 +504,6 @@ characters = {
 			'common': 'mask'
 		},
 		'weapon': 'sword',
-		'elenent': 'none'
+		'element': 'none'
 	}
 }

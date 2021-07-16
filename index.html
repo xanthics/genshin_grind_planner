@@ -15,6 +15,7 @@
  <body onload="brython(1)">
   <section class="main">
    <p><strong>This page requires local storage to save state.</strong></p>
+   <p>2021/7/16: Added an information page.  Table generating required mats is built from config files, so easier to spot any mistakes.  Other useful data will be here eventually.</p>
    <p>2021/7/13: Corrected Xiao ascension material: Hurricane Seed -&gt; Juvenile Jade.  Thank you rubibry</p>
    <p>2021/6/30: Added Kaedehara Kazuha (character), Dodoco Tales (Catalyst), Freedom-Sworn (Sword), Mitternachts Waltz (Bow).</p>
    <p>2021/6/30: I am currently taking a break from Genshin.  If you notice anything missing please create a bug report and I will add it.</p>
@@ -67,7 +68,7 @@
    <div id="loading">This page requires javascript in order to work correctly.<br/> <br/> 
     This page may take a moment to load.
     <div id="prerendered"></div>
-   </div> <span id="character"><button class="current_tab" id="button_character">Characters</button></span><span id="inventory"><button id="button_inventory">Inventory</button></span><div id="main">
+   </div> <span id="nav_buttons"></span><div id="characters">
     <div id="character_list">
      <table class="body">
       <colgroup>
@@ -7013,7 +7014,7 @@
     <div id="daily">
     </div>
    </div>
-   <div id="inven" style="display: none;">
+   <div id="inventory" style="display: none;">
     <p><span class="bad">_Red_</span> means you need that material.<br/> <span class="convert">_Orange_</span> means you need that material and can convert the previous tier.<br/> <span class="good">_Green_(#)_</span> means you have enough of that material left over to convert up # times.</p>
     <table class="borders center">
      <tr>
@@ -8702,6 +8703,686 @@
       </td>
      </tr>
     </table>
+   </div>
+   <div id="information" style="display: none;">
+    <section class="grind">
+     <p>The following table shows which character needs which item in order to level and improve talents.  This table is generated from config files so if there is a mistake here, there is also a mistake in the config file.</p>
+     <table class="borders body">
+      <tr>
+       <th>Item(s)</th>
+       <th>Character(s)</th>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Slime Condensate" src="img/slime_0.png" title="Slime Condensate"/>
+        <img alt="Slime Secretions" src="img/slime_1.png" title="Slime Secretions"/>
+        <img alt="Slime Concentrate" src="img/slime_2.png" title="Slime Concentrate"/>
+       </td>
+       <td>
+        <img alt="Lisa" src="img/lisa.png" title="Lisa"/>
+        <img alt="Venti" src="img/venti.png" title="Venti"/>
+        <img alt="Xiangling" src="img/xiangling.png" title="Xiangling"/>
+        <img alt="Xiao" src="img/xiao.png" title="Xiao"/>
+        <img alt="Zhongli" src="img/zhongli.png" title="Zhongli"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Damaged Mask" src="img/mask_0.png" title="Damaged Mask"/>
+        <img alt="Stained Mask" src="img/mask_1.png" title="Stained Mask"/>
+        <img alt="Ominous Mask" src="img/mask_2.png" title="Ominous Mask"/>
+       </td>
+       <td>
+        <img alt="Albedo" src="img/albedo.png" title="Albedo"/>
+        <img alt="Chongyun" src="img/chongyun.png" title="Chongyun"/>
+        <img alt="Eula" src="img/eula.png" title="Eula"/>
+        <img alt="Jean" src="img/jean.png" title="Jean"/>
+        <img alt="Noelle" src="img/noelle.png" title="Noelle"/>
+        <img alt="Razor" src="img/razor.png" title="Razor"/>
+        <img alt="Traveler" src="img/traveler.png" title="Traveler"/>
+        <img alt="Xingqiu" src="img/xingqiu.png" title="Xingqiu"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Divining Scroll" src="img/scroll_0.png" title="Divining Scroll"/>
+        <img alt="Sealed Scroll" src="img/scroll_1.png" title="Sealed Scroll"/>
+        <img alt="Forbidden Curse Scroll" src="img/scroll_2.png" title="Forbidden Curse Scroll"/>
+       </td>
+       <td>
+        <img alt="Albedo" src="img/albedo.png" title="Albedo"/>
+        <img alt="Barbara" src="img/barbara.png" title="Barbara"/>
+        <img alt="Klee" src="img/klee.png" title="Klee"/>
+        <img alt="Qiqi" src="img/qiqi.png" title="Qiqi"/>
+        <img alt="Traveler (Anemo)" src="img/traveler_anemo.png" title="Traveler (Anemo)"/>
+        <img alt="Traveler (Geo)" src="img/traveler_geo.png" title="Traveler (Geo)"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Firm Arrowhead" src="img/arrowhead_0.png" title="Firm Arrowhead"/>
+        <img alt="Sharp Arrowhead" src="img/arrowhead_1.png" title="Sharp Arrowhead"/>
+        <img alt="Weathered Arrowhead" src="img/arrowhead_2.png" title="Weathered Arrowhead"/>
+       </td>
+       <td>
+        <img alt="Amber" src="img/amber.png" title="Amber"/>
+        <img alt="Diona" src="img/diona.png" title="Diona"/>
+        <img alt="Fischl" src="img/fischl.png" title="Fischl"/>
+        <img alt="Traveler (Geo)" src="img/traveler_geo.png" title="Traveler (Geo)"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Recruit's Insignia" src="img/f_insignia_0.png" title="Recruit's Insignia"/>
+        <img alt="Sergeant's Insignia" src="img/f_insignia_1.png" title="Sergeant's Insignia"/>
+        <img alt="Lieutenant's Insignia" src="img/f_insignia_2.png" title="Lieutenant's Insignia"/>
+       </td>
+       <td>
+        <img alt="Diluc" src="img/diluc.png" title="Diluc"/>
+        <img alt="Ningguang" src="img/ningguang.png" title="Ningguang"/>
+        <img alt="Rosaria" src="img/rosaria.png" title="Rosaria"/>
+        <img alt="Tartaglia" src="img/tartaglia.png" title="Tartaglia"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Treasure Hoarder Insignia" src="img/th_insignia_0.png" title="Treasure Hoarder Insignia"/>
+        <img alt="Silver Raven Insignia" src="img/th_insignia_1.png" title="Silver Raven Insignia"/>
+        <img alt="Golden Raven Insignia" src="img/th_insignia_2.png" title="Golden Raven Insignia"/>
+       </td>
+       <td>
+        <img alt="Beidou" src="img/beidou.png" title="Beidou"/>
+        <img alt="Bennett" src="img/bennett.png" title="Bennett"/>
+        <img alt="Kaedehara Kazuha" src="img/kaedehara_kazuha.png" title="Kaedehara Kazuha"/>
+        <img alt="Kaeya" src="img/kaeya.png" title="Kaeya"/>
+        <img alt="Xinyan" src="img/xinyan.png" title="Xinyan"/>
+        <img alt="Yanfei" src="img/yanfei.png" title="Yanfei"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Dvalin's Plume" src="img/dvalins_plume.png" title="Dvalin's Plume"/>
+       </td>
+       <td>
+        <img alt="Bennett" src="img/bennett.png" title="Bennett"/>
+        <img alt="Diluc" src="img/diluc.png" title="Diluc"/>
+        <img alt="Jean" src="img/jean.png" title="Jean"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Dvalin's Claw" src="img/dvalins_claw.png" title="Dvalin's Claw"/>
+       </td>
+       <td>
+        <img alt="Lisa" src="img/lisa.png" title="Lisa"/>
+        <img alt="Noelle" src="img/noelle.png" title="Noelle"/>
+        <img alt="Razor" src="img/razor.png" title="Razor"/>
+        <img alt="Xiangling" src="img/xiangling.png" title="Xiangling"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Dvalin's Sigh" src="img/dvalins_sigh.png" title="Dvalin's Sigh"/>
+       </td>
+       <td>
+        <img alt="Amber" src="img/amber.png" title="Amber"/>
+        <img alt="Beidou" src="img/beidou.png" title="Beidou"/>
+        <img alt="Chongyun" src="img/chongyun.png" title="Chongyun"/>
+        <img alt="Traveler (Anemo)" src="img/traveler_anemo.png" title="Traveler (Anemo)"/>
+        <img alt="Traveler (Geo)" src="img/traveler_geo.png" title="Traveler (Geo)"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Tail of Boreas" src="img/tail_of_boreas.png" title="Tail of Boreas"/>
+       </td>
+       <td>
+        <img alt="Qiqi" src="img/qiqi.png" title="Qiqi"/>
+        <img alt="Venti" src="img/venti.png" title="Venti"/>
+        <img alt="Xingqiu" src="img/xingqiu.png" title="Xingqiu"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Ring of Boreas" src="img/ring_of_boreas.png" title="Ring of Boreas"/>
+       </td>
+       <td>
+        <img alt="Barbara" src="img/barbara.png" title="Barbara"/>
+        <img alt="Keqing" src="img/keqing.png" title="Keqing"/>
+        <img alt="Klee" src="img/klee.png" title="Klee"/>
+        <img alt="Mona" src="img/mona.png" title="Mona"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Spirit Locket of Boreas" src="img/spirit_locket_of_boreas.png" title="Spirit Locket of Boreas"/>
+       </td>
+       <td>
+        <img alt="Fischl" src="img/fischl.png" title="Fischl"/>
+        <img alt="Kaeya" src="img/kaeya.png" title="Kaeya"/>
+        <img alt="Ningguang" src="img/ningguang.png" title="Ningguang"/>
+        <img alt="Sucrose" src="img/sucrose.png" title="Sucrose"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Tusk of Monoceros Caeli" src="img/tusk_of_monoceros_caeli.png" title="Tusk of Monoceros Caeli"/>
+       </td>
+       <td>
+        <img alt="Albedo" src="img/albedo.png" title="Albedo"/>
+        <img alt="Xinyan" src="img/xinyan.png" title="Xinyan"/>
+        <img alt="Zhongli" src="img/zhongli.png" title="Zhongli"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Shard of a Foul Legacy" src="img/shard_of_a_foul_legacy.png" title="Shard of a Foul Legacy"/>
+       </td>
+       <td>
+        <img alt="Diona" src="img/diona.png" title="Diona"/>
+        <img alt="Hu Tao" src="img/hu_tao.png" title="Hu Tao"/>
+        <img alt="Tartaglia" src="img/tartaglia.png" title="Tartaglia"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Shadow of the Warrior" src="img/shadow_of_the_warrior.png" title="Shadow of the Warrior"/>
+       </td>
+       <td>
+        <img alt="Ganyu" src="img/ganyu.png" title="Ganyu"/>
+        <img alt="Rosaria" src="img/rosaria.png" title="Rosaria"/>
+        <img alt="Xiao" src="img/xiao.png" title="Xiao"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Dragon Lord's Crown" src="img/dragon_lords_crown.png" title="Dragon Lord's Crown"/>
+       </td>
+       <td>
+        <img alt="Eula" src="img/eula.png" title="Eula"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Bloodjade Branch" src="img/bloodjade_branch.png" title="Bloodjade Branch"/>
+       </td>
+       <td>
+        <img alt="Yanfei" src="img/yanfei.png" title="Yanfei"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Gilded Scale" src="img/gilded_scale.png" title="Gilded Scale"/>
+       </td>
+       <td>
+        <img alt="Kaedehara Kazuha" src="img/kaedehara_kazuha.png" title="Kaedehara Kazuha"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Hurricane Seed" src="img/hurricane_seed.png" title="Hurricane Seed"/>
+       </td>
+       <td>
+        <img alt="Jean" src="img/jean.png" title="Jean"/>
+        <img alt="Sucrose" src="img/sucrose.png" title="Sucrose"/>
+        <img alt="Venti" src="img/venti.png" title="Venti"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Lightning Prism" src="img/lightning_prism.png" title="Lightning Prism"/>
+       </td>
+       <td>
+        <img alt="Beidou" src="img/beidou.png" title="Beidou"/>
+        <img alt="Fischl" src="img/fischl.png" title="Fischl"/>
+        <img alt="Keqing" src="img/keqing.png" title="Keqing"/>
+        <img alt="Lisa" src="img/lisa.png" title="Lisa"/>
+        <img alt="Razor" src="img/razor.png" title="Razor"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Basalt Pillar" src="img/basalt_pillar.png" title="Basalt Pillar"/>
+       </td>
+       <td>
+        <img alt="Albedo" src="img/albedo.png" title="Albedo"/>
+        <img alt="Ningguang" src="img/ningguang.png" title="Ningguang"/>
+        <img alt="Noelle" src="img/noelle.png" title="Noelle"/>
+        <img alt="Zhongli" src="img/zhongli.png" title="Zhongli"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Hoarfrost Core" src="img/hoarfrost_core.png" title="Hoarfrost Core"/>
+       </td>
+       <td>
+        <img alt="Chongyun" src="img/chongyun.png" title="Chongyun"/>
+        <img alt="Diona" src="img/diona.png" title="Diona"/>
+        <img alt="Ganyu" src="img/ganyu.png" title="Ganyu"/>
+        <img alt="Kaeya" src="img/kaeya.png" title="Kaeya"/>
+        <img alt="Qiqi" src="img/qiqi.png" title="Qiqi"/>
+        <img alt="Rosaria" src="img/rosaria.png" title="Rosaria"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Everflame Seed" src="img/everflame_seed.png" title="Everflame Seed"/>
+       </td>
+       <td>
+        <img alt="Amber" src="img/amber.png" title="Amber"/>
+        <img alt="Bennett" src="img/bennett.png" title="Bennett"/>
+        <img alt="Diluc" src="img/diluc.png" title="Diluc"/>
+        <img alt="Klee" src="img/klee.png" title="Klee"/>
+        <img alt="Xiangling" src="img/xiangling.png" title="Xiangling"/>
+        <img alt="Xinyan" src="img/xinyan.png" title="Xinyan"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Cleansing Heart" src="img/cleansing_heart.png" title="Cleansing Heart"/>
+       </td>
+       <td>
+        <img alt="Barbara" src="img/barbara.png" title="Barbara"/>
+        <img alt="Mona" src="img/mona.png" title="Mona"/>
+        <img alt="Tartaglia" src="img/tartaglia.png" title="Tartaglia"/>
+        <img alt="Xingqiu" src="img/xingqiu.png" title="Xingqiu"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Juvenile Jade" src="img/juvenile_jade.png" title="Juvenile Jade"/>
+       </td>
+       <td>
+        <img alt="Hu Tao" src="img/hu_tao.png" title="Hu Tao"/>
+        <img alt="Xiao" src="img/xiao.png" title="Xiao"/>
+        <img alt="Yanfei" src="img/yanfei.png" title="Yanfei"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Crystalline Bloom" src="img/crystalline_bloom.png" title="Crystalline Bloom"/>
+       </td>
+       <td>
+        <img alt="Eula" src="img/eula.png" title="Eula"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Marionette Core" src="img/marionette_core.png" title="Marionette Core"/>
+       </td>
+       <td>
+        <img alt="Kaedehara Kazuha" src="img/kaedehara_kazuha.png" title="Kaedehara Kazuha"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Whopperflower Nectar" src="img/nectar_0.png" title="Whopperflower Nectar"/>
+        <img alt="Shimmering Nectar" src="img/nectar_1.png" title="Shimmering Nectar"/>
+        <img alt="Energy Nectar" src="img/nectar_2.png" title="Energy Nectar"/>
+       </td>
+       <td>
+        <img alt="Ganyu" src="img/ganyu.png" title="Ganyu"/>
+        <img alt="Hu Tao" src="img/hu_tao.png" title="Hu Tao"/>
+        <img alt="Keqing" src="img/keqing.png" title="Keqing"/>
+        <img alt="Mona" src="img/mona.png" title="Mona"/>
+        <img alt="Sucrose" src="img/sucrose.png" title="Sucrose"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Brilliant Diamond Sliver" src="img/brilliant_diamond_0.png" title="Brilliant Diamond Sliver"/>
+        <img alt="Brilliant Diamond Fragment" src="img/brilliant_diamond_1.png" title="Brilliant Diamond Fragment"/>
+        <img alt="Brilliant Diamond Chunk" src="img/brilliant_diamond_2.png" title="Brilliant Diamond Chunk"/>
+        <img alt="Brilliant Diamond Gemstone" src="img/brilliant_diamond_3.png" title="Brilliant Diamond Gemstone"/>
+       </td>
+       <td>
+        <img alt="Traveler" src="img/traveler.png" title="Traveler"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Agnidus Agate Sliver" src="img/agnidus_agate_0.png" title="Agnidus Agate Sliver"/>
+        <img alt="Agnidus Agate Fragment" src="img/agnidus_agate_1.png" title="Agnidus Agate Fragment"/>
+        <img alt="Agnidus Agate Chunk" src="img/agnidus_agate_2.png" title="Agnidus Agate Chunk"/>
+        <img alt="Agnidus Agate Gemstone" src="img/agnidus_agate_3.png" title="Agnidus Agate Gemstone"/>
+       </td>
+       <td>
+        <img alt="Amber" src="img/amber.png" title="Amber"/>
+        <img alt="Bennett" src="img/bennett.png" title="Bennett"/>
+        <img alt="Diluc" src="img/diluc.png" title="Diluc"/>
+        <img alt="Hu Tao" src="img/hu_tao.png" title="Hu Tao"/>
+        <img alt="Klee" src="img/klee.png" title="Klee"/>
+        <img alt="Xiangling" src="img/xiangling.png" title="Xiangling"/>
+        <img alt="Xinyan" src="img/xinyan.png" title="Xinyan"/>
+        <img alt="Yanfei" src="img/yanfei.png" title="Yanfei"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Varunada Lazurite Sliver" src="img/varunada_lazurite_0.png" title="Varunada Lazurite Sliver"/>
+        <img alt="Varunada Lazurite Fragment" src="img/varunada_lazurite_1.png" title="Varunada Lazurite Fragment"/>
+        <img alt="Varunada Lazurite Chunk" src="img/varunada_lazurite_2.png" title="Varunada Lazurite Chunk"/>
+        <img alt="Varunada Lazurite Gemstone" src="img/varunada_lazurite_3.png" title="Varunada Lazurite Gemstone"/>
+       </td>
+       <td>
+        <img alt="Barbara" src="img/barbara.png" title="Barbara"/>
+        <img alt="Mona" src="img/mona.png" title="Mona"/>
+        <img alt="Tartaglia" src="img/tartaglia.png" title="Tartaglia"/>
+        <img alt="Xingqiu" src="img/xingqiu.png" title="Xingqiu"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Vajrada Amethyst Sliver" src="img/vajrada_amethyst_0.png" title="Vajrada Amethyst Sliver"/>
+        <img alt="Vajrada Amethyst Fragment" src="img/vajrada_amethyst_1.png" title="Vajrada Amethyst Fragment"/>
+        <img alt="Vajrada Amethyst Chunk" src="img/vajrada_amethyst_2.png" title="Vajrada Amethyst Chunk"/>
+        <img alt="Vajrada Amethyst Gemstone" src="img/vajrada_amethyst_3.png" title="Vajrada Amethyst Gemstone"/>
+       </td>
+       <td>
+        <img alt="Beidou" src="img/beidou.png" title="Beidou"/>
+        <img alt="Fischl" src="img/fischl.png" title="Fischl"/>
+        <img alt="Keqing" src="img/keqing.png" title="Keqing"/>
+        <img alt="Lisa" src="img/lisa.png" title="Lisa"/>
+        <img alt="Razor" src="img/razor.png" title="Razor"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Vayuda Turquoise Sliver" src="img/vayuda_turqoise_0.png" title="Vayuda Turquoise Sliver"/>
+        <img alt="Vayuda Turquoise Fragment" src="img/vayuda_turqoise_1.png" title="Vayuda Turquoise Fragment"/>
+        <img alt="Vayuda Turquoise Chunk" src="img/vayuda_turqoise_2.png" title="Vayuda Turquoise Chunk"/>
+        <img alt="Vayuda Turquoise Gemstone" src="img/vayuda_turqoise_3.png" title="Vayuda Turquoise Gemstone"/>
+       </td>
+       <td>
+        <img alt="Jean" src="img/jean.png" title="Jean"/>
+        <img alt="Kaedehara Kazuha" src="img/kaedehara_kazuha.png" title="Kaedehara Kazuha"/>
+        <img alt="Sucrose" src="img/sucrose.png" title="Sucrose"/>
+        <img alt="Venti" src="img/venti.png" title="Venti"/>
+        <img alt="Xiao" src="img/xiao.png" title="Xiao"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Shivada Jade Sliver" src="img/shivada_jade_0.png" title="Shivada Jade Sliver"/>
+        <img alt="Shivada Jade Fragment" src="img/shivada_jade_1.png" title="Shivada Jade Fragment"/>
+        <img alt="Shivada Jade Chunk" src="img/shivada_jade_2.png" title="Shivada Jade Chunk"/>
+        <img alt="Shivada Jade Gemstone" src="img/shivada_jade_3.png" title="Shivada Jade Gemstone"/>
+       </td>
+       <td>
+        <img alt="Chongyun" src="img/chongyun.png" title="Chongyun"/>
+        <img alt="Diona" src="img/diona.png" title="Diona"/>
+        <img alt="Eula" src="img/eula.png" title="Eula"/>
+        <img alt="Ganyu" src="img/ganyu.png" title="Ganyu"/>
+        <img alt="Kaeya" src="img/kaeya.png" title="Kaeya"/>
+        <img alt="Qiqi" src="img/qiqi.png" title="Qiqi"/>
+        <img alt="Rosaria" src="img/rosaria.png" title="Rosaria"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Prithiva Topaz Sliver" src="img/prithiva_topaz_0.png" title="Prithiva Topaz Sliver"/>
+        <img alt="Prithiva Topaz Fragment" src="img/prithiva_topaz_1.png" title="Prithiva Topaz Fragment"/>
+        <img alt="Prithiva Topaz Chunk" src="img/prithiva_topaz_2.png" title="Prithiva Topaz Chunk"/>
+        <img alt="Prithiva Topaz Gemstone" src="img/prithiva_topaz_3.png" title="Prithiva Topaz Gemstone"/>
+       </td>
+       <td>
+        <img alt="Albedo" src="img/albedo.png" title="Albedo"/>
+        <img alt="Ningguang" src="img/ningguang.png" title="Ningguang"/>
+        <img alt="Noelle" src="img/noelle.png" title="Noelle"/>
+        <img alt="Zhongli" src="img/zhongli.png" title="Zhongli"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt='Teachings of "Freedom"' src="img/freedom_0.png" title='Teachings of "Freedom"'/>
+        <img alt='Guide to "Freedom"' src="img/freedom_1.png" title='Guide to "Freedom"'/>
+        <img alt='Philosophies of "Freedom"' src="img/freedom_2.png" title='Philosophies of "Freedom"'/>
+       </td>
+       <td>
+        <img alt="Amber" src="img/amber.png" title="Amber"/>
+        <img alt="Barbara" src="img/barbara.png" title="Barbara"/>
+        <img alt="Diona" src="img/diona.png" title="Diona"/>
+        <img alt="Klee" src="img/klee.png" title="Klee"/>
+        <img alt="Sucrose" src="img/sucrose.png" title="Sucrose"/>
+        <img alt="Tartaglia" src="img/tartaglia.png" title="Tartaglia"/>
+        <img alt="Traveler (Anemo)" src="img/traveler_anemo.png" title="Traveler (Anemo)"/>
+        <img alt="Traveler (Geo)" src="img/traveler_geo.png" title="Traveler (Geo)"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt='Teachings of "Resistance"' src="img/resistance_0.png" title='Teachings of "Resistance"'/>
+        <img alt='Guide to "Resistance"' src="img/resistance_1.png" title='Guide to "Resistance"'/>
+        <img alt='Philosophies of "Resistance"' src="img/resistance_2.png" title='Philosophies of "Resistance"'/>
+       </td>
+       <td>
+        <img alt="Bennett" src="img/bennett.png" title="Bennett"/>
+        <img alt="Diluc" src="img/diluc.png" title="Diluc"/>
+        <img alt="Eula" src="img/eula.png" title="Eula"/>
+        <img alt="Jean" src="img/jean.png" title="Jean"/>
+        <img alt="Mona" src="img/mona.png" title="Mona"/>
+        <img alt="Noelle" src="img/noelle.png" title="Noelle"/>
+        <img alt="Razor" src="img/razor.png" title="Razor"/>
+        <img alt="Traveler (Anemo)" src="img/traveler_anemo.png" title="Traveler (Anemo)"/>
+        <img alt="Traveler (Geo)" src="img/traveler_geo.png" title="Traveler (Geo)"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt='Teachings of "Ballad"' src="img/ballad_0.png" title='Teachings of "Ballad"'/>
+        <img alt='Guide to "Ballad"' src="img/ballad_1.png" title='Guide to "Ballad"'/>
+        <img alt='Philosophies of "Ballad"' src="img/ballad_2.png" title='Philosophies of "Ballad"'/>
+       </td>
+       <td>
+        <img alt="Albedo" src="img/albedo.png" title="Albedo"/>
+        <img alt="Fischl" src="img/fischl.png" title="Fischl"/>
+        <img alt="Kaeya" src="img/kaeya.png" title="Kaeya"/>
+        <img alt="Lisa" src="img/lisa.png" title="Lisa"/>
+        <img alt="Rosaria" src="img/rosaria.png" title="Rosaria"/>
+        <img alt="Traveler (Anemo)" src="img/traveler_anemo.png" title="Traveler (Anemo)"/>
+        <img alt="Traveler (Geo)" src="img/traveler_geo.png" title="Traveler (Geo)"/>
+        <img alt="Venti" src="img/venti.png" title="Venti"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt='Teachings of "Prosperity"' src="img/prosperity_0.png" title='Teachings of "Prosperity"'/>
+        <img alt='Guide to "Prosperity"' src="img/prosperity_1.png" title='Guide to "Prosperity"'/>
+        <img alt='Philosophies of "Prosperity"' src="img/prosperity_2.png" title='Philosophies of "Prosperity"'/>
+       </td>
+       <td>
+        <img alt="Keqing" src="img/keqing.png" title="Keqing"/>
+        <img alt="Ningguang" src="img/ningguang.png" title="Ningguang"/>
+        <img alt="Qiqi" src="img/qiqi.png" title="Qiqi"/>
+        <img alt="Traveler (Geo)" src="img/traveler_geo.png" title="Traveler (Geo)"/>
+        <img alt="Xiao" src="img/xiao.png" title="Xiao"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt='Teachings of "Diligence"' src="img/diligence_0.png" title='Teachings of "Diligence"'/>
+        <img alt='Guide to "Diligence"' src="img/diligence_1.png" title='Guide to "Diligence"'/>
+        <img alt='Philosophies of "Diligence"' src="img/diligence_2.png" title='Philosophies of "Diligence"'/>
+       </td>
+       <td>
+        <img alt="Chongyun" src="img/chongyun.png" title="Chongyun"/>
+        <img alt="Ganyu" src="img/ganyu.png" title="Ganyu"/>
+        <img alt="Hu Tao" src="img/hu_tao.png" title="Hu Tao"/>
+        <img alt="Kaedehara Kazuha" src="img/kaedehara_kazuha.png" title="Kaedehara Kazuha"/>
+        <img alt="Traveler (Geo)" src="img/traveler_geo.png" title="Traveler (Geo)"/>
+        <img alt="Xiangling" src="img/xiangling.png" title="Xiangling"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt='Teachings of "Gold"' src="img/gold_0.png" title='Teachings of "Gold"'/>
+        <img alt='Guide to "Gold"' src="img/gold_1.png" title='Guide to "Gold"'/>
+        <img alt='Philosophies of "Gold"' src="img/gold_2.png" title='Philosophies of "Gold"'/>
+       </td>
+       <td>
+        <img alt="Beidou" src="img/beidou.png" title="Beidou"/>
+        <img alt="Traveler (Geo)" src="img/traveler_geo.png" title="Traveler (Geo)"/>
+        <img alt="Xingqiu" src="img/xingqiu.png" title="Xingqiu"/>
+        <img alt="Xinyan" src="img/xinyan.png" title="Xinyan"/>
+        <img alt="Yanfei" src="img/yanfei.png" title="Yanfei"/>
+        <img alt="Zhongli" src="img/zhongli.png" title="Zhongli"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Calla Lily" src="img/calla_lily.png" title="Calla Lily"/>
+       </td>
+       <td>
+        <img alt="Diona" src="img/diona.png" title="Diona"/>
+        <img alt="Kaeya" src="img/kaeya.png" title="Kaeya"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Wolfhook" src="img/wolfhook.png" title="Wolfhook"/>
+       </td>
+       <td>
+        <img alt="Razor" src="img/razor.png" title="Razor"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Valberry" src="img/valberry.png" title="Valberry"/>
+       </td>
+       <td>
+        <img alt="Lisa" src="img/lisa.png" title="Lisa"/>
+        <img alt="Noelle" src="img/noelle.png" title="Noelle"/>
+        <img alt="Rosaria" src="img/rosaria.png" title="Rosaria"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Cecilia" src="img/cecilia.png" title="Cecilia"/>
+       </td>
+       <td>
+        <img alt="Albedo" src="img/albedo.png" title="Albedo"/>
+        <img alt="Venti" src="img/venti.png" title="Venti"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Windwheel Aster" src="img/windwheel_aster.png" title="Windwheel Aster"/>
+       </td>
+       <td>
+        <img alt="Bennett" src="img/bennett.png" title="Bennett"/>
+        <img alt="Sucrose" src="img/sucrose.png" title="Sucrose"/>
+        <img alt="Traveler" src="img/traveler.png" title="Traveler"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Philanemo Mushroom" src="img/philanemo_mushroom.png" title="Philanemo Mushroom"/>
+       </td>
+       <td>
+        <img alt="Barbara" src="img/barbara.png" title="Barbara"/>
+        <img alt="Klee" src="img/klee.png" title="Klee"/>
+        <img alt="Mona" src="img/mona.png" title="Mona"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Jueyun Chili" src="img/jueyun_chili.png" title="Jueyun Chili"/>
+       </td>
+       <td>
+        <img alt="Xiangling" src="img/xiangling.png" title="Xiangling"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Noctilucous Jade" src="img/noctilucous_jade.png" title="Noctilucous Jade"/>
+       </td>
+       <td>
+        <img alt="Beidou" src="img/beidou.png" title="Beidou"/>
+        <img alt="Yanfei" src="img/yanfei.png" title="Yanfei"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Silk Flower" src="img/silk_flower.png" title="Silk Flower"/>
+       </td>
+       <td>
+        <img alt="Hu Tao" src="img/hu_tao.png" title="Hu Tao"/>
+        <img alt="Xingqiu" src="img/xingqiu.png" title="Xingqiu"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Glaze Lily" src="img/glaze_lilly.png" title="Glaze Lily"/>
+       </td>
+       <td>
+        <img alt="Ningguang" src="img/ningguang.png" title="Ningguang"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Qingxin" src="img/qingxin.png" title="Qingxin"/>
+       </td>
+       <td>
+        <img alt="Ganyu" src="img/ganyu.png" title="Ganyu"/>
+        <img alt="Xiao" src="img/xiao.png" title="Xiao"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Starconch" src="img/starconch.png" title="Starconch"/>
+       </td>
+       <td>
+        <img alt="Tartaglia" src="img/tartaglia.png" title="Tartaglia"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Violetgrass" src="img/violetgrass.png" title="Violetgrass"/>
+       </td>
+       <td>
+        <img alt="Qiqi" src="img/qiqi.png" title="Qiqi"/>
+        <img alt="Xinyan" src="img/xinyan.png" title="Xinyan"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Small Lamp Grass" src="img/small_lamp_grass.png" title="Small Lamp Grass"/>
+       </td>
+       <td>
+        <img alt="Amber" src="img/amber.png" title="Amber"/>
+        <img alt="Diluc" src="img/diluc.png" title="Diluc"/>
+        <img alt="Fischl" src="img/fischl.png" title="Fischl"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Dandelion Seed" src="img/dandelion_seed.png" title="Dandelion Seed"/>
+       </td>
+       <td>
+        <img alt="Eula" src="img/eula.png" title="Eula"/>
+        <img alt="Jean" src="img/jean.png" title="Jean"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Cor Lapis" src="img/cor_lapis.png" title="Cor Lapis"/>
+       </td>
+       <td>
+        <img alt="Chongyun" src="img/chongyun.png" title="Chongyun"/>
+        <img alt="Keqing" src="img/keqing.png" title="Keqing"/>
+        <img alt="Zhongli" src="img/zhongli.png" title="Zhongli"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Sea Ganoderma" src="img/sea_ganoderma.png" title="Sea Ganoderma"/>
+       </td>
+       <td>
+        <img alt="Kaedehara Kazuha" src="img/kaedehara_kazuha.png" title="Kaedehara Kazuha"/>
+       </td>
+      </tr>
+     </table>
+    </section>
    </div>
    <p><a href="https://github.com/xanthics/genshin_grind_planner/discussions" target="_blank">Suggestions</a><br/> <a href="https://github.com/xanthics/genshin_grind_planner/issues" target="_blank">Bugs</a></p>
    <ul id="missing">

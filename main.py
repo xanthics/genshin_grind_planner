@@ -14,7 +14,7 @@ from ingame_order import ingame_order
 
 
 storage_key = "genshin_grind_planner"
-current_page = 'character'  # are we on character or inventory page
+current_page = 'characters'
 # dict to store states for the grind table
 grind_table_state = {
 	'checked': set(),  # is a character selected
@@ -192,6 +192,32 @@ def init_page():
 	# finish updating page state after loading data
 	calculate_change()
 	update_visible()
+	# add navigation buttons
+	pages = ['characters', 'inventory', 'information']  # , 'About', 'Changelog']
+	for c, page in enumerate(pages):
+		doc['nav_buttons'] <= BUTTON(page.capitalize(), data_id=page, Class=f'page{" current_tab" if not c else ""}', Id=f'b_{page}')
+
+	# Make it so navigation buttons work
+	@bind('.page', 'click')
+	def change_page(ev):
+		global current_page
+		l_val = ev.target['data-id']
+		current_page = l_val
+		calculate_change()
+		doc[l_val].style.display = 'block'
+		doc[f'b_{l_val}'].attrs['class'] = 'current_tab page'
+		idx = pages.index(l_val)
+		for i in pages[:idx] + pages[idx+1:]:
+			doc[i].style.display = 'none'
+			doc[f'b_{i}'].attrs['class'] = 'page'
+
+
+# called when grind tracker needs to be updated
+def calculate_change():
+	if current_page == 'characters':
+		update_character()
+	elif current_page == 'inventory':
+		update_inventory()
 
 
 # custom implementation of default dict for int
@@ -403,14 +429,6 @@ def readable_number(val):
 	return f"{val}"
 
 
-# called when grind tracker needs to be updated
-def calculate_change():
-	if current_page == 'character':
-		update_character()
-	elif current_page == 'inventory':
-		update_inventory()
-
-
 # update displayed values on the inventory page
 def update_inventory():
 	# update inventory page
@@ -580,26 +598,6 @@ def update_character():
 	doc['daily'] <= d
 
 
-def show_characters(ev):
-	global current_page
-	current_page = 'character'
-	calculate_change()
-	doc["inven"].style.display = 'none'
-	doc["main"].style.display = 'block'
-	doc["button_character"].attrs['class'] = 'current_tab'
-	doc["button_inventory"].attrs['class'] = ''
-
-
-def show_inventory(ev):
-	global current_page
-	current_page = 'inventory'
-	calculate_change()
-	doc["main"].style.display = 'none'
-	doc["inven"].style.display = 'block'
-	doc["button_inventory"].attrs['class'] = 'current_tab'
-	doc["button_character"].attrs['class'] = ''
-
-
 # Function for saving changes
 @bind('.save', 'change')
 def save_state(ev):
@@ -712,12 +710,6 @@ def showartis(ev):
 	doc <= arti
 	doc.bind('click', custom_menu)
 
-
-doc["button_character"] .bind("click", show_characters)
-doc["button_inventory"].bind("click", show_inventory)
-doc["reset_all"].bind("click", reset_data)
-doc["reset_character"].bind("click", reset_character)
-doc["reset_inventory"].bind("click", reset_inventory)
 
 init_page()
 del doc['loading']
