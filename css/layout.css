@@ -30,8 +30,9 @@ section {
 
 .grind {
 	background-color: rgb(30,30,30);
-    margin: 10px;
-    padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
 }
 
 span {
