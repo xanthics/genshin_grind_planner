@@ -6,7 +6,7 @@ from weapons import weapons
 from lang_en import strings
 from costs import costs
 from ingame_order import ingame_order
-from traveler import traveler
+from traveler import traveler, traveler_talent
 
 
 # Create the static elements of the home page
@@ -42,14 +42,10 @@ def init_information():
 		for row in traveler[tal_group]:
 			for field in row:
 				trav_data[tal_group].add(row[field])
-	# TODO: workaround for traveler.  Add this information to a global config file
-	talents = {
-		'talent_1': {'traveler_anemo', 'traveler_geo'},
-		'talent_2': {'traveler_geo', }
-	}
-	for t in talents:
-		for item in trav_data[t]:
-			data[item].update(talents[t])
+	for t_char in traveler_talent:
+		for talent in traveler_talent[t_char]:
+			for item in trav_data[talent]:
+				data[item].add(t_char)
 	# create a table with the dictionary we just built
 	t = TABLE(TR(TH(strings["item_s"]) + TH(strings["character_s"])), Class='borders body')
 	for typ, item in ingame_order:

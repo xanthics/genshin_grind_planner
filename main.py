@@ -9,7 +9,7 @@ from artifacts import artifacts
 from lang_en import strings
 from costs import costs
 from farming_data import farming_data
-from traveler import traveler
+from traveler import traveler, traveler_talent
 from ingame_order import ingame_order
 
 
@@ -240,7 +240,7 @@ def add_value_set(i_set, key, val):
 # This function also updates table select box classes
 def update_per_character(char, char_tracker):
 	character = grind_table_state['characters'][char]
-	if 'traveler' not in char or char == 'traveler':
+	if not char.startswith('traveler_'):  # Skips traveler_anemo, etc
 		update_xp(char, character, char_tracker)
 		update_weapon(char, character, char_tracker)
 	if char != 'traveler':
@@ -293,8 +293,6 @@ def update_xp(char, character, char_tracker):
 					add_value_set(char_tracker, characters[char]['ascension']['element_2'], char)
 			if temp['xp']:
 				add_value_set(char_tracker, 'xp', char)
-#			if temp['mora']:
-#				add_value_set(char_tracker, 'mora', char)
 			if temp['element_1'][0]:
 				add_value_set(char_tracker, characters[char]['ascension']['element_1'], char)
 			if temp['local']:
@@ -323,10 +321,9 @@ def update_talent(char, character, char_tracker):
 				doc[f'{t_c_t}-{char}'].attrs['class'] += ' selected'
 				doc[f'{t_t_t}-{char}'].attrs['class'] += ' selected'
 
-			if char == 'traveler_anemo' or (char == 'traveler_geo' and t_c_t == 'talent_1_c'):
-				talent_prelookup = traveler['talent_1']
-			elif char == 'traveler_geo':
-				talent_prelookup = traveler['talent_2']
+			if char.startswith('traveler_'):
+				idx = int(t_c_t.split('_')[1]) - 1
+				talent_prelookup = traveler[traveler_talent[char][idx]]
 			else:
 				talent_lookup = characters[char]['talent']
 
@@ -341,8 +338,6 @@ def update_talent(char, character, char_tracker):
 				grind_table_state['total']['crown'] += temp['crown']
 				if temp['crown']:
 					add_value_set(char_tracker, 'crown', char)
-#				if temp['mora']:
-#					add_value_set(char_tracker, 'mora', char)
 				if temp['talent'][0]:
 					add_value_set(char_tracker, talent_lookup['talent'], char)
 				if temp['common'][0]:
@@ -398,8 +393,6 @@ def update_weapon(char, character, char_tracker):
 			grind_table_state['total'][f"{weapon['common']}_{temp['common'][1]}"] += temp['common'][0]
 			if temp['xp']:
 				add_value_set(char_tracker, 'wep_xp', char)
-#			if temp['mora']:
-#				add_value_set(char_tracker, 'mora', char)
 			if temp['wam'][0]:
 				add_value_set(char_tracker, weapon['wam'], char)
 			if temp['common_rare'][0]:

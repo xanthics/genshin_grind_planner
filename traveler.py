@@ -1,3 +1,9 @@
+# lookup table to map talent requirements to specific travelers.  Thanks traveler_geo >.>
+traveler_talent = {
+	'traveler_anemo': ['talent_1', 'talent_1', 'talent_1'],
+	'traveler_geo': ['talent_1', 'talent_2', 'talent_2'],
+}
+
 traveler = {
 	"talent_1": [
 		{},
