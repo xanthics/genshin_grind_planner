@@ -1,5 +1,5 @@
 from browser import document as doc
-from browser.html import TABLE, TR, TH, TD, INPUT, SELECT, OPTION, DIV, BUTTON, SPAN, LI, H2, H3, IMG, COLGROUP, COL, P, SECTION
+from browser.html import TABLE, TR, TH, TD, INPUT, SELECT, OPTION, DIV, BUTTON, SPAN, LI, H2, H3, IMG, COLGROUP, COL, P, SECTION, BR
 
 from characters import characters
 from weapons import weapons
@@ -20,8 +20,10 @@ def init_page():
 # Show various useful information
 def init_information():
 	data = {}
+	char_data = {}
 	# iterate all the characters and add items they need to data
 	for character in characters:
+		char_data[character] = set()
 		for field in characters[character]:
 			# keys with subkeys
 			if field in ['ascension', 'talent']:
@@ -30,11 +32,13 @@ def init_information():
 					if val not in data:
 						data[val] = set()
 					data[val].add(character)
+					char_data[character].add(val)
 			else:
 				val = characters[character][field]
 				if val not in data:
 					data[val] = []
 				data[val].append(character)
+				char_data[character].add(val)
 	trav_data = {}
 	# do the same thing for traveler talents
 	for tal_group in traveler:
@@ -43,11 +47,29 @@ def init_information():
 			for field in row:
 				trav_data[tal_group].add(row[field])
 	for t_char in traveler_talent:
+		char_data[t_char] = set()
 		for talent in traveler_talent[t_char]:
 			for item in trav_data[talent]:
 				data[item].add(t_char)
-	# create a table with the dictionary we just built
-	t = TABLE(TR(TH(strings["item_s"]) + TH(strings["character_s"])), Class='borders body')
+				char_data[t_char].add(item)
+	# create a table with the character->item dictionary we just built
+	order_index = [x[1] for x in ingame_order]
+	t_chars = TABLE(TR(TH(strings["character"]) + TH(strings["item_s"])), Class='borders body')
+	for char in sorted(char_data):
+		item_set = {}
+		for item in char_data[char]:
+			if item in strings:
+				i_idx = order_index.index(item)
+				if isinstance(strings[item], list):
+					c = len(strings[item]) - 1
+					item_set[i_idx] = [f"{item}_{c}", strings[item][c]]
+				else:
+					item_set[i_idx] = [item, strings[item]]
+		i = (IMG(src=f"img/{item_set[x][0]}.png", alt=item_set[x][1], title=item_set[x][1]) for x in sorted(item_set))
+		c = IMG(src=f"img/{char}.png", alt=strings[char], title=strings[char])
+		t_chars <= TR(TD(c) + TD(i))
+	# create a table with the item->character dictionary we just built
+	t_items = TABLE(TR(TH(strings["item_s"]) + TH(strings["character_s"])), Class='borders body')
 	for typ, item in ingame_order:
 		if item in data:
 			if isinstance(strings[item], list):
@@ -55,9 +77,9 @@ def init_information():
 			else:
 				i = IMG(src=f"img/{item}.png", alt=strings[item], title=strings[item])
 			c = (IMG(src=f"img/{x}.png", alt=strings[x], title=strings[x]) for x in sorted(data[item]))
-			t <= TR(TD(i) + TD(c))
+			t_items <= TR(TD(i) + TD(c))
 
-	doc['information'] <= SECTION(P(strings['character_mats']) + t, Class='grind')
+	doc['information'] <= SECTION(P(strings['character_mats']) + t_chars + BR()+ BR() + t_items, Class='grind')
 
 
 # Initialize select boxes so you can only have certain characters show
