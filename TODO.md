@@ -5,6 +5,7 @@ The following is a list of things that have, or soon will be, added to Genshin o
 "Frostflake Heron" Kamisato Ayaka
 "Frolicking Flames" Yoimiya
 "Mujina Ninja" Sayu
+Taveler - Electro
 ```
 **Weapons**
 ```text
