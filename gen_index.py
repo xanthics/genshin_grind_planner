@@ -13,6 +13,7 @@ from os import getcwd
 # make it pretty
 from bs4 import BeautifulSoup as bs
 from prettierfier import prettify_html
+import minify_html
 
 
 # load the page in firefox-selenium and return the html
@@ -63,8 +64,14 @@ def main():
 	server.shutdown()  # kill the server since we are done with it
 	soup = bs(html, "html.parser")
 	update_page(soup)
-	with open('index.html', 'w', encoding='utf-8') as f:
-		f.write(f"<!DOCTYPE html>\n{prettify_html(soup.prettify())}")
+	try:
+		minified = minify_html.minify(str(soup), minify_js=False, minify_css=False)
+		with open('index.html', 'w', encoding='utf-8') as f:
+			f.write(f"<!DOCTYPE html>{minified}")
+	except SyntaxError as e:
+		print(e)
+#	with open('index.html', 'w', encoding='utf-8') as f:
+#		f.write(f"<!DOCTYPE html>\n{prettify_html(soup.prettify())}")
 
 
 if __name__ == '__main__':
