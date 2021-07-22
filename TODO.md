@@ -17,7 +17,6 @@ Thundering Pulse (5-Star Bow)
 ```
 **Other** (personal todo list)
 ```text
-Minified Files, size is getting out of control
 Show available actions: eg can ascend a character
 Useful information page: artifact sets, items->character mappings, important formulas
 ```
