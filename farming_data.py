@@ -243,13 +243,13 @@ farming_data = {
 		'when': ['any'],
 		'where': ['agent']
 	},
-	'aerosiderite': {
-		'when': ['wed', 'sat', 'sun'],
-		'where': ['hidden_palace_of_lianshan_formula']
-	},
 	'crown': {
 		'when': ['any'],
 		'where': ['event']
+	},
+	'decarabian': {
+		'when': ['mon', 'thu', 'sun'],
+		'where': ['cecilia_garden']
 	},
 	'boreal_wolf': {
 		'when': ['tue', 'fri', 'sun'],
@@ -259,10 +259,6 @@ farming_data = {
 		'when': ['wed', 'sat', 'sun'],
 		'where': ['cecilia_garden']
 	},
-	'decarabian': {
-		'when': ['mon', 'thu', 'sun'],
-		'where': ['cecilia_garden']
-	},
 	'guyun': {
 		'when': ['mon', 'thu', 'sun'],
 		'where': ['hidden_palace_of_lianshan_formula']
@@ -270,6 +266,22 @@ farming_data = {
 	'mist_veiled_elixer': {
 		'when': ['tue', 'fri', 'sun'],
 		'where': ['hidden_palace_of_lianshan_formula']
+	},
+	'aerosiderite': {
+		'when': ['wed', 'sat', 'sun'],
+		'where': ['hidden_palace_of_lianshan_formula']
+	},
+	'distant_sea': {
+		'when': ['mon', 'thu', 'sun'],
+		'where': ['court_of_flowing_sand']
+	},
+	'narukami': {
+		'when': ['tue', 'fri', 'sun'],
+		'where': ['court_of_flowing_sand']
+	},
+	'oni_mask': {
+		'when': ['wed', 'sat', 'sun'],
+		'where': ['court_of_flowing_sand']
 	},
 	'freedom': {
 		'when': ['mon', 'thu', 'sun'],

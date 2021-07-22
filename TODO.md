@@ -5,7 +5,7 @@ The following is a list of things that have, or soon will be, added to Genshin o
 "Frostflake Heron" Kamisato Ayaka
 "Frolicking Flames" Yoimiya
 "Mujina Ninja" Sayu
-Taveler - Electro
+Traveler - Electro
 ```
 **Weapons**
 ```text
@@ -20,12 +20,7 @@ Hamayumi (4-Star Bow)
 **Dungeons & Bosses**
 ```text
 Pyro Hypostasis
-Domain of Forgery: Court of Flowing Sand
-Domain of Mastery: Violet Court
 Domain of Blessing: Momiji-Dyed Court
-Domain: Empty Boat of a Thousand Gates -- Probably story related
-Domain: Shakkei Pavilion -- Probably story related
-Domain: Formation Estate -- Probably story related
 ```
 **Artifacts**
 ```text

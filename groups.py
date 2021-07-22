@@ -111,6 +111,9 @@ groups = {
 		'guyun',
 		'mist_veiled_elixer',
 		'aerosiderite',
+		'distant_sea',
+		'narukami',
+		'oni_mask'
 	],
 	'talent': [
 		'freedom',

@@ -146,6 +146,9 @@ strings = {
 	'decarabian': ["Tile of Decarabian's Tower", "Debris of Decarabian's City", "Fragment of Decarabian's Epic", "Scattered Piece of Decarabian's Dream"],
 	'guyun': ["Luminous Sands from Guyun", "Lustrous Stone from Guyun", "Relic from Guyun", "Divine Body from Guyun"],
 	'mist_veiled_elixer': ["Mist Veiled Lead Elixir", "Mist Veiled Mercury Elixir", "Mist Veiled Gold Elixir", "Mist Veiled Primo Elixir"],
+	'distant_sea': ["Coral Branch of a Distant Sea", "Jeweled Branch of a Distant Sea", "Jade Branch of a Distant Sea", "Golden Branch of a Distant Sea"],
+	'narukami': ["Narukami's Wisdom", "Narukami's Joy", "Narukami's Affection", "Narukami's Valor"],
+	'oni_mask': ["Mask of the Wicked Lieutenant", "Mask of the Tiger's Bite", "Mask of the One-Horned", "Mask of the Kijin"],
 	# domain talent materials
 	'freedom': ['Teachings of Freedom', 'Guide to Freedom', 'Philosophies of Freedom'],
 	'resistance': ['Teachings of Resistance', 'Guide to Resistance', 'Philosophies of Resistance'],
@@ -382,6 +385,7 @@ strings = {
 	# Domain: Weapon Ascension Materials
 	'cecilia_garden': "Cecilia Garden",
 	'hidden_palace_of_lianshan_formula': "Hidden Palace of Lianshan Formula",
+	'court_of_flowing_sand': "Court of Flowing Sand",
 	# Domain: Talent Materials
 	'forsaken_rift': "Forsaken Rift",
 	'taishan_mansion': "Taishan Mansion",
