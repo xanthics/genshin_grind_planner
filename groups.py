@@ -85,7 +85,11 @@ groups = {
 		'windwheel_aster',
 		'wolfhook',
 		'qingxin',
-		'sea_ganoderma'
+		'sea_ganoderma',
+		'onikabuto',
+		'sakura_bloom',
+		'crystal_marrow',
+		'naku_weed'
 	],
 	'common': [
 		'slime',
@@ -291,7 +295,7 @@ groups = {
 		'adventure_rank',
 		'special_liyue',
 		'special_mondstadt',
-		'special_golden_apple'
+		'special_inazuma'
 		# common mobs
 		'hilichurl',
 		'ranged_hilichurl',

@@ -76,5 +76,9 @@ ingame_order = [
 	('local', 'small_lamp_grass'),
 	('local', 'dandelion_seed'),
 	('local', 'cor_lapis'),
+	('local', 'onikabuto'),
+	('local', 'sakura_bloom'),
+	('local', 'crystal_marrow'),
+	('local', 'naku_weed'),
 	('local', 'sea_ganoderma')
 ]

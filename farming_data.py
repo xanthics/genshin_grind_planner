@@ -183,9 +183,25 @@ farming_data = {
 		'when': ['any'],
 		'where': ['special_mondstadt']
 	},
+	'onikabuto': {
+		'when': ['any'],
+		'where': ['special_inazuma']
+	},
+	'sakura_bloom': {
+		'when': ['any'],
+		'where': ['special_inazuma']
+	},
+	'crystal_marrow': {
+		'when': ['any'],
+		'where': ['special_inazuma']
+	},
+	'naku_weed': {
+		'when': ['any'],
+		'where': ['special_inazuma']
+	},
 	'sea_ganoderma': {
 		'when': ['any'],
-		'where': ['special_golden_apple']
+		'where': ['special_inazuma']
 	},
 	'qingxin': {
 		'when': ['any'],
