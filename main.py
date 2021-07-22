@@ -78,6 +78,7 @@ def reset_data(ev):
 		if key.startswith(storage_key):
 			del storage[key]
 	calculate_change()
+	update_visible()
 
 
 # Reset that only deletes values for this site
@@ -105,6 +106,7 @@ def reset_character(ev):
 		if key.startswith(storage_key) and not key.endswith('-user'):
 			del storage[key]
 	calculate_change()
+	update_visible()
 
 
 # Reset that only deletes values for this site
@@ -710,6 +712,9 @@ def showartis(ev):
 
 
 init_page()
+doc["reset_all"].bind("click", reset_data)
+doc["reset_character"].bind("click", reset_character)
+doc["reset_inventory"].bind("click", reset_inventory)
 del doc['loading']
 
 
