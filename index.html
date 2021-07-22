@@ -15,8 +15,7 @@
  <body onload="brython(1)">
   <section class="main">
    <p><strong>This page requires local storage to save state.</strong></p>
-   <p>2021/7/20: Kamisato (etc) might take a couple days before it is added.  Need to unlock drops/domains/etc to get icons.</p>
-   <p>2021/7/20: Added character -&gt; item mapping to information page.</p>
+   <p>2021/7/21: Updated for 2.0 including Inazuma drops, bosses, Kamisato Ayaka(Character), and Mistsplitter Reforged(Sword).</p>
    <p>2021/6/30: I am currently taking a break from Genshin.  If you notice anything missing please create a bug report and I will add it.</p>
    <div id="show_hide">
     <table>
@@ -254,6 +253,7 @@
          <option value="harbinger_of_dawn">Harbinger of Dawn</option>
          <option value="iron_sting">Iron Sting</option>
          <option value="lions_roar">Lion's Roar</option>
+         <option value="mistsplitter_reforged">Mistsplitter Reforged</option>
          <option value="primordial_jade_winged_cutter">Primordial Jade Cutter</option>
          <option value="prototype_rancour">Prototype Rancour</option>
          <option value="royal_longsword">Royal Longsword</option>
@@ -1053,6 +1053,7 @@
          <option value="harbinger_of_dawn">Harbinger of Dawn</option>
          <option value="iron_sting">Iron Sting</option>
          <option value="lions_roar">Lion's Roar</option>
+         <option value="mistsplitter_reforged">Mistsplitter Reforged</option>
          <option value="primordial_jade_winged_cutter">Primordial Jade Cutter</option>
          <option value="prototype_rancour">Prototype Rancour</option>
          <option value="royal_longsword">Royal Longsword</option>
@@ -2644,6 +2645,7 @@
          <option value="harbinger_of_dawn">Harbinger of Dawn</option>
          <option value="iron_sting">Iron Sting</option>
          <option value="lions_roar">Lion's Roar</option>
+         <option value="mistsplitter_reforged">Mistsplitter Reforged</option>
          <option value="primordial_jade_winged_cutter">Primordial Jade Cutter</option>
          <option value="prototype_rancour">Prototype Rancour</option>
          <option value="royal_longsword">Royal Longsword</option>
@@ -2846,6 +2848,7 @@
          <option value="harbinger_of_dawn">Harbinger of Dawn</option>
          <option value="iron_sting">Iron Sting</option>
          <option value="lions_roar">Lion's Roar</option>
+         <option value="mistsplitter_reforged">Mistsplitter Reforged</option>
          <option value="primordial_jade_winged_cutter">Primordial Jade Cutter</option>
          <option value="prototype_rancour">Prototype Rancour</option>
          <option value="royal_longsword">Royal Longsword</option>
@@ -3048,6 +3051,7 @@
          <option value="harbinger_of_dawn">Harbinger of Dawn</option>
          <option value="iron_sting">Iron Sting</option>
          <option value="lions_roar">Lion's Roar</option>
+         <option value="mistsplitter_reforged">Mistsplitter Reforged</option>
          <option value="primordial_jade_winged_cutter">Primordial Jade Cutter</option>
          <option value="prototype_rancour">Prototype Rancour</option>
          <option value="royal_longsword">Royal Longsword</option>
@@ -3106,6 +3110,209 @@
        </td>
        <td>
         <div class="arti_span" id="arti-kaeya">
+        </div>
+       </td>
+      </tr>
+      <tr class="unchecked" data-color="cryo" data-id="check-kamisato_ayaka" data-weapon="sword">
+       <td>
+        <input class="char_select save" data-id="check-kamisato_ayaka" id="check-kamisato_ayaka" type="checkbox"/>
+       </td>
+       <td>
+        <img alt="Kamisato Ayaka" src="img/kamisato_ayaka.png" title="Kamisato Ayaka"/>
+       </td>
+       <td>
+        <select class="kamisato_ayaka save" id="level_c-kamisato_ayaka">
+         <option value="0">1</option>
+         <option value="1">20</option>
+         <option value="11">20 A</option>
+         <option value="2">40</option>
+         <option value="12">40 A</option>
+         <option value="3">50</option>
+         <option value="13">50 A</option>
+         <option value="4">60</option>
+         <option value="14">60 A</option>
+         <option value="5">70</option>
+         <option value="15">70 A</option>
+         <option value="6">80</option>
+         <option value="16">80 A</option>
+         <option value="7">90</option>
+        </select>
+       </td>
+       <td>
+        <select class="kamisato_ayaka save" id="level_t-kamisato_ayaka">
+         <option value="0">1</option>
+         <option value="1">20</option>
+         <option value="11">20 A</option>
+         <option value="2">40</option>
+         <option value="12">40 A</option>
+         <option value="3">50</option>
+         <option value="13">50 A</option>
+         <option value="4">60</option>
+         <option value="14">60 A</option>
+         <option value="5">70</option>
+         <option value="15">70 A</option>
+         <option value="6">80</option>
+         <option value="16">80 A</option>
+         <option value="7">90</option>
+        </select>
+       </td>
+       <td>
+        <select class="kamisato_ayaka save" id="talent_1_c-kamisato_ayaka">
+         <option>1</option>
+         <option>2</option>
+         <option>3</option>
+         <option>4</option>
+         <option>5</option>
+         <option>6</option>
+         <option>7</option>
+         <option>8</option>
+         <option>9</option>
+         <option>10</option>
+        </select>
+       </td>
+       <td>
+        <select class="kamisato_ayaka save" id="talent_1_t-kamisato_ayaka">
+         <option>1</option>
+         <option>2</option>
+         <option>3</option>
+         <option>4</option>
+         <option>5</option>
+         <option>6</option>
+         <option>7</option>
+         <option>8</option>
+         <option>9</option>
+         <option>10</option>
+        </select>
+       </td>
+       <td>
+        <select class="kamisato_ayaka save" id="talent_2_c-kamisato_ayaka">
+         <option>1</option>
+         <option>2</option>
+         <option>3</option>
+         <option>4</option>
+         <option>5</option>
+         <option>6</option>
+         <option>7</option>
+         <option>8</option>
+         <option>9</option>
+         <option>10</option>
+        </select>
+       </td>
+       <td>
+        <select class="kamisato_ayaka save" id="talent_2_t-kamisato_ayaka">
+         <option>1</option>
+         <option>2</option>
+         <option>3</option>
+         <option>4</option>
+         <option>5</option>
+         <option>6</option>
+         <option>7</option>
+         <option>8</option>
+         <option>9</option>
+         <option>10</option>
+        </select>
+       </td>
+       <td>
+        <select class="kamisato_ayaka save" id="talent_3_c-kamisato_ayaka">
+         <option>1</option>
+         <option>2</option>
+         <option>3</option>
+         <option>4</option>
+         <option>5</option>
+         <option>6</option>
+         <option>7</option>
+         <option>8</option>
+         <option>9</option>
+         <option>10</option>
+        </select>
+       </td>
+       <td>
+        <select class="kamisato_ayaka save" id="talent_3_t-kamisato_ayaka">
+         <option>1</option>
+         <option>2</option>
+         <option>3</option>
+         <option>4</option>
+         <option>5</option>
+         <option>6</option>
+         <option>7</option>
+         <option>8</option>
+         <option>9</option>
+         <option>10</option>
+        </select>
+       </td>
+       <td>
+        <select class="weapon kamisato_ayaka save" data-id="select-kamisato_ayaka" id="weapon-kamisato_ayaka">
+         <option value="--">--</option>
+         <option value="aquila_favonia">Aquila Favonia</option>
+         <option value="blackcliff_longsword">Blackcliff Longsword</option>
+         <option value="cool_steel">Cool Steel</option>
+         <option value="dark_iron_sword">Dark Iron Sword</option>
+         <option value="favonius_sword">Favonius Sword</option>
+         <option value="festering_desire">Festering Desire</option>
+         <option value="fillet_blade">Fillet Blade</option>
+         <option value="freedom_sworn">Freedom-Sworn</option>
+         <option value="harbinger_of_dawn">Harbinger of Dawn</option>
+         <option value="iron_sting">Iron Sting</option>
+         <option value="lions_roar">Lion's Roar</option>
+         <option value="mistsplitter_reforged">Mistsplitter Reforged</option>
+         <option value="primordial_jade_winged_cutter">Primordial Jade Cutter</option>
+         <option value="prototype_rancour">Prototype Rancour</option>
+         <option value="royal_longsword">Royal Longsword</option>
+         <option value="sacrificial_sword">Sacrificial Sword</option>
+         <option value="skyrider_sword">Skyrider Sword</option>
+         <option value="skyward_blade">Skyward Blade</option>
+         <option value="summit_shaper">Summit Shaper</option>
+         <option value="sword_of_descension">Sword of Descension</option>
+         <option value="the_alley_flash">The Alley Flash</option>
+         <option value="the_black_sword">The Black Sword</option>
+         <option value="the_flute">The Flute</option>
+         <option value="travelers_handy_sword">Traveler's Handy Sword</option>
+        </select>
+       </td>
+       <td>
+        <select class="kamisato_ayaka save" id="weapon_c-kamisato_ayaka">
+         <option value="0">1</option>
+         <option value="1">20</option>
+         <option value="11">20 A</option>
+         <option value="2">40</option>
+         <option value="12">40 A</option>
+         <option value="3">50</option>
+         <option value="13">50 A</option>
+         <option value="4">60</option>
+         <option value="14">60 A</option>
+         <option value="5">70</option>
+         <option value="15">70 A</option>
+         <option value="6">80</option>
+         <option value="16">80 A</option>
+         <option value="7">90</option>
+        </select>
+       </td>
+       <td>
+        <select class="kamisato_ayaka save" id="weapon_t-kamisato_ayaka">
+         <option value="0">1</option>
+         <option value="1">20</option>
+         <option value="11">20 A</option>
+         <option value="2">40</option>
+         <option value="12">40 A</option>
+         <option value="3">50</option>
+         <option value="13">50 A</option>
+         <option value="4">60</option>
+         <option value="14">60 A</option>
+         <option value="5">70</option>
+         <option value="15">70 A</option>
+         <option value="6">80</option>
+         <option value="16">80 A</option>
+         <option value="7">90</option>
+        </select>
+       </td>
+       <td>
+        <input checked="checked" class="save" id="use_arti-kamisato_ayaka" type="checkbox"/>
+       </td>
+       <td>
+        <button class="arti_list text_button" data-id="arti-kamisato_ayaka">Add</button>
+       </td>
+       <td>
+        <div class="arti_span" id="arti-kamisato_ayaka">
         </div>
        </td>
       </tr>
@@ -3250,6 +3457,7 @@
          <option value="harbinger_of_dawn">Harbinger of Dawn</option>
          <option value="iron_sting">Iron Sting</option>
          <option value="lions_roar">Lion's Roar</option>
+         <option value="mistsplitter_reforged">Mistsplitter Reforged</option>
          <option value="primordial_jade_winged_cutter">Primordial Jade Cutter</option>
          <option value="prototype_rancour">Prototype Rancour</option>
          <option value="royal_longsword">Royal Longsword</option>
@@ -4447,6 +4655,7 @@
          <option value="harbinger_of_dawn">Harbinger of Dawn</option>
          <option value="iron_sting">Iron Sting</option>
          <option value="lions_roar">Lion's Roar</option>
+         <option value="mistsplitter_reforged">Mistsplitter Reforged</option>
          <option value="primordial_jade_winged_cutter">Primordial Jade Cutter</option>
          <option value="prototype_rancour">Prototype Rancour</option>
          <option value="royal_longsword">Royal Longsword</option>
@@ -6030,6 +6239,7 @@
          <option value="harbinger_of_dawn">Harbinger of Dawn</option>
          <option value="iron_sting">Iron Sting</option>
          <option value="lions_roar">Lion's Roar</option>
+         <option value="mistsplitter_reforged">Mistsplitter Reforged</option>
          <option value="primordial_jade_winged_cutter">Primordial Jade Cutter</option>
          <option value="prototype_rancour">Prototype Rancour</option>
          <option value="royal_longsword">Royal Longsword</option>
@@ -6747,6 +6957,7 @@
          <option value="harbinger_of_dawn">Harbinger of Dawn</option>
          <option value="iron_sting">Iron Sting</option>
          <option value="lions_roar">Lion's Roar</option>
+         <option value="mistsplitter_reforged">Mistsplitter Reforged</option>
          <option value="primordial_jade_winged_cutter">Primordial Jade Cutter</option>
          <option value="prototype_rancour">Prototype Rancour</option>
          <option value="royal_longsword">Royal Longsword</option>
@@ -6889,6 +7100,106 @@
        </td>
        <td>
         <select class="traveler_anemo save" id="talent_3_t-traveler_anemo">
+         <option>1</option>
+         <option>2</option>
+         <option>3</option>
+         <option>4</option>
+         <option>5</option>
+         <option>6</option>
+         <option>7</option>
+         <option>8</option>
+         <option>9</option>
+         <option>10</option>
+        </select>
+       </td>
+       <td></td>
+       <td></td>
+       <td></td>
+       <td></td>
+       <td></td>
+       <td></td>
+      </tr>
+      <tr class="unchecked" data-color="electro" data-id="check-traveler_electro" data-weapon="sword">
+       <td>
+        <input class="char_select save" data-id="check-traveler_electro" id="check-traveler_electro" type="checkbox"/>
+       </td>
+       <td>
+        <img alt="Traveler" src="img/traveler_electro.png" title="Traveler"/>
+       </td>
+       <td></td>
+       <td></td>
+       <td>
+        <select class="traveler_electro save" id="talent_1_c-traveler_electro">
+         <option>1</option>
+         <option>2</option>
+         <option>3</option>
+         <option>4</option>
+         <option>5</option>
+         <option>6</option>
+         <option>7</option>
+         <option>8</option>
+         <option>9</option>
+         <option>10</option>
+        </select>
+       </td>
+       <td>
+        <select class="traveler_electro save" id="talent_1_t-traveler_electro">
+         <option>1</option>
+         <option>2</option>
+         <option>3</option>
+         <option>4</option>
+         <option>5</option>
+         <option>6</option>
+         <option>7</option>
+         <option>8</option>
+         <option>9</option>
+         <option>10</option>
+        </select>
+       </td>
+       <td>
+        <select class="traveler_electro save" id="talent_2_c-traveler_electro">
+         <option>1</option>
+         <option>2</option>
+         <option>3</option>
+         <option>4</option>
+         <option>5</option>
+         <option>6</option>
+         <option>7</option>
+         <option>8</option>
+         <option>9</option>
+         <option>10</option>
+        </select>
+       </td>
+       <td>
+        <select class="traveler_electro save" id="talent_2_t-traveler_electro">
+         <option>1</option>
+         <option>2</option>
+         <option>3</option>
+         <option>4</option>
+         <option>5</option>
+         <option>6</option>
+         <option>7</option>
+         <option>8</option>
+         <option>9</option>
+         <option>10</option>
+        </select>
+       </td>
+       <td>
+        <select class="traveler_electro save" id="talent_3_c-traveler_electro">
+         <option>1</option>
+         <option>2</option>
+         <option>3</option>
+         <option>4</option>
+         <option>5</option>
+         <option>6</option>
+         <option>7</option>
+         <option>8</option>
+         <option>9</option>
+         <option>10</option>
+        </select>
+       </td>
+       <td>
+        <select class="traveler_electro save" id="talent_3_t-traveler_electro">
          <option>1</option>
          <option>2</option>
          <option>3</option>
@@ -7466,6 +7777,166 @@
      </tr>
      <tr class="tr_even">
       <td>
+       <img alt="Energy Nectar" src="img/nectar_2.png" title="Energy Nectar"/>
+      </td>
+      <td id="nectar_2-total">0</td>
+      <td>
+       <input class="save" id="nectar_2-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="nectar_2-need">0</td>
+      <td></td>
+      <td>
+       <img alt="Shimmering Nectar" src="img/nectar_1.png" title="Shimmering Nectar"/>
+      </td>
+      <td id="nectar_1-total">0</td>
+      <td>
+       <input class="save" id="nectar_1-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="nectar_1-need">0</td>
+      <td></td>
+      <td>
+       <img alt="Whopperflower Nectar" src="img/nectar_0.png" title="Whopperflower Nectar"/>
+      </td>
+      <td id="nectar_0-total">0</td>
+      <td>
+       <input class="save" id="nectar_0-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="nectar_0-need">0</td>
+     </tr>
+     <tr class="empty_row">
+      <td colspan="14">
+      </td>
+     </tr>
+     <tr class="tr_odd">
+      <td>
+       <img alt="Fossilized Bone Shard" src="img/bone_shard_2.png" title="Fossilized Bone Shard"/>
+      </td>
+      <td id="bone_shard_2-total">0</td>
+      <td>
+       <input class="save" id="bone_shard_2-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="bone_shard_2-need">0</td>
+      <td></td>
+      <td>
+       <img alt="Sturdy Bone Shard" src="img/bone_shard_1.png" title="Sturdy Bone Shard"/>
+      </td>
+      <td id="bone_shard_1-total">0</td>
+      <td>
+       <input class="save" id="bone_shard_1-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="bone_shard_1-need">0</td>
+      <td></td>
+      <td>
+       <img alt="Fragile Bone Shard" src="img/bone_shard_0.png" title="Fragile Bone Shard"/>
+      </td>
+      <td id="bone_shard_0-total">0</td>
+      <td>
+       <input class="save" id="bone_shard_0-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="bone_shard_0-need">0</td>
+     </tr>
+     <tr class="empty_row">
+      <td colspan="14">
+      </td>
+     </tr>
+     <tr class="tr_even">
+      <td>
+       <img alt="Famed Handguard" src="img/handguard_2.png" title="Famed Handguard"/>
+      </td>
+      <td id="handguard_2-total">0</td>
+      <td>
+       <input class="save" id="handguard_2-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="handguard_2-need">0</td>
+      <td></td>
+      <td>
+       <img alt="Kageuchi Handguard" src="img/handguard_1.png" title="Kageuchi Handguard"/>
+      </td>
+      <td id="handguard_1-total">0</td>
+      <td>
+       <input class="save" id="handguard_1-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="handguard_1-need">0</td>
+      <td></td>
+      <td>
+       <img alt="Old Handguard" src="img/handguard_0.png" title="Old Handguard"/>
+      </td>
+      <td id="handguard_0-total">0</td>
+      <td>
+       <input class="save" id="handguard_0-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="handguard_0-need">0</td>
+     </tr>
+     <tr class="empty_row">
+      <td colspan="14">
+      </td>
+     </tr>
+     <tr class="tr_odd">
+      <td>
+       <img alt="Chaos Oculus" src="img/chaos2_2.png" title="Chaos Oculus"/>
+      </td>
+      <td id="chaos2_2-total">0</td>
+      <td>
+       <input class="save" id="chaos2_2-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="chaos2_2-need">0</td>
+      <td></td>
+      <td>
+       <img alt="Chaos Axis" src="img/chaos2_1.png" title="Chaos Axis"/>
+      </td>
+      <td id="chaos2_1-total">0</td>
+      <td>
+       <input class="save" id="chaos2_1-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="chaos2_1-need">0</td>
+      <td></td>
+      <td>
+       <img alt="Chaos Gear" src="img/chaos2_0.png" title="Chaos Gear"/>
+      </td>
+      <td id="chaos2_0-total">0</td>
+      <td>
+       <input class="save" id="chaos2_0-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="chaos2_0-need">0</td>
+     </tr>
+     <tr class="empty_row">
+      <td colspan="14">
+      </td>
+     </tr>
+     <tr class="tr_even">
+      <td>
+       <img alt="Polarizing Prism" src="img/prism_2.png" title="Polarizing Prism"/>
+      </td>
+      <td id="prism_2-total">0</td>
+      <td>
+       <input class="save" id="prism_2-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="prism_2-need">0</td>
+      <td></td>
+      <td>
+       <img alt="Crystal Prism" src="img/prism_1.png" title="Crystal Prism"/>
+      </td>
+      <td id="prism_1-total">0</td>
+      <td>
+       <input class="save" id="prism_1-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="prism_1-need">0</td>
+      <td></td>
+      <td>
+       <img alt="Dismal Prism" src="img/prism_0.png" title="Dismal Prism"/>
+      </td>
+      <td id="prism_0-total">0</td>
+      <td>
+       <input class="save" id="prism_0-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="prism_0-need">0</td>
+     </tr>
+     <tr class="empty_row">
+      <td colspan="14">
+      </td>
+     </tr>
+     <tr class="tr_odd">
+      <td>
        <img alt="Dvalin's Plume" src="img/dvalins_plume.png" title="Dvalin's Plume"/>
       </td>
       <td id="dvalins_plume-total">0</td>
@@ -7492,7 +7963,7 @@
       </td>
       <td id="dvalins_sigh-need">0</td>
      </tr>
-     <tr class="tr_odd">
+     <tr class="tr_even">
       <td>
        <img alt="Tail of Boreas" src="img/tail_of_boreas.png" title="Tail of Boreas"/>
       </td>
@@ -7520,7 +7991,7 @@
       </td>
       <td id="spirit_locket_of_boreas-need">0</td>
      </tr>
-     <tr class="tr_even">
+     <tr class="tr_odd">
       <td>
        <img alt="Tusk of Monoceros Caeli" src="img/tusk_of_monoceros_caeli.png" title="Tusk of Monoceros Caeli"/>
       </td>
@@ -7548,7 +8019,7 @@
       </td>
       <td id="shadow_of_the_warrior-need">0</td>
      </tr>
-     <tr class="tr_odd">
+     <tr class="tr_even">
       <td>
        <img alt="Dragon Lord's Crown" src="img/dragon_lords_crown.png" title="Dragon Lord's Crown"/>
       </td>
@@ -7580,7 +8051,7 @@
       <td colspan="14">
       </td>
      </tr>
-     <tr class="tr_even">
+     <tr class="tr_odd">
       <td>
        <img alt="Hurricane Seed" src="img/hurricane_seed.png" title="Hurricane Seed"/>
       </td>
@@ -7608,7 +8079,7 @@
       </td>
       <td id="basalt_pillar-need">0</td>
      </tr>
-     <tr class="tr_odd">
+     <tr class="tr_even">
       <td>
        <img alt="Hoarfrost Core" src="img/hoarfrost_core.png" title="Hoarfrost Core"/>
       </td>
@@ -7636,7 +8107,7 @@
       </td>
       <td id="cleansing_heart-need">0</td>
      </tr>
-     <tr class="tr_even">
+     <tr class="tr_odd">
       <td>
        <img alt="Juvenile Jade" src="img/juvenile_jade.png" title="Juvenile Jade"/>
       </td>
@@ -7664,43 +8135,33 @@
       </td>
       <td id="marionette_core-need">0</td>
      </tr>
+     <tr class="tr_even">
+      <td>
+       <img alt="Smoldering Pearl" src="img/smoldering_pearl.png" title="Smoldering Pearl"/>
+      </td>
+      <td id="smoldering_pearl-total">0</td>
+      <td>
+       <input class="save" id="smoldering_pearl-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="smoldering_pearl-need">0</td>
+      <td></td>
+      <td>
+       <img alt="Perpetual Heart" src="img/perpetual_heart.png" title="Perpetual Heart"/>
+      </td>
+      <td id="perpetual_heart-total">0</td>
+      <td>
+       <input class="save" id="perpetual_heart-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="perpetual_heart-need">0</td>
+      <td></td>
+      <td class="notvis" colspan="4">
+      </td>
+     </tr>
      <tr class="empty_row">
       <td colspan="14">
       </td>
      </tr>
      <tr class="tr_odd">
-      <td>
-       <img alt="Energy Nectar" src="img/nectar_2.png" title="Energy Nectar"/>
-      </td>
-      <td id="nectar_2-total">0</td>
-      <td>
-       <input class="save" id="nectar_2-user" min="0" step="1" type="number" value="0"/>
-      </td>
-      <td id="nectar_2-need">0</td>
-      <td></td>
-      <td>
-       <img alt="Shimmering Nectar" src="img/nectar_1.png" title="Shimmering Nectar"/>
-      </td>
-      <td id="nectar_1-total">0</td>
-      <td>
-       <input class="save" id="nectar_1-user" min="0" step="1" type="number" value="0"/>
-      </td>
-      <td id="nectar_1-need">0</td>
-      <td></td>
-      <td>
-       <img alt="Whopperflower Nectar" src="img/nectar_0.png" title="Whopperflower Nectar"/>
-      </td>
-      <td id="nectar_0-total">0</td>
-      <td>
-       <input class="save" id="nectar_0-user" min="0" step="1" type="number" value="0"/>
-      </td>
-      <td id="nectar_0-need">0</td>
-     </tr>
-     <tr class="empty_row">
-      <td colspan="14">
-      </td>
-     </tr>
-     <tr class="tr_even">
       <td>
        <img alt="Brilliant Diamond Gemstone" src="img/brilliant_diamond_3.png" title="Brilliant Diamond Gemstone"/>
       </td>
@@ -7721,7 +8182,7 @@
       <td class="notvis" colspan="5">
       </td>
      </tr>
-     <tr class="tr_odd">
+     <tr class="tr_even">
       <td>
        <img alt="Brilliant Diamond Fragment" src="img/brilliant_diamond_1.png" title="Brilliant Diamond Fragment"/>
       </td>
@@ -7741,38 +8202,6 @@
       <td id="brilliant_diamond_0-need">0</td>
       <td class="notvis" colspan="5">
       </td>
-     </tr>
-     <tr class="empty_row">
-      <td colspan="14">
-      </td>
-     </tr>
-     <tr class="tr_even">
-      <td>
-       <img alt="Fossilized Bone Shard" src="img/bone_shard_2.png" title="Fossilized Bone Shard"/>
-      </td>
-      <td id="bone_shard_2-total">0</td>
-      <td>
-       <input class="save" id="bone_shard_2-user" min="0" step="1" type="number" value="0"/>
-      </td>
-      <td id="bone_shard_2-need">0</td>
-      <td></td>
-      <td>
-       <img alt="Sturdy Bone Shard" src="img/bone_shard_1.png" title="Sturdy Bone Shard"/>
-      </td>
-      <td id="bone_shard_1-total">0</td>
-      <td>
-       <input class="save" id="bone_shard_1-user" min="0" step="1" type="number" value="0"/>
-      </td>
-      <td id="bone_shard_1-need">0</td>
-      <td></td>
-      <td>
-       <img alt="Fragile Bone Shard" src="img/bone_shard_0.png" title="Fragile Bone Shard"/>
-      </td>
-      <td id="bone_shard_0-total">0</td>
-      <td>
-       <input class="save" id="bone_shard_0-user" min="0" step="1" type="number" value="0"/>
-      </td>
-      <td id="bone_shard_0-need">0</td>
      </tr>
      <tr class="empty_row">
       <td colspan="14">
@@ -8056,7 +8485,7 @@
      </tr>
      <tr class="tr_odd">
       <td>
-       <img alt='Philosophies of "Freedom"' src="img/freedom_2.png" title='Philosophies of "Freedom"'/>
+       <img alt="Philosophies of Freedom" src="img/freedom_2.png" title="Philosophies of Freedom"/>
       </td>
       <td id="freedom_2-total">0</td>
       <td>
@@ -8065,7 +8494,7 @@
       <td id="freedom_2-need">0</td>
       <td></td>
       <td>
-       <img alt='Guide to "Freedom"' src="img/freedom_1.png" title='Guide to "Freedom"'/>
+       <img alt="Guide to Freedom" src="img/freedom_1.png" title="Guide to Freedom"/>
       </td>
       <td id="freedom_1-total">0</td>
       <td>
@@ -8074,7 +8503,7 @@
       <td id="freedom_1-need">0</td>
       <td></td>
       <td>
-       <img alt='Teachings of "Freedom"' src="img/freedom_0.png" title='Teachings of "Freedom"'/>
+       <img alt="Teachings of Freedom" src="img/freedom_0.png" title="Teachings of Freedom"/>
       </td>
       <td id="freedom_0-total">0</td>
       <td>
@@ -8088,7 +8517,7 @@
      </tr>
      <tr class="tr_even">
       <td>
-       <img alt='Philosophies of "Resistance"' src="img/resistance_2.png" title='Philosophies of "Resistance"'/>
+       <img alt="Philosophies of Resistance" src="img/resistance_2.png" title="Philosophies of Resistance"/>
       </td>
       <td id="resistance_2-total">0</td>
       <td>
@@ -8097,7 +8526,7 @@
       <td id="resistance_2-need">0</td>
       <td></td>
       <td>
-       <img alt='Guide to "Resistance"' src="img/resistance_1.png" title='Guide to "Resistance"'/>
+       <img alt="Guide to Resistance" src="img/resistance_1.png" title="Guide to Resistance"/>
       </td>
       <td id="resistance_1-total">0</td>
       <td>
@@ -8106,7 +8535,7 @@
       <td id="resistance_1-need">0</td>
       <td></td>
       <td>
-       <img alt='Teachings of "Resistance"' src="img/resistance_0.png" title='Teachings of "Resistance"'/>
+       <img alt="Teachings of Resistance" src="img/resistance_0.png" title="Teachings of Resistance"/>
       </td>
       <td id="resistance_0-total">0</td>
       <td>
@@ -8120,7 +8549,7 @@
      </tr>
      <tr class="tr_odd">
       <td>
-       <img alt='Philosophies of "Ballad"' src="img/ballad_2.png" title='Philosophies of "Ballad"'/>
+       <img alt="Philosophies of Ballad" src="img/ballad_2.png" title="Philosophies of Ballad"/>
       </td>
       <td id="ballad_2-total">0</td>
       <td>
@@ -8129,7 +8558,7 @@
       <td id="ballad_2-need">0</td>
       <td></td>
       <td>
-       <img alt='Guide to "Ballad"' src="img/ballad_1.png" title='Guide to "Ballad"'/>
+       <img alt="Guide to Ballad" src="img/ballad_1.png" title="Guide to Ballad"/>
       </td>
       <td id="ballad_1-total">0</td>
       <td>
@@ -8138,7 +8567,7 @@
       <td id="ballad_1-need">0</td>
       <td></td>
       <td>
-       <img alt='Teachings of "Ballad"' src="img/ballad_0.png" title='Teachings of "Ballad"'/>
+       <img alt="Teachings of Ballad" src="img/ballad_0.png" title="Teachings of Ballad"/>
       </td>
       <td id="ballad_0-total">0</td>
       <td>
@@ -8152,7 +8581,7 @@
      </tr>
      <tr class="tr_even">
       <td>
-       <img alt='Philosophies of "Prosperity"' src="img/prosperity_2.png" title='Philosophies of "Prosperity"'/>
+       <img alt="Philosophies of Prosperity" src="img/prosperity_2.png" title="Philosophies of Prosperity"/>
       </td>
       <td id="prosperity_2-total">0</td>
       <td>
@@ -8161,7 +8590,7 @@
       <td id="prosperity_2-need">0</td>
       <td></td>
       <td>
-       <img alt='Guide to "Prosperity"' src="img/prosperity_1.png" title='Guide to "Prosperity"'/>
+       <img alt="Guide to Prosperity" src="img/prosperity_1.png" title="Guide to Prosperity"/>
       </td>
       <td id="prosperity_1-total">0</td>
       <td>
@@ -8170,7 +8599,7 @@
       <td id="prosperity_1-need">0</td>
       <td></td>
       <td>
-       <img alt='Teachings of "Prosperity"' src="img/prosperity_0.png" title='Teachings of "Prosperity"'/>
+       <img alt="Teachings of Prosperity" src="img/prosperity_0.png" title="Teachings of Prosperity"/>
       </td>
       <td id="prosperity_0-total">0</td>
       <td>
@@ -8184,7 +8613,7 @@
      </tr>
      <tr class="tr_odd">
       <td>
-       <img alt='Philosophies of "Diligence"' src="img/diligence_2.png" title='Philosophies of "Diligence"'/>
+       <img alt="Philosophies of Diligence" src="img/diligence_2.png" title="Philosophies of Diligence"/>
       </td>
       <td id="diligence_2-total">0</td>
       <td>
@@ -8193,7 +8622,7 @@
       <td id="diligence_2-need">0</td>
       <td></td>
       <td>
-       <img alt='Guide to "Diligence"' src="img/diligence_1.png" title='Guide to "Diligence"'/>
+       <img alt="Guide to Diligence" src="img/diligence_1.png" title="Guide to Diligence"/>
       </td>
       <td id="diligence_1-total">0</td>
       <td>
@@ -8202,7 +8631,7 @@
       <td id="diligence_1-need">0</td>
       <td></td>
       <td>
-       <img alt='Teachings of "Diligence"' src="img/diligence_0.png" title='Teachings of "Diligence"'/>
+       <img alt="Teachings of Diligence" src="img/diligence_0.png" title="Teachings of Diligence"/>
       </td>
       <td id="diligence_0-total">0</td>
       <td>
@@ -8216,7 +8645,7 @@
      </tr>
      <tr class="tr_even">
       <td>
-       <img alt='Philosophies of "Gold"' src="img/gold_2.png" title='Philosophies of "Gold"'/>
+       <img alt="Philosophies of Gold" src="img/gold_2.png" title="Philosophies of Gold"/>
       </td>
       <td id="gold_2-total">0</td>
       <td>
@@ -8225,7 +8654,7 @@
       <td id="gold_2-need">0</td>
       <td></td>
       <td>
-       <img alt='Guide to "Gold"' src="img/gold_1.png" title='Guide to "Gold"'/>
+       <img alt="Guide to Gold" src="img/gold_1.png" title="Guide to Gold"/>
       </td>
       <td id="gold_1-total">0</td>
       <td>
@@ -8234,7 +8663,7 @@
       <td id="gold_1-need">0</td>
       <td></td>
       <td>
-       <img alt='Teachings of "Gold"' src="img/gold_0.png" title='Teachings of "Gold"'/>
+       <img alt="Teachings of Gold" src="img/gold_0.png" title="Teachings of Gold"/>
       </td>
       <td id="gold_0-total">0</td>
       <td>
@@ -8247,6 +8676,102 @@
       </td>
      </tr>
      <tr class="tr_odd">
+      <td>
+       <img alt="Philosophies of Transience" src="img/transience_2.png" title="Philosophies of Transience"/>
+      </td>
+      <td id="transience_2-total">0</td>
+      <td>
+       <input class="save" id="transience_2-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="transience_2-need">0</td>
+      <td></td>
+      <td>
+       <img alt="Guide to Transience" src="img/transience_1.png" title="Guide to Transience"/>
+      </td>
+      <td id="transience_1-total">0</td>
+      <td>
+       <input class="save" id="transience_1-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="transience_1-need">0</td>
+      <td></td>
+      <td>
+       <img alt="Teachings of Transience" src="img/transience_0.png" title="Teachings of Transience"/>
+      </td>
+      <td id="transience_0-total">0</td>
+      <td>
+       <input class="save" id="transience_0-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="transience_0-need">0</td>
+     </tr>
+     <tr class="empty_row">
+      <td colspan="14">
+      </td>
+     </tr>
+     <tr class="tr_even">
+      <td>
+       <img alt="Philosophies of Elegance" src="img/elegance_2.png" title="Philosophies of Elegance"/>
+      </td>
+      <td id="elegance_2-total">0</td>
+      <td>
+       <input class="save" id="elegance_2-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="elegance_2-need">0</td>
+      <td></td>
+      <td>
+       <img alt="Guide to Elegance" src="img/elegance_1.png" title="Guide to Elegance"/>
+      </td>
+      <td id="elegance_1-total">0</td>
+      <td>
+       <input class="save" id="elegance_1-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="elegance_1-need">0</td>
+      <td></td>
+      <td>
+       <img alt="Teachings of Elegance" src="img/elegance_0.png" title="Teachings of Elegance"/>
+      </td>
+      <td id="elegance_0-total">0</td>
+      <td>
+       <input class="save" id="elegance_0-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="elegance_0-need">0</td>
+     </tr>
+     <tr class="empty_row">
+      <td colspan="14">
+      </td>
+     </tr>
+     <tr class="tr_odd">
+      <td>
+       <img alt="Philosophies of Light" src="img/light_2.png" title="Philosophies of Light"/>
+      </td>
+      <td id="light_2-total">0</td>
+      <td>
+       <input class="save" id="light_2-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="light_2-need">0</td>
+      <td></td>
+      <td>
+       <img alt="Guide to Light" src="img/light_1.png" title="Guide to Light"/>
+      </td>
+      <td id="light_1-total">0</td>
+      <td>
+       <input class="save" id="light_1-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="light_1-need">0</td>
+      <td></td>
+      <td>
+       <img alt="Teachings of Light" src="img/light_0.png" title="Teachings of Light"/>
+      </td>
+      <td id="light_0-total">0</td>
+      <td>
+       <input class="save" id="light_0-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="light_0-need">0</td>
+     </tr>
+     <tr class="empty_row">
+      <td colspan="14">
+      </td>
+     </tr>
+     <tr class="tr_even">
       <td>
        <img alt="Crown of Sagehood" src="img/crown.png" title="Crown of Sagehood"/>
       </td>
@@ -8263,7 +8788,7 @@
       <td colspan="14">
       </td>
      </tr>
-     <tr class="tr_even">
+     <tr class="tr_odd">
       <td>
        <img alt="Scattered Piece of Decarabian's Dream" src="img/decarabian_3.png" title="Scattered Piece of Decarabian's Dream"/>
       </td>
@@ -8284,7 +8809,7 @@
       <td class="notvis" colspan="5">
       </td>
      </tr>
-     <tr class="tr_odd">
+     <tr class="tr_even">
       <td>
        <img alt="Debris of Decarabian's City" src="img/decarabian_1.png" title="Debris of Decarabian's City"/>
       </td>
@@ -8309,7 +8834,7 @@
       <td colspan="14">
       </td>
      </tr>
-     <tr class="tr_even">
+     <tr class="tr_odd">
       <td>
        <img alt="Boreal Wolf's Nostalgia" src="img/boreal_wolf_3.png" title="Boreal Wolf's Nostalgia"/>
       </td>
@@ -8330,7 +8855,7 @@
       <td class="notvis" colspan="5">
       </td>
      </tr>
-     <tr class="tr_odd">
+     <tr class="tr_even">
       <td>
        <img alt="Boreal Wolf's Cracked Tooth" src="img/boreal_wolf_1.png" title="Boreal Wolf's Cracked Tooth"/>
       </td>
@@ -8355,7 +8880,7 @@
       <td colspan="14">
       </td>
      </tr>
-     <tr class="tr_even">
+     <tr class="tr_odd">
       <td>
        <img alt="Dream of the Dandelion Gladiator" src="img/dandelion_gladiator_3.png" title="Dream of the Dandelion Gladiator"/>
       </td>
@@ -8376,7 +8901,7 @@
       <td class="notvis" colspan="5">
       </td>
      </tr>
-     <tr class="tr_odd">
+     <tr class="tr_even">
       <td>
        <img alt="Chains of the Dandelion Gladiator" src="img/dandelion_gladiator_1.png" title="Chains of the Dandelion Gladiator"/>
       </td>
@@ -8401,7 +8926,7 @@
       <td colspan="14">
       </td>
      </tr>
-     <tr class="tr_even">
+     <tr class="tr_odd">
       <td>
        <img alt="Divine Body from Guyun" src="img/guyun_3.png" title="Divine Body from Guyun"/>
       </td>
@@ -8422,7 +8947,7 @@
       <td class="notvis" colspan="5">
       </td>
      </tr>
-     <tr class="tr_odd">
+     <tr class="tr_even">
       <td>
        <img alt="Lustrous Stone from Guyun" src="img/guyun_1.png" title="Lustrous Stone from Guyun"/>
       </td>
@@ -8447,7 +8972,7 @@
       <td colspan="14">
       </td>
      </tr>
-     <tr class="tr_even">
+     <tr class="tr_odd">
       <td>
        <img alt="Mist Veiled Primo Elixir" src="img/mist_veiled_elixer_3.png" title="Mist Veiled Primo Elixir"/>
       </td>
@@ -8468,7 +8993,7 @@
       <td class="notvis" colspan="5">
       </td>
      </tr>
-     <tr class="tr_odd">
+     <tr class="tr_even">
       <td>
        <img alt="Mist Veiled Mercury Elixir" src="img/mist_veiled_elixer_1.png" title="Mist Veiled Mercury Elixir"/>
       </td>
@@ -8493,7 +9018,7 @@
       <td colspan="14">
       </td>
      </tr>
-     <tr class="tr_even">
+     <tr class="tr_odd">
       <td>
        <img alt="Chunk of Aerosiderite" src="img/aerosiderite_3.png" title="Chunk of Aerosiderite"/>
       </td>
@@ -8514,7 +9039,7 @@
       <td class="notvis" colspan="5">
       </td>
      </tr>
-     <tr class="tr_odd">
+     <tr class="tr_even">
       <td>
        <img alt="Piece of Aerosiderite" src="img/aerosiderite_1.png" title="Piece of Aerosiderite"/>
       </td>
@@ -8539,7 +9064,145 @@
       <td colspan="14">
       </td>
      </tr>
+     <tr class="tr_odd">
+      <td>
+       <img alt="Golden Branch of a Distant Sea" src="img/distant_sea_3.png" title="Golden Branch of a Distant Sea"/>
+      </td>
+      <td id="distant_sea_3-total">0</td>
+      <td>
+       <input class="save" id="distant_sea_3-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="distant_sea_3-need">0</td>
+      <td></td>
+      <td>
+       <img alt="Jade Branch of a Distant Sea" src="img/distant_sea_2.png" title="Jade Branch of a Distant Sea"/>
+      </td>
+      <td id="distant_sea_2-total">0</td>
+      <td>
+       <input class="save" id="distant_sea_2-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="distant_sea_2-need">0</td>
+      <td class="notvis" colspan="5">
+      </td>
+     </tr>
      <tr class="tr_even">
+      <td>
+       <img alt="Jeweled Branch of a Distant Sea" src="img/distant_sea_1.png" title="Jeweled Branch of a Distant Sea"/>
+      </td>
+      <td id="distant_sea_1-total">0</td>
+      <td>
+       <input class="save" id="distant_sea_1-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="distant_sea_1-need">0</td>
+      <td></td>
+      <td>
+       <img alt="Coral Branch of a Distant Sea" src="img/distant_sea_0.png" title="Coral Branch of a Distant Sea"/>
+      </td>
+      <td id="distant_sea_0-total">0</td>
+      <td>
+       <input class="save" id="distant_sea_0-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="distant_sea_0-need">0</td>
+      <td class="notvis" colspan="5">
+      </td>
+     </tr>
+     <tr class="empty_row">
+      <td colspan="14">
+      </td>
+     </tr>
+     <tr class="tr_odd">
+      <td>
+       <img alt="Narukami's Valor" src="img/narukami_3.png" title="Narukami's Valor"/>
+      </td>
+      <td id="narukami_3-total">0</td>
+      <td>
+       <input class="save" id="narukami_3-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="narukami_3-need">0</td>
+      <td></td>
+      <td>
+       <img alt="Narukami's Affection" src="img/narukami_2.png" title="Narukami's Affection"/>
+      </td>
+      <td id="narukami_2-total">0</td>
+      <td>
+       <input class="save" id="narukami_2-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="narukami_2-need">0</td>
+      <td class="notvis" colspan="5">
+      </td>
+     </tr>
+     <tr class="tr_even">
+      <td>
+       <img alt="Narukami's Joy" src="img/narukami_1.png" title="Narukami's Joy"/>
+      </td>
+      <td id="narukami_1-total">0</td>
+      <td>
+       <input class="save" id="narukami_1-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="narukami_1-need">0</td>
+      <td></td>
+      <td>
+       <img alt="Narukami's Wisdom" src="img/narukami_0.png" title="Narukami's Wisdom"/>
+      </td>
+      <td id="narukami_0-total">0</td>
+      <td>
+       <input class="save" id="narukami_0-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="narukami_0-need">0</td>
+      <td class="notvis" colspan="5">
+      </td>
+     </tr>
+     <tr class="empty_row">
+      <td colspan="14">
+      </td>
+     </tr>
+     <tr class="tr_odd">
+      <td>
+       <img alt="Mask of the Kijin" src="img/oni_mask_3.png" title="Mask of the Kijin"/>
+      </td>
+      <td id="oni_mask_3-total">0</td>
+      <td>
+       <input class="save" id="oni_mask_3-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="oni_mask_3-need">0</td>
+      <td></td>
+      <td>
+       <img alt="Mask of the One-Horned" src="img/oni_mask_2.png" title="Mask of the One-Horned"/>
+      </td>
+      <td id="oni_mask_2-total">0</td>
+      <td>
+       <input class="save" id="oni_mask_2-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="oni_mask_2-need">0</td>
+      <td class="notvis" colspan="5">
+      </td>
+     </tr>
+     <tr class="tr_even">
+      <td>
+       <img alt="Mask of the Tiger's Bite" src="img/oni_mask_1.png" title="Mask of the Tiger's Bite"/>
+      </td>
+      <td id="oni_mask_1-total">0</td>
+      <td>
+       <input class="save" id="oni_mask_1-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="oni_mask_1-need">0</td>
+      <td></td>
+      <td>
+       <img alt="Mask of the Wicked Lieutenant" src="img/oni_mask_0.png" title="Mask of the Wicked Lieutenant"/>
+      </td>
+      <td id="oni_mask_0-total">0</td>
+      <td>
+       <input class="save" id="oni_mask_0-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="oni_mask_0-need">0</td>
+      <td class="notvis" colspan="5">
+      </td>
+     </tr>
+     <tr class="empty_row">
+      <td colspan="14">
+      </td>
+     </tr>
+     <tr class="tr_odd">
       <td>
        <img alt="Calla Lily" src="img/calla_lily.png" title="Calla Lily"/>
       </td>
@@ -8567,7 +9230,7 @@
       </td>
       <td id="valberry-need">0</td>
      </tr>
-     <tr class="tr_odd">
+     <tr class="tr_even">
       <td>
        <img alt="Cecilia" src="img/cecilia.png" title="Cecilia"/>
       </td>
@@ -8595,7 +9258,7 @@
       </td>
       <td id="philanemo_mushroom-need">0</td>
      </tr>
-     <tr class="tr_even">
+     <tr class="tr_odd">
       <td>
        <img alt="Jueyun Chili" src="img/jueyun_chili.png" title="Jueyun Chili"/>
       </td>
@@ -8623,7 +9286,7 @@
       </td>
       <td id="silk_flower-need">0</td>
      </tr>
-     <tr class="tr_odd">
+     <tr class="tr_even">
       <td>
        <img alt="Glaze Lily" src="img/glaze_lilly.png" title="Glaze Lily"/>
       </td>
@@ -8651,7 +9314,7 @@
       </td>
       <td id="starconch-need">0</td>
      </tr>
-     <tr class="tr_even">
+     <tr class="tr_odd">
       <td>
        <img alt="Violetgrass" src="img/violetgrass.png" title="Violetgrass"/>
       </td>
@@ -8679,7 +9342,7 @@
       </td>
       <td id="dandelion_seed-need">0</td>
      </tr>
-     <tr class="tr_odd">
+     <tr class="tr_even">
       <td>
        <img alt="Cor Lapis" src="img/cor_lapis.png" title="Cor Lapis"/>
       </td>
@@ -8690,6 +9353,43 @@
       <td id="cor_lapis-need">0</td>
       <td></td>
       <td>
+       <img alt="Onikabuto" src="img/onikabuto.png" title="Onikabuto"/>
+      </td>
+      <td id="onikabuto-total">0</td>
+      <td>
+       <input class="save" id="onikabuto-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="onikabuto-need">0</td>
+      <td></td>
+      <td>
+       <img alt="Sakura Bloom" src="img/sakura_bloom.png" title="Sakura Bloom"/>
+      </td>
+      <td id="sakura_bloom-total">0</td>
+      <td>
+       <input class="save" id="sakura_bloom-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="sakura_bloom-need">0</td>
+     </tr>
+     <tr class="tr_odd">
+      <td>
+       <img alt="Crystal Marrow" src="img/crystal_marrow.png" title="Crystal Marrow"/>
+      </td>
+      <td id="crystal_marrow-total">0</td>
+      <td>
+       <input class="save" id="crystal_marrow-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="crystal_marrow-need">0</td>
+      <td></td>
+      <td>
+       <img alt="Naku Weed" src="img/naku_weed.png" title="Naku Weed"/>
+      </td>
+      <td id="naku_weed-total">0</td>
+      <td>
+       <input class="save" id="naku_weed-user" min="0" step="1" type="number" value="0"/>
+      </td>
+      <td id="naku_weed-need">0</td>
+      <td></td>
+      <td>
        <img alt="Sea Ganoderma" src="img/sea_ganoderma.png" title="Sea Ganoderma"/>
       </td>
       <td id="sea_ganoderma-total">0</td>
@@ -8697,9 +9397,6 @@
        <input class="save" id="sea_ganoderma-user" min="0" step="1" type="number" value="0"/>
       </td>
       <td id="sea_ganoderma-need">0</td>
-      <td></td>
-      <td class="notvis" colspan="4">
-      </td>
      </tr>
     </table>
    </div>
@@ -8721,7 +9418,7 @@
         <img alt="Tusk of Monoceros Caeli" src="img/tusk_of_monoceros_caeli.png" title="Tusk of Monoceros Caeli"/>
         <img alt="Basalt Pillar" src="img/basalt_pillar.png" title="Basalt Pillar"/>
         <img alt="Prithiva Topaz Gemstone" src="img/prithiva_topaz_3.png" title="Prithiva Topaz Gemstone"/>
-        <img alt='Philosophies of "Ballad"' src="img/ballad_2.png" title='Philosophies of "Ballad"'/>
+        <img alt="Philosophies of Ballad" src="img/ballad_2.png" title="Philosophies of Ballad"/>
         <img alt="Cecilia" src="img/cecilia.png" title="Cecilia"/>
        </td>
       </tr>
@@ -8734,7 +9431,7 @@
         <img alt="Dvalin's Sigh" src="img/dvalins_sigh.png" title="Dvalin's Sigh"/>
         <img alt="Everflame Seed" src="img/everflame_seed.png" title="Everflame Seed"/>
         <img alt="Agnidus Agate Gemstone" src="img/agnidus_agate_3.png" title="Agnidus Agate Gemstone"/>
-        <img alt='Philosophies of "Freedom"' src="img/freedom_2.png" title='Philosophies of "Freedom"'/>
+        <img alt="Philosophies of Freedom" src="img/freedom_2.png" title="Philosophies of Freedom"/>
         <img alt="Small Lamp Grass" src="img/small_lamp_grass.png" title="Small Lamp Grass"/>
        </td>
       </tr>
@@ -8747,7 +9444,7 @@
         <img alt="Ring of Boreas" src="img/ring_of_boreas.png" title="Ring of Boreas"/>
         <img alt="Cleansing Heart" src="img/cleansing_heart.png" title="Cleansing Heart"/>
         <img alt="Varunada Lazurite Gemstone" src="img/varunada_lazurite_3.png" title="Varunada Lazurite Gemstone"/>
-        <img alt='Philosophies of "Freedom"' src="img/freedom_2.png" title='Philosophies of "Freedom"'/>
+        <img alt="Philosophies of Freedom" src="img/freedom_2.png" title="Philosophies of Freedom"/>
         <img alt="Philanemo Mushroom" src="img/philanemo_mushroom.png" title="Philanemo Mushroom"/>
        </td>
       </tr>
@@ -8760,7 +9457,7 @@
         <img alt="Dvalin's Sigh" src="img/dvalins_sigh.png" title="Dvalin's Sigh"/>
         <img alt="Lightning Prism" src="img/lightning_prism.png" title="Lightning Prism"/>
         <img alt="Vajrada Amethyst Gemstone" src="img/vajrada_amethyst_3.png" title="Vajrada Amethyst Gemstone"/>
-        <img alt='Philosophies of "Gold"' src="img/gold_2.png" title='Philosophies of "Gold"'/>
+        <img alt="Philosophies of Gold" src="img/gold_2.png" title="Philosophies of Gold"/>
         <img alt="Noctilucous Jade" src="img/noctilucous_jade.png" title="Noctilucous Jade"/>
        </td>
       </tr>
@@ -8773,7 +9470,7 @@
         <img alt="Dvalin's Plume" src="img/dvalins_plume.png" title="Dvalin's Plume"/>
         <img alt="Everflame Seed" src="img/everflame_seed.png" title="Everflame Seed"/>
         <img alt="Agnidus Agate Gemstone" src="img/agnidus_agate_3.png" title="Agnidus Agate Gemstone"/>
-        <img alt='Philosophies of "Resistance"' src="img/resistance_2.png" title='Philosophies of "Resistance"'/>
+        <img alt="Philosophies of Resistance" src="img/resistance_2.png" title="Philosophies of Resistance"/>
         <img alt="Windwheel Aster" src="img/windwheel_aster.png" title="Windwheel Aster"/>
        </td>
       </tr>
@@ -8786,7 +9483,7 @@
         <img alt="Dvalin's Sigh" src="img/dvalins_sigh.png" title="Dvalin's Sigh"/>
         <img alt="Hoarfrost Core" src="img/hoarfrost_core.png" title="Hoarfrost Core"/>
         <img alt="Shivada Jade Gemstone" src="img/shivada_jade_3.png" title="Shivada Jade Gemstone"/>
-        <img alt='Philosophies of "Diligence"' src="img/diligence_2.png" title='Philosophies of "Diligence"'/>
+        <img alt="Philosophies of Diligence" src="img/diligence_2.png" title="Philosophies of Diligence"/>
         <img alt="Cor Lapis" src="img/cor_lapis.png" title="Cor Lapis"/>
        </td>
       </tr>
@@ -8799,7 +9496,7 @@
         <img alt="Dvalin's Plume" src="img/dvalins_plume.png" title="Dvalin's Plume"/>
         <img alt="Everflame Seed" src="img/everflame_seed.png" title="Everflame Seed"/>
         <img alt="Agnidus Agate Gemstone" src="img/agnidus_agate_3.png" title="Agnidus Agate Gemstone"/>
-        <img alt='Philosophies of "Resistance"' src="img/resistance_2.png" title='Philosophies of "Resistance"'/>
+        <img alt="Philosophies of Resistance" src="img/resistance_2.png" title="Philosophies of Resistance"/>
         <img alt="Small Lamp Grass" src="img/small_lamp_grass.png" title="Small Lamp Grass"/>
        </td>
       </tr>
@@ -8812,7 +9509,7 @@
         <img alt="Shard of a Foul Legacy" src="img/shard_of_a_foul_legacy.png" title="Shard of a Foul Legacy"/>
         <img alt="Hoarfrost Core" src="img/hoarfrost_core.png" title="Hoarfrost Core"/>
         <img alt="Shivada Jade Gemstone" src="img/shivada_jade_3.png" title="Shivada Jade Gemstone"/>
-        <img alt='Philosophies of "Freedom"' src="img/freedom_2.png" title='Philosophies of "Freedom"'/>
+        <img alt="Philosophies of Freedom" src="img/freedom_2.png" title="Philosophies of Freedom"/>
         <img alt="Calla Lily" src="img/calla_lily.png" title="Calla Lily"/>
        </td>
       </tr>
@@ -8825,7 +9522,7 @@
         <img alt="Dragon Lord's Crown" src="img/dragon_lords_crown.png" title="Dragon Lord's Crown"/>
         <img alt="Crystalline Bloom" src="img/crystalline_bloom.png" title="Crystalline Bloom"/>
         <img alt="Shivada Jade Gemstone" src="img/shivada_jade_3.png" title="Shivada Jade Gemstone"/>
-        <img alt='Philosophies of "Resistance"' src="img/resistance_2.png" title='Philosophies of "Resistance"'/>
+        <img alt="Philosophies of Resistance" src="img/resistance_2.png" title="Philosophies of Resistance"/>
         <img alt="Dandelion Seed" src="img/dandelion_seed.png" title="Dandelion Seed"/>
        </td>
       </tr>
@@ -8838,7 +9535,7 @@
         <img alt="Spirit Locket of Boreas" src="img/spirit_locket_of_boreas.png" title="Spirit Locket of Boreas"/>
         <img alt="Lightning Prism" src="img/lightning_prism.png" title="Lightning Prism"/>
         <img alt="Vajrada Amethyst Gemstone" src="img/vajrada_amethyst_3.png" title="Vajrada Amethyst Gemstone"/>
-        <img alt='Philosophies of "Ballad"' src="img/ballad_2.png" title='Philosophies of "Ballad"'/>
+        <img alt="Philosophies of Ballad" src="img/ballad_2.png" title="Philosophies of Ballad"/>
         <img alt="Small Lamp Grass" src="img/small_lamp_grass.png" title="Small Lamp Grass"/>
        </td>
       </tr>
@@ -8847,11 +9544,11 @@
         <img alt="Ganyu" src="img/ganyu.png" title="Ganyu"/>
        </td>
        <td>
+        <img alt="Energy Nectar" src="img/nectar_2.png" title="Energy Nectar"/>
         <img alt="Shadow of the Warrior" src="img/shadow_of_the_warrior.png" title="Shadow of the Warrior"/>
         <img alt="Hoarfrost Core" src="img/hoarfrost_core.png" title="Hoarfrost Core"/>
-        <img alt="Energy Nectar" src="img/nectar_2.png" title="Energy Nectar"/>
         <img alt="Shivada Jade Gemstone" src="img/shivada_jade_3.png" title="Shivada Jade Gemstone"/>
-        <img alt='Philosophies of "Diligence"' src="img/diligence_2.png" title='Philosophies of "Diligence"'/>
+        <img alt="Philosophies of Diligence" src="img/diligence_2.png" title="Philosophies of Diligence"/>
         <img alt="Qingxin" src="img/qingxin.png" title="Qingxin"/>
        </td>
       </tr>
@@ -8860,11 +9557,11 @@
         <img alt="Hu Tao" src="img/hu_tao.png" title="Hu Tao"/>
        </td>
        <td>
+        <img alt="Energy Nectar" src="img/nectar_2.png" title="Energy Nectar"/>
         <img alt="Shard of a Foul Legacy" src="img/shard_of_a_foul_legacy.png" title="Shard of a Foul Legacy"/>
         <img alt="Juvenile Jade" src="img/juvenile_jade.png" title="Juvenile Jade"/>
-        <img alt="Energy Nectar" src="img/nectar_2.png" title="Energy Nectar"/>
         <img alt="Agnidus Agate Gemstone" src="img/agnidus_agate_3.png" title="Agnidus Agate Gemstone"/>
-        <img alt='Philosophies of "Diligence"' src="img/diligence_2.png" title='Philosophies of "Diligence"'/>
+        <img alt="Philosophies of Diligence" src="img/diligence_2.png" title="Philosophies of Diligence"/>
         <img alt="Silk Flower" src="img/silk_flower.png" title="Silk Flower"/>
        </td>
       </tr>
@@ -8877,7 +9574,7 @@
         <img alt="Dvalin's Plume" src="img/dvalins_plume.png" title="Dvalin's Plume"/>
         <img alt="Hurricane Seed" src="img/hurricane_seed.png" title="Hurricane Seed"/>
         <img alt="Vayuda Turquoise Gemstone" src="img/vayuda_turqoise_3.png" title="Vayuda Turquoise Gemstone"/>
-        <img alt='Philosophies of "Resistance"' src="img/resistance_2.png" title='Philosophies of "Resistance"'/>
+        <img alt="Philosophies of Resistance" src="img/resistance_2.png" title="Philosophies of Resistance"/>
         <img alt="Dandelion Seed" src="img/dandelion_seed.png" title="Dandelion Seed"/>
        </td>
       </tr>
@@ -8890,7 +9587,7 @@
         <img alt="Gilded Scale" src="img/gilded_scale.png" title="Gilded Scale"/>
         <img alt="Marionette Core" src="img/marionette_core.png" title="Marionette Core"/>
         <img alt="Vayuda Turquoise Gemstone" src="img/vayuda_turqoise_3.png" title="Vayuda Turquoise Gemstone"/>
-        <img alt='Philosophies of "Diligence"' src="img/diligence_2.png" title='Philosophies of "Diligence"'/>
+        <img alt="Philosophies of Diligence" src="img/diligence_2.png" title="Philosophies of Diligence"/>
         <img alt="Sea Ganoderma" src="img/sea_ganoderma.png" title="Sea Ganoderma"/>
        </td>
       </tr>
@@ -8903,8 +9600,21 @@
         <img alt="Spirit Locket of Boreas" src="img/spirit_locket_of_boreas.png" title="Spirit Locket of Boreas"/>
         <img alt="Hoarfrost Core" src="img/hoarfrost_core.png" title="Hoarfrost Core"/>
         <img alt="Shivada Jade Gemstone" src="img/shivada_jade_3.png" title="Shivada Jade Gemstone"/>
-        <img alt='Philosophies of "Ballad"' src="img/ballad_2.png" title='Philosophies of "Ballad"'/>
+        <img alt="Philosophies of Ballad" src="img/ballad_2.png" title="Philosophies of Ballad"/>
         <img alt="Calla Lily" src="img/calla_lily.png" title="Calla Lily"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Kamisato Ayaka" src="img/kamisato_ayaka.png" title="Kamisato Ayaka"/>
+       </td>
+       <td>
+        <img alt="Famed Handguard" src="img/handguard_2.png" title="Famed Handguard"/>
+        <img alt="Bloodjade Branch" src="img/bloodjade_branch.png" title="Bloodjade Branch"/>
+        <img alt="Perpetual Heart" src="img/perpetual_heart.png" title="Perpetual Heart"/>
+        <img alt="Shivada Jade Gemstone" src="img/shivada_jade_3.png" title="Shivada Jade Gemstone"/>
+        <img alt="Philosophies of Elegance" src="img/elegance_2.png" title="Philosophies of Elegance"/>
+        <img alt="Sakura Bloom" src="img/sakura_bloom.png" title="Sakura Bloom"/>
        </td>
       </tr>
       <tr>
@@ -8912,11 +9622,11 @@
         <img alt="Keqing" src="img/keqing.png" title="Keqing"/>
        </td>
        <td>
+        <img alt="Energy Nectar" src="img/nectar_2.png" title="Energy Nectar"/>
         <img alt="Ring of Boreas" src="img/ring_of_boreas.png" title="Ring of Boreas"/>
         <img alt="Lightning Prism" src="img/lightning_prism.png" title="Lightning Prism"/>
-        <img alt="Energy Nectar" src="img/nectar_2.png" title="Energy Nectar"/>
         <img alt="Vajrada Amethyst Gemstone" src="img/vajrada_amethyst_3.png" title="Vajrada Amethyst Gemstone"/>
-        <img alt='Philosophies of "Prosperity"' src="img/prosperity_2.png" title='Philosophies of "Prosperity"'/>
+        <img alt="Philosophies of Prosperity" src="img/prosperity_2.png" title="Philosophies of Prosperity"/>
         <img alt="Cor Lapis" src="img/cor_lapis.png" title="Cor Lapis"/>
        </td>
       </tr>
@@ -8929,7 +9639,7 @@
         <img alt="Ring of Boreas" src="img/ring_of_boreas.png" title="Ring of Boreas"/>
         <img alt="Everflame Seed" src="img/everflame_seed.png" title="Everflame Seed"/>
         <img alt="Agnidus Agate Gemstone" src="img/agnidus_agate_3.png" title="Agnidus Agate Gemstone"/>
-        <img alt='Philosophies of "Freedom"' src="img/freedom_2.png" title='Philosophies of "Freedom"'/>
+        <img alt="Philosophies of Freedom" src="img/freedom_2.png" title="Philosophies of Freedom"/>
         <img alt="Philanemo Mushroom" src="img/philanemo_mushroom.png" title="Philanemo Mushroom"/>
        </td>
       </tr>
@@ -8942,7 +9652,7 @@
         <img alt="Dvalin's Claw" src="img/dvalins_claw.png" title="Dvalin's Claw"/>
         <img alt="Lightning Prism" src="img/lightning_prism.png" title="Lightning Prism"/>
         <img alt="Vajrada Amethyst Gemstone" src="img/vajrada_amethyst_3.png" title="Vajrada Amethyst Gemstone"/>
-        <img alt='Philosophies of "Ballad"' src="img/ballad_2.png" title='Philosophies of "Ballad"'/>
+        <img alt="Philosophies of Ballad" src="img/ballad_2.png" title="Philosophies of Ballad"/>
         <img alt="Valberry" src="img/valberry.png" title="Valberry"/>
        </td>
       </tr>
@@ -8951,11 +9661,11 @@
         <img alt="Mona" src="img/mona.png" title="Mona"/>
        </td>
        <td>
+        <img alt="Energy Nectar" src="img/nectar_2.png" title="Energy Nectar"/>
         <img alt="Ring of Boreas" src="img/ring_of_boreas.png" title="Ring of Boreas"/>
         <img alt="Cleansing Heart" src="img/cleansing_heart.png" title="Cleansing Heart"/>
-        <img alt="Energy Nectar" src="img/nectar_2.png" title="Energy Nectar"/>
         <img alt="Varunada Lazurite Gemstone" src="img/varunada_lazurite_3.png" title="Varunada Lazurite Gemstone"/>
-        <img alt='Philosophies of "Resistance"' src="img/resistance_2.png" title='Philosophies of "Resistance"'/>
+        <img alt="Philosophies of Resistance" src="img/resistance_2.png" title="Philosophies of Resistance"/>
         <img alt="Philanemo Mushroom" src="img/philanemo_mushroom.png" title="Philanemo Mushroom"/>
        </td>
       </tr>
@@ -8968,7 +9678,7 @@
         <img alt="Spirit Locket of Boreas" src="img/spirit_locket_of_boreas.png" title="Spirit Locket of Boreas"/>
         <img alt="Basalt Pillar" src="img/basalt_pillar.png" title="Basalt Pillar"/>
         <img alt="Prithiva Topaz Gemstone" src="img/prithiva_topaz_3.png" title="Prithiva Topaz Gemstone"/>
-        <img alt='Philosophies of "Prosperity"' src="img/prosperity_2.png" title='Philosophies of "Prosperity"'/>
+        <img alt="Philosophies of Prosperity" src="img/prosperity_2.png" title="Philosophies of Prosperity"/>
         <img alt="Glaze Lily" src="img/glaze_lilly.png" title="Glaze Lily"/>
        </td>
       </tr>
@@ -8981,7 +9691,7 @@
         <img alt="Dvalin's Claw" src="img/dvalins_claw.png" title="Dvalin's Claw"/>
         <img alt="Basalt Pillar" src="img/basalt_pillar.png" title="Basalt Pillar"/>
         <img alt="Prithiva Topaz Gemstone" src="img/prithiva_topaz_3.png" title="Prithiva Topaz Gemstone"/>
-        <img alt='Philosophies of "Resistance"' src="img/resistance_2.png" title='Philosophies of "Resistance"'/>
+        <img alt="Philosophies of Resistance" src="img/resistance_2.png" title="Philosophies of Resistance"/>
         <img alt="Valberry" src="img/valberry.png" title="Valberry"/>
        </td>
       </tr>
@@ -8994,7 +9704,7 @@
         <img alt="Tail of Boreas" src="img/tail_of_boreas.png" title="Tail of Boreas"/>
         <img alt="Hoarfrost Core" src="img/hoarfrost_core.png" title="Hoarfrost Core"/>
         <img alt="Shivada Jade Gemstone" src="img/shivada_jade_3.png" title="Shivada Jade Gemstone"/>
-        <img alt='Philosophies of "Prosperity"' src="img/prosperity_2.png" title='Philosophies of "Prosperity"'/>
+        <img alt="Philosophies of Prosperity" src="img/prosperity_2.png" title="Philosophies of Prosperity"/>
         <img alt="Violetgrass" src="img/violetgrass.png" title="Violetgrass"/>
        </td>
       </tr>
@@ -9007,7 +9717,7 @@
         <img alt="Dvalin's Claw" src="img/dvalins_claw.png" title="Dvalin's Claw"/>
         <img alt="Lightning Prism" src="img/lightning_prism.png" title="Lightning Prism"/>
         <img alt="Vajrada Amethyst Gemstone" src="img/vajrada_amethyst_3.png" title="Vajrada Amethyst Gemstone"/>
-        <img alt='Philosophies of "Resistance"' src="img/resistance_2.png" title='Philosophies of "Resistance"'/>
+        <img alt="Philosophies of Resistance" src="img/resistance_2.png" title="Philosophies of Resistance"/>
         <img alt="Wolfhook" src="img/wolfhook.png" title="Wolfhook"/>
        </td>
       </tr>
@@ -9020,7 +9730,7 @@
         <img alt="Shadow of the Warrior" src="img/shadow_of_the_warrior.png" title="Shadow of the Warrior"/>
         <img alt="Hoarfrost Core" src="img/hoarfrost_core.png" title="Hoarfrost Core"/>
         <img alt="Shivada Jade Gemstone" src="img/shivada_jade_3.png" title="Shivada Jade Gemstone"/>
-        <img alt='Philosophies of "Ballad"' src="img/ballad_2.png" title='Philosophies of "Ballad"'/>
+        <img alt="Philosophies of Ballad" src="img/ballad_2.png" title="Philosophies of Ballad"/>
         <img alt="Valberry" src="img/valberry.png" title="Valberry"/>
        </td>
       </tr>
@@ -9029,11 +9739,11 @@
         <img alt="Sucrose" src="img/sucrose.png" title="Sucrose"/>
        </td>
        <td>
+        <img alt="Energy Nectar" src="img/nectar_2.png" title="Energy Nectar"/>
         <img alt="Spirit Locket of Boreas" src="img/spirit_locket_of_boreas.png" title="Spirit Locket of Boreas"/>
         <img alt="Hurricane Seed" src="img/hurricane_seed.png" title="Hurricane Seed"/>
-        <img alt="Energy Nectar" src="img/nectar_2.png" title="Energy Nectar"/>
         <img alt="Vayuda Turquoise Gemstone" src="img/vayuda_turqoise_3.png" title="Vayuda Turquoise Gemstone"/>
-        <img alt='Philosophies of "Freedom"' src="img/freedom_2.png" title='Philosophies of "Freedom"'/>
+        <img alt="Philosophies of Freedom" src="img/freedom_2.png" title="Philosophies of Freedom"/>
         <img alt="Windwheel Aster" src="img/windwheel_aster.png" title="Windwheel Aster"/>
        </td>
       </tr>
@@ -9046,7 +9756,7 @@
         <img alt="Shard of a Foul Legacy" src="img/shard_of_a_foul_legacy.png" title="Shard of a Foul Legacy"/>
         <img alt="Cleansing Heart" src="img/cleansing_heart.png" title="Cleansing Heart"/>
         <img alt="Varunada Lazurite Gemstone" src="img/varunada_lazurite_3.png" title="Varunada Lazurite Gemstone"/>
-        <img alt='Philosophies of "Freedom"' src="img/freedom_2.png" title='Philosophies of "Freedom"'/>
+        <img alt="Philosophies of Freedom" src="img/freedom_2.png" title="Philosophies of Freedom"/>
         <img alt="Starconch" src="img/starconch.png" title="Starconch"/>
        </td>
       </tr>
@@ -9067,9 +9777,21 @@
        <td>
         <img alt="Forbidden Curse Scroll" src="img/scroll_2.png" title="Forbidden Curse Scroll"/>
         <img alt="Dvalin's Sigh" src="img/dvalins_sigh.png" title="Dvalin's Sigh"/>
-        <img alt='Philosophies of "Freedom"' src="img/freedom_2.png" title='Philosophies of "Freedom"'/>
-        <img alt='Philosophies of "Resistance"' src="img/resistance_2.png" title='Philosophies of "Resistance"'/>
-        <img alt='Philosophies of "Ballad"' src="img/ballad_2.png" title='Philosophies of "Ballad"'/>
+        <img alt="Philosophies of Freedom" src="img/freedom_2.png" title="Philosophies of Freedom"/>
+        <img alt="Philosophies of Resistance" src="img/resistance_2.png" title="Philosophies of Resistance"/>
+        <img alt="Philosophies of Ballad" src="img/ballad_2.png" title="Philosophies of Ballad"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Traveler (Electro)" src="img/traveler_electro.png" title="Traveler (Electro)"/>
+       </td>
+       <td>
+        <img alt="Famed Handguard" src="img/handguard_2.png" title="Famed Handguard"/>
+        <img alt="Dragon Lord's Crown" src="img/dragon_lords_crown.png" title="Dragon Lord's Crown"/>
+        <img alt="Philosophies of Transience" src="img/transience_2.png" title="Philosophies of Transience"/>
+        <img alt="Philosophies of Elegance" src="img/elegance_2.png" title="Philosophies of Elegance"/>
+        <img alt="Philosophies of Light" src="img/light_2.png" title="Philosophies of Light"/>
        </td>
       </tr>
       <tr>
@@ -9080,12 +9802,12 @@
         <img alt="Forbidden Curse Scroll" src="img/scroll_2.png" title="Forbidden Curse Scroll"/>
         <img alt="Weathered Arrowhead" src="img/arrowhead_2.png" title="Weathered Arrowhead"/>
         <img alt="Dvalin's Sigh" src="img/dvalins_sigh.png" title="Dvalin's Sigh"/>
-        <img alt='Philosophies of "Freedom"' src="img/freedom_2.png" title='Philosophies of "Freedom"'/>
-        <img alt='Philosophies of "Resistance"' src="img/resistance_2.png" title='Philosophies of "Resistance"'/>
-        <img alt='Philosophies of "Ballad"' src="img/ballad_2.png" title='Philosophies of "Ballad"'/>
-        <img alt='Philosophies of "Prosperity"' src="img/prosperity_2.png" title='Philosophies of "Prosperity"'/>
-        <img alt='Philosophies of "Diligence"' src="img/diligence_2.png" title='Philosophies of "Diligence"'/>
-        <img alt='Philosophies of "Gold"' src="img/gold_2.png" title='Philosophies of "Gold"'/>
+        <img alt="Philosophies of Freedom" src="img/freedom_2.png" title="Philosophies of Freedom"/>
+        <img alt="Philosophies of Resistance" src="img/resistance_2.png" title="Philosophies of Resistance"/>
+        <img alt="Philosophies of Ballad" src="img/ballad_2.png" title="Philosophies of Ballad"/>
+        <img alt="Philosophies of Prosperity" src="img/prosperity_2.png" title="Philosophies of Prosperity"/>
+        <img alt="Philosophies of Diligence" src="img/diligence_2.png" title="Philosophies of Diligence"/>
+        <img alt="Philosophies of Gold" src="img/gold_2.png" title="Philosophies of Gold"/>
        </td>
       </tr>
       <tr>
@@ -9097,7 +9819,7 @@
         <img alt="Tail of Boreas" src="img/tail_of_boreas.png" title="Tail of Boreas"/>
         <img alt="Hurricane Seed" src="img/hurricane_seed.png" title="Hurricane Seed"/>
         <img alt="Vayuda Turquoise Gemstone" src="img/vayuda_turqoise_3.png" title="Vayuda Turquoise Gemstone"/>
-        <img alt='Philosophies of "Ballad"' src="img/ballad_2.png" title='Philosophies of "Ballad"'/>
+        <img alt="Philosophies of Ballad" src="img/ballad_2.png" title="Philosophies of Ballad"/>
         <img alt="Cecilia" src="img/cecilia.png" title="Cecilia"/>
        </td>
       </tr>
@@ -9110,7 +9832,7 @@
         <img alt="Dvalin's Claw" src="img/dvalins_claw.png" title="Dvalin's Claw"/>
         <img alt="Everflame Seed" src="img/everflame_seed.png" title="Everflame Seed"/>
         <img alt="Agnidus Agate Gemstone" src="img/agnidus_agate_3.png" title="Agnidus Agate Gemstone"/>
-        <img alt='Philosophies of "Diligence"' src="img/diligence_2.png" title='Philosophies of "Diligence"'/>
+        <img alt="Philosophies of Diligence" src="img/diligence_2.png" title="Philosophies of Diligence"/>
         <img alt="Jueyun Chili" src="img/jueyun_chili.png" title="Jueyun Chili"/>
        </td>
       </tr>
@@ -9123,7 +9845,7 @@
         <img alt="Shadow of the Warrior" src="img/shadow_of_the_warrior.png" title="Shadow of the Warrior"/>
         <img alt="Juvenile Jade" src="img/juvenile_jade.png" title="Juvenile Jade"/>
         <img alt="Vayuda Turquoise Gemstone" src="img/vayuda_turqoise_3.png" title="Vayuda Turquoise Gemstone"/>
-        <img alt='Philosophies of "Prosperity"' src="img/prosperity_2.png" title='Philosophies of "Prosperity"'/>
+        <img alt="Philosophies of Prosperity" src="img/prosperity_2.png" title="Philosophies of Prosperity"/>
         <img alt="Qingxin" src="img/qingxin.png" title="Qingxin"/>
        </td>
       </tr>
@@ -9136,7 +9858,7 @@
         <img alt="Tail of Boreas" src="img/tail_of_boreas.png" title="Tail of Boreas"/>
         <img alt="Cleansing Heart" src="img/cleansing_heart.png" title="Cleansing Heart"/>
         <img alt="Varunada Lazurite Gemstone" src="img/varunada_lazurite_3.png" title="Varunada Lazurite Gemstone"/>
-        <img alt='Philosophies of "Gold"' src="img/gold_2.png" title='Philosophies of "Gold"'/>
+        <img alt="Philosophies of Gold" src="img/gold_2.png" title="Philosophies of Gold"/>
         <img alt="Silk Flower" src="img/silk_flower.png" title="Silk Flower"/>
        </td>
       </tr>
@@ -9149,7 +9871,7 @@
         <img alt="Tusk of Monoceros Caeli" src="img/tusk_of_monoceros_caeli.png" title="Tusk of Monoceros Caeli"/>
         <img alt="Everflame Seed" src="img/everflame_seed.png" title="Everflame Seed"/>
         <img alt="Agnidus Agate Gemstone" src="img/agnidus_agate_3.png" title="Agnidus Agate Gemstone"/>
-        <img alt='Philosophies of "Gold"' src="img/gold_2.png" title='Philosophies of "Gold"'/>
+        <img alt="Philosophies of Gold" src="img/gold_2.png" title="Philosophies of Gold"/>
         <img alt="Violetgrass" src="img/violetgrass.png" title="Violetgrass"/>
        </td>
       </tr>
@@ -9162,7 +9884,7 @@
         <img alt="Bloodjade Branch" src="img/bloodjade_branch.png" title="Bloodjade Branch"/>
         <img alt="Juvenile Jade" src="img/juvenile_jade.png" title="Juvenile Jade"/>
         <img alt="Agnidus Agate Gemstone" src="img/agnidus_agate_3.png" title="Agnidus Agate Gemstone"/>
-        <img alt='Philosophies of "Gold"' src="img/gold_2.png" title='Philosophies of "Gold"'/>
+        <img alt="Philosophies of Gold" src="img/gold_2.png" title="Philosophies of Gold"/>
         <img alt="Noctilucous Jade" src="img/noctilucous_jade.png" title="Noctilucous Jade"/>
        </td>
       </tr>
@@ -9175,7 +9897,7 @@
         <img alt="Tusk of Monoceros Caeli" src="img/tusk_of_monoceros_caeli.png" title="Tusk of Monoceros Caeli"/>
         <img alt="Basalt Pillar" src="img/basalt_pillar.png" title="Basalt Pillar"/>
         <img alt="Prithiva Topaz Gemstone" src="img/prithiva_topaz_3.png" title="Prithiva Topaz Gemstone"/>
-        <img alt='Philosophies of "Gold"' src="img/gold_2.png" title='Philosophies of "Gold"'/>
+        <img alt="Philosophies of Gold" src="img/gold_2.png" title="Philosophies of Gold"/>
         <img alt="Cor Lapis" src="img/cor_lapis.png" title="Cor Lapis"/>
        </td>
       </tr>
@@ -9274,6 +9996,31 @@
       </tr>
       <tr>
        <td>
+        <img alt="Whopperflower Nectar" src="img/nectar_0.png" title="Whopperflower Nectar"/>
+        <img alt="Shimmering Nectar" src="img/nectar_1.png" title="Shimmering Nectar"/>
+        <img alt="Energy Nectar" src="img/nectar_2.png" title="Energy Nectar"/>
+       </td>
+       <td>
+        <img alt="Ganyu" src="img/ganyu.png" title="Ganyu"/>
+        <img alt="Hu Tao" src="img/hu_tao.png" title="Hu Tao"/>
+        <img alt="Keqing" src="img/keqing.png" title="Keqing"/>
+        <img alt="Mona" src="img/mona.png" title="Mona"/>
+        <img alt="Sucrose" src="img/sucrose.png" title="Sucrose"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Old Handguard" src="img/handguard_0.png" title="Old Handguard"/>
+        <img alt="Kageuchi Handguard" src="img/handguard_1.png" title="Kageuchi Handguard"/>
+        <img alt="Famed Handguard" src="img/handguard_2.png" title="Famed Handguard"/>
+       </td>
+       <td>
+        <img alt="Kamisato Ayaka" src="img/kamisato_ayaka.png" title="Kamisato Ayaka"/>
+        <img alt="Traveler (Electro)" src="img/traveler_electro.png" title="Traveler (Electro)"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
         <img alt="Dvalin's Plume" src="img/dvalins_plume.png" title="Dvalin's Plume"/>
        </td>
        <td>
@@ -9373,6 +10120,7 @@
        </td>
        <td>
         <img alt="Eula" src="img/eula.png" title="Eula"/>
+        <img alt="Traveler (Electro)" src="img/traveler_electro.png" title="Traveler (Electro)"/>
        </td>
       </tr>
       <tr>
@@ -9380,6 +10128,7 @@
         <img alt="Bloodjade Branch" src="img/bloodjade_branch.png" title="Bloodjade Branch"/>
        </td>
        <td>
+        <img alt="Kamisato Ayaka" src="img/kamisato_ayaka.png" title="Kamisato Ayaka"/>
         <img alt="Yanfei" src="img/yanfei.png" title="Yanfei"/>
        </td>
       </tr>
@@ -9489,16 +10238,10 @@
       </tr>
       <tr>
        <td>
-        <img alt="Whopperflower Nectar" src="img/nectar_0.png" title="Whopperflower Nectar"/>
-        <img alt="Shimmering Nectar" src="img/nectar_1.png" title="Shimmering Nectar"/>
-        <img alt="Energy Nectar" src="img/nectar_2.png" title="Energy Nectar"/>
+        <img alt="Perpetual Heart" src="img/perpetual_heart.png" title="Perpetual Heart"/>
        </td>
        <td>
-        <img alt="Ganyu" src="img/ganyu.png" title="Ganyu"/>
-        <img alt="Hu Tao" src="img/hu_tao.png" title="Hu Tao"/>
-        <img alt="Keqing" src="img/keqing.png" title="Keqing"/>
-        <img alt="Mona" src="img/mona.png" title="Mona"/>
-        <img alt="Sucrose" src="img/sucrose.png" title="Sucrose"/>
+        <img alt="Kamisato Ayaka" src="img/kamisato_ayaka.png" title="Kamisato Ayaka"/>
        </td>
       </tr>
       <tr>
@@ -9587,6 +10330,7 @@
         <img alt="Eula" src="img/eula.png" title="Eula"/>
         <img alt="Ganyu" src="img/ganyu.png" title="Ganyu"/>
         <img alt="Kaeya" src="img/kaeya.png" title="Kaeya"/>
+        <img alt="Kamisato Ayaka" src="img/kamisato_ayaka.png" title="Kamisato Ayaka"/>
         <img alt="Qiqi" src="img/qiqi.png" title="Qiqi"/>
         <img alt="Rosaria" src="img/rosaria.png" title="Rosaria"/>
        </td>
@@ -9607,9 +10351,9 @@
       </tr>
       <tr>
        <td>
-        <img alt='Teachings of "Freedom"' src="img/freedom_0.png" title='Teachings of "Freedom"'/>
-        <img alt='Guide to "Freedom"' src="img/freedom_1.png" title='Guide to "Freedom"'/>
-        <img alt='Philosophies of "Freedom"' src="img/freedom_2.png" title='Philosophies of "Freedom"'/>
+        <img alt="Teachings of Freedom" src="img/freedom_0.png" title="Teachings of Freedom"/>
+        <img alt="Guide to Freedom" src="img/freedom_1.png" title="Guide to Freedom"/>
+        <img alt="Philosophies of Freedom" src="img/freedom_2.png" title="Philosophies of Freedom"/>
        </td>
        <td>
         <img alt="Amber" src="img/amber.png" title="Amber"/>
@@ -9624,9 +10368,9 @@
       </tr>
       <tr>
        <td>
-        <img alt='Teachings of "Resistance"' src="img/resistance_0.png" title='Teachings of "Resistance"'/>
-        <img alt='Guide to "Resistance"' src="img/resistance_1.png" title='Guide to "Resistance"'/>
-        <img alt='Philosophies of "Resistance"' src="img/resistance_2.png" title='Philosophies of "Resistance"'/>
+        <img alt="Teachings of Resistance" src="img/resistance_0.png" title="Teachings of Resistance"/>
+        <img alt="Guide to Resistance" src="img/resistance_1.png" title="Guide to Resistance"/>
+        <img alt="Philosophies of Resistance" src="img/resistance_2.png" title="Philosophies of Resistance"/>
        </td>
        <td>
         <img alt="Bennett" src="img/bennett.png" title="Bennett"/>
@@ -9642,9 +10386,9 @@
       </tr>
       <tr>
        <td>
-        <img alt='Teachings of "Ballad"' src="img/ballad_0.png" title='Teachings of "Ballad"'/>
-        <img alt='Guide to "Ballad"' src="img/ballad_1.png" title='Guide to "Ballad"'/>
-        <img alt='Philosophies of "Ballad"' src="img/ballad_2.png" title='Philosophies of "Ballad"'/>
+        <img alt="Teachings of Ballad" src="img/ballad_0.png" title="Teachings of Ballad"/>
+        <img alt="Guide to Ballad" src="img/ballad_1.png" title="Guide to Ballad"/>
+        <img alt="Philosophies of Ballad" src="img/ballad_2.png" title="Philosophies of Ballad"/>
        </td>
        <td>
         <img alt="Albedo" src="img/albedo.png" title="Albedo"/>
@@ -9659,9 +10403,9 @@
       </tr>
       <tr>
        <td>
-        <img alt='Teachings of "Prosperity"' src="img/prosperity_0.png" title='Teachings of "Prosperity"'/>
-        <img alt='Guide to "Prosperity"' src="img/prosperity_1.png" title='Guide to "Prosperity"'/>
-        <img alt='Philosophies of "Prosperity"' src="img/prosperity_2.png" title='Philosophies of "Prosperity"'/>
+        <img alt="Teachings of Prosperity" src="img/prosperity_0.png" title="Teachings of Prosperity"/>
+        <img alt="Guide to Prosperity" src="img/prosperity_1.png" title="Guide to Prosperity"/>
+        <img alt="Philosophies of Prosperity" src="img/prosperity_2.png" title="Philosophies of Prosperity"/>
        </td>
        <td>
         <img alt="Keqing" src="img/keqing.png" title="Keqing"/>
@@ -9673,9 +10417,9 @@
       </tr>
       <tr>
        <td>
-        <img alt='Teachings of "Diligence"' src="img/diligence_0.png" title='Teachings of "Diligence"'/>
-        <img alt='Guide to "Diligence"' src="img/diligence_1.png" title='Guide to "Diligence"'/>
-        <img alt='Philosophies of "Diligence"' src="img/diligence_2.png" title='Philosophies of "Diligence"'/>
+        <img alt="Teachings of Diligence" src="img/diligence_0.png" title="Teachings of Diligence"/>
+        <img alt="Guide to Diligence" src="img/diligence_1.png" title="Guide to Diligence"/>
+        <img alt="Philosophies of Diligence" src="img/diligence_2.png" title="Philosophies of Diligence"/>
        </td>
        <td>
         <img alt="Chongyun" src="img/chongyun.png" title="Chongyun"/>
@@ -9688,9 +10432,9 @@
       </tr>
       <tr>
        <td>
-        <img alt='Teachings of "Gold"' src="img/gold_0.png" title='Teachings of "Gold"'/>
-        <img alt='Guide to "Gold"' src="img/gold_1.png" title='Guide to "Gold"'/>
-        <img alt='Philosophies of "Gold"' src="img/gold_2.png" title='Philosophies of "Gold"'/>
+        <img alt="Teachings of Gold" src="img/gold_0.png" title="Teachings of Gold"/>
+        <img alt="Guide to Gold" src="img/gold_1.png" title="Guide to Gold"/>
+        <img alt="Philosophies of Gold" src="img/gold_2.png" title="Philosophies of Gold"/>
        </td>
        <td>
         <img alt="Beidou" src="img/beidou.png" title="Beidou"/>
@@ -9699,6 +10443,37 @@
         <img alt="Xinyan" src="img/xinyan.png" title="Xinyan"/>
         <img alt="Yanfei" src="img/yanfei.png" title="Yanfei"/>
         <img alt="Zhongli" src="img/zhongli.png" title="Zhongli"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Teachings of Transience" src="img/transience_0.png" title="Teachings of Transience"/>
+        <img alt="Guide to Transience" src="img/transience_1.png" title="Guide to Transience"/>
+        <img alt="Philosophies of Transience" src="img/transience_2.png" title="Philosophies of Transience"/>
+       </td>
+       <td>
+        <img alt="Traveler (Electro)" src="img/traveler_electro.png" title="Traveler (Electro)"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Teachings of Elegance" src="img/elegance_0.png" title="Teachings of Elegance"/>
+        <img alt="Guide to Elegance" src="img/elegance_1.png" title="Guide to Elegance"/>
+        <img alt="Philosophies of Elegance" src="img/elegance_2.png" title="Philosophies of Elegance"/>
+       </td>
+       <td>
+        <img alt="Kamisato Ayaka" src="img/kamisato_ayaka.png" title="Kamisato Ayaka"/>
+        <img alt="Traveler (Electro)" src="img/traveler_electro.png" title="Traveler (Electro)"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Teachings of Light" src="img/light_0.png" title="Teachings of Light"/>
+        <img alt="Guide to Light" src="img/light_1.png" title="Guide to Light"/>
+        <img alt="Philosophies of Light" src="img/light_2.png" title="Philosophies of Light"/>
+       </td>
+       <td>
+        <img alt="Traveler (Electro)" src="img/traveler_electro.png" title="Traveler (Electro)"/>
        </td>
       </tr>
       <tr>
@@ -9844,6 +10619,14 @@
         <img alt="Chongyun" src="img/chongyun.png" title="Chongyun"/>
         <img alt="Keqing" src="img/keqing.png" title="Keqing"/>
         <img alt="Zhongli" src="img/zhongli.png" title="Zhongli"/>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <img alt="Sakura Bloom" src="img/sakura_bloom.png" title="Sakura Bloom"/>
+       </td>
+       <td>
+        <img alt="Kamisato Ayaka" src="img/kamisato_ayaka.png" title="Kamisato Ayaka"/>
        </td>
       </tr>
       <tr>
