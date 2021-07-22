@@ -119,6 +119,9 @@ groups = {
 		'prosperity',
 		'diligence',
 		'gold',
+		'transience',
+		'elegance',
+		'light'
 	],
 	'special': [
 		'crown'

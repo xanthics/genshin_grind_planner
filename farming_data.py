@@ -271,29 +271,41 @@ farming_data = {
 		'when': ['tue', 'fri', 'sun'],
 		'where': ['hidden_palace_of_lianshan_formula']
 	},
-	'ballad': {
-		'when': ['wed', 'sat', 'sun'],
-		'where': ['forsaken_rift']
-	},
-	'diligence': {
-		'when': ['tue', 'fri', 'sun'],
-		'where': ['taishan_mansion']
-	},
 	'freedom': {
 		'when': ['mon', 'thu', 'sun'],
 		'where': ['forsaken_rift']
 	},
-	'gold': {
+	'resistance': {
+		'when': ['tue', 'fri', 'sun'],
+		'where': ['forsaken_rift']
+	},
+	'ballad': {
 		'when': ['wed', 'sat', 'sun'],
-		'where': ['taishan_mansion']
+		'where': ['forsaken_rift']
 	},
 	'prosperity': {
 		'when': ['mon', 'thu', 'sun'],
 		'where': ['taishan_mansion']
 	},
-	'resistance': {
+	'diligence': {
 		'when': ['tue', 'fri', 'sun'],
-		'where': ['forsaken_rift']
+		'where': ['taishan_mansion']
+	},
+	'gold': {
+		'when': ['wed', 'sat', 'sun'],
+		'where': ['taishan_mansion']
+	},
+	'transience': {
+		'when': ['mon', 'thu', 'sun'],
+		'where': ['violet_court']
+	},
+	'elegance': {
+		'when': ['tue', 'fri', 'sun'],
+		'where': ['violet_court']
+	},
+	'light': {
+		'when': ['wed', 'sat', 'sun'],
+		'where': ['violet_court']
 	},
 	'adventurer': {
 		'when': ['any'],

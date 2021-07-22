@@ -147,12 +147,15 @@ strings = {
 	'guyun': ["Luminous Sands from Guyun", "Lustrous Stone from Guyun", "Relic from Guyun", "Divine Body from Guyun"],
 	'mist_veiled_elixer': ["Mist Veiled Lead Elixir", "Mist Veiled Mercury Elixir", "Mist Veiled Gold Elixir", "Mist Veiled Primo Elixir"],
 	# domain talent materials
-	'ballad': ['Teachings of "Ballad"', 'Guide to "Ballad"', 'Philosophies of "Ballad"'],
-	'diligence': ['Teachings of "Diligence"', 'Guide to "Diligence"', 'Philosophies of "Diligence"'],
-	'freedom': ['Teachings of "Freedom"', 'Guide to "Freedom"', 'Philosophies of "Freedom"'],
-	'gold': ['Teachings of "Gold"', 'Guide to "Gold"', 'Philosophies of "Gold"'],
-	'prosperity': ['Teachings of "Prosperity"', 'Guide to "Prosperity"', 'Philosophies of "Prosperity"'],
-	'resistance': ['Teachings of "Resistance"', 'Guide to "Resistance"', 'Philosophies of "Resistance"'],
+	'freedom': ['Teachings of Freedom', 'Guide to Freedom', 'Philosophies of Freedom'],
+	'resistance': ['Teachings of Resistance', 'Guide to Resistance', 'Philosophies of Resistance'],
+	'ballad': ['Teachings of Ballad', 'Guide to Ballad', 'Philosophies of Ballad'],
+	'prosperity': ['Teachings of Prosperity', 'Guide to Prosperity', 'Philosophies of Prosperity'],
+	'diligence': ['Teachings of Diligence', 'Guide to Diligence', 'Philosophies of Diligence'],
+	'gold': ['Teachings of Gold', 'Guide to Gold', 'Philosophies of Gold'],
+	'transience': ['Teachings of Transience', 'Guide to Transience', 'Philosophies of Transience'],
+	'elegance': ['Teachings of Elegance', 'Guide to Elegance', 'Philosophies of Elegance'],
+	'light': ['Teachings of Light', 'Guide to Light', 'Philosophies of Light'],
 	'crown': 'Crown of Sagehood',
 	# bows
 	'alley_hunter': 'Alley Hunter',
@@ -382,6 +385,7 @@ strings = {
 	# Domain: Talent Materials
 	'forsaken_rift': "Forsaken Rift",
 	'taishan_mansion': "Taishan Mansion",
+	'violet_court': "Violet Court",
 	# Domain: Artifacts
 	'clear_pool_and_mountain_cavern': "Clear Pool and Mountain Cavern",
 	'domain_of_guyun': "Domain of Guyun",
