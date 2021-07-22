@@ -37,6 +37,8 @@ ingame_order = [
 	('element_2', 'juvenile_jade'),
 	('element_2', 'crystalline_bloom'),
 	('element_2', 'marionette_core'),
+	('element_2', 'smoldering_pearl'),
+	('element_2', 'perpetual_heart'),
 	('element_1', 'brilliant_diamond'),
 	('element_1', 'agnidus_agate'),
 	('element_1', 'varunada_lazurite'),

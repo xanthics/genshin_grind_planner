@@ -66,7 +66,9 @@ groups = {
 		'lightning_prism',
 		'juvenile_jade',
 		'crystalline_bloom',
-		'marionette_core'
+		'marionette_core',
+		'smoldering_pearl',
+		'perpetual_heart'
 	],
 	'local': [
 		'calla_lily',
@@ -329,6 +331,8 @@ groups = {
 		'primo_geovishap',
 		'cryo_hypostasis',
 		'maguu_kenki',
+		'pyro_hypostasis',
+		'perpetual_mechanical_array',
 		# weekly boss
 		'stormterror',
 		'wolf_of_the_north',

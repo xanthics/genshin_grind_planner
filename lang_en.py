@@ -106,6 +106,8 @@ strings = {
 	'juvenile_jade': 'Juvenile Jade',
 	'crystalline_bloom': 'Crystalline Bloom',
 	'marionette_core': 'Marionette Core',
+	'smoldering_pearl': 'Smoldering Pearl',
+	'perpetual_heart': 'Perpetual Heart',
 	# common gathered items
 	'calla_lily': 'Calla Lily',
 	'cecilia': 'Cecilia',
@@ -387,6 +389,8 @@ strings = {
 	'pyro_regisvine': "Pyro Regisvine",
 	'primo_geovishap': 'Primo Geovishap',
 	'maguu_kenki': 'Maguu Kenki',
+	'pyro_hypostasis': "Pyro Hypostasis",
+	'perpetual_mechanical_array': "Perpetual Mechanical Array",
 	'40_boss': "Any 40 Resin Boss",
 	# weekly boss
 	'stormterror': "Stormterror",

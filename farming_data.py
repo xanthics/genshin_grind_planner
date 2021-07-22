@@ -59,21 +59,21 @@ farming_data = {
 		'when': ['any'],
 		'where': ['azhdaha']
 	},
-	'agnidus_agate': {
-		'when': ['any'],
-		'where': ['pyro_regisvine', 'wolf_of_the_north', 'primo_geovishap']
-	},
 	'brilliant_diamond': {
 		'when': ['any'],
 		'where': ['adventure_rank']
 	},
+	'agnidus_agate': {
+		'when': ['any'],
+		'where': ['pyro_regisvine', 'wolf_of_the_north', 'primo_geovishap', 'pyro_hypostasis']
+	},
 	'prithiva_topaz': {
 		'when': ['any'],
-		'where': ['geo_hypostasis', 'wolf_of_the_north', 'primo_geovishap', 'azhdaha']
+		'where': ['geo_hypostasis', 'wolf_of_the_north', 'primo_geovishap', 'azhdaha', 'perpetual_mechanical_array']
 	},
 	'shivada_jade': {
 		'when': ['any'],
-		'where': ['cryo_regisvine', 'wolf_of_the_north', 'golden_house', 'primo_geovishap', 'cryo_hypostasis', 'maguu_kenki']
+		'where': ['cryo_regisvine', 'wolf_of_the_north', 'golden_house', 'primo_geovishap', 'cryo_hypostasis', 'maguu_kenki', 'perpetual_mechanical_array']
 	},
 	'vajrada_amethyst': {
 		'when': ['any'],
@@ -122,6 +122,14 @@ farming_data = {
 	'marionette_core': {
 		'when': ['any'],
 		'where': ['maguu_kenki']
+	},
+	'smoldering_pearl': {
+		'when': ['any'],
+		'where': ['pyro_hypostasis']
+	},
+	'perpetual_heart': {
+		'when': ['any'],
+		'where': ['perpetual_mechanical_array']
 	},
 	'calla_lily': {
 		'when': ['any'],
