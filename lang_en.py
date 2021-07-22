@@ -191,6 +191,7 @@ strings = {
 	'elegy_for_the_end': 'Elegy for the End',
 	'windblume_ode': 'Windblume Ode',
 	'mitternachts_waltz': 'Mitternachts Waltz',
+	'hamayumi': 'Hamayumi',
 	# catalysts
 	'blackcliff_amulet': 'Blackcliff Agate',
 	'emerald_orb': 'Emerald Orb',
@@ -212,6 +213,7 @@ strings = {
 	'wine_and_song': 'Wine and Song',
 	'memory_of_dust': 'Memory of Dust',
 	'frostbearer': 'Frostbearer',
+	'hakushin_ring': 'Hakushin Ring',
 	# Claymores
 	'blackcliff_slasher': 'Blackcliff Slasher',
 	'bloodtainted_greatsword': 'Bloodtainted Greatsword',
@@ -233,6 +235,7 @@ strings = {
 	'the_unforged': 'The Unforged',
 	'snow_tombed_starsliver': 'Snow-Tombed Starsilver',
 	'lithic_blade': 'Lithic Blade',
+	'katsuragikiri_nagamasa': 'Katsuragikiri Nagamasa',
 	# Polearms
 	'black_tassel': 'Black Tassel',
 	'blackcliff_pole': 'Blackcliff Pole',
@@ -251,6 +254,7 @@ strings = {
 	'dragonspine_spear': 'Dragonspine Spear',
 	'staff_of_homa': 'Staff of Homa',
 	'lithic_spear': 'Lithic Spear',
+	'kitain_cross_spear': 'Kitain Cross Spear',
 	# Swords
 	'aquila_favonia': 'Aquila Favonia',
 	'blackcliff_longsword': 'Blackcliff Longsword',
@@ -276,6 +280,7 @@ strings = {
 	'primordial_jade_winged_cutter': 'Primordial Jade Cutter',
 	'the_alley_flash': 'The Alley Flash',
 	'mistsplitter_reforged': "Mistsplitter Reforged",
+	'amenoma_kageuchi': 'Amenoma Kageuchi',
 	# Artifacts
 	'adventurer': "Adventurer",
 	'archaic_petra': "Archaic Petra",

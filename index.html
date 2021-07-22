@@ -15,7 +15,7 @@
  <body onload="brython(1)">
   <section class="main">
    <p><strong>This page requires local storage to save state.</strong></p>
-   <p>2021/7/21: Updated for 2.0 including Inazuma drops, bosses, Kamisato Ayaka(Character), and Mistsplitter Reforged(Sword).</p>
+   <p>2021/7/21: Updated for 2.0 including Inazuma drops, bosses, Kamisato Ayaka(Character), and Mistsplitter Reforged(Sword).  Update, added craftable weapons.</p>
    <p>2021/6/30: I am currently taking a break from Genshin.  If you notice anything missing please create a bug report and I will add it.</p>
    <div id="show_hide">
     <table>
@@ -242,6 +242,7 @@
        <td>
         <select class="weapon albedo save" data-id="select-albedo" id="weapon-albedo">
          <option value="--">--</option>
+         <option value="amenoma_kageuchi">Amenoma Kageuchi</option>
          <option value="aquila_favonia">Aquila Favonia</option>
          <option value="blackcliff_longsword">Blackcliff Longsword</option>
          <option value="cool_steel">Cool Steel</option>
@@ -451,6 +452,7 @@
          <option value="compound_bow">Compound Bow</option>
          <option value="elegy_for_the_end">Elegy for the End</option>
          <option value="favonius_warbow">Favonius Warbow</option>
+         <option value="hamayumi">Hamayumi</option>
          <option value="messenger">Messenger</option>
          <option value="mitternachts_waltz">Mitternachts Waltz</option>
          <option value="prototype_crescent">Prototype Crescent</option>
@@ -650,6 +652,7 @@
          <option value="eye_of_perception">Eye of Perception</option>
          <option value="favonius_codex">Favonius Codex</option>
          <option value="frostbearer">Frostbearer</option>
+         <option value="hakushin_ring">Hakushin Ring</option>
          <option value="lost_prayer_to_the_sacred_winds">Lost Prayer to the Sacred Winds</option>
          <option value="magic_guide">Magic Guide</option>
          <option value="mappa_mare">Mappa Mare</option>
@@ -848,6 +851,7 @@
          <option value="debate_club">Debate Club</option>
          <option value="favonius_greatsword">Favonius Greatsword</option>
          <option value="ferrous_shadow">Ferrous Shadow</option>
+         <option value="katsuragikiri_nagamasa">Katsuragikiri Nagamasa</option>
          <option value="lithic_blade">Lithic Blade</option>
          <option value="prototype_aminus">Prototype Archaic</option>
          <option value="rainslasher">Rainslasher</option>
@@ -1042,6 +1046,7 @@
        <td>
         <select class="weapon bennett save" data-id="select-bennett" id="weapon-bennett">
          <option value="--">--</option>
+         <option value="amenoma_kageuchi">Amenoma Kageuchi</option>
          <option value="aquila_favonia">Aquila Favonia</option>
          <option value="blackcliff_longsword">Blackcliff Longsword</option>
          <option value="cool_steel">Cool Steel</option>
@@ -1250,6 +1255,7 @@
          <option value="debate_club">Debate Club</option>
          <option value="favonius_greatsword">Favonius Greatsword</option>
          <option value="ferrous_shadow">Ferrous Shadow</option>
+         <option value="katsuragikiri_nagamasa">Katsuragikiri Nagamasa</option>
          <option value="lithic_blade">Lithic Blade</option>
          <option value="prototype_aminus">Prototype Archaic</option>
          <option value="rainslasher">Rainslasher</option>
@@ -1449,6 +1455,7 @@
          <option value="debate_club">Debate Club</option>
          <option value="favonius_greatsword">Favonius Greatsword</option>
          <option value="ferrous_shadow">Ferrous Shadow</option>
+         <option value="katsuragikiri_nagamasa">Katsuragikiri Nagamasa</option>
          <option value="lithic_blade">Lithic Blade</option>
          <option value="prototype_aminus">Prototype Archaic</option>
          <option value="rainslasher">Rainslasher</option>
@@ -1649,6 +1656,7 @@
          <option value="compound_bow">Compound Bow</option>
          <option value="elegy_for_the_end">Elegy for the End</option>
          <option value="favonius_warbow">Favonius Warbow</option>
+         <option value="hamayumi">Hamayumi</option>
          <option value="messenger">Messenger</option>
          <option value="mitternachts_waltz">Mitternachts Waltz</option>
          <option value="prototype_crescent">Prototype Crescent</option>
@@ -1847,6 +1855,7 @@
          <option value="debate_club">Debate Club</option>
          <option value="favonius_greatsword">Favonius Greatsword</option>
          <option value="ferrous_shadow">Ferrous Shadow</option>
+         <option value="katsuragikiri_nagamasa">Katsuragikiri Nagamasa</option>
          <option value="lithic_blade">Lithic Blade</option>
          <option value="prototype_aminus">Prototype Archaic</option>
          <option value="rainslasher">Rainslasher</option>
@@ -2047,6 +2056,7 @@
          <option value="compound_bow">Compound Bow</option>
          <option value="elegy_for_the_end">Elegy for the End</option>
          <option value="favonius_warbow">Favonius Warbow</option>
+         <option value="hamayumi">Hamayumi</option>
          <option value="messenger">Messenger</option>
          <option value="mitternachts_waltz">Mitternachts Waltz</option>
          <option value="prototype_crescent">Prototype Crescent</option>
@@ -2246,6 +2256,7 @@
          <option value="compound_bow">Compound Bow</option>
          <option value="elegy_for_the_end">Elegy for the End</option>
          <option value="favonius_warbow">Favonius Warbow</option>
+         <option value="hamayumi">Hamayumi</option>
          <option value="messenger">Messenger</option>
          <option value="mitternachts_waltz">Mitternachts Waltz</option>
          <option value="prototype_crescent">Prototype Crescent</option>
@@ -2447,6 +2458,7 @@
          <option value="dragonspine_spear">Dragonspine Spear</option>
          <option value="favonius_lance">Favonius Lance</option>
          <option value="halberd">Halberd</option>
+         <option value="kitain_cross_spear">Kitain Cross Spear</option>
          <option value="lithic_spear">Lithic Spear</option>
          <option value="primordial_jade_winged_spear">Primordial Jade Winged-Spear</option>
          <option value="prototype_grudge">Prototype Starglitter</option>
@@ -2634,6 +2646,7 @@
        <td>
         <select class="weapon jean save" data-id="select-jean" id="weapon-jean">
          <option value="--">--</option>
+         <option value="amenoma_kageuchi">Amenoma Kageuchi</option>
          <option value="aquila_favonia">Aquila Favonia</option>
          <option value="blackcliff_longsword">Blackcliff Longsword</option>
          <option value="cool_steel">Cool Steel</option>
@@ -2837,6 +2850,7 @@
        <td>
         <select class="weapon kaedehara_kazuha save" data-id="select-kaedehara_kazuha" id="weapon-kaedehara_kazuha">
          <option value="--">--</option>
+         <option value="amenoma_kageuchi">Amenoma Kageuchi</option>
          <option value="aquila_favonia">Aquila Favonia</option>
          <option value="blackcliff_longsword">Blackcliff Longsword</option>
          <option value="cool_steel">Cool Steel</option>
@@ -3040,6 +3054,7 @@
        <td>
         <select class="weapon kaeya save" data-id="select-kaeya" id="weapon-kaeya">
          <option value="--">--</option>
+         <option value="amenoma_kageuchi">Amenoma Kageuchi</option>
          <option value="aquila_favonia">Aquila Favonia</option>
          <option value="blackcliff_longsword">Blackcliff Longsword</option>
          <option value="cool_steel">Cool Steel</option>
@@ -3243,6 +3258,7 @@
        <td>
         <select class="weapon kamisato_ayaka save" data-id="select-kamisato_ayaka" id="weapon-kamisato_ayaka">
          <option value="--">--</option>
+         <option value="amenoma_kageuchi">Amenoma Kageuchi</option>
          <option value="aquila_favonia">Aquila Favonia</option>
          <option value="blackcliff_longsword">Blackcliff Longsword</option>
          <option value="cool_steel">Cool Steel</option>
@@ -3446,6 +3462,7 @@
        <td>
         <select class="weapon keqing save" data-id="select-keqing" id="weapon-keqing">
          <option value="--">--</option>
+         <option value="amenoma_kageuchi">Amenoma Kageuchi</option>
          <option value="aquila_favonia">Aquila Favonia</option>
          <option value="blackcliff_longsword">Blackcliff Longsword</option>
          <option value="cool_steel">Cool Steel</option>
@@ -3655,6 +3672,7 @@
          <option value="eye_of_perception">Eye of Perception</option>
          <option value="favonius_codex">Favonius Codex</option>
          <option value="frostbearer">Frostbearer</option>
+         <option value="hakushin_ring">Hakushin Ring</option>
          <option value="lost_prayer_to_the_sacred_winds">Lost Prayer to the Sacred Winds</option>
          <option value="magic_guide">Magic Guide</option>
          <option value="mappa_mare">Mappa Mare</option>
@@ -3854,6 +3872,7 @@
          <option value="eye_of_perception">Eye of Perception</option>
          <option value="favonius_codex">Favonius Codex</option>
          <option value="frostbearer">Frostbearer</option>
+         <option value="hakushin_ring">Hakushin Ring</option>
          <option value="lost_prayer_to_the_sacred_winds">Lost Prayer to the Sacred Winds</option>
          <option value="magic_guide">Magic Guide</option>
          <option value="mappa_mare">Mappa Mare</option>
@@ -4053,6 +4072,7 @@
          <option value="eye_of_perception">Eye of Perception</option>
          <option value="favonius_codex">Favonius Codex</option>
          <option value="frostbearer">Frostbearer</option>
+         <option value="hakushin_ring">Hakushin Ring</option>
          <option value="lost_prayer_to_the_sacred_winds">Lost Prayer to the Sacred Winds</option>
          <option value="magic_guide">Magic Guide</option>
          <option value="mappa_mare">Mappa Mare</option>
@@ -4252,6 +4272,7 @@
          <option value="eye_of_perception">Eye of Perception</option>
          <option value="favonius_codex">Favonius Codex</option>
          <option value="frostbearer">Frostbearer</option>
+         <option value="hakushin_ring">Hakushin Ring</option>
          <option value="lost_prayer_to_the_sacred_winds">Lost Prayer to the Sacred Winds</option>
          <option value="magic_guide">Magic Guide</option>
          <option value="mappa_mare">Mappa Mare</option>
@@ -4450,6 +4471,7 @@
          <option value="debate_club">Debate Club</option>
          <option value="favonius_greatsword">Favonius Greatsword</option>
          <option value="ferrous_shadow">Ferrous Shadow</option>
+         <option value="katsuragikiri_nagamasa">Katsuragikiri Nagamasa</option>
          <option value="lithic_blade">Lithic Blade</option>
          <option value="prototype_aminus">Prototype Archaic</option>
          <option value="rainslasher">Rainslasher</option>
@@ -4644,6 +4666,7 @@
        <td>
         <select class="weapon qiqi save" data-id="select-qiqi" id="weapon-qiqi">
          <option value="--">--</option>
+         <option value="amenoma_kageuchi">Amenoma Kageuchi</option>
          <option value="aquila_favonia">Aquila Favonia</option>
          <option value="blackcliff_longsword">Blackcliff Longsword</option>
          <option value="cool_steel">Cool Steel</option>
@@ -4852,6 +4875,7 @@
          <option value="debate_club">Debate Club</option>
          <option value="favonius_greatsword">Favonius Greatsword</option>
          <option value="ferrous_shadow">Ferrous Shadow</option>
+         <option value="katsuragikiri_nagamasa">Katsuragikiri Nagamasa</option>
          <option value="lithic_blade">Lithic Blade</option>
          <option value="prototype_aminus">Prototype Archaic</option>
          <option value="rainslasher">Rainslasher</option>
@@ -5054,6 +5078,7 @@
          <option value="dragonspine_spear">Dragonspine Spear</option>
          <option value="favonius_lance">Favonius Lance</option>
          <option value="halberd">Halberd</option>
+         <option value="kitain_cross_spear">Kitain Cross Spear</option>
          <option value="lithic_spear">Lithic Spear</option>
          <option value="primordial_jade_winged_spear">Primordial Jade Winged-Spear</option>
          <option value="prototype_grudge">Prototype Starglitter</option>
@@ -5247,6 +5272,7 @@
          <option value="eye_of_perception">Eye of Perception</option>
          <option value="favonius_codex">Favonius Codex</option>
          <option value="frostbearer">Frostbearer</option>
+         <option value="hakushin_ring">Hakushin Ring</option>
          <option value="lost_prayer_to_the_sacred_winds">Lost Prayer to the Sacred Winds</option>
          <option value="magic_guide">Magic Guide</option>
          <option value="mappa_mare">Mappa Mare</option>
@@ -5446,6 +5472,7 @@
          <option value="compound_bow">Compound Bow</option>
          <option value="elegy_for_the_end">Elegy for the End</option>
          <option value="favonius_warbow">Favonius Warbow</option>
+         <option value="hamayumi">Hamayumi</option>
          <option value="messenger">Messenger</option>
          <option value="mitternachts_waltz">Mitternachts Waltz</option>
          <option value="prototype_crescent">Prototype Crescent</option>
@@ -5645,6 +5672,7 @@
          <option value="compound_bow">Compound Bow</option>
          <option value="elegy_for_the_end">Elegy for the End</option>
          <option value="favonius_warbow">Favonius Warbow</option>
+         <option value="hamayumi">Hamayumi</option>
          <option value="messenger">Messenger</option>
          <option value="mitternachts_waltz">Mitternachts Waltz</option>
          <option value="prototype_crescent">Prototype Crescent</option>
@@ -5846,6 +5874,7 @@
          <option value="dragonspine_spear">Dragonspine Spear</option>
          <option value="favonius_lance">Favonius Lance</option>
          <option value="halberd">Halberd</option>
+         <option value="kitain_cross_spear">Kitain Cross Spear</option>
          <option value="lithic_spear">Lithic Spear</option>
          <option value="primordial_jade_winged_spear">Primordial Jade Winged-Spear</option>
          <option value="prototype_grudge">Prototype Starglitter</option>
@@ -6041,6 +6070,7 @@
          <option value="dragonspine_spear">Dragonspine Spear</option>
          <option value="favonius_lance">Favonius Lance</option>
          <option value="halberd">Halberd</option>
+         <option value="kitain_cross_spear">Kitain Cross Spear</option>
          <option value="lithic_spear">Lithic Spear</option>
          <option value="primordial_jade_winged_spear">Primordial Jade Winged-Spear</option>
          <option value="prototype_grudge">Prototype Starglitter</option>
@@ -6228,6 +6258,7 @@
        <td>
         <select class="weapon xingqiu save" data-id="select-xingqiu" id="weapon-xingqiu">
          <option value="--">--</option>
+         <option value="amenoma_kageuchi">Amenoma Kageuchi</option>
          <option value="aquila_favonia">Aquila Favonia</option>
          <option value="blackcliff_longsword">Blackcliff Longsword</option>
          <option value="cool_steel">Cool Steel</option>
@@ -6436,6 +6467,7 @@
          <option value="debate_club">Debate Club</option>
          <option value="favonius_greatsword">Favonius Greatsword</option>
          <option value="ferrous_shadow">Ferrous Shadow</option>
+         <option value="katsuragikiri_nagamasa">Katsuragikiri Nagamasa</option>
          <option value="lithic_blade">Lithic Blade</option>
          <option value="prototype_aminus">Prototype Archaic</option>
          <option value="rainslasher">Rainslasher</option>
@@ -6636,6 +6668,7 @@
          <option value="eye_of_perception">Eye of Perception</option>
          <option value="favonius_codex">Favonius Codex</option>
          <option value="frostbearer">Frostbearer</option>
+         <option value="hakushin_ring">Hakushin Ring</option>
          <option value="lost_prayer_to_the_sacred_winds">Lost Prayer to the Sacred Winds</option>
          <option value="magic_guide">Magic Guide</option>
          <option value="mappa_mare">Mappa Mare</option>
@@ -6837,6 +6870,7 @@
          <option value="dragonspine_spear">Dragonspine Spear</option>
          <option value="favonius_lance">Favonius Lance</option>
          <option value="halberd">Halberd</option>
+         <option value="kitain_cross_spear">Kitain Cross Spear</option>
          <option value="lithic_spear">Lithic Spear</option>
          <option value="primordial_jade_winged_spear">Primordial Jade Winged-Spear</option>
          <option value="prototype_grudge">Prototype Starglitter</option>
@@ -6946,6 +6980,7 @@
        <td>
         <select class="weapon traveler save" data-id="select-traveler" id="weapon-traveler">
          <option value="--">--</option>
+         <option value="amenoma_kageuchi">Amenoma Kageuchi</option>
          <option value="aquila_favonia">Aquila Favonia</option>
          <option value="blackcliff_longsword">Blackcliff Longsword</option>
          <option value="cool_steel">Cool Steel</option>
