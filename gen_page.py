@@ -19,7 +19,8 @@ def init_page():
 
 # Show various useful information
 def init_information():
-	data = {}
+	order_index = [x[1] for x in ingame_order]
+	data = {k: set() for k in order_index}
 	char_data = {}
 	# iterate all the characters and add items they need to data
 	for character in characters:
@@ -29,16 +30,14 @@ def init_information():
 			if field in ['ascension', 'talent']:
 				for key in characters[character][field]:
 					val = characters[character][field][key]
-					if val not in data:
-						data[val] = set()
-					data[val].add(character)
-					char_data[character].add(val)
+					if val in data:
+						data[val].add(character)
+						char_data[character].add(val)
 			else:
 				val = characters[character][field]
-				if val not in data:
-					data[val] = []
-				data[val].append(character)
-				char_data[character].add(val)
+				if val in data:
+					data[val].add(character)
+					char_data[character].add(val)
 	trav_data = {}
 	# do the same thing for traveler talents
 	for tal_group in traveler:
@@ -53,7 +52,6 @@ def init_information():
 				data[item].add(t_char)
 				char_data[t_char].add(item)
 	# create a table with the character->item dictionary we just built
-	order_index = [x[1] for x in ingame_order]
 	t_chars = TABLE(TR(TH(strings["character"]) + TH(strings["item_s"])), Class='borders body')
 	for char in sorted(char_data):
 		item_set = {}
@@ -72,12 +70,13 @@ def init_information():
 	t_items = TABLE(TR(TH(strings["item_s"]) + TH(strings["character_s"])), Class='borders body')
 	for typ, item in ingame_order:
 		if item in data:
-			if isinstance(strings[item], list):
-				i = (IMG(src=f"img/{item}_{c}.png", alt=strings[item][c], title=strings[item][c]) for c in range(len(strings[item])))
-			else:
-				i = IMG(src=f"img/{item}.png", alt=strings[item], title=strings[item])
-			c = (IMG(src=f"img/{x}.png", alt=strings[x], title=strings[x]) for x in sorted(data[item]))
-			t_items <= TR(TD(i) + TD(c))
+			if data[item]:  # only show items used by a character
+				if isinstance(strings[item], list):
+					i = (IMG(src=f"img/{item}_{c}.png", alt=strings[item][c], title=strings[item][c]) for c in range(len(strings[item])))
+				else:
+					i = IMG(src=f"img/{item}.png", alt=strings[item], title=strings[item])
+				c = (IMG(src=f"img/{x}.png", alt=strings[x], title=strings[x]) for x in sorted(data[item]))
+				t_items <= TR(TD(i) + TD(c))
 
 	doc['information'] <= SECTION(P(strings['character_mats']) + t_chars + BR()+ BR() + t_items, Class='grind')
 
@@ -292,7 +291,8 @@ def init_characters():
 		data_id=f"check-{char}", Class='unchecked', data_color='multi', data_weapon=characters[char]['weapon']
 	)
 	# set up traveler anemo/geo row
-	for char, ele in [('traveler_anemo', 'anemo'), ('traveler_geo', 'geo')]:
+	for char in sorted(traveler_talent):
+		ele = char.split('_')[1]
 		# Set up talent select
 		t1c = SELECT(Id=f"talent_1_c-{char}", Class=f"{char} save")
 		t1t = SELECT(Id=f"talent_1_t-{char}", Class=f"{char} save")

@@ -2,6 +2,7 @@
 traveler_talent = {
 	'traveler_anemo': ['talent_1', 'talent_1', 'talent_1'],
 	'traveler_geo': ['talent_1', 'talent_2', 'talent_2'],
+	'traveler_electro': ['talent_3', 'talent_3', 'talent_3'],
 }
 
 traveler = {
@@ -30,5 +31,18 @@ traveler = {
 		{'talent': 'prosperity', 'common': 'arrowhead', 'boss': 'dvalins_sigh'},
 		{'talent': 'diligence', 'common': 'arrowhead', 'boss': 'dvalins_sigh'},
 		{'talent': 'gold', 'common': 'arrowhead', 'boss': 'dvalins_sigh'},
+	],
+	"talent_3": [
+		{},
+		{},
+		{'talent': 'transience', 'common': 'handguard', 'boss': 'dragon_lords_crown'},
+		{'talent': 'elegance', 'common': 'handguard', 'boss': 'dragon_lords_crown'},
+		{'talent': 'light', 'common': 'handguard', 'boss': 'dragon_lords_crown'},
+		{'talent': 'transience', 'common': 'handguard', 'boss': 'dragon_lords_crown'},
+		{'talent': 'elegance', 'common': 'handguard', 'boss': 'dragon_lords_crown'},
+		{'talent': 'light', 'common': 'handguard', 'boss': 'dragon_lords_crown'},
+		{'talent': 'transience', 'common': 'handguard', 'boss': 'dragon_lords_crown'},
+		{'talent': 'elegance', 'common': 'handguard', 'boss': 'dragon_lords_crown'},
+		{'talent': 'light', 'common': 'handguard', 'boss': 'dragon_lords_crown'},
 	]
 }
