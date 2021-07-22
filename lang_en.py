@@ -80,6 +80,7 @@ strings = {
 	'yanfei': 'Yanfei',
 	'eula': "Eula",
 	'kaedehara_kazuha': 'Kaedehara Kazuha',
+	'kamisato_ayaka': "Kamisato Ayaka",
 	'traveler': "Traveler",
 	'traveler_pyro': "Traveler (Pyro)",
 	'traveler_hydro': "Traveler (Hydro)",
@@ -274,6 +275,7 @@ strings = {
 	'summit_shaper': 'Summit Shaper',
 	'primordial_jade_winged_cutter': 'Primordial Jade Cutter',
 	'the_alley_flash': 'The Alley Flash',
+	'mistsplitter_reforged': "Mistsplitter Reforged",
 	# Artifacts
 	'adventurer': "Adventurer",
 	'archaic_petra': "Archaic Petra",

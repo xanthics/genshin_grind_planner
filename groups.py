@@ -46,7 +46,8 @@ groups = {
 		'rosaria',
 		'yanfei',
 		'eula',
-		'kaedehara_kazuha'
+		'kaedehara_kazuha',
+		'kamisato_ayaka'
 	],
 	'element_1': [
 		'brilliant_diamond',
@@ -246,7 +247,8 @@ groups = {
 		'summit_shaper',
 		'festering_desire',
 		'primordial_jade_winged_cutter',
-		'the_alley_flash'
+		'the_alley_flash',
+		'mistsplitter_reforged'
 	],
 	'artifacts': [
 		'adventurer',

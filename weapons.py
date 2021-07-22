@@ -89,6 +89,7 @@ weapons = {
 		'freedom_sworn': {'wam': 'dandelion_gladiator', 'common_rare': 'chaos', 'common': 'scroll', 'tier': '5_weapon'},
 		'aquila_favonia': {'wam': 'decarabian', 'common_rare': 'horn', 'common': 'arrowhead', 'tier': '5_weapon'},
 		'summit_shaper': {'wam': 'guyun', 'common_rare': 'sacrificial_knife', 'common': 'mask', 'tier': '5_weapon'},
+		'mistsplitter_reforged': {'wam': 'distant_sea', 'common_rare': 'chaos2', 'common': 'handguard', 'tier': '5_weapon'},
 		'blackcliff_longsword': {'wam': 'guyun', 'common_rare': 'sacrificial_knife', 'common': 'arrowhead', 'tier': '4_weapon'},
 		'the_alley_flash': {'wam': 'decarabian', 'common_rare': 'horn', 'common': 'scroll', 'tier': '4_weapon'},
 		'royal_longsword': {'wam': 'decarabian', 'common_rare': 'horn', 'common': 'arrowhead', 'tier': '4_weapon'},

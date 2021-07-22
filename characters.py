@@ -495,6 +495,21 @@ characters = {
 		'weapon': 'sword',
 		'element': 'anemo'
 	},
+	"kamisato_ayaka": {
+		'ascension': {
+			'element_1': 'shivada_jade',
+			'element_2': 'perpetual_heart',
+			'local': 'sakura_bloom',
+			'common': 'handguard'
+		},
+		'talent': {
+			'talent': 'elegance',
+			'common': 'handguard',
+			'boss': 'bloodjade_branch'
+		},
+		'weapon': 'sword',
+		'element': 'cryo'
+	},
 
 	"traveler": {
 		'ascension': {
