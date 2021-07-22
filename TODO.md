@@ -20,12 +20,9 @@ Hamayumi (4-Star Bow)
 **Dungeons & Bosses**
 ```text
 Pyro Hypostasis
-Domain of Blessing: Momiji-Dyed Court
 ```
 **Artifacts**
 ```text
-Shimenawa's Reminiscence (4-Star and 5-Star)
-Emblem of Severed Fate (4-Star and 5-Star)
 ```
 **Other** (personal todo list)
 ```text

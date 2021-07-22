@@ -451,4 +451,12 @@ farming_data = {
 		'when': ['any'],
 		'where': ['peak_of_vindagnyr']
 	},
+	'emblem_of_severed_fate': {
+		'when': ['any'],
+		'where': ['momiji_dyed_court']
+	},
+	'shimenawa_s_reminiscence': {
+		'when': ['any'],
+		'where': ['momiji_dyed_court']
+	},
 }

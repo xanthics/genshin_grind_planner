@@ -299,6 +299,8 @@ strings = {
 	'wanderers_troupe': "Wanderer's Troupe",
 	'blizzard_strayer': 'Blizzard Strayer',
 	'heart_of_depth': 'Heart of Depth',
+	'emblem_of_severed_fate': 'Emblem of Severed Fate',
+	'shimenawa_s_reminiscence': "Shimenawa's Reminiscence",
 	# Artifact Set bonuses
 	'adventurer_bonus': ["HP increased by 1,000", "Opening chest regenerates 30% HP over 5s"],
 	'archaic_petra_bonus': ["Gain a 15% Geo DMG Bonus", "Upon obtaining a crystal created through a Geo Elemental Reaction, all party members gain 35% Elemental DMG Bonus to that particular element for 10s. Only one form of Elemental DMG Bonus can be gained in this manner at any one time."],
@@ -397,5 +399,6 @@ strings = {
 	'midsummer_courtyard': "Midsummer Courtyard",
 	'valley_of_remembrance': "Valley of Remembrance",
 	'peak_of_vindagnyr': 'Peak of Vindagnyr',
-	'ridge_watch': 'Ridge Watch'
+	'ridge_watch': 'Ridge Watch',
+	'momiji_dyed_court': "Momiji-Dyed Court"
 }

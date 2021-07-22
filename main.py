@@ -504,6 +504,9 @@ def update_character():
 		'midsummer_courtyard': 20,
 		'valley_of_remembrance': 20,
 		'peak_of_vindagnyr': 20,
+		'court_of_flowing_sand': 20,
+		'violet_court': 20,
+		'momiji_dyed_court': 20,
 		'ridge_watch': 20,
 		'xp_leyline': 20,
 		'mora_leyline': 20

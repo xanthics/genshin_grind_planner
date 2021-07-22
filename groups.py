@@ -273,6 +273,8 @@ groups = {
 		'wanderers_troupe',
 		'blizzard_strayer',
 		'heart_of_depth',
+		'emblem_of_severed_fate',
+		'shimenawa_s_reminiscence'
 	],
 	'when': [
 		'any',
