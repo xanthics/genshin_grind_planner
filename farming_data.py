@@ -259,6 +259,18 @@ farming_data = {
 		'when': ['any'],
 		'where': ['agent']
 	},
+	'handguard': {
+		'when': ['any'],
+		'where': ['nobushi']
+	},
+	'chaos2': {
+		'when': ['any'],
+		'where': ['ruin_sentinel']
+	},
+	'prism': {
+		'when': ['any'],
+		'where': ['mirror_maiden']
+	},
 	'crown': {
 		'when': ['any'],
 		'where': ['event']

@@ -136,7 +136,10 @@ strings = {
 	'nectar': ['Whopperflower Nectar', 'Shimmering Nectar', 'Energy Nectar'],
 	'scroll': ['Divining Scroll', 'Sealed Scroll', 'Forbidden Curse Scroll'],
 	'slime': ['Slime Condensate', 'Slime Secretions', 'Slime Concentrate'],
+	'handguard': ["Old Handguard", "Kageuchi Handguard", "Famed Handguard"],
 	# boss enemy drops
+	'chaos2': ["Chaos Gear", "Chaos Axis", "Chaos Oculus"],
+	'prism': ["Dismal Prism", "Crystal Prism", "Polarizing Prism"],
 	'bone_shard': ["Fragile Bone Shard", "Sturdy Bone Shard", "Fossilized Bone Shard"],
 	'chaos': ["Chaos Device", "Chaos Circuit", "Chaos Core"],
 	'horn': ["Heavy Horn", "Black Copper Horn", "Black Crystal Horn"],
@@ -361,6 +364,7 @@ strings = {
 	'samachurl': "Hilichurl Casters",
 	'slimes': "Slimes",
 	'treasure_hoarder': "Treasure Hoarders",
+	'nobushi': "Nobushi",
 	# bosses
 	'bosses': "World (Bosses)",
 	'abyss_mage': "Abyss Mage",
@@ -371,6 +375,8 @@ strings = {
 	'ruin_guard': "Ruin Guard or Hunter",
 	'skirmisher': "Fatui Skirmisher",
 	'whopperflower': "Whopperflower",
+	'ruin_sentinel': "Ruin Sentinel",
+	'mirror_maiden': "Mirror Maiden",
 	# elite bosses
 	'anemo_hypostasis': "Anemo Hypostasis",
 	'cryo_regisvine': "Cryo Regisvine",

@@ -99,6 +99,7 @@ groups = {
 		'f_insignia',
 		'th_insignia',
 		'nectar',
+		'handguard'
 	],
 	'common_rare': [
 		'horn',
@@ -107,6 +108,8 @@ groups = {
 		'mist',
 		'sacrificial_knife',
 		'bone_shard',
+		'chaos2',
+		'prism'
 	],
 	'wam': [
 		'decarabian',
@@ -302,6 +305,7 @@ groups = {
 		'samachurl',
 		'slime',
 		'treasure_hoarder',
+		'nobushi',
 		# bosses
 		'bosses',
 		'abyss_mage',
@@ -313,6 +317,8 @@ groups = {
 		'ruin_hunter',
 		'skirmisher',
 		'whopperflower',
+		'ruin_sentinel',
+		'mirror_maiden',
 		# elite bosses
 		'anemo_hypostasis',
 		'cryo_regisvine',
