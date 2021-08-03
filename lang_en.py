@@ -81,6 +81,8 @@ strings = {
 	'eula': "Eula",
 	'kaedehara_kazuha': 'Kaedehara Kazuha',
 	'kamisato_ayaka': "Kamisato Ayaka",
+	'yoimiya': 'Yoimiya',
+	'sayu': 'Sayu',
 	'traveler': "Traveler",
 	'traveler_pyro': "Traveler (Pyro)",
 	'traveler_hydro': "Traveler (Hydro)",
