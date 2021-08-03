@@ -510,6 +510,36 @@ characters = {
 		'weapon': 'sword',
 		'element': 'cryo'
 	},
+	"yoimiya": {
+		'ascension': {
+			'element_1': 'agnidus_agate',
+			'element_2': 'smoldering_pearl',
+			'local': 'naku_weed',
+			'common': 'scroll'
+		},
+		'talent': {
+			'talent': 'transience',
+			'common': 'scroll',
+			'boss': 'dragon_lords_crown'
+		},
+		'weapon': 'bow',
+		'element': 'pyro'
+	},
+	"sayu": {
+		'ascension': {
+			'element_1': 'vayuda_turqoise',
+			'element_2': 'marionette_core',
+			'local': 'crystal_marrow',
+			'common': 'nectar'
+		},
+		'talent': {
+			'talent': 'light',
+			'common': 'nectar',
+			'boss': 'gilded_scale'
+		},
+		'weapon': 'claymore',
+		'element': 'anemo'
+	},
 
 	"traveler": {
 		'ascension': {
