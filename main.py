@@ -658,7 +658,7 @@ def search_chars(ev):
 	search_terms = ev.target.value.lower().split()
 	print(search_terms)
 	for el in doc.get(selector="[data-id^=check]"):
-		if any(x in el.attrs['data-id'][6:] for x in search_terms):
+		if all(x in el.attrs['data-id'][6:] for x in search_terms):
 			print(el.attrs['data-id'][6:])
 			if 'hidden' in el.attrs:
 				del el.attrs['hidden']
