@@ -191,6 +191,7 @@ strings = {
 	'the_stringless': 'The Stringless',
 	'the_viridescent_hunt': 'The Viridescent Hunt',
 	'elegy_for_the_end': 'Elegy for the End',
+	'thundering_pulse': 'Thundering Pulse',
 	'windblume_ode': 'Windblume Ode',
 	'mitternachts_waltz': 'Mitternachts Waltz',
 	'hamayumi': 'Hamayumi',

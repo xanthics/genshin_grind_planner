@@ -12,7 +12,6 @@ import threading
 from os import getcwd
 # make it pretty
 from bs4 import BeautifulSoup as bs
-from prettierfier import prettify_html
 import minify_html
 
 
@@ -73,8 +72,6 @@ def main():
 			f.write(f"<!DOCTYPE html>{minified}")
 	except SyntaxError as e:
 		print(e)
-#	with open('index.html', 'w', encoding='utf-8') as f:
-#		f.write(f"<!DOCTYPE html>\n{prettify_html(soup.prettify())}")
 
 
 if __name__ == '__main__':

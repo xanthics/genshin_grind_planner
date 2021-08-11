@@ -63,8 +63,8 @@ def init_information():
 					item_set[i_idx] = [f"{item}_{c}", strings[item][c]]
 				else:
 					item_set[i_idx] = [item, strings[item]]
-		i = (IMG(src=f"img/{item_set[x][0]}.png", alt=item_set[x][1], title=item_set[x][1]) for x in sorted(item_set))
-		c = IMG(src=f"img/{char}.png", alt=strings[char], title=strings[char])
+		i = (IMG(src=f"img/{item_set[x][0]}.png", alt=item_set[x][1], title=item_set[x][1], loading="lazy") for x in sorted(item_set))
+		c = IMG(src=f"img/{char}.png", alt=strings[char], title=strings[char], loading="lazy")
 		t_chars <= TR(TD(c) + TD(i))
 	# create a table with the item->character dictionary we just built
 	t_items = TABLE(TR(TH(strings["item_s"]) + TH(strings["character_s"])), Class='borders body')
@@ -72,10 +72,10 @@ def init_information():
 		if item in data:
 			if data[item]:  # only show items used by a character
 				if isinstance(strings[item], list):
-					i = (IMG(src=f"img/{item}_{c}.png", alt=strings[item][c], title=strings[item][c]) for c in range(len(strings[item])))
+					i = (IMG(src=f"img/{item}_{c}.png", alt=strings[item][c], title=strings[item][c], loading="lazy") for c in range(len(strings[item])))
 				else:
-					i = IMG(src=f"img/{item}.png", alt=strings[item], title=strings[item])
-				c = (IMG(src=f"img/{x}.png", alt=strings[x], title=strings[x]) for x in sorted(data[item]))
+					i = IMG(src=f"img/{item}.png", alt=strings[item], title=strings[item], loading="lazy")
+				c = (IMG(src=f"img/{x}.png", alt=strings[x], title=strings[x], loading="lazy") for x in sorted(data[item]))
 				t_items <= TR(TD(i) + TD(c))
 
 	doc['information'] <= SECTION(P(strings['character_mats']) + t_chars + BR()+ BR() + t_items, Class='grind')
@@ -211,7 +211,7 @@ def init_characters():
 		# Create table row for character
 		t <= TR(
 			TD(INPUT(Id=f"check-{char}", type='checkbox', data_id=f"check-{char}", Class='char_select save')) +
-			TD(IMG(src=f"img/{char}.png", alt=strings[char], title=strings[char])) +
+			TD(IMG(src=f"img/{char}.png", alt=strings[char], title=strings[char], loading="lazy")) +
 			TD(lvlc) +
 			TD(lvlt) +
 			TD(t1c) +
@@ -272,7 +272,7 @@ def init_characters():
 	# Create table row for character
 	t <= TR(
 		TD(INPUT(Id=f"check-{char}", type='checkbox', data_id=f"check-{char}", Class='char_select save')) +
-		TD(IMG(src=f"img/{char}.png", alt=strings[char], title=strings[char])) +
+		TD(IMG(src=f"img/{char}.png", alt=strings[char], title=strings[char], loading="lazy")) +
 		TD(lvlc) +
 		TD(lvlt) +
 		TD() +
@@ -306,7 +306,7 @@ def init_characters():
 		# Create table row for character
 		t <= TR(
 			TD(INPUT(Id=f"check-{char}", type='checkbox', data_id=f"check-{char}", Class='char_select save')) +
-			TD(IMG(src=f"img/{char}.png", alt=strings['traveler'], title=strings['traveler'])) +
+			TD(IMG(src=f"img/{char}.png", alt=strings['traveler'], title=strings['traveler'], loading="lazy")) +
 			TD() +
 			TD() +
 			TD(t1c) +
@@ -332,13 +332,13 @@ def init_inventory():
 	# char xp, weapon xp, and mora
 	t_own = TABLE(Class='borders center')
 	t_own <= TR(TH(strings["item"]) + TH(strings["need"]) + TH(strings["have"]) + TH(strings["missing_"]))
-	t_own <= TR(TD(IMG(src=f"img/wep_xp.png", alt=strings['wep_xp'], title=strings['wep_xp'])) + TD('0', Id='wep_xp-total') + TD(INPUT(Type='number', min='0', step="1", value='0', Id='wep_xp-user', Class='save')) + TD('0', Id='wep_xp-need', Class='good'))
-	t_own <= TR(TD(IMG(src=f"img/wep_xp_sub_1.png", alt=strings['wep_xp'], title=strings['wep_xp'])) + TD() + TD(INPUT(Type='number', min='0', step="1", value='0', Id='wep_xp_sub_1-user', Class='save')) + TD())
-	t_own <= TR(TD(IMG(src=f"img/wep_xp_sub_0.png", alt=strings['wep_xp'], title=strings['wep_xp'])) + TD() + TD(INPUT(Type='number', min='0', step="1", value='0', Id='wep_xp_sub_0-user', Class='save')) + TD())
-	t_own <= TR(TD(IMG(src=f"img/mora.png", alt=strings['mora'], title=strings['mora'])) + TD('0', Id='mora-total') + TD(INPUT(Type='number', min='0', step="1", value='0', Id='mora-user', Class='save')) + TD('0', Id='mora-need', Class='good'))
-	t_own <= TR(TD(IMG(src=f"img/xp.png", alt=strings['xp'], title=strings['xp'])) + TD('0', Id='xp-total') + TD(INPUT(Type='number', min='0', step="1", value='0', Id='xp-user', Class='save')) + TD('0', Id='xp-need', Class='good'))
-	t_own <= TR(TD(IMG(src=f"img/xp_sub_1.png", alt=strings['xp'], title=strings['xp'])) + TD() + TD(INPUT(Type='number', min='0', step="1", value='0', Id='xp_sub_1-user', Class='save')) + TD())
-	t_own <= TR(TD(IMG(src=f"img/xp_sub_0.png", alt=strings['xp'], title=strings['xp'])) + TD() + TD(INPUT(Type='number', min='0', step="1", value='0', Id='xp_sub_0-user', Class='save')) + TD())
+	t_own <= TR(TD(IMG(src=f"img/wep_xp.png", alt=strings['wep_xp'], title=strings['wep_xp'], loading="lazy")) + TD('0', Id='wep_xp-total') + TD(INPUT(Type='number', min='0', step="1", value='0', Id='wep_xp-user', Class='save')) + TD('0', Id='wep_xp-need', Class='good'))
+	t_own <= TR(TD(IMG(src=f"img/wep_xp_sub_1.png", alt=strings['wep_xp'], title=strings['wep_xp'], loading="lazy")) + TD() + TD(INPUT(Type='number', min='0', step="1", value='0', Id='wep_xp_sub_1-user', Class='save')) + TD())
+	t_own <= TR(TD(IMG(src=f"img/wep_xp_sub_0.png", alt=strings['wep_xp'], title=strings['wep_xp'], loading="lazy")) + TD() + TD(INPUT(Type='number', min='0', step="1", value='0', Id='wep_xp_sub_0-user', Class='save')) + TD())
+	t_own <= TR(TD(IMG(src=f"img/mora.png", alt=strings['mora'], title=strings['mora'], loading="lazy")) + TD('0', Id='mora-total') + TD(INPUT(Type='number', min='0', step="1", value='0', Id='mora-user', Class='save')) + TD('0', Id='mora-need', Class='good'))
+	t_own <= TR(TD(IMG(src=f"img/xp.png", alt=strings['xp'], title=strings['xp'], loading="lazy")) + TD('0', Id='xp-total') + TD(INPUT(Type='number', min='0', step="1", value='0', Id='xp-user', Class='save')) + TD('0', Id='xp-need', Class='good'))
+	t_own <= TR(TD(IMG(src=f"img/xp_sub_1.png", alt=strings['xp'], title=strings['xp'], loading="lazy")) + TD() + TD(INPUT(Type='number', min='0', step="1", value='0', Id='xp_sub_1-user', Class='save')) + TD())
+	t_own <= TR(TD(IMG(src=f"img/xp_sub_0.png", alt=strings['xp'], title=strings['xp'], loading="lazy")) + TD() + TD(INPUT(Type='number', min='0', step="1", value='0', Id='xp_sub_0-user', Class='save')) + TD())
 	doc['inventory'] <= P(strings['convert_notice']) + t_own
 
 	width = 3
@@ -382,7 +382,7 @@ def init_inventory():
 				t_width = width
 			prev_section = 'end section'
 			for i in range(len(strings[item])-1, -1, -1):
-				t_td = TD(IMG(src=f"img/{item}_{i}.png", alt=strings[item][i], title=strings[item][i])) + TD('0', Id=f"{item}_{i}-total") + TD(INPUT(Type='number', min='0', step="1", value='0', Id=f"{item}_{i}-user", Class='save')) + TD('0', Id=f"{item}_{i}-need")
+				t_td = TD(IMG(src=f"img/{item}_{i}.png", alt=strings[item][i], title=strings[item][i], loading="lazy")) + TD('0', Id=f"{item}_{i}-total") + TD(INPUT(Type='number', min='0', step="1", value='0', Id=f"{item}_{i}-user", Class='save')) + TD('0', Id=f"{item}_{i}-need")
 				c += 1
 				t_row <= t_td
 				if not (c % t_width):
@@ -395,7 +395,7 @@ def init_inventory():
 				elif c % width < width:
 					t_row <= TD()
 		else:  # section in ['boss', 'element_2', 'local', 'special']:
-			t_td = TD(IMG(src=f"img/{item}.png", alt=strings[item], title=strings[item])) + TD('0', Id=f"{item}-total") + TD(INPUT(Type='number', min='0', step="1", value='0', Id=f"{item}-user", Class='save')) + TD('0', Id=f"{item}-need")
+			t_td = TD(IMG(src=f"img/{item}.png", alt=strings[item], title=strings[item], loading="lazy")) + TD('0', Id=f"{item}-total") + TD(INPUT(Type='number', min='0', step="1", value='0', Id=f"{item}-user", Class='save')) + TD('0', Id=f"{item}-need")
 			c += 1
 			t_row <= t_td
 			if not (c % width):

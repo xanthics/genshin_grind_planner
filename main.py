@@ -549,8 +549,8 @@ def update_character():
 							item_set[f"{x}_{i}"] = {'text': strings[x][i], 'count': readable_number(grind_table_state['total'][f"{x}_{i}"] - grind_table_state['user'][f"{x}_{i}"])}
 			if item_set:
 				empty = False
-				v = (DIV(IMG(src=f"img/{x}.png", alt=item_set[x]['text'], title=item_set[x]['text']) + DIV(item_set[x]['count'], Class='bottom-right'), Class='container') for x in item_set)
-				c = (IMG(src=f"img/{x}.png", alt=strings[x], title=strings[x]) for x in sorted(char_set))
+				v = (DIV(IMG(src=f"img/{x}.png", alt=item_set[x]['text'], title=item_set[x]['text'], loading="lazy") + DIV(item_set[x]['count'], Class='bottom-right'), Class='container') for x in item_set)
+				c = (IMG(src=f"img/{x}.png", alt=strings[x], title=strings[x], loading="lazy") for x in sorted(char_set))
 				t <= TR(TD(strings[loc], Class="location") + TD(v) + TD(c))
 		if empty:
 			t <= TR(TD(strings['nothing'], Class="location") + TD(strings['nothing']) + TD(strings['nothing']))
@@ -589,8 +589,8 @@ def update_character():
 									char_set.update(char_tracker[x])
 									item_set[f"{x}_{i}"] = {'text': strings[x][i], 'count': readable_number(grind_table_state['total'][f"{x}_{i}"] - grind_table_state['user'][f"{x}_{i}"])}
 					if item_set:
-						v = (DIV(IMG(src=f"img/{x}.png", alt=item_set[x]['text'], title=item_set[x]['text']) + DIV(item_set[x]['count'], Class='bottom-right'), Class='container') for x in item_set)
-						c = (IMG(src=f"img/{x}.png", alt=strings[x], title=strings[x]) for x in sorted(char_set))
+						v = (DIV(IMG(src=f"img/{x}.png", alt=item_set[x]['text'], title=item_set[x]['text'], loading="lazy") + DIV(item_set[x]['count'], Class='bottom-right'), Class='container') for x in item_set)
+						c = (IMG(src=f"img/{x}.png", alt=strings[x], title=strings[x], loading="lazy") for x in sorted(char_set))
 						t <= TR(TD(strings[loc], Class="location") + TD(v) + TD(c))
 				d <= t
 

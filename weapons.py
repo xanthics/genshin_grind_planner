@@ -3,6 +3,7 @@ weapons = {
 		'amos_bow': {'wam': 'dandelion_gladiator', 'common_rare': 'chaos', 'common': 'slime', 'tier': '5_weapon'},
 		'skyward_harp': {'wam': 'boreal_wolf', 'common_rare': 'ley_line', 'common': 'arrowhead', 'tier': '5_weapon'},
 		'elegy_for_the_end': {'wam': 'boreal_wolf', 'common_rare': 'horn', 'common': 'f_insignia', 'tier': '5_weapon'},
+		'thundering_pulse': {'wam': 'narukami', 'common_rare': 'prism', 'common': 'arrowhead', 'tier': '5_weapon'},
 		'compound_bow': {'wam': 'aerosiderite', 'common_rare': 'bone_shard', 'common': 'f_insignia', 'tier': '4_weapon'},
 		'blackcliff_warbow': {'wam': 'guyun', 'common_rare': 'sacrificial_knife', 'common': 'th_insignia', 'tier': '4_weapon'},
 		'the_viridescent_hunt': {'wam': 'decarabian', 'common_rare': 'horn', 'common': 'arrowhead', 'tier': '4_weapon'},

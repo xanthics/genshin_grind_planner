@@ -2,12 +2,9 @@ The following is a list of things that have, or soon will be, added to Genshin o
 
 **Character(s)**
 ```text
-"Frolicking Flames" Yoimiya (placeholder until release)
-"Mujina Ninja" Sayu (placeholder until release)
 ```
 **Weapons**
 ```text
-Thundering Pulse (5-Star Bow)
 ```
 **Dungeons & Bosses**
 ```text
@@ -18,5 +15,5 @@ Thundering Pulse (5-Star Bow)
 **Other** (personal todo list)
 ```text
 Show available actions: eg can ascend a character
-Useful information page: artifact sets, items->character mappings, important formulas
+Useful information page: artifact sets, important formulas
 ```
