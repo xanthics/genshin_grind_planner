@@ -652,17 +652,34 @@ def save_state(ev):
 		print(f"Unhandled element type for storage: {ev.target.type}")
 
 
-# Handles which characters are visible
-def update_visible():
-	c = doc['selected'].value
-	e = doc['element'].value
-	w = doc['weapon'].value
-	for el in doc.get(selector="#character_list .body tr[data-id]"):
-		if c in ['any', el.attrs['class']] and (e in ['any', el.attrs['data-color']] or (el.attrs['data-color'] == 'multi' and e in ['anemo', 'geo'])) and w in ['any', el.attrs['data-weapon']]:
+# Support for searching character list
+@bind('#keywords', 'input')
+def search_chars(ev):
+	search_terms = ev.target.value.lower().split()
+	print(search_terms)
+	for el in doc.get(selector="[data-id^=check]"):
+		if any(x in el.attrs['data-id'][6:] for x in search_terms):
+			print(el.attrs['data-id'][6:])
 			if 'hidden' in el.attrs:
 				del el.attrs['hidden']
 		else:
 			el.attrs['hidden'] = ''
+	if not doc['keywords'].value:
+		update_visible()
+
+
+# Handles which characters are visible
+def update_visible():
+	if not doc['keywords'].value:
+		c = doc['selected'].value
+		e = doc['element'].value
+		w = doc['weapon'].value
+		for el in doc.get(selector="#character_list .body tr[data-id]"):
+			if c in ['any', el.attrs['class']] and (e in ['any', el.attrs['data-color']] or (el.attrs['data-color'] == 'multi' and e in ['anemo', 'geo'])) and w in ['any', el.attrs['data-weapon']]:
+				if 'hidden' in el.attrs:
+					del el.attrs['hidden']
+			else:
+				el.attrs['hidden'] = ''
 
 
 # Function to handle deleting artifacts

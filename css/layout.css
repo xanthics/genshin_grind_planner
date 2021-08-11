@@ -59,7 +59,7 @@ input[type=number] {
     appearance: textfield;
 }
 
-input[type=number],
+input,
 select {
     text-align: right;
     border-top-style: hidden;
@@ -355,6 +355,9 @@ table.spacer td:nth-child(10),
     height: 6px !important;
 }
 
+.right_text {
+    text-align: right;
+}
 
 table.spacer th:nth-child(5),
 table.spacer td:nth-child(5),

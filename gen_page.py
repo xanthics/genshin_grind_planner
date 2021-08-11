@@ -105,11 +105,12 @@ def init_show_hide():
 		wst <= OPTION(s.capitalize(), value=s)
 
 	t = TABLE(TR(TH() + TH('Option')))
-	t <= TR(TD('Character') + TD(cst))
-	t <= TR(TD('Element') + TD(est))
-	t <= TR(TD('Weapon') + TD(wst))
+	t <= TR(TD('Character', Class="right_text") + TD(cst))
+	t <= TR(TD('Element', Class="right_text") + TD(est))
+	t <= TR(TD('Weapon', Class="right_text") + TD(wst))
+	t <= TR(TD('Character Search', Class="right_text") + TD(INPUT(Type='text', Id="keywords")))
 
-	doc['show_hide'] <= t + P("Note that all selections have to be true for a character to be visible.")
+	doc['show_hide'] <= t + P("Note that all selections have to be true for a character to be visible.  Additionally the keyword search overrides all other filter settings so clear it to use them.")
 
 
 def init_characters():
