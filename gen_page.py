@@ -108,7 +108,7 @@ def init_show_hide():
 	t <= TR(TD('Character', Class="right_text") + TD(cst))
 	t <= TR(TD('Element', Class="right_text") + TD(est))
 	t <= TR(TD('Weapon', Class="right_text") + TD(wst))
-	t <= TR(TD('Character Search', Class="right_text") + TD(INPUT(Type='text', Id="keywords")))
+	t <= TR(TD('Character Search', Class="right_text") + TD(INPUT(Type='text', Id="keywords") + BUTTON('x', Id='clear_keywords')))
 
 	doc['show_hide'] <= t + P("Note that all selections have to be true for a character to be visible.  Additionally the keyword search overrides all other filter settings so clear it to use them.")
 

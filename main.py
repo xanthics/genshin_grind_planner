@@ -668,6 +668,12 @@ def search_chars(ev):
 		update_visible()
 
 
+# Clear keyword box
+def clear_keywords(ev):
+	doc['keywords'].value = ''
+	update_visible()
+
+
 # Handles which characters are visible
 def update_visible():
 	if not doc['keywords'].value:
@@ -732,6 +738,7 @@ init_page()
 doc["reset_all"].bind("click", reset_data)
 doc["reset_character"].bind("click", reset_character)
 doc["reset_inventory"].bind("click", reset_inventory)
+doc["clear_keywords"].bind("click", clear_keywords)
 del doc['loading']
 
 
