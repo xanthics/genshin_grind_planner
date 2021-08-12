@@ -1,5 +1,5 @@
 from browser import document as doc
-from browser import bind
+from browser import bind, window
 from browser.html import TABLE, TR, TH, TD, INPUT, SELECT, OPTION, DIV, BUTTON, SPAN, LI, H2, H3, IMG, COLGROUP, COL, SECTION
 from browser.local_storage import storage
 
@@ -656,7 +656,6 @@ def save_state(ev):
 @bind('#keywords', 'input')
 def search_chars(ev):
 	search_terms = ev.target.value.lower().split()
-	print(search_terms)
 	for el in doc.get(selector="[data-id^=check]"):
 		if all(x in el.attrs['data-id'][6:] for x in search_terms):
 			print(el.attrs['data-id'][6:])
@@ -671,7 +670,8 @@ def search_chars(ev):
 # Clear keyword box
 def clear_keywords(ev):
 	doc['keywords'].value = ''
-	update_visible()
+	event = window.Event.new('input')
+	doc['keywords'].dispatchEvent(event)
 
 
 # Handles which characters are visible
